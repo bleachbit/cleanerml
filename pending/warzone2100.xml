@@ -19,7 +19,7 @@ BleachBit
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-
+<!-- FIXME: Warzone2100 runs also on Windows -->
 <cleaner id="warzone2100" os="linux">
   <label>Warzone2100</label>
   <option id="logs">
