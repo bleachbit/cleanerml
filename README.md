@@ -24,3 +24,11 @@ How to contribute
 1.  Read [Documentation on CleanerML](http://bleachbit.sourceforge.net/documentation/cleanerml)  
 1.  Read [Contributing a cleaner](http://bleachbit.sourceforge.net/contribute/cleaner)
 1.  Write your own cleaner *or* review someone else's submission
+
+
+Contents
+--------
+
+The directory `pending` contains cleaners that are waiting for someone to verify they are safe and effective.
+
+The directory `release` contains cleaners that are considered safe and effective.
