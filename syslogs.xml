@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2010 Andrew Ziem
+    http://bleachbit.sourceforge.net
+
+    This cleaner
+    Copyright © 2009 Roman Horník
+    https://launchpad.net/~roman.hornik
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<cleaner id="syslogs" os="linux">
+  <label>System logs</label>
+  <description>System logs in /var/log
+Various system logs are often needed for error reporting and debugging the system.
+If your system works properly, these files are not needed and may be deleted.</description>
+  <option id="acpid">
+    <label>acpid</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="file" path="/var/log/acpid"/>
+  </option>
+  <option id="apache">
+    <label>Apache</label>
+    <description>Delete the logs</description>
+    <!-- Ubuntu -->
+    <action command="truncate" search="file" path="/var/log/apache2/access.log"/>
+    <action command="truncate" search="file" path="/var/log/apache2/access.log.1"/>
+    <action command="truncate" search="file" path="/var/log/apache2/error.log"/>
+    <action command="truncate" search="file" path="/var/log/apache2/error.log.1"/>
+    <!-- Fedora -->
+    <action command="truncate" search="file" path="/var/log/httpd/access_log"/>
+    <action command="truncate" search="file" path="/var/log/httpd/error_log"/>
+    <action command="truncate" search="glob" path="/var/log/httpd/access_log-????????"/>
+    <action command="truncate" search="glob" path="/var/log/httpd/error_log-????????"/>
+  </option>
+  <option id="auth">
+    <label>auth.log</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="file" path="/var/log/auth.log"/>
+  </option>
+  <option id="boot">
+    <!-- Seen on Fedora 11 -->
+    <label>boot.log</label>
+    <description>Delete the logs</description>
+    <action command="truncate" search="file" path="/var/log/boot.log"/>
+    <action command="delete" search="glob" path="/var/log/boot.log-????????"/>
+  </option>
+  <option id="bootstrap">
+    <label>bootstrap.log</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="file" path="/var/log/bootstrap.log"/>
+  </option>
+  <option id="casper">
+    <label>casper.log</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="file" path="/var/log/apt/installer/casper.log"/>
+  </option>
+  <option id="ckit">
+    <label>ConsoleKit history</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="file" path="/var/log/ConsoleKit/history"/>
+  </option>
+  <option id="cron">
+    <!-- Seen on Fedora 11 -->
+    <label>cron</label>
+    <description>Delete the logs</description>
+    <action command="truncate" search="file" path="/var/log/cron"/>
+    <action command="delete" search="glob" path="/var/log/cron-????????"/>
+  </option>
+  <option id="daemon">
+    <label>daemon.log</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="file" path="/var/log/daemon.log"/>
+  </option>
+  <option id="debug">
+    <label>debug</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="file" path="/var/log/debug"/>
+  </option>
+  <option id="dmesg">
+    <label>dmesg</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="file" path="/var/log/dmesg"/>
+    <action command="delete" search="file" path="/var/log/dmesg.old"/>
+  </option>
+  <option id="dpkg">
+    <label>dpkg.log</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="file" path="/var/log/dpkg.log"/>
+  </option>
+  <option id="dkms">
+    <label>dkms_autoinstaller</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="file" path="/var/log/dkms_autoinstaller"/>
+  </option>
+  <option id="fcfg">
+    <label>fontconfig.log</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="file" path="/var/log/fontconfig.log"/>
+  </option>
+  <option id="kern">
+    <label>kern.log</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="file" path="/var/log/kern.log"/>
+  </option>
+  <option id="lastlog">
+    <label>lastlog</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="file" path="/var/log/lastlog"/>
+  </option>
+  <option id="mail">
+    <label>mail</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="file" path="/var/log/mail.err"/>
+    <action command="delete" search="file" path="/var/log/mail.info"/>
+    <action command="delete" search="file" path="/var/log/mail.log"/>
+    <action command="delete" search="file" path="/var/log/mail.warn"/>
+    <!-- /var/log/maillog* seen on Fedora 11 -->
+    <action command="truncate" search="file" path="/var/log/maillog"/>
+    <action command="delete" search="glob" path="/var/log/maillog-????????"/>
+  </option>
+  <option id="messages">
+    <label>messages</label>
+    <description>Delete the logs</description>
+    <action command="truncate" search="file" path="/var/log/messages"/>
+    <action command="delete" search="glob" path="/var/log/messages-????????"/>
+  </option>
+  <option id="pyctl">
+    <label>pycentral</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="file" path="/var/log/pycentral"/>
+  </option>
+  <option id="popcon">
+    <label>popularity-contest</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="file" path="/var/log/popularity-contest"/>
+  </option>
+  <option id="sec">
+    <label>secure</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="file" path="/var/log/secure"/>
+    <action command="delete" search="glob" path="/var/log/secure-????????"/>
+  </option>
+  <option id="syslog">
+    <label>syslog</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="file" path="/var/log/syslog"/>
+  </option>
+  <option id="term">
+    <label>term.log</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="file" path="/var/log/apt/term.log"/>
+  </option>
+  <option id="udev">
+    <label>udev</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="file" path="/var/log/udev"/>
+  </option>
+  <option id="user">
+    <label>user.log</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="file" path="/var/log/user.log"/>
+  </option>
+  <option id="vbox">
+    <label>vbox-install.log</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="file" path="/var/log/vbox-install.log"/>
+  </option>
+  <option id="preload">
+    <label>preload.log</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="file" path="/var/log/apt/preload.log"/>
+  </option>
+  <option id="xorg">
+    <label>xorg</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="glob" path="/var/log/Xorg.*.log*"/>
+  </option>
+</cleaner>
