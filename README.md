@@ -1,7 +1,7 @@
 CleanerML Repository
 ====================
 
-This repository is an experiment whether GitHub provides an efficent platform for a community to develop safe and effective system cleaners.  If the experiment is successful, BleachBit will provide automated access to this repository to support a wide variety of applications.
+This repository is an experiment whether GitHub provides an efficent platform for a community to develop safe and effective system cleaners.  If the experiment is successful, BleachBit will provide automated access to this repository to support a wide variety of applications.  For more background read the [announcement](http://bleachbit.sourceforge.net/news/bonus-pack-moved-svn-git).
 
 
 CleanerML
