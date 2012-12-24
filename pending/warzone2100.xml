@@ -20,6 +20,7 @@ BleachBit
 
 -->
 <!-- FIXME: Warzone2100 runs also on Windows -->
+<!-- Gogeden (11/19/2011): tested on Trisquel GNUx and BleachBit 0.9.1 -->
 <cleaner id="warzone2100" os="linux">
   <label>Warzone2100</label>
   <option id="logs">
