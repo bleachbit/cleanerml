@@ -20,7 +20,7 @@
 
  -->
 
-<cleaner id ="superantispyware">
+<cleaner id ="superantispyware" os="windows">
   <label>SuperAntiSpyware</label>
   <description>anti-virus</description>
   <option id="applogs">
