@@ -20,7 +20,7 @@
 
 -->
 
-<cleaner id="abrowser">
+<cleaner id="abrowser" os="linux">
    <label>Abrowser</label>
    <description>Web Browser</description>
 <option id="cache">
