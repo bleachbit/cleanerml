@@ -29,7 +29,7 @@
     <action search="file" command="delete" path="~\.sabnzbd\*.bak"/>
     <action search="file" command="delete" path="~\.sabnzbd\logs\*.log"/>
     <action search="file" command="delete" path="$LOCALAPPDATA\sabnzbd\*.bak"/>
-    <action search="file" command="delete" path="~\.sabnzb\admin\history.db
-	 <action search="file" command="delete" path="$LOCALAPPDATA\sabnzbd\admin\history.db
+    <action search="file" command="delete" path="~\.sabnzb\admin\history.db"/>
+    <action search="file" command="delete" path="$LOCALAPPDATA\sabnzbd\admin\history.db"/>
   </option>
 </cleaner>
