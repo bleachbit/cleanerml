@@ -20,7 +20,7 @@
 
 -->
 
-<cleaner id="zune">
+<cleaner id="zune" os="windows">
    <label>Zune</label>
    <description>Media Player</description>
    <option id="art cache">
