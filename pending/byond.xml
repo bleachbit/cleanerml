@@ -20,7 +20,7 @@
 
 -->
 
-<cleaner id="byond">
+<cleaner id="byond" os="linux">
 	<label>BYOND</label>
 	<description>Game development program</description>
 <option id="cache">
