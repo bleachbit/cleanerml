@@ -19,7 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<cleaner id="GNU IceCat" os="linux">
+<cleaner id="gnu_icecat" os="linux">
   <label>GNU IceCat</label>
   <description>Web browser</description>
   <option id="cache">

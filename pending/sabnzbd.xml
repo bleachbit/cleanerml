@@ -19,7 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<cleaner id="SABnzbd">
+<cleaner id="sabnzbd">
   <label>Usenet client</label>
   <description>Deletes logs and settings backups</description>
   <option id="Logs and Settings Backups">
