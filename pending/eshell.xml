@@ -19,12 +19,11 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-
 <cleaner id="eshell" os="linux">
-<label>Eshell</label>
-	<option id="History">
-	<label>History</label>
-	<description>Delete the command history</description>
-	<action command="delete" search="file" path="~/.eshell/history"/>
-</option>
+  <label>Eshell</label>
+  <option id="History">
+    <label>History</label>
+    <description>Delete the command history</description>
+    <action command="delete" search="file" path="~/.eshell/history"/>
+  </option>
 </cleaner>

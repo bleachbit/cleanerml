@@ -22,38 +22,38 @@
 <cleaner id="GNU IceCat" os="linux">
   <label>GNU IceCat</label>
   <description>Web browser</description>
-<option id="cache">
-   <label>Cache</label>
-   <description>Clean the cache</description>
-   <action command="delete" search="walk.all" path="~/.gnuzilla/icecat/*.default/Cache"/>
- </option>
-<option id="cookies">
-   <label>Cookies</label>
-   <description>Clean cookies, which contain information such as web site preferences, authentication, and tracking identification</description>
-   <action command="delete" search="glob" path="~/.gnuzilla/icecat/*.default/cookies.sqlite"/>
+  <option id="cache">
+    <label>Cache</label>
+    <description>Clean the cache</description>
+    <action command="delete" search="walk.all" path="~/.gnuzilla/icecat/*.default/Cache"/>
   </option>
-<option id="download_history">
+  <option id="cookies">
+    <label>Cookies</label>
+    <description>Clean cookies, which contain information such as web site preferences, authentication, and tracking identification</description>
+    <action command="delete" search="glob" path="~/.gnuzilla/icecat/*.default/cookies.sqlite"/>
+  </option>
+  <option id="download_history">
     <label>Download history</label>
     <description>Clean the list of downloaded files</description>
     <action command="delete" search="glob" path="~/.gnuzilla/icecat/*.default/downloads.sqlite"/>
   </option>
-<option id="form_history">
-   <label>Form History</label>
-   <description>Clean the Form History, also known as "AutoComplete"</description>
-   <action command="delete" search="glob" path="~/.gnuzilla/icecat/*.default/formhistory.sqlite"/>
+  <option id="form_history">
+    <label>Form History</label>
+    <description>Clean the Form History, also known as "AutoComplete"</description>
+    <action command="delete" search="glob" path="~/.gnuzilla/icecat/*.default/formhistory.sqlite"/>
   </option>
-<option id="history">
-<!-- Apparently in GNU IceCat, the "places.sqlite" file is it's history file -->
+  <option id="history">
+    <!-- Apparently in GNU IceCat, the "places.sqlite" file is it's history file -->
     <label>History</label>
     <description>Clean the list of visited web pages</description>
     <action command="delete" search="glob" path="~/.gnuzilla/icecat/*.default/places.sqlite"/>
   </option>
-<option id="offline_cache">
+  <option id="offline_cache">
     <label>Offline Cache</label>
     <description>Clean the cache collected while visiting pages offline</description>
     <action command="delete" search="glob" path="~/.gnuzilla/icecat/*.default/OfflineCache/index.sqlite"/>
   </option>
-<option id="search_history">
+  <option id="search_history">
     <label>Search</label>
     <description>Clean history in the browser's search bar</description>
     <action command="delete" search="glob" path="~/.gnuzilla/icecat/*.default/search.sqlite"/>

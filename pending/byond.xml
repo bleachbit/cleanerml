@@ -19,13 +19,12 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-
 <cleaner id="byond" os="linux">
-	<label>BYOND</label>
-	<description>Game development program</description>
-<option id="cache">
-	<label>Cache</label>
-	<description>Clean BYOND's cache</description>
-	 <action command="delete" search="walk.all" path="~/.byond/cache"/>
-</option>
+  <label>BYOND</label>
+  <description>Game development program</description>
+  <option id="cache">
+    <label>Cache</label>
+    <description>Clean BYOND's cache</description>
+    <action command="delete" search="walk.all" path="~/.byond/cache"/>
+  </option>
 </cleaner>

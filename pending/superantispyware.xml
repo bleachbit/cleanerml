@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" ?> 
- <!-- 
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
     BleachBit
     Copyright (C) 2011 Andrew Ziem
     http://bleachbit.sourceforge.net
@@ -19,13 +19,12 @@
 
 
  -->
-
-<cleaner id ="superantispyware" os="windows">
+<cleaner id="superantispyware" os="windows">
   <label>SuperAntiSpyware</label>
   <description>anti-virus</description>
   <option id="applogs">
-   <label>AppLogs</label>
-   <description>Delete application logs</description>
-   <action command="delete" search="walk.files" path="$USERPROFILE\AppData\Roaming\SUPERAntiSpyware.com\SUPERAntiSpyware\AppLogs\" />
-</option>
+    <label>AppLogs</label>
+    <description>Delete application logs</description>
+    <action command="delete" search="walk.files" path="$USERPROFILE\AppData\Roaming\SUPERAntiSpyware.com\SUPERAntiSpyware\AppLogs\"/>
+  </option>
 </cleaner>

@@ -19,18 +19,17 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-
 <cleaner id="zune" os="windows">
-   <label>Zune</label>
-   <description>Media Player</description>
-   <option id="art cache">
-     <label>Art Cache</label>
-     <description>Delete album cover cache</description>
-     <action command="delete" search="walk.files" path="$USERPROFILE\AppData\Local\Microsoft\Zune\Art Cache\"/>
- </option>
-   <option id="tfc">
-     <label>Transcoded Files Cache</label>
-     <description>Delete the cache</description>
-     <action command="delete" search="walk.files" path="$USERPROFILE\AppData\Local\Microsoft\Zune\Transcoded Files Cache\"/>
- </option>
+  <label>Zune</label>
+  <description>Media Player</description>
+  <option id="art cache">
+    <label>Art Cache</label>
+    <description>Delete album cover cache</description>
+    <action command="delete" search="walk.files" path="$USERPROFILE\AppData\Local\Microsoft\Zune\Art Cache\"/>
+  </option>
+  <option id="tfc">
+    <label>Transcoded Files Cache</label>
+    <description>Delete the cache</description>
+    <action command="delete" search="walk.files" path="$USERPROFILE\AppData\Local\Microsoft\Zune\Transcoded Files Cache\"/>
+  </option>
 </cleaner>

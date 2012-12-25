@@ -19,43 +19,42 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-
 <cleaner id="abrowser" os="linux">
-   <label>Abrowser</label>
-   <description>Web Browser</description>
-<option id="cache">
+  <label>Abrowser</label>
+  <description>Web Browser</description>
+  <option id="cache">
     <label>Cache</label>
     <description>Clean the browser cache</description>
-     <action command="delete" search="walk.all" path="~/.mozilla/abrowser/*.default/Cache"/>
-</option>
-<option id="cookies">
+    <action command="delete" search="walk.all" path="~/.mozilla/abrowser/*.default/Cache"/>
+  </option>
+  <option id="cookies">
     <label>Cookies</label>
     <description>Clean cookies which contain tracking information, site preferences, and more</description>
-     <action command="delete" search="glob" path="~/.mozilla/abrowser/*.default/cookies.sqlite"/>
-</option>
-<option id="download_history">
+    <action command="delete" search="glob" path="~/.mozilla/abrowser/*.default/cookies.sqlite"/>
+  </option>
+  <option id="download_history">
     <label>Download History</label>
     <description>Clean history of downloaded files</description>
-     <action command="delete" search="glob" path="~/.mozilla/abrowser/*.default/downloads.sqlite"/>
-</option>
-<option id="form_history">
+    <action command="delete" search="glob" path="~/.mozilla/abrowser/*.default/downloads.sqlite"/>
+  </option>
+  <option id="form_history">
     <label>Form History</label>
     <description>Clean the Form History. Also known as "Autocomplete"</description>
-     <action command="delete" search="glob" path="~/.mozilla/abrowser/*.default/formhistory.sqlite"/>
-</option>
-<option id="history">
+    <action command="delete" search="glob" path="~/.mozilla/abrowser/*.default/formhistory.sqlite"/>
+  </option>
+  <option id="history">
     <label>History</label>
     <description>Clean the list of visited sites</description>
-     <action command="delete" search="glob" path="~/.mozilla/abrowser/*.default/places.sqlite"/>
-</option>
-<option id="offline_cache">
+    <action command="delete" search="glob" path="~/.mozilla/abrowser/*.default/places.sqlite"/>
+  </option>
+  <option id="offline_cache">
     <label>Offline Cache</label>
     <description>Clean the cache collected while visiting sites offline</description>
-     <action command="delete" search="glob" path="~/.mozilla/abrowser/*.default/OfflineCache/index.sqlite"/>
-</option>
-<option id="search_history">
+    <action command="delete" search="glob" path="~/.mozilla/abrowser/*.default/OfflineCache/index.sqlite"/>
+  </option>
+  <option id="search_history">
     <label>Search</label>
     <description>Clean the history in the search bar</description>
-     <action command="delete" search="glob" path="~/.mozilla/abrowser/*.default/search.sqlite"/>
-</option>
+    <action command="delete" search="glob" path="~/.mozilla/abrowser/*.default/search.sqlite"/>
+  </option>
 </cleaner>
