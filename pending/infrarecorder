@@ -23,7 +23,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
   <label>InfraRecorder</label>
   <description>Optical disc burning software</description>
   <option id="logs">
-    <label>logs</label>
+    <label>Logs</label>
     <description>Delete the program logs</description>
     <action command="delete" search="glob" path="$USERPROFILE\AppData\Roaming\InfraRecorder\logs\"/>
   </option>
