@@ -25,6 +25,6 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
   <option id="logs">
     <label>Logs</label>
     <description>Delete the program logs</description>
-    <action command="delete" search="glob" path="$USERPROFILE\AppData\Roaming\InfraRecorder\logs\"/>
+    <action command="delete" search="glob" path="$USERPROFILE\AppData\Roaming\InfraRecorder\logs\*"/>
   </option>
 </cleaner>
