@@ -25,5 +25,6 @@
     <label>History</label>
     <description>Delete the command history</description>
     <action command="delete" search="file" path="~/.eshell/history"/>
+    <action command="delete" search="file" path="$APPDATA\.eshell\history"/>
   </option>
 </cleaner>
