@@ -27,6 +27,6 @@ BleachBit
     <label>Logs</label>
     <description>Delete the log files</description>
     <action command="delete" search="walk.all" path="~/.warzone2100*/logs/"/>
-    <action command="delete" search="walk.all" path="$USERPROFILE\My/\Documents\Warzone/\2100*\logs\"/>
+    <action command="delete" search="walk.all" path="$USERPROFILE\My Documents\Warzone 2100*\logs\"/>
   </option>
 </cleaner>
