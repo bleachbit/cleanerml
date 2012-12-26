@@ -21,11 +21,12 @@ BleachBit
 -->
 <!-- FIXME: Warzone2100 runs also on Windows -->
 <!-- Gogeden (11/19/2011): tested on Trisquel GNUx and BleachBit 0.9.1 -->
-<cleaner id="warzone2100" os="linux">
+<cleaner id="warzone2100">
   <label>Warzone2100</label>
   <option id="logs">
     <label>Logs</label>
     <description>Delete the log files</description>
     <action command="delete" search="walk.all" path="~/.warzone2100*/logs/"/>
+    <action command="delete" search="walk.all" path="$USERPROFILE\My/\Documents\Warzone/\2100*\logs\"/>
   </option>
 </cleaner>
