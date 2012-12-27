@@ -4,6 +4,9 @@
     BleachBit
     Copyright (C) 2011 Andrew Ziem
     http://bleachbit.sourceforge.net
+    
+     Cleaner for ABrowser by Theatre X
+from <https://bugs.launchpad.net/bleachbit/+bug/571114>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
