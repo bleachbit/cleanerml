@@ -30,6 +30,7 @@
     <description>Delete the cache</description>
     <action command="delete" search="walk.files" path="~/.cache/midori/"/>
     <action command="delete" search="walk.files" path="$APPDATA\local\webkit\icondatabase\WebpageIcons.db"/>
+    <action command="delete" search="walk.files" path="$APPDATA\local\webkit\databases\*"/>
     <!-- FIXME: add Windows cache path -->
   </option>
   <option id="Cookies">
