@@ -4,6 +4,9 @@
     BleachBit
     Copyright (C) 2010 Andrew Ziem
     http://bleachbit.sourceforge.net
+    
+    Cleaner for Midori by SpaceCafé and Gogeden
+    from <https://bugs.launchpad.net/bleachbit/+bug/571114>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -26,16 +29,19 @@
     <label>Cache</label>
     <description>Delete the cache</description>
     <action command="delete" search="walk.files" path="~/.cache/midori/"/>
+    <!-- FIXME: add Windows cache path -->
   </option>
   <option id="Cookies">
     <label>Cookies</label>
     <description>Delete cookies, which contain information such as web site preferences, authentication, and tracking identification</description>
     <action command="delete" search="glob" path="$APPDATA\Local\midori\cookies.txt"/>
+    <!-- FIXME: add Linux cookies path -->
   </option>
   <option id="History">
     <label>History</label>
     <description>Delete the history which includes visited sites, downloads, and thumbnails</description>
     <action command="delete" search="glob" path="$APPDATA\Local\midori\history.db"/>
     <action command="delete" search="glob" path="$APPDATA\Local\midori\history.db-journal"/>
+    <!-- FIXME: add Linux history path -->
   </option>
 </cleaner>
