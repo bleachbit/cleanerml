@@ -42,8 +42,7 @@
   <option id="History">
     <label>History</label>
     <description>Delete the history which includes visited sites, downloads, and thumbnails</description>
-    <action command="delete" search="glob" path="$APPDATA\Local\midori\history.db"/>
-    <action command="delete" search="glob" path="$APPDATA\Local\midori\history.db-journal"/>
+    <action command="delete" search="glob" path="$APPDATA\Local\midori\history*"/>
     <!-- FIXME: add Linux history path -->
   </option>
 </cleaner>
