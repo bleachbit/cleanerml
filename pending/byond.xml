@@ -19,7 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<cleaner id="byond" os="linux">
+<cleaner id="byond">
   <label>BYOND</label>
   <description>Game development program</description>
   <option id="cache">
