@@ -22,7 +22,7 @@
 <cleaner id="zune" os="windows">
   <label>Zune</label>
   <description>Media Player</description>
-  <option id="art cache">
+  <option id="art_cache">
     <label>Art Cache</label>
     <description>Delete album cover cache</description>
     <action command="delete" search="walk.files" path="$USERPROFILE\AppData\Local\Microsoft\Zune\Art Cache\"/>
