@@ -21,7 +21,7 @@ Cleaner contributed by "Theatre X"
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<cleaner id="steam">
+<cleaner id="steam" os="windows">
   <label>Steam</label>
     <option id="cookies">
       <label>Cookies</label>
