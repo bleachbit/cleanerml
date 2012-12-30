@@ -21,7 +21,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<cleaner id="facebook_messenger">
+<cleaner id="facebook_messenger" os="windows">
 <label>Facebook Messeneger</label>
 <option id="cache">
 <label>Cache</label>
