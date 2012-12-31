@@ -29,13 +29,13 @@
 			<action search="glob" command="delete" path="~\.sabnzbd\logs\*.log"/>
 	</option>
 	<option id="history">
-		<label>History</Label>
+		<label>History</label>
 		<description>Clears the history.</description>
 			<action search="file" command="delete" path="~\.sabnzb\admin\history.db"/>
 			<action search="file" command="delete" path="$LOCALAPPDATA\sabnzbd\admin\history.db"/>
 	</option>
 	<option id="settings_backups">
-		<label>Backups</Label>
+		<label>Backups</label>
 		<description>Clears the settings backups. You will be unable to restore them in the event something goes wrong </description>
 			<action search="glob" command="delete" path="~\.sabnzbd\*.bak"/>
 			<action search="glob" command="delete" path="$LOCALAPPDATA\sabnzbd\*.bak"/>

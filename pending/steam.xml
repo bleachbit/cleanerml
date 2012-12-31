@@ -26,7 +26,7 @@ Cleaner contributed by "Theatre X"
     <option id="cookies">
       <label>Cookies</label>
         <description>Clean the program cookies</description>
-          <action command="delete" search="walk.file" path="$ProgramFiles\Steam\config\cookes\*"/>
+          <action command="delete" search="walk.files" path="$ProgramFiles\Steam\config\cookes\*"/>
 </option>
 <option id="html_cache">
   <label>HTML Cache</label>
