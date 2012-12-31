@@ -20,8 +20,8 @@
 
 -->
 <cleaner id="sabnzbd">
-	<label>Usenet client</label>
-	<description>Deletes logs, history, and backups</description>
+	<label>SABnzbd</label>
+	<description>Usenet client</description>
 	<option id="logs">
 		<label>Logs</label>
 		<description>Deletes the logs from SABnzbd</description>
