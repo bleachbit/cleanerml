@@ -19,7 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<cleaner id="gnash">
+<cleaner id="gnash" os="linux">
   <label>Gnash</label>
   <description>The GNU Flash Player</description>
   <option id="Shared Objects">
