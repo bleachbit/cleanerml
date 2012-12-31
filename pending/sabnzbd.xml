@@ -24,7 +24,7 @@
 	<description>Usenet client</description>
 	<option id="logs">
 		<label>Logs</label>
-		<description>Deletes the logs from SABnzbd</description>
+		<description>Deletes the logs</description>
 			<action search="glob" command="delete" path="$LOCALAPPDATA\sabnzbd\logs\*.log"/>
 			<action search="glob" command="delete" path="~\.sabnzbd\logs\*.log"/>
 	</option>
