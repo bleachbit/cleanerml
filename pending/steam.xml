@@ -26,17 +26,13 @@ Cleaner contributed by "Theatre X"
     <option id="cookies">
       <label>Cookies</label>
         <description>Clean the program cookies</description>
-          <action command="delete" search="walk.files" path="$ProgramFiles\Steam\config\cookes\*"/>
+          <action command="delete" search="walk.files" path="$ProgramFiles\Steam\config\cookies\"/>
 </option>
-<option id="html_cache">
-  <label>HTML Cache</label>
-    <description>Delete HTML cache</description>
+<option id="cache">
+  <label>Cache</label>
+    <description>Delete HTML and HTTP cache</description>
       <action command="delete" search="walk.all" path="$ProgramFiles\Steam\config\htmlcache\*"/>
-</option>
-    <option id="http_cache">
-      <label>HTTP Cache</label>
-        <description>Delete the cache from web usage</description>
-          <action command="delete" search="walk.all" path="$ProgramFiles\Steam\appcache\httpcache\*"/>
+      <action command="delete" search="walk.all" path="$ProgramFiles\Steam\appcache\httpcache\*"/>
 </option>
 <option id="logs">
   <label>Logs</label>
