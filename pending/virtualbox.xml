@@ -21,10 +21,10 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 -->
 <cleaner id="virtualbox">
 <label>VirtualBox</label>
-  <description>Virtual Machine</description>
+  <description>Virtual machine</description>
   <option id="logs">
     <label>Logs</label>
-    <description>Delete log files</description>
+    <description>Delete the logs</description>
     <action command="delete" search="walk.all" path="~/.VirtualBox/" regex="\.log\.[0-9]*$" />
   </option>
 </cleaner>
