@@ -20,16 +20,24 @@
 
 -->
 <cleaner id="sabnzbd">
-  <label>Usenet client</label>
-  <description>Deletes logs and settings backups</description>
-  <option id="Logs and Settings Backups">
-    <label>Deletes logs and settings backups</label>
-    <description>Deleting the settings backup file will prevent you from restoring them in the case of loss</description>
-    <action search="file" command="delete" path="$LOCALAPPDATA\sabnzbd\logs\*.log"/>
-    <action search="file" command="delete" path="~\.sabnzbd\*.bak"/>
-    <action search="file" command="delete" path="~\.sabnzbd\logs\*.log"/>
-    <action search="file" command="delete" path="$LOCALAPPDATA\sabnzbd\*.bak"/>
-    <action search="file" command="delete" path="~\.sabnzb\admin\history.db"/>
-    <action search="file" command="delete" path="$LOCALAPPDATA\sabnzbd\admin\history.db"/>
-  </option>
+	<label>Usenet client</label>
+	<description>Deletes logs, history, and backups</description>
+	<option id="Logs">
+		<label>Logs</label>
+		<description>Deletes the logs from SABnzbd</description>
+			<action search="glob" command="delete" path="$LOCALAPPDATA\sabnzbd\logs\*.log"/>
+			<action search="glob" command="delete" path="~\.sabnzbd\logs\*.log"/>
+	</option>
+	<option id="History">
+		<label>History</Label>
+		<description>Clears the history.</description>
+			<action search="file" command="delete" path="~\.sabnzb\admin\history.db"/>
+			<action search="file" command="delete" path="$LOCALAPPDATA\sabnzbd\admin\history.db"/>
+	</option>
+	<option id="Settings Backups">
+		<label>Backups</Label>
+		<description>Clears the settings backups. You will be unable to restore them in the event something goes wrong </description>
+			<action search="glob" command="delete" path="~\.sabnzbd\*.bak"/>
+			<action search="glob" command="delete" path="$LOCALAPPDATA\sabnzbd\*.bak"/>
+	</option>
 </cleaner>
