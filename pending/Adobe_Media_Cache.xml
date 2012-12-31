@@ -19,12 +19,12 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<cleaner id="Adobe Media Cache" os="windows">
+<cleaner id="adobe_media_cache" os="windows">
 	<label>Adobe Media Cache</label>
-	<description>Clears the Cache</description>
-	<option id="Cache">
+	<description>Cache shared by several Adobe products</description>
+	<option id="cache">
 		<label>Cache</label>
-		<description>Clears the Cache</description>
+		<description>Delete the cache</description>
 			<action search="walk.files" command="delete" path="$APPDATA\Adobe\Common\Media Cache Files\"/>
 			<action search="walk.files" command="delete" path="$APPDATA\Adobe\Common\Media Cache\"/>
 	</option>
