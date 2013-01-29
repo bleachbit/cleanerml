@@ -2,7 +2,7 @@
 <!--
 
 BleachBit
-    Copyright (C) 2011 Andrew Ziem
+    Copyright (C) 2013 Andrew Ziem
     http://bleachbit.sourceforge.net
 
     This program is free software: you can redistribute it and/or modify
@@ -19,8 +19,8 @@ BleachBit
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<!-- FIXME: Warzone2100 runs also on Windows -->
 <!-- Gogeden (11/19/2011): tested on Trisquel GNUx and BleachBit 0.9.1 -->
+<!-- AZ (1/13/2013): tested on Warzone 2100 3.1, Ubuntu 12.10, BleachBit 0.9.5 -->
 <cleaner id="warzone2100">
   <label>Warzone2100</label>
   <option id="logs">
