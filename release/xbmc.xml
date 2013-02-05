@@ -46,7 +46,7 @@
     <action command="delete" search="walk.files" path="~/.xbmc/userdata/Thumbnails/Video/"/>
   </option>
 
-  <option id="xbmc">
+  <option id="tmp">
     <label>Temporary files</label>
     <description>Delete temporary files created by XBMC</description>
     <action command="delete" search="walk.all" path="~/.xbmc/temp/"/>
