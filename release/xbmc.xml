@@ -26,16 +26,19 @@
 <cleaner id="xbmc" os="linux">
   <label>XBMC Media Center</label>
   <description>Multimedia center</description>
+
   <option id="th-music">
     <label>Thumbnails: Music</label>
     <description>Delete all music thumbnails (album covers)</description>
     <action command="delete" search="walk.files" path="~/.xbmc/userdata/Thumbnails/Music/"/>
   </option>
+
   <option id="th-pics">
     <label>Thumbnails: Pictures</label>
     <description>Delete all thumbnails of pictures</description>
     <action command="delete" search="walk.files" path="~/.xbmc/userdata/Thumbnails/Pictures/"/>
   </option>
+
   <option id="th-video">
     <label>Thumbnails: Video</label>
     <description>Delete all video thumbnails</description>
