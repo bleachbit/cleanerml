@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2011 Andrew Ziem
+    http://bleachbit.sourceforge.net
+
+    Cleaner for libdvdcss by Rogério Theodoro de Brito.
+    Copyright © 2012-2013 Rogério Theodoro de Brito.
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<cleaner id="xbmc" os="linux">
+  <!-- FIXME: Add Windows support. -->
+  <label>libdvdcss</label>
+  <description>Library for accessing encrypted DVD content</description>
+
+  <option id="libdvdcss">
+    <label>Delete libdvdcss cache</label>
+    <description>Delete keys of DVDs that were cached by libdvdcss</description>
+    <action search="walk.all" command="delete" path="~/.dvdcss/"/>
+  </option>
+</cleaner>
