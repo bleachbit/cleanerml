@@ -46,4 +46,10 @@
     <action command="delete" search="glob" path="$APPDATA\Local\midori\history*"/>
     <action command="delete" search="glob" path="~/.config/midori/history.*"/>
   </option>
+  <option id="tabtrash">
+    <label>Closed Tabs History</label>
+    <description>Delete the list of previously closed tabs.</description>
+    <action command="delete" search="glob" path="$APPDATA\Local\midori\tabtrash*"/>
+    <action command="delete" search="glob" path="~/.config/midori/tabtrash.*"/>
+  </option>
 </cleaner>
