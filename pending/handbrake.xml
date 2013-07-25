@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2011 Andrew Ziem
+    http://bleachbit.sourceforge.net
+
+    Cleaner for HandBrake by Rogério Theodoro de Brito.
+    Copyright © 2012-2013 Rogério Theodoro de Brito.
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<cleaner id="handbrake" os="linux">
+  <!-- FIXME: Not really Linux specific, but I don't know about other OSes -->
+  <label>HandBrake</label>
+  <description>Video transcoder</description>
+
+  <option id="logs">
+    <label>Remove old logs</label>
+    <description>Remove logs of old transcodings</description>
+    <action command="delete" search="glob" path="~/.config/ghb/Activity.log.*"/>
+    <action command="delete" search="walk.all" path="~/.config/ghb/EncodeLogs/"/>
+  </option>
+
+  <option id="queues">
+    <label>Remove queues of jobs</label>
+    <description>Remove queues of jobs</description>
+    <warning>Queues may contain transcoding jobs that were not yet completed and you will have to reschedule them</warning>
+    <action command="delete" search="glob" path="~/.config/ghb/queue.*"/>
+  </option>
+</cleaner>

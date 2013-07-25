@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-BleachBit
-    Copyright (C) 2013 Andrew Ziem
+    BleachBit
+    Copyright (C) 2011 Andrew Ziem
     http://bleachbit.sourceforge.net
+
+    Cleaner for ccache by Rogério Theodoro de Brito.
+    Copyright © 2012-2013 Rogério Theodoro de Brito.
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -19,14 +22,14 @@ BleachBit
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<!-- Gogeden (11/19/2011): tested on Trisquel GNUx and BleachBit 0.9.1 -->
-<!-- AZ (1/13/2013): tested on Warzone 2100 3.1, Ubuntu 12.10, BleachBit 0.9.5 -->
-<cleaner id="warzone2100">
-  <label>Warzone2100</label>
-  <option id="logs">
-    <label>Logs</label>
-    <description>Delete the log files</description>
-    <action command="delete" search="walk.all" path="~/.warzone2100*/logs/"/>
-    <action command="delete" search="walk.all" path="$USERPROFILE\My Documents\Warzone 2100*\logs\"/>
+<cleaner id="ccache" os="linux">
+  <!-- FIXME: Does it work under Windows? -->
+  <label>ccache</label>
+  <description>Cache result of files compiled by C/C++ compilers</description>
+
+  <option id="ccache">
+    <label>Delete ccache's files</label>
+    <description>Delete cached files created by ccache</description>
+    <action search="walk.all" command="delete" path="~/.ccache/"/>
   </option>
 </cleaner>
