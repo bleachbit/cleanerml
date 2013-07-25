@@ -32,6 +32,7 @@
   </option>
   <option id="cache">
     <label>Cache</label>
+    <warning>Causes corruption?</warning>
     <description>Delete the program cache</description>
     <action command="delete" search="walk.all" path="~/Freenet/datastore" />
   </option>
