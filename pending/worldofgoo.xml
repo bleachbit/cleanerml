@@ -18,6 +18,12 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+
+    by  juancarlospaco 2009
+
+    tested with BleachBit 0.5.1 and World of Goo 1.40
+
+    from https://bugs.launchpad.net/bleachbit/+bug/390500
 -->
 <cleaner id="worldofgoo" os="linux">
   <label>WorldOfGoo</label>
