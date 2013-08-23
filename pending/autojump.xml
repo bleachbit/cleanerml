@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2011 Andrew Ziem
+    http://bleachbit.sourceforge.net
+
+    Cleaner for Autojump by xr09
+    Copyright © 2013 xr09
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<cleaner id="autojump" os="linux">
+  <label>Autojump</label>
+  <description>a faster way to navigate your filesystem</description>
+
+  <option id="backup">
+    <label>Backup files</label>
+    <description>Delete backup files from autojump</description>
+    <action search="glob" command="delete" path="~/.local/share/autojump/*.bak"/>
+    <action search="glob" command="delete" path="~/.local/share/autojump/tmp*"/>
+  </option>
+</cleaner>
