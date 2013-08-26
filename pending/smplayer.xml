@@ -31,7 +31,7 @@
     <description>Remove multiple file settings (multiple ini files)</description>
     <action command="delete" search="walk.all" path="~/.config/smplayer/file_settings/"/>
   </option>
-  
+
   <option id="filesettings">
     <label>File settings</label>
     <description>Remove unified file settings (one ini file)</description>
@@ -44,5 +44,9 @@
     <action command="delete" search="glob" path="~/.config/smplayer/screenshots/*"/>
   </option>
 
-  
+  <option id="history">
+    <label>Recently played</label>
+    <description>Delete the recently played file list</description>
+    <action command="ini" section="history" search="file" path="~/.config/smplayer/smplayer.ini"/>
+  </option> 
 </cleaner>
