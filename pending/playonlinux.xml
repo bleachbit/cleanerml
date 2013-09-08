@@ -29,6 +29,7 @@
 		<description>Delete common component installation files cached by PlayOnLinux</description>
 		
 		<action search="walk.all" command="delete" path="~/.PlayOnLinux/resources" />
+		<action search="walk.all" command="delete" path="~/.PlayOnLinux/ressources" /><!--WORKAROUND: Typo in PlayOnLinux-->
 	</option>
 	
 	<option id="playonlinux-tmp">
