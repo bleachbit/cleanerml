@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2011 Andrew Ziem
+    http://bleachbit.sourceforge.net
+
+    Cleaner for SMPlayer by xr09
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<cleaner id="smplayer" os="linux">
+  <label>SMPlayer</label>
+  <description>Video player</description>
+
+  <option id="filesettings">
+    <label>File Settings</label>
+    <description>Remove file settings (last position, subtitles size, fonts)</description>
+    <action command="delete" search="file" path="~/.config/smplayer/smplayer_files.ini"/>
+    <action command="delete" search="walk.all" path="~/.config/smplayer/file_settings/"/>
+  </option>
+
+  <option id="screenshots">
+    <label>Screenshots</label>
+    <description>Remove screenshots image files from default location</description>
+    <action command="delete" search="glob" path="~/.config/smplayer/screenshots/*"/>
+  </option>
+
+  <option id="history">
+    <label>Recent Files</label>
+    <description>Clear recent played files</description>
+    <action command="ini" section="history" search="file" path="~/.config/smplayer/smplayer.ini"/>
+  </option> 
+</cleaner>
