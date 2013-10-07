@@ -18,6 +18,11 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+    Tested with
+        - Fedora 19
+        - gnome-shell-3.8.4-2.fc19.x86_64
+        - gnome-mplayer-1.0.8-2.fc19.x86_64
+
 -->
 <cleaner id="gnome-mplayer" os="linux">
   <label>Gnome MPlayer</label>
