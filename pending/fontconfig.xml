@@ -27,5 +27,6 @@
     <!-- Ubuntu 12.10 has both ~/.fontconfig and ~/fontconfig -->
     <action command="delete" search="glob" path="~/.fontconfig/*.cache-?"/>
     <action command="delete" search="glob" path="~/fontconfig/*.cache-?"/>
+    <action command="delete" search="glob" path="~/.cache/fontconfig/*"/>
   </option>
 </cleaner>
