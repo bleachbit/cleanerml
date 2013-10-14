@@ -22,12 +22,12 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<cleaner id="xbmc" os="linux">
+<cleaner id="libdvdcss" os="linux">
   <!-- FIXME: Add Windows support. -->
   <label>libdvdcss</label>
   <description>Library for accessing encrypted DVD content</description>
 
-  <option id="libdvdcss">
+  <option id="keyscache">
     <label>Delete libdvdcss cache</label>
     <description>Delete keys of DVDs that were cached by libdvdcss</description>
     <action search="walk.all" command="delete" path="~/.dvdcss/"/>
