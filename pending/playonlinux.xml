@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+	
+	PlayOnLinux cleaner for BleachBit
+	Copyright (C) 2013 Alexander Schlarb
+	
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+	
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+	
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <http://www.gnu.org/licenses/>.
+	
+--> 
+
+<cleaner id="playonlinux" os="linux">
+	<label>PlayOnLinux</label>
+	<description>WINE application managment</description>
+	
+	<option id="playonlinux-resources">
+		<label>Resource cache</label>
+		<description>Delete common component installation files cached by PlayOnLinux</description>
+		
+		<action search="walk.all" command="delete" path="~/.PlayOnLinux/resources" />
+		<action search="walk.all" command="delete" path="~/.PlayOnLinux/ressources" /><!--WORKAROUND: Typo in PlayOnLinux-->
+	</option>
+	
+	<option id="playonlinux-tmp">
+		<label>Temporary files</label>
+		<description>Delete the temporary files</description>
+		
+		<action search="walk.all" command="delete" path="~/.PlayOnLinux/tmp" />
+	</option>
+	
+	<option id="playonlinux-wineprefix-temp">
+		<label>Temporary WINE files</label>
+		<description>Delete temporary files and directories in each WINE prefix</description>
+		
+		<action search="walk.all" command="delete" path="~/.PlayOnLinux/wineprefix/*/dosdevices/c:/windows/temp" />
+		<action search="walk.all" command="delete" path="~/.PlayOnLinux/wineprefix/*/dosdevices/c:/users/*/Temp" />
+		<action search="walk.all" command="delete" path="~/.PlayOnLinux/wineprefix/*/dosdevices/c:/users/*/Local Settings/Temporary Internet Files/Content.IE5" />
+	</option>
+</cleaner>
