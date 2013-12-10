@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cleaner id="kde" os="linux">
+  <label>KDE</label>
+  <option id="cache">
+    <label>Cache</label>
+    <description>Delete the cache</description>
+    <action command="delete" search="glob" path="~/.kde/cache-*/*/*"/>
+    <action command="delete" search="glob" path="~/.kde/cache-*/*"/>
+    <action command="delete" search="walk.all" path="~/tmp-*/*"/>
+    <action command="delete" search="glob" path="/var/log/YaST2/y2log"/>
+    <action command="delete" search="glob" path="/var/log/*.log"/>
+    <action command="delete" search="glob" path="/var/log/*.xz"/>
+  </option>
+  <option id="tmp">
+    <label>Temporary files</label>
+    <description>Delete the temporary files</description>
+    <action command="delete" search="glob" path="~/.kde/tmp-*/*/*"/>
+    <action command="delete" search="glob" path="~/.kde/tmp-*/*"/>
+  </option>
+  <option id="recent_documents">
+    <label>Recent documents list</label>
+    <description>Delete the list of recently used documents</description>
+    <action command="delete" search="glob" path="~/.kde/share/apps/RecentDocuments/*.desktop"/>
+    <action command="delete" search="glob" path="~/.kde4/share/apps/RecentDocuments/*.desktop"/>
+    <action command="delete" search="glob" path="~/.kde4/share/apps/klipper/*.lst"/>
+  </option>
+</cleaner>
