@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+BleachBit
+Copyright (C) 2014 Andrew Ziem
+http://bleachbit.sourceforge.net
+
+Cleaner by "Theatre X"
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+-->
+
+<cleaner id="qbittorrent">
+  <label>qBittorrent</label>
+  <description>Bittorrent</description>
+<option id="resume">
+    <label>Resumes</label>
+    <warning>This will make all downloads start over. Useful if qBittorrent freezes due to file corruption.</warning>
+    <description>Clear resumes. Make downloads start over.</description>
+    <action command="delete" search="walk.all" path="~/.local/share/data/qBittorrent/BT_backup/*.fastresume"/>
+</option>
+<option id="torrents">
+    <label>Torrents</label>
+    <description>Clear all torrent files</description>
+    <action command="delete" search="walk.all" path="~/.local/share/data/qBittorrent/BT_backup/*.torrent"/>
+</option>
+</cleaner>
