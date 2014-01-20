@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2013 Andrew Ziem
+    Converted from thunderbird.xml by Stephen Lyons 2014
+    http://bleachbit.sourceforge.net
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<cleaner id="icedove">
+  <label>Icedove</label>
+  <!-- Debian has both a long term stable, mature version based on ESR release
+and an up to date backported current version of its Icedove rebranding of
+Thunderbird.  This cleaner was tested on the latter but it should also work on
+the former by extraplolation from the varients that other Linux distributions
+have used over time.  As such it should be as reliable as the Thunderbird one.--> 
+  <running type="exe">icedove-bin</running>
+  <option id="cache">
+    <label>Cache</label>
+    <description>Delete the web cache, which reduces time to display revisited pages</description>
+    <!-- Ubuntu 10.04 Thunderbird 3 had ~/.thunderbird/????????.default/Cache/ -->
+    <action command="delete" search="glob" path="~/.icedove/????????.default/Cache/*"/>
+    <!-- openSUSE 11.3 Thunderbird 3 had ~/.thunderbird/Profiles/????????.default/Cache/ -->
+    <action command="delete" search="glob" path="~/.icedove/Profiles/????????.default/Cache/*"/>
+  </option>
+  <option id="cookies">
+    <label>Cookies</label>
+    <description>Delete cookies, which contain information such as web site preferences, authentication, and tracking identification</description>
+    <!-- Ubuntu 10.04 Thunderbird 3 had ~/.thunderbird/????????.default/ -->
+    <action command="delete" search="glob" path="~/.icedove/????????.default/cookies.sqlite"/>
+    <!-- openSUSE 11.3 Thunderbird 3 had ~/.thunderbird/Profiles/????????.default/ -->
+    <action command="delete" search="glob" path="~/.icedove/Profiles/????????.default/cookies.sqlite"/>
+  </option>
+  <option id="index">
+    <label>Index</label>
+    <description>Delete the files</description>
+    <!-- Ubuntu 10.04 Thunderbird 3 had ~/.thunderbird/????????.default/ -->
+    <!-- openSUSE 11.3 Thunderbird 3 had ~/.thunderbird/Profiles/????????.default/ -->
+    <!-- Fedora 16 Thunderbird 17 had ~/.thunderbird/default/ -->
+    <action command="delete" search="walk.files" path="~/.icedove/" regex="\.msf$"/>
+  </option>
+  <option id="passwords">
+    <label>Passwords</label>
+    <description>A database of usernames and passwords as well as a list of sites that should not store passwords</description>
+    <!-- Fedora 11 Thunderbird 3.0 had ~/.thunderbird/default/????????.slt/ -->
+    <action command="delete" search="glob" path="~/.icedove/default/????????.slt/signons.sqlite"/>
+    <action command="delete" search="glob" path="~/.icedove/default/????????.slt/signons.txt"/>
+    <action command="delete" search="glob" path="~/.icedove/default/????????.slt/signons3.txt"/>
+    <!-- Ubuntu 9.10 Thunderbird 2.0 had ~/.mozilla-thunderbird/????????.default/ -->
+    <!-- Assumes that if there was an Icedove this far back it might still use
+.mozilla-thunderbird - strangely at the time of producing this cleaner, IceWeasel
+(the companion browser) IS using .mozilla-firefox! -->
+    <action command="delete" search="file" path="~/.mozilla-thunderbird/????????.default/signons.txt"/>
+    <!-- Ubuntu 10.04 Thunderbird 3 had ~/.thunderbird/????????.default/ -->
+    <action command="delete" search="glob" path="~/.icedove/????????.default/signons.sqlite"/>
+    <!-- openSUSE 11.3 Thunderbird 3 had ~/.thunderbird/Profiles/????????.default/ -->
+    <action command="delete" search="glob" path="~/.icedove/Profiles/????????.default/signons.sqlite"/>
+  </option>
+  <option id="vacuum">
+    <label>Vacuum</label>
+    <description>Clean database fragmentation to reduce space and improve speed without removing any data</description>
+    <action command="sqlite.vacuum" search="glob" path="~/.icedove/default/????????.slt/*.sqlite"/>
+    <!-- Ubuntu 10.04 Thunderbird 3 had ~/.thunderbird/????????.default/ -->
+    <action command="sqlite.vacuum" search="glob" path="~/.icedove/????????.default/*.sqlite"/>
+    <!-- openSUSE 11.3 Thunderbird 3 had ~/.thunderbird/Profiles/????????.default/ -->
+    <action command="sqlite.vacuum" search="glob" path="~/.icedove/Profiles/????????.default/*.sqlite"/>
+  </option>
+</cleaner>
