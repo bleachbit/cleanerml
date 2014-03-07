@@ -21,11 +21,11 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<cleaner id="facebook_messenger" os="windows">
+<cleaner id="fbcim" os="windows">
 <label>Facebook Messenger</label>
 <option id="cache">
-<label>Cache</label>
-<description>Delete program cache</description>
+<label>User Cache</label>
+<description>Delete your user cache</description>
 <!-- For older versions of the program -->
 <action command="delete" search="glob" path="$APPDATA\Local\Facebook\Messenger\fbmessenger.cache\*"/>
 <!-- For current versions -->
