@@ -86,6 +86,7 @@
   <option id="url_history">
     <label>URL history</label>
     <description>List of visited web pages</description>
+    <warning>This option will delete your bookmarks. It's safer to delete your URL history from IceDragon itself.</warning>
     <action command="delete" search="glob" path="$APPDATA\Comodo\IceDragon\Profiles\*\places.sqlite"/>
   </option>
   <option id="vacuum">
