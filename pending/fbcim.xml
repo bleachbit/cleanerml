@@ -23,7 +23,7 @@
 -->
 <cleaner id="fbcim" os="windows">
 <label>Facebook Messenger</label>
-<option id="cache">
+<option id="user_cache">
 <label>User Cache</label>
 <description>Delete your user cache</description>
 <!-- For older versions of the program -->
