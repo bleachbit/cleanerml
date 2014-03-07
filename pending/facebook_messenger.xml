@@ -26,6 +26,9 @@
 <option id="cache">
 <label>Cache</label>
 <description>Delete program cache</description>
+<!-- For older versions of the program -->
 <action command="delete" search="walk.all" path="$APPDATA\Local\Facebook\Messenger\fbmessenger.cache\*"/>
+<!-- For current versions -->
+<action command="delete" search="walk.all" path="$USER\fbcim\cache\*"/>
 </option>
 </cleaner>
