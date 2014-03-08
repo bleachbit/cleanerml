@@ -27,6 +27,6 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
     <description>Delete the program logs</description>
     <action command="delete" search="glob" path="$USERPROFILE\AppData\Roaming\InfraRecorder\logs\*"/>
     <!-- For Windows XP -->
-    <action command="delete" search="glob" path="$USERPROFILE\AppData\InfraRecorder\logs\*"/>
+    <action command="delete" search="glob" path="$APPDATA\InfraRecorder\logs\*"/>
   </option>
 </cleaner>
