@@ -27,9 +27,9 @@
   <option id="cache">
     <label>Cache</label>
     <description>Delete the cache</description>
-    <action command="delete" search="glob" path="$APPDATA\Local\AOL\AIM\cache\AppCache\*"/>
-    <action command="delete" search="glob" path="$APPDATA\Local\AOL\AIM\cache\WebCache\*"/>
-    <action command="delete" search="glob" path="$APPDATA\Local\AOL\AIM\cache\Local*\*"/>
+    <action command="delete" search="glob" path="$USERPROFILE\AppData\Local\AOL\AIM\cache\AppCache\*"/>
+    <action command="delete" search="glob" path="$USERPROFILE\AppData\Local\AOL\AIM\cache\WebCache\*"/>
+    <action command="delete" search="glob" path="$USERPROFILE\AppData\Local\AOL\AIM\cache\Local*\*"/>
 
 <!-- For Win XP -->
 
@@ -40,7 +40,7 @@
 <option id="cookies">
   <label>Cookies</label>
   <description>Delete the cookies</description>
-  <action command="delete" search="glob" path="$APPDATA\Local\AOL\AIM\cache\Cookies*"/>
+  <action command="delete" search="glob" path="$USERPROFILE\AppData\Local\AOL\AIM\cache\Cookies*"/>
   <action command="delete" search="glob" path="$USERPROFILE\Local*\Application*\AOL\AIM\cache\Cookies*"/>
 </option>
 </cleaner>
