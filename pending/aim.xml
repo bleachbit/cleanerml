@@ -27,9 +27,10 @@
   <option id="cache">
     <label>Cache</label>
     <description>Delete the cache</description>
-    <action command="delete" search="walk.all" path="$APPDATA\Local\AOL\AIM\AppCache\*"/>
+    <action command="delete" search="walk.all" path="$APPDATA\Local\AOL\AIM\cache\AppCache\*"/>
     <action command="delete" search="walk.file" path="$APPDATA\Local\AOL\AIM\cache\data*"/>
-    <action command="delete" search="walk.file" path="$APPDATA\Local\AOL\AIM\cache\f_*"/>
+    <action command="delete" search="walk.file" path="$APPDATA\Local\AOL\AIM\WebCache\*"/>
+    <action command="delete" search="walk.file" path="$APPDATA\Local\AOL\AIM\Local*\*"/>
   </option>
 <option id="cookies">
   <label>Cookies</label>
