@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 BleachBit
-Copyright (C) 2012 Andrew Ziem
+Copyright (C) 2014 Andrew Ziem
 http://bleachbit.sourceforge.net
 
 This program is free software: you can redistribute it and/or modify
@@ -26,5 +26,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
     <label>Logs</label>
     <description>Delete the program logs</description>
     <action command="delete" search="glob" path="$USERPROFILE\AppData\Roaming\InfraRecorder\logs\*"/>
+    <!-- For Windows XP -->
+    <action command="delete" search="glob" path="$USERPROFILE\AppData\InfraRecorder\logs\*"/>
   </option>
 </cleaner>
