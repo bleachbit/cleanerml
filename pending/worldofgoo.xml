@@ -2,7 +2,7 @@
 <!--
 
     BleachBit
-    Copyright (C) 2009 Andrew Ziem
+    Copyright (C) 2014 Andrew Ziem
     http://bleachbit.sourceforge.net
 
     This program is free software: you can redistribute it and/or modify
@@ -31,6 +31,6 @@
   <option id="logs">
     <label>Logs</label>
     <description>Delete the World Of Goo logs</description>
-    <action type="file">~/.WorldOfGoo/WorldOfGoo.log</action>
+    <action command="delete" search="file">~/.WorldOfGoo/WorldOfGoo.log</action>
   </option>
 </cleaner>
