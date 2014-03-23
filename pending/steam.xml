@@ -23,20 +23,20 @@ Cleaner contributed by "Theatre X"
 -->
 <cleaner id="steam" os="windows">
   <label>Steam</label>
-    <option id="cookies">
-      <label>Cookies</label>
-        <description>Clean the program cookies</description>
-          <action command="delete" search="walk.files" path="$ProgramFiles\Steam\config\cookies\"/>
-</option>
-<option id="cache">
-  <label>Cache</label>
+  <option id="cookies">
+    <label>Cookies</label>
+    <description>Clean the program cookies</description>
+    <action command="delete" search="walk.files" path="$ProgramFiles\Steam\config\cookies\"/>
+  </option>
+  <option id="cache">
+    <label>Cache</label>
     <description>Delete HTML and HTTP cache</description>
-      <action command="delete" search="walk.all" path="$ProgramFiles\Steam\config\htmlcache\*"/>
-      <action command="delete" search="walk.all" path="$ProgramFiles\Steam\appcache\httpcache\*"/>
-</option>
-<option id="logs">
-  <label>Logs</label>
+    <action command="delete" search="walk.all" path="$ProgramFiles\Steam\config\htmlcache\*"/>
+    <action command="delete" search="walk.all" path="$ProgramFiles\Steam\appcache\httpcache\*"/>
+  </option>
+  <option id="logs">
+    <label>Logs</label>
     <description>Delete the program logs</description>
-      <action command="delete" search="walk.all" path="$ProgramFiles\Steam\logs\*"/>
-</option>
+    <action command="delete" search="walk.all" path="$ProgramFiles\Steam\logs\*"/>
+  </option>
 </cleaner>

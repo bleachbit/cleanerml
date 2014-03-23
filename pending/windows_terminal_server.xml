@@ -36,7 +36,7 @@
     <label>Most recently used</label>
     <description>Delete the most recently used list</description>
     <action command="winreg" path="HKCU\Software\Microsoft\Terminal Server Client\LocalDevices"/>
-	<action command="winreg" path="HKCU\Software\Microsoft\Terminal Server Client\Servers"/>
-	<action command="winreg" path="HKCU\Software\Microsoft\Terminal Server Client\Default"/>
+    <action command="winreg" path="HKCU\Software\Microsoft\Terminal Server Client\Servers"/>
+    <action command="winreg" path="HKCU\Software\Microsoft\Terminal Server Client\Default"/>
   </option>
 </cleaner>

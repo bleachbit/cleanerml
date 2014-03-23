@@ -31,7 +31,7 @@
   <option id="icons">
     <label>Icons</label>
     <description>Delete temporary icons saved by the program</description>
-    <action command ="delete" search="glob" path="~/.cache/software-center/icons/*"/>
+    <action command="delete" search="glob" path="~/.cache/software-center/icons/*"/>
   </option>
   <option id="log">
     <label>Log</label>
@@ -39,4 +39,3 @@
     <action command="delete" search="file" path="~/.cache/software-center/software-center.log"/>
   </option>
 </cleaner>
-    

@@ -21,33 +21,32 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-
 <cleaner id="jitsi">
   <label>Jitsi</label>
   <description>Chat client</description>
-<option id="cache">
+  <option id="cache">
     <label>Cache</label>
     <description>Delete Jitsi's cache</description>
     <action command="delete" search="walk.all" path="~/.jitsi/avatarcache/*"/>
-</option>
-<option id="call_history">
-  <label>Call History</label>
-  <description>Delete the history of calls made</description>
-  <action command="delete" search="walk.all" path="~/.jitsi/history*/callhistory/default/*"/>
-</option>
-<option id="file_history">
-  <label>File History</label>
-  <description>Delete the history of files shared</description>
-  <action command="delete" search="walk.all" path="~/.jitsi/history*/filehistory/default/*"/>
-</option>
-<option id="log">
-  <label>Logs</label>
-  <description>Delete the saved program logs</description>
-  <action command="delete" search="walk.all" path="~/.jitsi/log/*"/>
-</option>
-<option id="messages">
-  <label>Messages</label>
-  <description>Delete message history</description>
-  <action command="delete" search="walk.all" path="~/.jitsi/history*/messages/default/*"/>
-</option>
+  </option>
+  <option id="call_history">
+    <label>Call History</label>
+    <description>Delete the history of calls made</description>
+    <action command="delete" search="walk.all" path="~/.jitsi/history*/callhistory/default/*"/>
+  </option>
+  <option id="file_history">
+    <label>File History</label>
+    <description>Delete the history of files shared</description>
+    <action command="delete" search="walk.all" path="~/.jitsi/history*/filehistory/default/*"/>
+  </option>
+  <option id="log">
+    <label>Logs</label>
+    <description>Delete the saved program logs</description>
+    <action command="delete" search="walk.all" path="~/.jitsi/log/*"/>
+  </option>
+  <option id="messages">
+    <label>Messages</label>
+    <description>Delete message history</description>
+    <action command="delete" search="walk.all" path="~/.jitsi/history*/messages/default/*"/>
+  </option>
 </cleaner>

@@ -26,14 +26,12 @@
   <!-- FIXME: Not really Linux specific, but I don't know about other OSes -->
   <label>HandBrake</label>
   <description>Video transcoder</description>
-
   <option id="logs">
     <label>Remove old logs</label>
     <description>Remove logs of old transcodings</description>
     <action command="delete" search="glob" path="~/.config/ghb/Activity.log.*"/>
     <action command="delete" search="walk.all" path="~/.config/ghb/EncodeLogs/"/>
   </option>
-
   <option id="queues">
     <label>Remove queues of jobs</label>
     <description>Remove queues of jobs</description>

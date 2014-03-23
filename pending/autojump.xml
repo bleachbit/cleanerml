@@ -25,7 +25,6 @@
 <cleaner id="autojump" os="linux">
   <label>Autojump</label>
   <description>a faster way to navigate your filesystem</description>
-
   <option id="backup">
     <label>Backup files</label>
     <description>Delete backup files from autojump</description>

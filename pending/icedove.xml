@@ -26,7 +26,7 @@
 and an up to date backported current version of its Icedove rebranding of
 Thunderbird.  This cleaner was tested on the latter but it should also work on
 the former by extraplolation from the varients that other Linux distributions
-have used over time.  As such it should be as reliable as the Thunderbird one.--> 
+have used over time.  As such it should be as reliable as the Thunderbird one.-->
   <running type="exe">icedove-bin</running>
   <option id="cache">
     <label>Cache</label>

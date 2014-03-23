@@ -30,17 +30,15 @@
     <action command="delete" search="glob" path="$USERPROFILE\AppData\Local\AOL\AIM\cache\AppCache\*"/>
     <action command="delete" search="glob" path="$USERPROFILE\AppData\Local\AOL\AIM\cache\WebCache\*"/>
     <action command="delete" search="glob" path="$USERPROFILE\AppData\Local\AOL\AIM\cache\Local*\*"/>
-
-<!-- For Win XP -->
-
-	<action command="delete" search="glob" path="$USERPROFILE\Local*\Application*\AOL\AIM\cache\AppCache\*"/>
-	<action command="delete" search="glob" path="$USERPROFILE\Local*\Application*\AOL\AIM\cache\WebCache\*"/>
-	<action command="delete" search="glob" path="$USERPROFILE\Local*\Application*\AOL\AIM\cache\Local*\*"/>
+    <!-- For Win XP -->
+    <action command="delete" search="glob" path="$USERPROFILE\Local*\Application*\AOL\AIM\cache\AppCache\*"/>
+    <action command="delete" search="glob" path="$USERPROFILE\Local*\Application*\AOL\AIM\cache\WebCache\*"/>
+    <action command="delete" search="glob" path="$USERPROFILE\Local*\Application*\AOL\AIM\cache\Local*\*"/>
   </option>
-<option id="cookies">
-  <label>Cookies</label>
-  <description>Delete the cookies</description>
-  <action command="delete" search="glob" path="$USERPROFILE\AppData\Local\AOL\AIM\cache\Cookies*"/>
-  <action command="delete" search="glob" path="$USERPROFILE\Local*\Application*\AOL\AIM\cache\Cookies*"/>
-</option>
+  <option id="cookies">
+    <label>Cookies</label>
+    <description>Delete the cookies</description>
+    <action command="delete" search="glob" path="$USERPROFILE\AppData\Local\AOL\AIM\cache\Cookies*"/>
+    <action command="delete" search="glob" path="$USERPROFILE\Local*\Application*\AOL\AIM\cache\Cookies*"/>
+  </option>
 </cleaner>

@@ -20,12 +20,12 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 -->
 <cleaner id="virtualbox" os="linux">
-<label>VirtualBox</label>
+  <label>VirtualBox</label>
   <description>Virtual machine</description>
   <option id="logs">
     <label>Logs</label>
     <description>Delete the logs</description>
-<!--
+    <!--
 example paths VirtualBox 4.2.4 on Ubuntu 12.10
 ~/.VirtualBox/VBoxSVC.log.8
 ~/.VirtualBox/VBoxSVC.log.10
@@ -39,6 +39,6 @@ example paths VirtualBox 4.2.4 on Ubuntu 12.10
 ~/.VirtualBox/selectorwindow.log.1
 ~/.VirtualBox/VBoxSVC.log.6
 -->
-    <action command="delete" search="walk.all" path="~/.VirtualBox/" regex="\.log\.[0-9]+$" />
+    <action command="delete" search="walk.all" path="~/.VirtualBox/" regex="\.log\.[0-9]+$"/>
   </option>
 </cleaner>

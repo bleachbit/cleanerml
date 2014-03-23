@@ -21,19 +21,18 @@ You should have received a copy of the GNU General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 -->
-
 <cleaner id="qbittorrent">
   <label>qBittorrent</label>
   <description>Bittorrent</description>
-<option id="resume">
+  <option id="resume">
     <label>Resumes</label>
     <warning>This will make all downloads start over. Useful if qBittorrent freezes due to file corruption.</warning>
     <description>Clear resumes. Make downloads start over.</description>
     <action command="delete" search="walk.all" path="~/.local/share/data/qBittorrent/BT_backup/*.fastresume"/>
-</option>
-<option id="torrents">
+  </option>
+  <option id="torrents">
     <label>Torrents</label>
     <description>Clear all torrent files</description>
     <action command="delete" search="walk.all" path="~/.local/share/data/qBittorrent/BT_backup/*.torrent"/>
-</option>
+  </option>
 </cleaner>

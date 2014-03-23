@@ -32,13 +32,10 @@
     <action command="delete" search="walk.files" path="$localappdata\Comodo\IceDragon\Profiles\*\OfflineCache\"/>
     <action command="delete" search="walk.files" path="$localappdata\Comodo\IceDragon\Profiles\*\mozilla-media-cache\"/>
     <action command="delete" search="walk.files" path="$localappdata\Comodo\IceDragon\Profiles\*\startupCache\"/>
-    
     <!-- Windows 8 -->
     <action command="delete" search="walk.files" path="$localappdata\Comodo\IceDragon\Profiles\*\jumpListCache\"/>
-    
     <!-- Also matches thumbnails-old -->
-     <action command="delete" search="walk.files" path="$localappdata\Comodo\IceDragon\Profiles\*\thumbnails*\"/>
-    
+    <action command="delete" search="walk.files" path="$localappdata\Comodo\IceDragon\Profiles\*\thumbnails*\"/>
     <!-- Favicon cache (stored when you drag & drop a page into a folder) -->
     <action command="delete" search="walk.files" path="$localappdata\Comodo\IceDragon\Profiles\*\shortcutCache\"/>
   </option>

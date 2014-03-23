@@ -23,9 +23,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 -->
 <cleaner id="ubuntuone" os="linux">
   <label>Ubuntu One</label>
-<option id="logs">
+  <option id="logs">
     <label>Logs</label>
     <description>Delete the program logs</description>
     <action command="delete" search="glob" path="~/.cache/ubuntuone/log/*"/>
-</option>
+  </option>
 </cleaner>

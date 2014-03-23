@@ -22,13 +22,13 @@
 
 -->
 <cleaner id="fbcim" os="windows">
-<label>Facebook Messenger</label>
-<option id="user_cache">
-<label>User Cache</label>
-<description>Delete your user cache</description>
-<!-- For older versions of the program -->
-<action command="delete" search="glob" path="$APPDATA\Local\Facebook\Messenger\fbmessenger.cache\*"/>
-<!-- For current versions -->
-<action command="delete" search="glob" path="$USERPROFILE\fbcim\cache\*"/>
-</option>
+  <label>Facebook Messenger</label>
+  <option id="user_cache">
+    <label>User Cache</label>
+    <description>Delete your user cache</description>
+    <!-- For older versions of the program -->
+    <action command="delete" search="glob" path="$APPDATA\Local\Facebook\Messenger\fbmessenger.cache\*"/>
+    <!-- For current versions -->
+    <action command="delete" search="glob" path="$USERPROFILE\fbcim\cache\*"/>
+  </option>
 </cleaner>

@@ -20,12 +20,12 @@
 
 -->
 <cleaner id="adobe_media_cache" os="windows">
-	<label>Adobe Media Cache</label>
-	<description>Cache shared by several Adobe products</description>
-	<option id="cache">
-		<label>Cache</label>
-		<description>Delete the cache</description>
-			<action search="walk.files" command="delete" path="$APPDATA\Adobe\Common\Media Cache Files\"/>
-			<action search="walk.files" command="delete" path="$APPDATA\Adobe\Common\Media Cache\"/>
-	</option>
+  <label>Adobe Media Cache</label>
+  <description>Cache shared by several Adobe products</description>
+  <option id="cache">
+    <label>Cache</label>
+    <description>Delete the cache</description>
+    <action search="walk.files" command="delete" path="$APPDATA\Adobe\Common\Media Cache Files\"/>
+    <action search="walk.files" command="delete" path="$APPDATA\Adobe\Common\Media Cache\"/>
+  </option>
 </cleaner>

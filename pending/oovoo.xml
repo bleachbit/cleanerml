@@ -29,14 +29,14 @@
     <description>Delete the ooVoo cache</description>
     <action command="delete" search="walk.all" path="$APPDATA\Roaming\ooVoo*\Cache\*"/>
   </option>
-<option id="chat_history">
-  <label>Chat History</label>
-  <description>Delete the chat history</description>
-  <action command="delete" search="walk.file" path="$APPDATA\Roaming\ooVoo*\Users\ChatHistory*"/>
-</option>
-<option id="logs">
-  <label>Logs</label>
-  <description>Clean the program logs</description>
-  <action command="delete" search="walk.all" path="$APPDATA\Roaming\ooVoo*\Logs\*"/>
-</option>
+  <option id="chat_history">
+    <label>Chat History</label>
+    <description>Delete the chat history</description>
+    <action command="delete" search="walk.file" path="$APPDATA\Roaming\ooVoo*\Users\ChatHistory*"/>
+  </option>
+  <option id="logs">
+    <label>Logs</label>
+    <description>Clean the program logs</description>
+    <action command="delete" search="walk.all" path="$APPDATA\Roaming\ooVoo*\Logs\*"/>
+  </option>
 </cleaner>

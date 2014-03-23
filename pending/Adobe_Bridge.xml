@@ -20,11 +20,11 @@
 
 -->
 <cleaner id="adobe_bridge_cs5" os="windows">
-	<label>Adobe Bridge CS5</label>
-	<description>Media Management Software</description>
-	<option id="cache">
-		<label>Cache</label>
-		<description>Delete the cache</description>
-			<action search="walk.files" command="delete" path="$APPDATA\Adobe\Bridge CS5\Cache"/>
-	</option>
+  <label>Adobe Bridge CS5</label>
+  <description>Media Management Software</description>
+  <option id="cache">
+    <label>Cache</label>
+    <description>Delete the cache</description>
+    <action search="walk.files" command="delete" path="$APPDATA\Adobe\Bridge CS5\Cache"/>
+  </option>
 </cleaner>

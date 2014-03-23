@@ -27,24 +27,24 @@
   <option id="backup_files">
     <label>Backup Files</label>
     <description>Delete the ".bak" and ".old" files</description>
-    <action command="delete" search="glob" path="~/Freenet/*.old" />
-    <action command="delete" search="glob" path="~/Freenet/*.bak" />
+    <action command="delete" search="glob" path="~/Freenet/*.old"/>
+    <action command="delete" search="glob" path="~/Freenet/*.bak"/>
   </option>
   <option id="cache">
     <label>Cache</label>
     <warning>Causes corruption?</warning>
     <description>Delete the program cache</description>
-    <action command="delete" search="walk.all" path="~/Freenet/datastore" />
+    <action command="delete" search="walk.all" path="~/Freenet/datastore"/>
   </option>
   <option id="logs">
     <label>Logs</label>
     <description>Delete the program logs</description>
-    <action command="delete" search="walk.all" path="~/Freenet/logs" />
-    <action command="delete" search="glob" path="~/Freenet/*.log" />
+    <action command="delete" search="walk.all" path="~/Freenet/logs"/>
+    <action command="delete" search="glob" path="~/Freenet/*.log"/>
   </option>
-<option id="temp">
-  <label>Temp Files</label>
-  <description>Delete the temp files</description>
-  <action command="delete" search="walk.all" path="~/Freenet/persistent-temp-*" />
-</option>
+  <option id="temp">
+    <label>Temp Files</label>
+    <description>Delete the temp files</description>
+    <action command="delete" search="walk.all" path="~/Freenet/persistent-temp-*"/>
+  </option>
 </cleaner>

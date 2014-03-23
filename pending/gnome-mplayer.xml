@@ -32,4 +32,3 @@
     <action command="delete" search="file" path="~/.config/gnome-mplayer/gnome-mplayer.db"/>
   </option>
 </cleaner>
-

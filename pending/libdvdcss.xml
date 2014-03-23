@@ -26,7 +26,6 @@
   <!-- FIXME: Add Windows support. -->
   <label>libdvdcss</label>
   <description>Library for accessing encrypted DVD content</description>
-
   <option id="keyscache">
     <label>Delete libdvdcss cache</label>
     <description>Delete keys of DVDs that were cached by libdvdcss</description>

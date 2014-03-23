@@ -23,7 +23,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 -->
 <cleaner id="fontconfig" os="linux">
   <label>fontconfig</label>
-<option id="cache">
+  <option id="cache">
     <label>Cache</label>
     <description>Delete the cache</description>
     <!-- Ubuntu 12.10 has both ~/.fontconfig and ~/fontconfig -->
@@ -31,10 +31,10 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
     <action command="delete" search="glob" path="~/fontconfig/*.cache-?"/>
     <action command="delete" search="glob" path="~/.cache/fontconfig/*"/>
     <action command="delete" search="glob" path="/var/cache/fontconfig/*"/>
-</option>
+  </option>
   <option id="log">
     <label>Log</label>
     <description>Delete the log</description>
     <action command="delete" search="glob" path="/var/log/fontconfig.log"/>
-</option>
+  </option>
 </cleaner>
