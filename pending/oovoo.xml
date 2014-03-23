@@ -32,7 +32,7 @@
   <option id="chat_history">
     <label>Chat History</label>
     <description>Delete the chat history</description>
-    <action command="delete" search="walk.file" path="$APPDATA\Roaming\ooVoo*\Users\ChatHistory*"/>
+    <action command="delete" search="walk.files" path="$APPDATA\Roaming\ooVoo*\Users\ChatHistory*"/>
   </option>
   <option id="logs">
     <label>Logs</label>
