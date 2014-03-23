@@ -26,8 +26,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
   <description>Bittorrent</description>
   <option id="resume">
     <label>Resumes</label>
-    <warning>This will make all downloads start over. Useful if qBittorrent freezes due to file corruption.</warning>
     <description>Clear resumes. Make downloads start over.</description>
+    <warning>This will make all downloads start over. Useful if qBittorrent freezes due to file corruption.</warning>
     <action command="delete" search="walk.all" path="~/.local/share/data/qBittorrent/BT_backup/*.fastresume"/>
   </option>
   <option id="torrents">
