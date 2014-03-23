@@ -48,7 +48,7 @@ from <https://bugs.launchpad.net/bleachbit/+bug/571114>
   <option id="history">
     <label>History</label>
     <description>Clean the list of visited sites</description>
-    <warning>This will delete your bookmarks.</description>
+    <warning>This will delete your bookmarks.</warning>
     <!-- FIXME: BleachBit version 0.9.5 does not yet expose the mozilla places cleaner used for Firefox -->
     <action command="delete" search="glob" path="~/.mozilla/abrowser/*.default/places.sqlite"/>
   </option>
