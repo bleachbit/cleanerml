@@ -26,7 +26,7 @@
   <description>Game development program</description>
   <option id="cache">
     <label>Cache</label>
-    <description>Clean BYOND's cache</description>
+    <description>Delete the cache</description>
     <action command="delete" search="walk.all" path="~/.byond/cache"/>
     <action command="delete" search="walk.all" path="$USERPROFILE\My Documents\BYOND\cache\*"/>
   </option>
