@@ -27,8 +27,8 @@
   <label>ccache</label>
   <description>Cache result of files compiled by C/C++ compilers</description>
   <option id="ccache">
-    <label>Delete ccache's files</label>
-    <description>Delete cached files created by ccache</description>
+    <label>Cache</label>
+    <description>Delete the cache</description>
     <action search="walk.all" command="delete" path="~/.ccache/"/>
   </option>
 </cleaner>
