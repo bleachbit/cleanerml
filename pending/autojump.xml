@@ -27,7 +27,7 @@
   <description>a faster way to navigate your filesystem</description>
   <option id="backup">
     <label>Backup files</label>
-    <description>Delete backup files from autojump</description>
+    <description>Delete the backup files</description>
     <action search="glob" command="delete" path="~/.local/share/autojump/*.bak"/>
     <action search="glob" command="delete" path="~/.local/share/autojump/tmp*"/>
   </option>
