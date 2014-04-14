@@ -36,11 +36,6 @@
     <description>Delete the list of favorite servers</description>
     <action command="delete" search="file" path="~/.minetest/client/serverlist/favoriteservers.txt"/>
   </option>
-  <option id="mod_settings">
-    <label>Mod settings</label>
-    <description>Delete each worlds enable/disable settings for mods</description>
-    <action command="delete" search="glob" path="~/.minetest/worlds/*/world.mt"/>
-  </option>
   <option id="mods">
     <label>Mods</label>
     <description>Delete all mods</description>
