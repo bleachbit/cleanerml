@@ -40,5 +40,7 @@ example paths VirtualBox 4.2.4 on Ubuntu 12.10
 ~/.VirtualBox/VBoxSVC.log.6
 -->
     <action command="delete" search="walk.all" path="~/.VirtualBox/" regex="\.log\.[0-9]+$"/>
+    <!-- Chakra 2014.02 has ~/.config/VirtualBox -->
+    <action command="delete" search="walk.all" path="~/.config/VirtualBox/" regex="\.log\.[0-9]+$"/>
   </option>
 </cleaner>
