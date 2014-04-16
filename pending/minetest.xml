@@ -38,7 +38,7 @@
   </option>
   <option id="mods">
     <label>Mods</label>
-    <description>Delete all mods</description>
+    <description>Delete all mods. Any blocks or items from a mod in a world will still become 'unknown'</description>
     <action command="delete" search="walk.all" path="~/.minetest/mods/"/>
   </option>
 </cleaner>
