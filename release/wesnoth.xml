@@ -32,11 +32,13 @@
     <description>Deletes all saves</description>
     <action command="delete" search="walk.files" path="~/.wesnoth1.8/saves"/>
     <action command="delete" search="walk.files" path="~/.wesnoth1.6/saves"/>
+    <action command="delete" search="walk.files" path="~/.local/share/wesnoth/1.10/saves"/>
   </option>
   <option id="add-ons">
     <label>Add-ons</label>
     <description>Remove all add-ons</description>
     <action command="delete" search="walk.files" path="~/.wesnoth1.8/data/add-ons"/>
     <action command="delete" search="walk.files" path="~/.wesnoth1.6/data/add-ons"/>
+    <action command="delete" search="walk.all" path="~/.local/share/wesnoth/1.10/data/add-ons/"/>
   </option>
 </cleaner>
