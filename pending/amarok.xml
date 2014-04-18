@@ -19,7 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<cleaner id="amarok">
+<cleaner id="amarok" os="linux">
   <label>Amarok</label>
   <description>Media player</description>
   <option id="cache">
