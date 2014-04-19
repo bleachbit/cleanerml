@@ -21,7 +21,7 @@
 -->
 <cleaner id="minetest_classic">
   <label>Minetest Classic</label>
-  <description>3D Voxel World Game</description>
+  <description>3D voxel world game</description>
   <option id="debug_logs">
     <label>Debug logs</label>
     <description>Delete the debug logs</description>
