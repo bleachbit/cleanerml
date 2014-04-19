@@ -19,7 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<cleaner id="minetest_classic">
+<cleaner id="minetest_classic" os="linux">
   <label>Minetest Classic</label>
   <description>3D voxel world game</description>
   <option id="debug_logs">
