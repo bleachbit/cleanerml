@@ -19,7 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<cleaner id="minetest">
+<cleaner id="minetest" os="linux">
   <label>Minetest</label>
   <option id="cache">
     <label>Cache</label>
