@@ -40,3 +40,11 @@ Contents
 The directory `pending` contains cleaners that are waiting for someone to verify they are safe and effective.
 
 The directory `release` contains cleaners that are considered safe and effective.
+
+
+License
+-------
+
+The contents of this repository are licensed under the GNU General Public License
+version 3 or later.  Do not submit work for which you do not own the copyright or
+which cannot be licensed under the GNU GPL v3+.
