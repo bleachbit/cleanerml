@@ -31,6 +31,6 @@
   <option id="logs">
     <label>Logs</label>
     <description>Delete the World Of Goo logs</description>
-    <action command="delete" search="file">~/.WorldOfGoo/WorldOfGoo.log</action>
+    <action command="delete" search="file" path="~/.WorldOfGoo/WorldOfGoo.log"/>
   </option>
 </cleaner>
