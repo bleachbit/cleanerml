@@ -31,4 +31,9 @@
     <action search="glob" command="delete" path="~/.local/share/autojump/*.bak"/>
     <action search="glob" command="delete" path="~/.local/share/autojump/tmp*"/>
   </option>
+  <option id="database">
+    <label>Database</label>
+    <description>Delete database of frequently used directories</description>
+    <action search="file" command="delete" path="~/.local/share/autojump/autojump.txt"/>
+  </option>
 </cleaner>
