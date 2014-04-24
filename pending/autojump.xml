@@ -36,4 +36,9 @@
     <description>Delete database of frequently used directories</description>
     <action search="file" command="delete" path="~/.local/share/autojump/autojump.txt"/>
   </option>
+  <option id="error-log">
+    <label>Error log</label>
+    <description>Delete error log</description>
+    <action search="file" command="truncate" path="~/.local/share/autojump/autojump_errors"/>
+  </option>
 </cleaner>
