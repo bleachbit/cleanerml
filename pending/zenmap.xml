@@ -19,7 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<!-- Tested on Chakra 2014, Zenmap 6.40 -->
+<!-- Tested on Chakra 2014.05, Zenmap 6.40 -->
 <cleaner id="zenmap" os="linux">
   <label>Zenmap</label>
   <option id="database">
