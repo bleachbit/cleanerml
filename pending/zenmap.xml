@@ -20,6 +20,7 @@
 
 -->
 <!-- Tested on Chakra 2014.05, Zenmap 6.40 -->
+<!-- FIXME: Add Windows support -->
 <cleaner id="zenmap" os="linux">
   <label>Zenmap</label>
   <option id="database">
@@ -29,12 +30,12 @@
   </option>
   <option id="recent_scans">
     <label>Recent scans</label>
-    <description>Delete list of locations of saved scans</description>
+    <description>Delete the list of saved scan locations</description>
     <action search="file" command="delete" path="~/.zenmap/recent_scans.txt"/>
   </option>
   <option id="target_list">
     <label>Target list</label>
-    <description>Delete list of targets</description>
+    <description>Delete the list of previous targets</description>
     <action search="file" command="delete" path="~/.zenmap/target_list.txt"/>
   </option>
   <option id="vacuum">
