@@ -19,7 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<cleaner id="okular">
+<cleaner id="okular" os="linux">
   <label>Okular</label>
   <description>Document viewer</description>
   <option id="docdata">
