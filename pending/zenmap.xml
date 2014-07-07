@@ -23,6 +23,7 @@
 <!-- FIXME: Add Windows support -->
 <cleaner id="zenmap" os="linux">
   <label>Zenmap</label>
+  <description>Nmap GUI</description>
   <option id="delete_database">
     <label>Database</label>
     <description>Delete the database. Contains history of scan type, target IP, XML output (basic scan details), and time</description>
