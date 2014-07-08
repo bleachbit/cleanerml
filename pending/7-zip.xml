@@ -19,12 +19,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-
-
 <!-- 7-Zip stores history in the windows Registry, so this cleaner is more aimed towards maintaining privacy rather then freeing up disk space -->
 <!-- 2McCoy7 (10/01/2014): tested on Windows 7 and BleachBit 1.0 -->
-
-
 <cleaner id="7-Zip" os="windows">
   <label>7-Zip</label>
   <option id="history">
@@ -32,6 +28,6 @@
     <description>Delete History</description>
     <action command="winreg" path="HKCU\Software\7-Zip\Compression" name="ArcHistory"/>
     <action command="winreg" path="HKCU\Software\7-Zip\Extraction" name="PathHistory"/>
-	<action command="winreg" path="HKCU\Software\7-Zip\FM" name="FolderHistory"/>
+    <action command="winreg" path="HKCU\Software\7-Zip\FM" name="FolderHistory"/>
   </option>
 </cleaner>
