@@ -46,7 +46,7 @@ have used over time.  As such it should be as reliable as the Thunderbird one.--
   </option>
   <option id="index">
     <label>Index</label>
-    <description>Delete the files</description>
+    <description>Delete the index files, which contain an index of mail messages, and playback information for offline operations and incomplete online operations. Indices will be rebuilt on next run.</description>
     <!-- Ubuntu 10.04 Thunderbird 3 had ~/.thunderbird/????????.default/ -->
     <!-- openSUSE 11.3 Thunderbird 3 had ~/.thunderbird/Profiles/????????.default/ -->
     <!-- Fedora 16 Thunderbird 17 had ~/.thunderbird/default/ -->
