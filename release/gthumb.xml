@@ -23,7 +23,7 @@
 
 -->
 <cleaner id="gthumb" os="linux">
-  <label>Gthumb</label>
+  <label>gThumb</label>
   <description>an advanced image viewer and browser</description>
   <option id="history">
     <label>History</label>
