@@ -28,6 +28,6 @@
   <option id="history">
     <label>History</label>
     <description>Delete the history of recently used files</description>
-    <action search="glob" command="delete" path="~/.config/gthumb/history.xbel"/>
+    <action search="file" command="delete" path="~/.config/gthumb/history.xbel"/>
   </option>
 </cleaner>
