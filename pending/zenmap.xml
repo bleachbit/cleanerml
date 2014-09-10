@@ -1,47 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
+BleachBit
+Copyright (C) 2014 Andrew Ziem
+http://bleachbit.sourceforge.net
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-    BleachBit
-    Copyright (C) 2014 Andrew Ziem
-    http://bleachbit.sourceforge.net
+2014 May
+Tested on Chakra, Zenmap 6.40
 
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
+2014 September 14
+Added Windows support for existing options 'delete_database','recent_scans',
+   'target_list', and 'vacuum'
+Added 'temp_data' option to purge temp files created by Zenmap in Windows
+   in the $localappdata\temp directory
+Tested OK on Windows 7, Zenmap 6.40
+Tested OK on Kali Linux 1.0.7, Zenmap 6.40
 -->
-<!-- Tested on Chakra 2014.05, Zenmap 6.40 -->
-<!-- FIXME: Add Windows support -->
-<cleaner id="zenmap" os="linux">
+
+<cleaner id="zenmap">
   <label>Zenmap</label>
   <description>Nmap GUI</description>
   <option id="delete_database">
     <label>Database</label>
     <description>Delete the database. Contains history of scan type, target IP, XML output (basic scan details), and time</description>
     <action search="file" command="delete" path="~/.zenmap/zenmap.db"/>
+    <action search="file" command="delete" path="$USERPROFILE\.zenmap\zenmap.db"/>
   </option>
   <option id="recent_scans">
     <label>Recent scans</label>
     <description>Delete the list of saved scan locations</description>
     <action search="file" command="delete" path="~/.zenmap/recent_scans.txt"/>
+    <action search="file" command="delete" path="$USERPROFILE\.zenmap\recent_scans.txt"/>
   </option>
   <option id="target_list">
     <label>Target list</label>
     <description>Delete the list of previous targets</description>
     <action search="file" command="delete" path="~/.zenmap/target_list.txt"/>
+    <action search="file" command="delete" path="$USERPROFILE\.zenmap\target_list.txt"/>
   </option>
   <option id="vacuum">
     <label>Vacuum</label>
     <description>Clean database fragmentation to reduce space and improve speed without removing any data</description>
     <action search="file" command="sqlite.vacuum" path="~/.zenmap/zenmap.db"/>
+    <action search="file" command="sqlite.vacuum" path="$USERPROFILE\.zenmap\zenmap.db"/>
+  </option>
+  <option id="temp_data">
+    <label>Temporary Data</label>
+    <description>Delete temporary data</description>
+    <action search="glob" command="delete" path="$LOCALAPPDATA\Temp\zenmap-*.xml"/>
+    <action search="glob" command="delete" path="$LOCALAPPDATA\Temp\zenmap-stdout*"/>
   </option>
 </cleaner>
