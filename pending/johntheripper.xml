@@ -22,8 +22,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 <cleaner id="johntheripper">
   <label>John the Ripper</label>
   <option id="log">
-    <label>Log</label>
-    <description>Clean the log file of John the Ripper</description>
+    <label>Logs</label>
+    <description>Delete the logs</description>
     <action command="delete" search="file" path="~/.john/john.log"/>
   </option>
 </cleaner>
