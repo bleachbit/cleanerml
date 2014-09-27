@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!--
 
 BleachBit
@@ -20,12 +19,11 @@ You should have received a copy of the GNU General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 -->
-
 <cleaner id="johntheripper">
-<label>John the Ripper</label>
-<option id="log">
-<label>Log</label>
-<description>Clean the log file of John the Ripper</description>
-<action command="delete" search="file" path="~/.john/john.log"/>
-</option>
+  <label>John the Ripper</label>
+  <option id="log">
+    <label>Log</label>
+    <description>Clean the log file of John the Ripper</description>
+    <action command="delete" search="file" path="~/.john/john.log"/>
+  </option>
 </cleaner>

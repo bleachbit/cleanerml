@@ -25,7 +25,6 @@ Added 'temp_data' option to purge temp files created by Zenmap in Windows
 Tested OK on Windows 7, Zenmap 6.40
 Tested OK on Kali Linux 1.0.7, Zenmap 6.40
 -->
-
 <cleaner id="zenmap">
   <label>Zenmap</label>
   <description>Nmap GUI</description>
