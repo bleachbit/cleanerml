@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cleaner id="kopete" os="linux">
+  <label>Kopete</label>
+  <description>Instant messaging and chat application</description>
+  <running type="exe">kopete</running>
+  <option id="logs">
+    <label>Logs</label>
+    <description>Information about files opened with Okular.</description>
+    <action command="delete" search="walk.files" path="~/.kde/share/apps/kopete/logs/*Protocol/"/>
+    <action command="delete" search="walk.files" path="~/.kde4/share/apps/kopete/logs/*Protocol/"/>
+  </option>
+</cleaner>
