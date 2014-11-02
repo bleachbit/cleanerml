@@ -18,6 +18,10 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+FIXME: Instead of deleting places.sqlite, use action="mozilla_url_history". This surgically deletes the history without deleting bookmarks.
+
+FIXME: There have been many changes in Firefox that you can see in the file https://github.com/az0/bleachbit/commits/master/bleachbit/Cleaner.py . IceCat should be on par.
+
 -->
 <cleaner id="gnu_icecat" os="linux">
   <label>GNU IceCat</label>
