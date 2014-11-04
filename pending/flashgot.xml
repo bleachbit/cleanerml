@@ -27,5 +27,6 @@
     <label>Log</label>
     <description>Delete the add-on's log file contains download history</description>
     <action command="delete" search="glob" path="~/.mozilla/firefox/*.default/flashgot.log"/>
+    <action command="delete" search="glob" path="$USERPROFILE\AppData\Roaming\Mozilla\Firefox\Profiles\*.default\flashgot.txt"/>
   </option>
 </cleaner>
