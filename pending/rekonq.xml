@@ -27,17 +27,27 @@
   <option id="cache">
     <label>Cache</label>
     <description>Delete the web cache which reduces time to display revisited pages, contains thumbnails of previously visited sites, favicons, and more.</description>
-    <action command="delete" search="walk.all" path="~/.kde/cache-*/*" />
+    <action command="delete" search="glob" path="~/.kde/cache-*/*" />
   </option>
   <option id="cookies">
     <label>Cookies</label>
     <description>Delete cookies which contain authentication information and information about a site.</description>
     <action command="delete" search="glob" path="~/.kde/share/apps/kcookiejar/cookies"/>
   </option>
+  <option id="favicons">
+    <label>Favicons</label>
+    <description>Delete the saved tiny icons for websites that appear in the browser tabs.</description>
+    <action command="delete" search="glob" path="~/.kde/cache-*/favicons/*"/>
+  </option>
   <option id="temp">
     <label>Temp Files</label>
     <description>Delete temporary files</description>
-    <action command="delete" search="walk.all" path="~/.kde/tmp-*/*"/>
+    <action command="delete" search="glob" path="~/.kde/tmp-*/*"/>
+  </option>
+  <option id="thumbs">
+    <label>Thumbnails</label>
+    <description>Delete small screenshot previews of websites</description>
+    <action command="delete" search="glob" path="~/.kde/cache-*/thumbs/*" />
   </option>
   <option id="url_history">
     <label>URL history</label>
