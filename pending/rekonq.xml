@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2014 Andrew Ziem
+    http://bleachbit.sourceforge.net
+
+	Rekonq cleaner by "Theatre X"
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<cleaner id="rekonq">
+  <label>Rekonq</label>
+  <description>Web browser</description>
+  <option id="cache">
+    <label>Cache</label>
+    <description>Delete the web cache which reduces time to display revisited pages, contains thumbnails of previously visited sites, favicons, and more.</description>
+    <action command="delete" search="walk.all" path="~/.kde/cache-*/*" />
+  </option>
+  <option id="cookies">
+    <label>Cookies</label>
+    <description>Delete cookies which contain authentication information and information about a site.</description>
+    <action command="delete" search="glob" path="~/.kde/share/apps/kcookiejar/cookies"/>
+  </option>
+  <option id="temp">
+    <label>Temp Files</label>
+    <description>Delete temporary files</description>
+    <action command="delete" search="walk.all" path="~/.kde/tmp-*/*"/>
+  </option>
+  <option id="url_history">
+    <label>URL history</label>
+    <description>List of visited web pages</description>
+    <action command="delete" search="glob" path="~/.kde/share/apps/rekonq/history"/>
+  </option>
+  <option id="window_size">
+    <label>Window Size</label>
+    <description>Resets the window size</description>
+    <action command="delete" search="file" path="~/.kde/share/config/rekonqrc"/>
+  </option>
+</cleaner>
