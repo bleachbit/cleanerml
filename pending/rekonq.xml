@@ -39,6 +39,11 @@
     <description>Delete the saved tiny icons for websites that appear in the browser tabs.</description>
     <action command="delete" search="glob" path="~/.kde/cache-*/favicons/*"/>
   </option>
+  <option id="http">
+    <label>HTTP Files</label>
+    <description>Clean this junk out. Yeah!</description>
+    <action command="delete" search="glob" path="~/.kde/cache-*/http/*"/>
+  </option>
   <option id="temp">
     <label>Temp Files</label>
     <description>Delete temporary files</description>
