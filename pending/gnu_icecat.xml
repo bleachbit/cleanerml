@@ -30,32 +30,44 @@ FIXME: There have been many changes in Firefox that you can see in the file http
     <label>Cache</label>
     <description>Clean the cache</description>
     <action command="delete" search="walk.all" path="~/.gnuzilla/icecat/*.default/Cache"/>
+    <action command="delete" search="walk.all" path="~/.cache/icecat/*.default/Cache"/>
   </option>
   <option id="cookies">
     <label>Cookies</label>
     <description>Clean cookies, which contain information such as web site preferences, authentication, and tracking identification</description>
     <action command="delete" search="glob" path="~/.gnuzilla/icecat/*.default/cookies.sqlite"/>
+    <action command="delete" search="glob" path="~/.mozilla/icecat/*.default/cookies.sqlite"/>
   </option>
   <option id="download_history">
     <label>Download history</label>
     <description>Clean the list of downloaded files</description>
     <action command="delete" search="glob" path="~/.gnuzilla/icecat/*.default/downloads.sqlite"/>
+    <action command="delete" search="glob" path="~/.mozilla/icecat/*.default/downloads.sqlite"/>
   </option>
   <option id="form_history">
     <label>Form History</label>
     <description>Clean the Form History, also known as "AutoComplete"</description>
     <action command="delete" search="glob" path="~/.gnuzilla/icecat/*.default/formhistory.sqlite"/>
+    <action command="delete" search="glob" path="~/.mozilla/icecat/*.default/formhistory.sqlite"/>
   </option>
   <option id="history">
     <!-- Apparently in GNU IceCat, the "places.sqlite" file is it's history file -->
     <label>History</label>
     <description>Clean the list of visited web pages</description>
     <action command="mozilla_url_history" search="glob" path="~/.gnuzilla/icecat/*.default/places.sqlite"/>
+    <action command="mozilla_url_history" search="glob" path="~/.mozilla/icecat/*.default/places.sqlite"/>
   </option>
   <option id="offline_cache">
     <label>Offline Cache</label>
     <description>Clean the cache collected while visiting pages offline</description>
     <action command="delete" search="glob" path="~/.gnuzilla/icecat/*.default/OfflineCache/index.sqlite"/>
+    <action command="delete" search="glob" path="~/.cache/mozilla/icecat/*.default/OfflineCache/*"
+  </option>
+  <option id="passwords"
+    <label>Passwords</label>
+    <description>Delete all of your saved passwords for websites</description>
+    <warning>This will delete your saved passwords.</warning>
+    <action command="delete" search="glob" path="~/.mozilla/icecat/*.default/signons.sqlite"/>
   </option>
   <option id="search_history">
     <label>Search</label>
