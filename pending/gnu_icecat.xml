@@ -50,7 +50,7 @@ FIXME: There have been many changes in Firefox that you can see in the file http
     <!-- Apparently in GNU IceCat, the "places.sqlite" file is it's history file -->
     <label>History</label>
     <description>Clean the list of visited web pages</description>
-    <action command="delete" search="glob" path="~/.gnuzilla/icecat/*.default/places.sqlite"/>
+    <action command="mozilla_url_history" search="glob" path="~/.gnuzilla/icecat/*.default/places.sqlite"/>
   </option>
   <option id="offline_cache">
     <label>Offline Cache</label>
