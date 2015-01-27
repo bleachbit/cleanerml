@@ -27,6 +27,6 @@ Cinnamon cleaner by Theatre X
   <option id="applet_cache">
     <label>Applet Cache</label>
     <description>Delete cache for downloaded applet images in Cinnamon.</description>
-    <action command="delete" search="walk.all" path="~/.cinnamon/spices.cache/applet/*" />
+    <action command="delete" search="glob" path="~/.cinnamon/spices.cache/applet/*" />
   </option>
 </cleaner>
