@@ -24,19 +24,17 @@ Cinnamon cleaner by Theatre X
 
 <cleaner id="cinnamon" os="linux">
   <label>Cinnamon</label>
-  <option id="applet_cache">
-    <label>Applet Cache</label>
-    <description>Delete cache for downloaded applet images in Cinnamon applet installer.</description>
+  <option id="cache">
+    <label>Cache</label>
+    <description>Delete cache for applet, desklet, and theme images in Cinnamon when using the "Get More Online" menus.</description>
     <action command="delete" search="glob" path="~/.cinnamon/spices.cache/applet/*" />
-  </option>
-  <option id="desklet_cache">
-    <label>Desklet Cache</label>
-    <description>Delete cache for downloaded desklet images in Cinnamon desklet installer.</description>
     <action command="delete" search="glob" path="~/.cinnamon/spices.cache/desklet/*" />
-  </option>
-  <option id="theme_cache">
-    <label>Theme Cache</label>
-    <description>Delete the cache for downloaded theme images in Cinnamon theme installer.</description>
     <action command="delete" search="glob" path="~/.cinnamon/spices.cache/theme/*" />
+  </option>
+  <option id="recent">
+    <label>Recent Files</label>  
+    <description>Delete the Recent Files content.</description>
+    <warning>This will not clear the Recent Files menu.</warning>
+    <action command="delete" search="file" path="~/.local/share/recently-used.xbel" />
   </option>
 </cleaner>
