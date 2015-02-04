@@ -24,6 +24,7 @@ Cinnamon cleaner by Theatre X
 
 <cleaner id="cinnamon" os="linux">
   <label>Cinnamon</label>
+  <description>Linux Mint's default interface</description>
   <option id="cache">
     <label>Cache</label>
     <description>Delete cache for applet, desklet, and theme images in Cinnamon when using the "Get More Online" menus.</description>
