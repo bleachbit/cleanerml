@@ -50,7 +50,7 @@ from <https://bugs.launchpad.net/bleachbit/+bug/571114>
     <description>Clean the list of visited sites</description>
     <warning>This will delete your bookmarks.</warning>
     <!-- FIXME: BleachBit version 0.9.5 does not yet expose the mozilla places cleaner used for Firefox -->
-    <action command="delete" search="glob" path="~/.mozilla/abrowser/*.default/places.sqlite"/>
+    <action command="mozilla_url_history" search="glob" path="~/.mozilla/abrowser/*.default/places.sqlite"/>
   </option>
   <option id="offline_cache">
     <label>Offline Cache</label>
