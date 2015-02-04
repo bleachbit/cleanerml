@@ -21,23 +21,27 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<cleaner id="steam" os="windows">
+<cleaner id="steam">
   <label>Steam</label>
   <description>Gaming platform</description>
   <option id="cookies">
     <label>Cookies</label>
     <description>Clean the program cookies</description>
-    <action command="delete" search="walk.files" path="$ProgramFiles\Steam\config\cookies\"/>
+    <action command="delete" search="walk.files" path="$ProgramFiles\Steam\config\cookies\*"/>
+    <action command="delete" search="walk.files" path="~/.steam/config/cookies/*" />
   </option>
   <option id="cache">
     <label>Cache</label>
     <description>Delete HTML and HTTP cache</description>
     <action command="delete" search="walk.all" path="$ProgramFiles\Steam\config\htmlcache\*"/>
     <action command="delete" search="walk.all" path="$ProgramFiles\Steam\appcache\httpcache\*"/>
+    <action command="delete" search="walk.all" path="~/.steam/config/htmlcache/*" />
+    <action command="delete" search="walk.all" path="~/.steam/appcache/httpscache/*" />
   </option>
   <option id="logs">
     <label>Logs</label>
     <description>Delete the program logs</description>
     <action command="delete" search="walk.all" path="$ProgramFiles\Steam\logs\*"/>
+    <action command="delete" search="walk.all" path="~/.steam/logs/*" />
   </option>
 </cleaner>
