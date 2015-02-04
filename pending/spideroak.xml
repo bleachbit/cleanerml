@@ -21,6 +21,7 @@
 -->
 <cleaner id="spideroak" os="linux">
   <label>SpiderOak</label>
+  <description>File backup service</description>
   <option id="logs">
     <label>Logs</label>
     <description>Delete the logs</description>
