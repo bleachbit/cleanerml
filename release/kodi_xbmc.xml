@@ -2,7 +2,7 @@
 <!--
 
     BleachBit
-    Copyright (C) 2010 Andrew Ziem
+    Copyright (C) 2015 Andrew Ziem
     http://bleachbit.sourceforge.net
 
     This cleaner:
@@ -26,8 +26,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<cleaner id="xbmc" os="linux">
-  <label>XBMC Media Center</label>
+<cleaner id="kodi_xbmc" os="linux">
+  <label>Kodi (XBMC)</label>
   <description>Multimedia center</description>
   <option id="th-music">
     <label>Thumbnails: Music</label>
