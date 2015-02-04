@@ -21,6 +21,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 -->
 <cleaner id="johntheripper">
   <label>John the Ripper</label>
+  <description>Password cracking tool</description>
   <option id="log">
     <label>Logs</label>
     <description>Delete the logs</description>
