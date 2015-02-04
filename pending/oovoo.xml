@@ -23,7 +23,7 @@
 -->
 <cleaner id="oovoo" os="windows">
   <label>ooVoo</label>
-  <description>Chat</description>
+  <description>Video chat client</description>
   <option id="cache">
     <label>Cache</label>
     <description>Delete the ooVoo cache</description>
