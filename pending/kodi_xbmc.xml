@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2010 Andrew Ziem
+    http://bleachbit.sourceforge.net
+
+    This cleaner:
+    Copyright (C) 2009 Roman Horník
+    https://launchpad.net/~roman.hornik
+    Copyright © 2013 Rogério Theodoro de Brito.
+
+    Modification for Kodi by Theatre X (2015)
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<cleaner id="xbmc" os="linux">
+  <label>XBMC Media Center</label>
+  <description>Multimedia center</description>
+  <option id="th-music">
+    <label>Thumbnails: Music</label>
+    <description>Delete all music thumbnails (album covers)</description>
+    <action command="delete" search="walk.files" path="~/.xbmc/userdata/Thumbnails/Music/"/>
+    <action command="delete" search="walk.files" path="~/.kodi/userdata/Thumbnails/Music/" />
+  </option>
+  <option id="th-pics">
+    <label>Thumbnails: Pictures</label>
+    <description>Delete all thumbnails of pictures</description>
+    <action command="delete" search="walk.files" path="~/.xbmc/userdata/Thumbnails/Pictures/"/>
+    <action command="delete" search="walk.files" path="~/.kodi/userdata/Thumbnails/Pictures/" />
+  </option>
+  <option id="th-video">
+    <label>Thumbnails: Video</label>
+    <description>Delete all video thumbnails</description>
+    <action command="delete" search="walk.files" path="~/.xbmc/userdata/Thumbnails/Video/"/>
+    <action command="delete" search="walk.files" path="~/.kodi/userdata/Thumbnails/Video/" />
+  </option>
+  <option id="tmp">
+    <label>Temporary files</label>
+    <description>Delete temporary files created by XBMC</description>
+    <action command="delete" search="walk.all" path="~/.xbmc/temp/"/>
+    <action command="delete" search="walk.all" path="~/.kodi/temp/" />
+  </option>
+</cleaner>
