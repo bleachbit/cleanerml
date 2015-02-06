@@ -27,8 +27,8 @@
   <option id="cookies">
     <label>Cookies</label>
     <description>Clean the program cookies</description>
-    <action command="delete" search="walk.files" path="$ProgramFiles\Steam\config\cookies\*"/>
-    <action command="delete" search="walk.files" path="~/.steam/config/cookies/*" />
+    <action command="delete" search="walk.files" path="$ProgramFiles\Steam\config\cookies\"/>
+    <action command="delete" search="walk.files" path="~/.steam/config/cookies/" />
   </option>
   <option id="cache">
     <label>Cache</label>
