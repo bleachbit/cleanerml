@@ -42,7 +42,7 @@
   <option id="logs">
     <label>Logs</label>
     <description>Delete the program logs</description>
-    <action command="delete" search="walk.all" path="$ProgramFiles\Steam\logs\*"/>
-    <action command="delete" search="walk.all" path="~/.steam/logs/*" />
+    <action command="delete" search="glob" path="$ProgramFiles\Steam\logs\*"/>
+    <action command="delete" search="glob" path="~/.steam/logs/*" />
   </option>
 </cleaner>
