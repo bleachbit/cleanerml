@@ -19,12 +19,12 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<cleaner id="adobe_bridge_cs5" os="windows">
-  <label>Adobe Bridge CS5</label>
+<cleaner id="adobe_bridge" os="windows">
+  <label>Adobe Bridge</label>
   <description>Media Management Software</description>
   <option id="cache">
     <label>Cache</label>
     <description>Delete the cache</description>
-    <action search="walk.files" command="delete" path="$APPDATA\Adobe\Bridge CS5\Cache"/>
+    <action search="walk.files" command="delete" path="$APPDATA\Adobe\Bridge CS*\Cache"/>
   </option>
 </cleaner>
