@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2015 Andrew Ziem
+    http://bleachbit.sourceforge.net
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<cleaner id="itunes" os="windows">
+  <label>iTunes</label>
+  <description>Media Player</description>
+  <option id="cache">
+    <label>Cache</label>
+    <description>Delete the cache</description>
+    <action search="file" command="delete" path="$LocalAppData\Apple Computer\iTunes\Cache.db"/>
+  </option>
+  <option id="cache_artwork">
+    <label>Album Artwork Cache</label>
+    <description>Delete the cache</description>
+    <action search="walk.all" command="delete" path="$USERPROFILE\My Music\iTunes\Album Artwork\Cache"/>
+  </option>
+  <option id="logs">
+    <label>Logs</label>
+    <description>Delete the program logs</description>
+    <action search="glob" command="delete" path="$AppData\Apple Computer\Logs\*"/>
+    <action search="glob" command="delete" path="$AppData\Apple Computer\iTunes\iPhone Updater Logs\*"/>
+    <action search="glob" command="delete" path="$WinDir\System32\config\systemprofile\AppData\Roaming\Apple Computer\Logs\*"/>
+    <action search="glob" command="delete" path="$WinDir\SysWOW64\config\systemprofile\AppData\Roaming\Apple Computer\Logs\*"/>
+  </option>
+  <option id="crash_reporter">
+    <label>Crash Reporter</label>
+    <description>Delete the crash reporter logs</description>
+    <action search="walk.all" command="delete" path="$AppData\Apple Computer\Logs\CrashReporter"/>
+  </option>
+  <option id="previous_libraries">
+    <label>Previous Libraries</label>
+    <description>Delete the previous libraries</description>
+    <action search="walk.all" command="delete" path="$USERPROFILE\My Music\iTunes\Previous iTunes Libraries"/>
+  </option>
+  <option id="temp_files">
+    <label>Temporary Files</label>
+    <description>Delete temporary files</description>
+    <action search="glob" command="delete" path="$USERPROFILE\My Music\iTunes\*.tmp"/>
+	<action search="walk.all" command="delete" path="$LocalAppData\Apple Computer\iTunes\iPhone Temporary Files"/>
+	<action search="glob" command="delete" path="$LocalAppData\VirtualStore\Program Files*\Apple Computer\iTunes\iPhone Temporary Files\*"/>
+  </option>
+</cleaner>
