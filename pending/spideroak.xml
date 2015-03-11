@@ -19,13 +19,18 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<cleaner id="spideroak" os="linux">
+<cleaner id="spideroak">
   <label>SpiderOak</label>
   <description>File backup service</description>
   <option id="logs">
     <label>Logs</label>
     <description>Delete the logs</description>
-    <!-- Tested with Fedora 16 and SpiderOak 4.6.9945 -->
     <action command="delete" search="glob" path="~/.SpiderOak/*log"/>
+    <action command="delete" search="glob" path="$APPDATA\SpiderOak\*.log"/>
+  </option>
+  <option id="cache">
+    <label>Download Cache</label>
+    <description>Delete the download cache</description>
+    <action search="walk.files" command="delete" path="$APPDATA\SpiderOak\download_cache"/>
   </option>
 </cleaner>
