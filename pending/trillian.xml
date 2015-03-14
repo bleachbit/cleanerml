@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2015 Andrew Ziem
+    http://bleachbit.sourceforge.net
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	@app     Trillian
+	@os      Windows
+	@version 0.1.0
+-->
+<cleaner id="trillian" os="windows">
+  <label>Trillian</label>
+  <description>Chat client</description>
+  <running type="exe">trillian.exe</running>
+  <option id="logs">
+    <label>Chat Logs</label>
+    <description>Delete the chat logs</description>
+    <warning>All chat logs not synced to the Trillian Cloud will be lost.</warning>
+    <action command="delete" search="walk.all" path="$APPDATA\Trillian\users\*\logs"/>
+  </option>
+  <option id="cache">
+    <label>Cache</label>
+    <description>Delete the cache</description>
+    <action command="delete" search="walk.all" path="$APPDATA\Trillian\users\global\skin_cache"/>
+    <action command="delete" search="glob" path="$APPDATA\Trillian\users\*\buddies.*.xml"/>
+    <action command="delete" search="walk.all" path="$APPDATA\Trillian\users\*\cache"/>
+    <action command="delete" search="walk.all" path="$APPDATA\Trillian\users\*\buddyicons"/>
+    <action command="delete" search="walk.all" path="$PROGRAMFILES\Trillian\Users\Default\buddyicons"/>
+    <action command="delete" search="walk.all" path="$LOCALAPPDATA\VirtualStore\Program Files*\Trillian\Users\Default\buddyicons"/>
+    <action command="delete" search="walk.all" path="$APPDATA\Trillian\users\*\instantlookup"/>
+    <action command="delete" search="walk.all" path="$PROGRAMFILES\Trillian\Users\Default\instantlookup"/>
+    <action command="delete" search="walk.all" path="$LOCALAPPDATA\VirtualStore\Program Files*\Trillian\Users\Default\instantlookup"/>
+  </option>
+  <option id="crash_repots">
+    <label>Crash reports</label>
+    <description>Delete the files</description>
+    <action command="delete" search="walk.all" path="$APPDATA\Trillian\Crash Files\"/>
+    <action command="delete" search="walk.all" path="$PROGRAMFILES\Trillian\Crash Files\"/>
+    <action command="delete" search="walk.all" path="$LOCALAPPDATA\VirtualStore\Program Files*\Trillian\Crash Files\"/>
+  </option>
+</cleaner>

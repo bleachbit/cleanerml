@@ -2,10 +2,8 @@
 <!--
 
     BleachBit
-    Copyright (C) 2014 Andrew Ziem
+    Copyright (C) 2015 Andrew Ziem
     http://bleachbit.sourceforge.net
-
-	k3b cleaner by "Theatre X"
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -20,13 +18,22 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+	@app     Sourcetree
+	@os      Windows
+	@version 0.1.0
 -->
-<cleaner id="k3b">
-  <label>k3b</label>
-  <description>Disc writing software</description>
-  <option id="log">
-    <label>Log</label>
-    <description>Delete the log file which contains information about the last writing session(s).</description>
-    <action command="delete" search="glob" path="~/.kde/share/apps/k3b/*.log"/>
+<cleaner id="sourcetree" os="windows">
+  <label>SourceTree</label>
+  <description>Source Control Management</description>
+  <option id="logs">
+    <label>Logs</label>
+    <description>Delete the logs (keep latest log)</description>
+    <!-- This application used in software development so deleting all logs is a bad idea -->
+    <action command="delete" search="walk.all" path="$LOCALAPPDATA\Atlassian\SourceTree\" regex="\w+\.log(\.\d+)$"/>
+  </option>
+  <option id="cache">
+    <label>Cache</label>
+    <description>Delete the cache</description>
+    <action search="walk.all" command="delete" path="$LOCALAPPDATA\Atlassian\SourceTree\cache"/>
   </option>
 </cleaner>

@@ -2,10 +2,8 @@
 <!--
 
     BleachBit
-    Copyright (C) 2014 Andrew Ziem
+    Copyright (C) 2015 Andrew Ziem
     http://bleachbit.sourceforge.net
-
-	k3b cleaner by "Theatre X"
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -20,13 +18,19 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+	Ruby Cleaner v0.1
 -->
-<cleaner id="k3b">
-  <label>k3b</label>
-  <description>Disc writing software</description>
-  <option id="log">
-    <label>Log</label>
-    <description>Delete the log file which contains information about the last writing session(s).</description>
-    <action command="delete" search="glob" path="~/.kde/share/apps/k3b/*.log"/>
+<cleaner id="ruby" os="windows">
+  <label>Ruby</label>
+  <description>Programming Language</description>
+  <option id="cache_gems">
+    <label>Gems</label>
+    <description>Delete cached gems</description>
+    <action command="delete" search="walk.all" path="$SYSTEMDRIVE\Ruby*\lib\ruby\gems\*\cache"/>
+  </option>
+  <option id="cache_indexes">
+    <label>Remote Index Cache</label>
+    <description>Delete the Remote Index Cache</description>
+    <action command="delete" search="walk.all" path="$USERPROFILE\.gem\specs"/>
   </option>
 </cleaner>
