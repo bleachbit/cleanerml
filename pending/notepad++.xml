@@ -25,11 +25,10 @@
 -->
 <cleaner id="notepad++" os="windows">
   <label>Notepad++</label>
-  <description>Text/Source Code Editor</description>
+  <description>Editor</description>
   <option id="backup">
-    <label>Backup</label>
-    <description>
-Delete backup files</description>
+    <label>Backup files</label>
+    <description>Delete the backup files</description>
     <action command="delete" search="walk.files" path="$APPDATA\Notepad++\backup"/>
   </option>
 </cleaner>
