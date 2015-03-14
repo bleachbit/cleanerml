@@ -39,11 +39,11 @@
     <label>Cache</label>
     <description>Delete the cache</description>
     <!-- Service Manager -->
-    <action command="delete" search="glob"       path="$APPDATA\Adobe\CS*ServiceManager\cache\*.*"/>
+    <action command="delete" search="glob" path="$APPDATA\Adobe\CS*ServiceManager\cache\*.*"/>
     <!-- Camera Raw Library -->
-    <action command="delete" search="glob"       path="$LOCALAPPDATA\Adobe\CameraRaw\Cache\*.dat"/>
+    <action command="delete" search="glob" path="$LOCALAPPDATA\Adobe\CameraRaw\Cache\*.dat"/>
 	<!-- Media Caches -->
-	<action command="delete" search="walk.files" path="$APPDATA\Adobe\Common\Media Cache Files\"/>
-    <action command="delete" search="walk.files" path="$APPDATA\Adobe\Common\Media Cache\"/>
+	<action command="delete" search="glob" path="$APPDATA\Adobe\Common\Media Cache Files\*"/>
+    <action command="delete" search="glob" path="$APPDATA\Adobe\Common\Media Cache\*"/>
   </option>
 </cleaner>
