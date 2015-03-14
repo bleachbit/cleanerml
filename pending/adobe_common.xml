@@ -46,10 +46,12 @@
 	<action command="delete" search="glob" path="$APPDATA\Adobe\Common\Media Cache Files\*"/>
     <action command="delete" search="glob" path="$APPDATA\Adobe\Common\Media Cache\*"/>
   </option>
+  <!-- Installers might also be included in cache -->
   <option id="installers">
     <label>Installers</label>
     <description>Delete cached patches and installers</description>
     <action command="delete" search="glob" path="$PROGRAMFILES\Adobe\Adobe\AdobePatchFiles\*.*"/>
     <action command="delete" search="glob" path="$PROGRAMW6432\Adobe\Adobe\AdobePatchFiles\*.*"/>
+    <action command="delete" search="glob" path="$PROGRAMDATA\Adobe\CameraRaw\Adobe\AdobePatchFiles\*.*"/>
   </option>
 </cleaner>
