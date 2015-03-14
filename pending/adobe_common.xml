@@ -20,7 +20,7 @@
 
 	@app     Adobe Common
 	@os      Windows
-	@version 0.2.0
+	@version 0.3.0
 -->
 <cleaner id="adobe_common" os="windows">
   <label>Adobe</label>
@@ -45,5 +45,11 @@
 	<!-- Media Caches -->
 	<action command="delete" search="glob" path="$APPDATA\Adobe\Common\Media Cache Files\*"/>
     <action command="delete" search="glob" path="$APPDATA\Adobe\Common\Media Cache\*"/>
+  </option>
+  <option id="installers">
+    <label>Installers</label>
+    <description>Delete cached patches and installers</description>
+    <action command="delete" search="glob" path="$PROGRAMFILES\Adobe\Adobe\AdobePatchFiles\*.*"/>
+    <action command="delete" search="glob" path="$PROGRAMFILES(X86)\Adobe\Adobe\AdobePatchFiles\*.*"/>
   </option>
 </cleaner>
