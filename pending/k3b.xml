@@ -27,6 +27,6 @@
   <option id="log">
     <label>Log</label>
     <description>Delete the log file which contains information about the last writing session(s).</description>
-    <action command="delete" search="glob" path="~/.kde/share/apps/k3b/*.log" />
+    <action command="delete" search="glob" path="~/.kde/share/apps/k3b/*.log"/>
   </option>
 </cleaner>

@@ -21,21 +21,20 @@ Cinnamon cleaner by Theatre X
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-
 <cleaner id="cinnamon" os="linux">
   <label>Cinnamon</label>
   <description>Linux Mint's default interface</description>
   <option id="cache">
     <label>Cache</label>
     <description>Delete cache for applet, desklet, and theme images in Cinnamon when using the "Get More Online" menus.</description>
-    <action command="delete" search="glob" path="~/.cinnamon/spices.cache/applet/*" />
-    <action command="delete" search="glob" path="~/.cinnamon/spices.cache/desklet/*" />
-    <action command="delete" search="glob" path="~/.cinnamon/spices.cache/theme/*" />
+    <action command="delete" search="glob" path="~/.cinnamon/spices.cache/applet/*"/>
+    <action command="delete" search="glob" path="~/.cinnamon/spices.cache/desklet/*"/>
+    <action command="delete" search="glob" path="~/.cinnamon/spices.cache/theme/*"/>
   </option>
   <option id="recent">
-    <label>Recent Files</label>  
+    <label>Recent Files</label>
     <description>Delete the Recent Files content.</description>
     <warning>This will not clear the Recent Files menu.</warning>
-    <action command="delete" search="file" path="~/.local/share/recently-used.xbel" />
+    <action command="delete" search="file" path="~/.local/share/recently-used.xbel"/>
   </option>
 </cleaner>
