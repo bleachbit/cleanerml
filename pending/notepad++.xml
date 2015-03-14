@@ -2,10 +2,8 @@
 <!--
 
     BleachBit
-    Copyright (C) 2014 Andrew Ziem
+    Copyright (C) 2015 Andrew Ziem
     http://bleachbit.sourceforge.net
-
-	k3b cleaner by "Theatre X"
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -20,13 +18,17 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+	@app     Notepad++
+	@link    http://notepad-plus-plus.org/
+	@os      Windows
+	@version 0.1.0
 -->
-<cleaner id="k3b">
-  <label>k3b</label>
-  <description>Disc writing software</description>
-  <option id="log">
-    <label>Log</label>
-    <description>Delete the log file which contains information about the last writing session(s).</description>
-    <action command="delete" search="glob" path="~/.kde/share/apps/k3b/*.log"/>
+<cleaner id="notepad++" os="windows">
+  <label>Notepad++</label>
+  <description>Editor</description>
+  <option id="backup">
+    <label>Backup files</label>
+    <description>Delete the backup files</description>
+    <action command="delete" search="walk.files" path="$APPDATA\Notepad++\backup"/>
   </option>
 </cleaner>
