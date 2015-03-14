@@ -18,7 +18,11 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-	Ruby Cleaner v0.1
+    @app     Ruby
+    @link    https://www.ruby-lang.org
+    @link    http://rubyinstaller.org/
+    @os      Windows
+    @version 0.1.0
 -->
 <cleaner id="ruby" os="windows">
   <label>Ruby</label>
