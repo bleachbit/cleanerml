@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2015 Andrew Ziem
+    http://bleachbit.sourceforge.net
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	@app     Sourcetree
+	@os      Windows
+	@version 0.1.0
+-->
+<cleaner id="sourcetree" os="windows">
+  <label>SourceTree</label>
+  <description>Source Control Management</description>
+  <option id="logs">
+    <label>Logs</label>
+    <description>Delete the logs (keep latest log)</description>
+    <!-- This application used in software development so deleting all logs is a bad idea -->
+    <action command="delete" search="walk.all" path="$LOCALAPPDATA\Atlassian\SourceTree\" regex="\w+\.log(\.\d+)$"/>
+  </option>
+  <option id="cache">
+    <label>Cache</label>
+    <description>Delete the cache</description>
+    <action search="walk.all" command="delete" path="$LOCALAPPDATA\Atlassian\SourceTree\cache"/>
+  </option>
+</cleaner>
