@@ -20,7 +20,7 @@
 
 	@app     Adobe Common
 	@os      Windows
-	@version 0.1.0
+	@version 0.2.0
 -->
 <cleaner id="adobe_common" os="windows">
   <label>Adobe</label>
@@ -36,6 +36,8 @@
   <option id="cache">
     <label>Cache</label>
     <description>Delete the cache</description>
-    <action command="delete" search="glob" path="$LOCALAPPDATA\Adobe\CameraRaw\Cache\Cache*.dat"/>
+    <action command="delete" search="glob"       path="$LOCALAPPDATA\Adobe\CameraRaw\Cache\Cache*.dat"/>
+	<action command="delete" search="walk.files" path="$APPDATA\Adobe\Common\Media Cache Files\"/>
+    <action command="delete" search="walk.files" path="$APPDATA\Adobe\Common\Media Cache\"/>
   </option>
 </cleaner>
