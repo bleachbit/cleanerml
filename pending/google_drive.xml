@@ -18,6 +18,10 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+    @app     Google Drive
+    @link    https://www.google.com/drive/
+    @os      Windows
+    @version 0.1.0
 -->
 <cleaner id="google_drive" os="windows">
   <label>Google Drive</label>
