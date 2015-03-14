@@ -46,8 +46,8 @@
     <action command="delete" search="walk.all" path="$LOCALAPPDATA\VirtualStore\Program Files*\Trillian\Users\Default\instantlookup"/>
   </option>
   <option id="crash_repots">
-    <label>Crash Reports</label>
-    <description>Delete crash reports</description>
+    <label>Crash reports</label>
+    <description>Delete the files</description>
     <action command="delete" search="walk.all" path="$APPDATA\Trillian\Crash Files\"/>
     <action command="delete" search="walk.all" path="$PROGRAMFILES\Trillian\Crash Files\"/>
     <action command="delete" search="walk.all" path="$LOCALAPPDATA\VirtualStore\Program Files*\Trillian\Crash Files\"/>
