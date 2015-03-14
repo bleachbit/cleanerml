@@ -50,6 +50,6 @@
     <label>Installers</label>
     <description>Delete cached patches and installers</description>
     <action command="delete" search="glob" path="$PROGRAMFILES\Adobe\Adobe\AdobePatchFiles\*.*"/>
-    <action command="delete" search="glob" path="$PROGRAMFILES(X86)\Adobe\Adobe\AdobePatchFiles\*.*"/>
+    <action command="delete" search="glob" path="$PROGRAMW6432\Adobe\Adobe\AdobePatchFiles\*.*"/>
   </option>
 </cleaner>
