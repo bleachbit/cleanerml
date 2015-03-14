@@ -29,14 +29,14 @@
   <option id="logs">
     <label>Chat Logs</label>
     <description>Delete the chat logs</description>
-	<warning>All chat logs not synced to the Trillian Cloud will be lost.</warning>
+    <warning>All chat logs not synced to the Trillian Cloud will be lost.</warning>
     <action command="delete" search="walk.all" path="$APPDATA\Trillian\users\*\logs"/>
   </option>
   <option id="cache">
     <label>Cache</label>
     <description>Delete the cache</description>
     <action command="delete" search="walk.all" path="$APPDATA\Trillian\users\global\skin_cache"/>
-    <action command="delete" search="glob"     path="$APPDATA\Trillian\users\*\buddies.*.xml"/>
+    <action command="delete" search="glob" path="$APPDATA\Trillian\users\*\buddies.*.xml"/>
     <action command="delete" search="walk.all" path="$APPDATA\Trillian\users\*\cache"/>
     <action command="delete" search="walk.all" path="$APPDATA\Trillian\users\*\buddyicons"/>
     <action command="delete" search="walk.all" path="$PROGRAMFILES\Trillian\Users\Default\buddyicons"/>
