@@ -18,9 +18,10 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-	@app     Spotify
-	@os      Windows
-	@version 0.1.0
+    @app     Spotify
+    @link    https://www.spotify.com
+    @os      Windows
+    @version 0.1.0
 -->
 <cleaner id="spotify" os="windows">
   <label>Spotify</label>
