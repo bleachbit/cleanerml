@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2015 Andrew Ziem
+    http://bleachbit.sourceforge.net
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	@app     JDownloader 2
+	@os      Windows
+	@version 0.1.0
+-->
+<cleaner id="jdownloader2" os="windows">
+  <label>JDownloader 2</label>
+  <description>Download Manager</description>
+  <running type="exe">JDownloader2.exe</running>
+  <option id="cache">
+    <label>Cache</label>
+    <description>Delete the cache</description>
+    <action command="delete" search="walk.all" path="$LOCALAPPDATA\JDownloader*2*\captchas\"/>
+    <action command="delete" search="walk.all" path="$LOCALAPPDATA\JDownloader*2*\tmp\"/>
+	<action command="delete" search="glob"     path="$LOCALAPPDATA\JDownloader*2*\cfg\CaptchaDialogDimensions_*.json"/>
+    <action command="delete" search="walk.all" path="$LOCALAPPDATA\VirtualStore\Program Files*\JDownloader*2*\captchas\"/>
+    <action command="delete" search="walk.all" path="$LOCALAPPDATA\VirtualStore\Program Files*\JDownloader*2*\tmp\"/>
+    <action command="delete" search="glob"     path="$LOCALAPPDATA\VirtualStore\Program Files*\JDownloader*2*\cfg\CaptchaDialogDimensions_*.json"/>
+  </option>
+  <option id="logs">
+    <label>Logs</label>
+    <description>Delete the logs</description>
+	<action command="delete" search="walk.all" path="$LOCALAPPDATA\JDownloader*2*\logs\"/>
+	<action command="delete" search="walk.all" path="$PROGRAMFILES\JDownloader*2*\logs\"/>
+	<action command="delete" search="walk.all" path="$LOCALAPPDATA\VirtualStore\Program Files*\JDownloader*2*\logs\"/>
+  </option>
+  <option id="backups">
+    <label>Backups</label>
+    <description>Delete config backups</description>
+	<action command="delete" search="glob" path="$LOCALAPPDATA\JDownloader*2*\cfg_backup_*"/>
+  </option>
+</cleaner>
