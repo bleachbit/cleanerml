@@ -34,6 +34,6 @@
     <label>Cache</label>
     <description>Delete the cache</description>
     <action command="delete" search="walk.all" path="$LOCALAPPDATA\Atlassian\SourceTree\cache\"/>
-    <action command="delete" search="glob"     path="$PROGRAMDATA\Caphyon\Advanced Installer\*\SourceTreeSetup_*.exe"/>
+    <action command="delete" search="glob" path="$PROGRAMDATA\Caphyon\Advanced Installer\*\SourceTreeSetup_*.exe"/>
   </option>
 </cleaner>
