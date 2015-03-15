@@ -22,6 +22,7 @@
     @link    https://www.trillian.im/
     @os      Windows
     @version 0.1.0
+
 -->
 <cleaner id="trillian" os="windows">
   <label>Trillian</label>

@@ -22,6 +22,7 @@
     @link    https://www.vagrantup.com/
     @os      Windows
     @version 0.1.0
+
 -->
 <cleaner id="vagrant" os="windows">
   <label>Vagrant</label>

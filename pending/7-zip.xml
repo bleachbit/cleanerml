@@ -22,6 +22,7 @@
     @link    http://7-zip.org/
     @os      Windows
     @version 0.1.0
+
 -->
 <!-- 7-Zip stores history in the windows Registry, so this cleaner is more aimed towards maintaining privacy rather then freeing up disk space -->
 <!-- 2McCoy7 (10/01/2014): tested on Windows 7 and BleachBit 1.0 -->
