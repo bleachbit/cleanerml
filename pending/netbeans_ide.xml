@@ -19,8 +19,9 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 	@app     Netbeans 8.x
+	@link    https://netbeans.org/
 	@os      Windows
-	@version 0.1.0
+	@version 0.2.0
 -->
 <cleaner id="netbeans_ide" os="windows">
   <label>NetBeans IDE</label>
@@ -29,15 +30,12 @@
   <running type="exe">netbeans64.exe</running>
   <option id="logs">
     <label>Logs</label>
-    <description>Delete the logs (keep latest log)</description>
-    <!-- This application used in software development so deleting all logs is a bad idea -->
-    <action command="delete" search="walk.all" path="$APPDATA\NetBeans\8.*\var\log\" regex="\w+(\.\d+)$"/>
+    <description>Delete the logs</description>
+    <action command="delete" search="walk.all" path="$APPDATA\NetBeans\8.*\var\log"/>
   </option>
   <option id="cache">
     <label>Cache</label>
-    <description>
-Delete the cache.
-Cache will be regenerated on next application startup. Reduces cache size by removing outdated files.</description>
-    <action search="walk.all" command="delete" path="$LOCALAPPDATA\NetBeans\Cache"/>
+    <description>Delete the cache</description>
+    <action command="delete" search="walk.all" path="$LOCALAPPDATA\NetBeans\Cache"/>
   </option>
 </cleaner>
