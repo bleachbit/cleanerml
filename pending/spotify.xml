@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2015 Andrew Ziem
+    http://bleachbit.sourceforge.net
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+    @app     Spotify
+    @link    https://www.spotify.com
+    @os      Windows
+    @version 0.1.0
+-->
+<cleaner id="spotify" os="windows">
+  <label>Spotify</label>
+  <description>Music Streaming Client</description>
+  <option id="crash_repots">
+    <label>Crash Reports</label>
+    <description>Delete crash reports</description>
+    <action command="delete" search="walk.all" path="$LOCALAPPDATA\Spotify\Crash Reports\"/>
+  </option>
+  <option id="cache">
+    <label>Cache</label>
+    <description>Delete the cache</description>
+	<!-- @todo The Storage Folder can be moved. The location is saved in
+         "%AppData%\Spotify\prefs" as storage.location="D:\\TEMP\\Spotify" -->
+	<action command="delete" search="walk.all" path="$LOCALAPPDATA\Spotify\Storage\"/>
+    <action command="delete" search="walk.all" path="$LOCALAPPDATA\Spotify\Browser\"/>
+    <action command="delete" search="glob"     path="$LOCALAPPDATA\Spotify\old_*"/>
+  </option>
+</cleaner>
