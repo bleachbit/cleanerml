@@ -20,13 +20,15 @@
 
 	@app     Calibre
 	@version 0.1.0
+	@os Windows, GNU+Linux
 -->
-<cleaner id="calibre" os="windows">
+<cleaner id="calibre">
   <label>Calibre</label>
   <description>E-book management</description>
   <option id="cache">
     <label>Cache</label>
     <description>Delete the cache</description>
     <action search="walk.all" command="delete" path="$LOCALAPPDATA\calibre-cache"/>
+    <action search="walk.all" command="delete" path="~/.cache/calibre"/>
   </option>
 </cleaner>
