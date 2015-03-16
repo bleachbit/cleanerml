@@ -18,13 +18,15 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-	@app     Calibre
-	@version 0.1.0
-	@os Windows, GNU+Linux
+    @app     Calibre
+    @link    http://jdownloader.org/
+    @version 0.1.0
+    @os      Windows, GNU+Linux
 -->
 <cleaner id="calibre">
   <label>Calibre</label>
   <description>E-book management</description>
+  <running type="exe">calibre.exe</running>
   <option id="cache">
     <label>Cache</label>
     <description>Delete the cache</description>
