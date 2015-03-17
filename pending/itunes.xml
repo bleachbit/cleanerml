@@ -58,7 +58,7 @@
     <label>Temporary Files</label>
     <description>Delete temporary files</description>
     <action search="glob" command="delete" path="$USERPROFILE\My Music\iTunes\*.tmp"/>
-	<action search="walk.all" command="delete" path="$LocalAppData\Apple Computer\iTunes\iPhone Temporary Files"/>
-	<action search="glob" command="delete" path="$LocalAppData\VirtualStore\Program Files*\Apple Computer\iTunes\iPhone Temporary Files\*"/>
+    <action search="walk.all" command="delete" path="$LocalAppData\Apple Computer\iTunes\iPhone Temporary Files"/>
+    <action search="glob" command="delete" path="$LocalAppData\VirtualStore\Program Files*\Apple Computer\iTunes\iPhone Temporary Files\*"/>
   </option>
 </cleaner>
