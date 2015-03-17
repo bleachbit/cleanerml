@@ -19,7 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
     @app     Calibre
-    @link    http://jdownloader.org/
+    @link    http://calibre-ebook.com/
     @version 0.1.0
     @os      Windows, GNU+Linux
 -->
@@ -38,6 +38,8 @@
     <description>Delete the logs</description>
     <action command="delete" search="file" path="~/.config/calibre/server_access_log.txt"/>
     <action command="delete" search="file" path="~/.config/calibre/server_error_log.txt"/>
+    <action command="delete" search="file" path="$APPDATA\calibre\server_error_log.txt"/>
+    <action command="delete" search="file" path="$APPDATA\calibre\server_access_log.txt"/>
   </option>
   <option id="vacuum">
     <label>Vacuum</label>
