@@ -2,7 +2,7 @@
 <!--
 
     BleachBit
-    Copyright (C) 2012 Andrew Ziem
+    Copyright (C) 2015 Andrew Ziem
     http://bleachbit.sourceforge.net
 
     This program is free software: you can redistribute it and/or modify
@@ -18,14 +18,26 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+    @app     Spotify
+    @link    https://www.spotify.com
+    @os      Windows
+    @version 0.1.0
 -->
-<cleaner id="adobe_media_cache" os="windows">
-  <label>Adobe Media Cache</label>
-  <description>Cache shared by several Adobe products</description>
+<cleaner id="spotify" os="windows">
+  <label>Spotify</label>
+  <description>Music Streaming Client</description>
+  <option id="crash_repots">
+    <label>Crash Reports</label>
+    <description>Delete crash reports</description>
+    <action command="delete" search="walk.all" path="$LOCALAPPDATA\Spotify\Crash Reports\"/>
+  </option>
   <option id="cache">
     <label>Cache</label>
     <description>Delete the cache</description>
-    <action search="walk.files" command="delete" path="$APPDATA\Adobe\Common\Media Cache Files\"/>
-    <action search="walk.files" command="delete" path="$APPDATA\Adobe\Common\Media Cache\"/>
+	<!-- @todo The Storage Folder can be moved. The location is saved in
+         "%AppData%\Spotify\prefs" as storage.location="D:\\TEMP\\Spotify" -->
+	<action command="delete" search="walk.all" path="$LOCALAPPDATA\Spotify\Storage\"/>
+    <action command="delete" search="walk.all" path="$LOCALAPPDATA\Spotify\Browser\"/>
+    <action command="delete" search="glob"     path="$LOCALAPPDATA\Spotify\old_*"/>
   </option>
 </cleaner>

@@ -61,9 +61,9 @@ FIXME: There have been many changes in Firefox that you can see in the file http
     <label>Offline Cache</label>
     <description>Clean the cache collected while visiting pages offline</description>
     <action command="delete" search="glob" path="~/.gnuzilla/icecat/*.default/OfflineCache/index.sqlite"/>
-    <action command="delete" search="glob" path="~/.cache/mozilla/icecat/*.default/OfflineCache/*"
+    <action command="delete" search="glob" path="~/.cache/mozilla/icecat/*.default/OfflineCache/*"/>
   </option>
-  <option id="passwords"
+  <option id="passwords">
     <label>Passwords</label>
     <description>Delete all of your saved passwords for websites</description>
     <warning>This will delete your saved passwords.</warning>

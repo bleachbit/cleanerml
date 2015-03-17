@@ -5,8 +5,6 @@
     Copyright (C) 2015 Andrew Ziem
     http://bleachbit.sourceforge.net
 
-Cinnamon cleaner by Theatre X
-
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -20,21 +18,24 @@ Cinnamon cleaner by Theatre X
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+    @app     Google Drive
+    @link    https://www.google.com/drive/
+    @os      Windows
+    @version 0.1.0
 -->
-<cleaner id="cinnamon" os="linux">
-  <label>Cinnamon</label>
-  <description>Linux Mint's default interface</description>
-  <option id="cache">
+<cleaner id="google_drive" os="windows">
+  <label>Google Drive</label>
+  <description>File backup service</description>
+  <option id="crash_reports">
     <label>Cache</label>
-    <description>Delete cache for applet, desklet, and theme images in Cinnamon when using the "Get More Online" menus.</description>
-    <action command="delete" search="glob" path="~/.cinnamon/spices.cache/applet/*"/>
-    <action command="delete" search="glob" path="~/.cinnamon/spices.cache/desklet/*"/>
-    <action command="delete" search="glob" path="~/.cinnamon/spices.cache/theme/*"/>
+    <description>Delete the cache</description>
+    <action command="delete" search="walk.all" path="$LOCALAPPDATA\Google\Drive\CrashReports"/>
   </option>
-  <option id="recent">
-    <label>Recent Files</label>
-    <description>Delete the Recent Files content.</description>
-    <warning>This will not clear the Recent Files menu.</warning>
-    <action command="delete" search="file" path="~/.local/share/recently-used.xbel"/>
+  <option id="logs">
+    <label>Logs</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="glob" path="$LOCALAPPDATA\Google\Drive\*.log"/>
+    <action command="delete" search="glob" path="$LOCALAPPDATA\VirtualStore\Program Files*\Google\Drive\*.log"/>
+    <action command="delete" search="glob" path="$ProgramFiles\Google\Drive\*.log"/>
   </option>
 </cleaner>
