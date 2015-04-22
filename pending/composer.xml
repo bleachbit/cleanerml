@@ -21,9 +21,9 @@
     @app     Composer
     @link    https://getcomposer.org/
     @os      Windows
-    @version 0.1.0
+    @version 0.1.1
 -->
-<cleaner id="composer">
+<cleaner id="composer" os="windows">
   <label>Composer</label>
   <description>PHP Package Manager</description>
   <option id="cache">
