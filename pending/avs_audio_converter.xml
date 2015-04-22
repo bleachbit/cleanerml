@@ -2,10 +2,8 @@
 <!--
 
     BleachBit
-    Copyright (C) 2014 Andrew Ziem
+    Copyright (C) 2012 Andrew Ziem
     http://bleachbit.sourceforge.net
-
-	k3b cleaner by "Theatre X"
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -20,13 +18,23 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+    @app     AVS Audio Converter
+    @link    http://www.avs4you.com/
+    @os      Windows
+    @version 0.1.0
+
 -->
-<cleaner id="k3b">
-  <label>k3b</label>
-  <description>Disc writing software</description>
-  <option id="log">
-    <label>Log</label>
-    <description>Delete the log file which contains information about the last writing session(s).</description>
-    <action command="delete" search="glob" path="~/.kde/share/apps/k3b/*.log"/>
+<cleaner id="avs_audio_converter" os="windows">
+  <label>AVS Audio Converter</label>
+  <description>Converter</description>
+  <option id="logs">
+    <label>Logs</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="glob" path="$APPDATA\AVS4YOU\AVSAudioConverter\*.log"/>
+  </option>
+  <option id="mru">
+    <label>Most recently used</label>
+    <description>Delete the most recently used list</description>
+    <action command="delete" search="file" path="$APPDATA\AVS4YOU\AVSAudioConverter\RecentFiles.txt"/>
   </option>
 </cleaner>
