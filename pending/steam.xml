@@ -42,8 +42,8 @@
     <description>Delete HTML and HTTP cache</description>
     <action command="delete" search="walk.all" path="$ProgramFiles\Steam\config\htmlcache\*"/>
     <action command="delete" search="walk.all" path="$ProgramFiles\Steam\appcache\httpcache\*"/>
-	<action command="delete" search="walk.all" path="$LocalAppData\VirtualStore\Program Files*\Steam\config\htmlcache\*"/>
-	<action command="delete" search="walk.all" path="$LocalAppData\VirtualStore\Program Files*\Steam\appcache\httpcache\*"/>
+    <action command="delete" search="walk.all" path="$LocalAppData\VirtualStore\Program Files*\Steam\config\htmlcache\*"/>
+    <action command="delete" search="walk.all" path="$LocalAppData\VirtualStore\Program Files*\Steam\appcache\httpcache\*"/>
     <action command="delete" search="walk.all" path="~/.steam/config/htmlcache/*"/>
     <action command="delete" search="walk.all" path="~/.steam/appcache/httpscache/*"/>
   </option>
