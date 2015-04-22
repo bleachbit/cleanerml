@@ -21,7 +21,7 @@
     @app     iTunes
     @link    https://www.apple.com/itunes/
     @os      Windows
-    @version 0.1.0
+    @version 0.2.0
 -->
 <cleaner id="itunes" os="windows">
   <label>iTunes</label>
@@ -60,5 +60,10 @@
     <action search="glob" command="delete" path="$MUSIC\iTunes\*.tmp"/>
     <action search="walk.all" command="delete" path="$LocalAppData\Apple Computer\iTunes\iPhone Temporary Files"/>
     <action search="glob" command="delete" path="$LocalAppData\VirtualStore\Program Files*\Apple Computer\iTunes\iPhone Temporary Files\*"/>
+  </option>
+  <option id="ios_app">
+    <label>iOS App files</label>
+    <description>Delete iOS App installation files</description>
+    <action search="glob" command="delete" path="$MUSIC\iTunes\iTunes Media\Mobile Applications\*.ipa"/>
   </option>
 </cleaner>
