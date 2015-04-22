@@ -34,7 +34,7 @@
   <option id="cache_artwork">
     <label>Album Artwork Cache</label>
     <description>Delete the cache</description>
-    <action search="walk.all" command="delete" path="$USERPROFILE\My Music\iTunes\Album Artwork\Cache"/>
+    <action search="walk.all" command="delete" path="$MUSIC\iTunes\Album Artwork\Cache"/>
   </option>
   <option id="logs">
     <label>Logs</label>
@@ -52,12 +52,12 @@
   <option id="previous_libraries">
     <label>Previous Libraries</label>
     <description>Delete the previous libraries</description>
-    <action search="walk.all" command="delete" path="$USERPROFILE\My Music\iTunes\Previous iTunes Libraries"/>
+    <action search="walk.all" command="delete" path="$MUSIC\iTunes\Previous iTunes Libraries"/>
   </option>
   <option id="temp_files">
     <label>Temporary Files</label>
     <description>Delete temporary files</description>
-    <action search="glob" command="delete" path="$USERPROFILE\My Music\iTunes\*.tmp"/>
+    <action search="glob" command="delete" path="$MUSIC\iTunes\*.tmp"/>
     <action search="walk.all" command="delete" path="$LocalAppData\Apple Computer\iTunes\iPhone Temporary Files"/>
     <action search="glob" command="delete" path="$LocalAppData\VirtualStore\Program Files*\Apple Computer\iTunes\iPhone Temporary Files\*"/>
   </option>
