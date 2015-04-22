@@ -18,24 +18,24 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-	@app     Netbeans 8.x
-	@link    https://netbeans.org/
-	@os      Windows
-	@version 0.2.0
+    @app     Google Drive
+    @link    https://www.google.com/drive/
+    @os      Windows
+    @version 0.1.0
 -->
-<cleaner id="netbeans_ide" os="windows">
-  <label>NetBeans IDE</label>
-  <description>Integrated development environment (IDE)</description>
-  <running type="exe">netbeans.exe</running>
-  <running type="exe">netbeans64.exe</running>
+<cleaner id="google_drive" os="windows">
+  <label>Google Drive</label>
+  <description>File backup service</description>
+  <option id="crash_reports">
+    <label>Cache</label>
+    <description>Delete the cache</description>
+    <action command="delete" search="walk.all" path="$LOCALAPPDATA\Google\Drive\CrashReports"/>
+  </option>
   <option id="logs">
     <label>Logs</label>
     <description>Delete the logs</description>
-    <action command="delete" search="walk.all" path="$APPDATA\NetBeans\8.*\var\log"/>
-  </option>
-  <option id="cache">
-    <label>Cache</label>
-    <description>Delete the cache</description>
-    <action command="delete" search="walk.all" path="$LOCALAPPDATA\NetBeans\Cache"/>
+    <action command="delete" search="glob" path="$LOCALAPPDATA\Google\Drive\*.log"/>
+    <action command="delete" search="glob" path="$LOCALAPPDATA\VirtualStore\Program Files*\Google\Drive\*.log"/>
+    <action command="delete" search="glob" path="$ProgramFiles\Google\Drive\*.log"/>
   </option>
 </cleaner>
