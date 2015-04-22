@@ -23,7 +23,7 @@
 -->
 <cleaner id="flashgot">
   <label>FlashGot</label>
-    <description>Internet multimedia extraction tool.</description>
+  <description>Internet multimedia extraction tool.</description>
   <option id="log">
     <label>Log</label>
     <description>Delete the add-on's log file contains download history</description>
