@@ -33,24 +33,24 @@
     <label>Thumbnails: Music</label>
     <description>Delete all music thumbnails (album covers)</description>
     <action command="delete" search="walk.files" path="~/.xbmc/userdata/Thumbnails/Music/"/>
-    <action command="delete" search="walk.files" path="~/.kodi/userdata/Thumbnails/Music/" />
+    <action command="delete" search="walk.files" path="~/.kodi/userdata/Thumbnails/Music/"/>
   </option>
   <option id="th-pics">
     <label>Thumbnails: Pictures</label>
     <description>Delete all thumbnails of pictures</description>
     <action command="delete" search="walk.files" path="~/.xbmc/userdata/Thumbnails/Pictures/"/>
-    <action command="delete" search="walk.files" path="~/.kodi/userdata/Thumbnails/Pictures/" />
+    <action command="delete" search="walk.files" path="~/.kodi/userdata/Thumbnails/Pictures/"/>
   </option>
   <option id="th-video">
     <label>Thumbnails: Video</label>
     <description>Delete all video thumbnails</description>
     <action command="delete" search="walk.files" path="~/.xbmc/userdata/Thumbnails/Video/"/>
-    <action command="delete" search="walk.files" path="~/.kodi/userdata/Thumbnails/Video/" />
+    <action command="delete" search="walk.files" path="~/.kodi/userdata/Thumbnails/Video/"/>
   </option>
   <option id="tmp">
     <label>Temporary files</label>
     <description>Delete temporary files created by XBMC</description>
     <action command="delete" search="walk.all" path="~/.xbmc/temp/"/>
-    <action command="delete" search="walk.all" path="~/.kodi/temp/" />
+    <action command="delete" search="walk.all" path="~/.kodi/temp/"/>
   </option>
 </cleaner>
