@@ -2,7 +2,7 @@
 <!--
 
     BleachBit
-    Copyright (C) 2015 Andrew Ziem
+    Copyright (C) 2012 Andrew Ziem
     http://bleachbit.sourceforge.net
 
     This program is free software: you can redistribute it and/or modify
@@ -18,24 +18,23 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-	@app     Netbeans 8.x
-	@link    https://netbeans.org/
-	@os      Windows
-	@version 0.2.0
+    @app     AVS Audio Converter
+    @link    http://www.avs4you.com/
+    @os      Windows
+    @version 0.1.0
+
 -->
-<cleaner id="netbeans_ide" os="windows">
-  <label>NetBeans IDE</label>
-  <description>Integrated development environment (IDE)</description>
-  <running type="exe">netbeans.exe</running>
-  <running type="exe">netbeans64.exe</running>
+<cleaner id="avs_audio_converter" os="windows">
+  <label>AVS Audio Converter</label>
+  <description>Converter</description>
   <option id="logs">
     <label>Logs</label>
     <description>Delete the logs</description>
-    <action command="delete" search="walk.all" path="$APPDATA\NetBeans\8.*\var\log"/>
+    <action command="delete" search="glob" path="$APPDATA\AVS4YOU\AVSAudioConverter\*.log"/>
   </option>
-  <option id="cache">
-    <label>Cache</label>
-    <description>Delete the cache</description>
-    <action command="delete" search="walk.all" path="$LOCALAPPDATA\NetBeans\Cache"/>
+  <option id="mru">
+    <label>Most recently used</label>
+    <description>Delete the most recently used list</description>
+    <action command="delete" search="file" path="$APPDATA\AVS4YOU\AVSAudioConverter\RecentFiles.txt"/>
   </option>
 </cleaner>
