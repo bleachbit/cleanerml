@@ -34,6 +34,7 @@
   <option id="cache_artwork">
     <label>Album Artwork Cache</label>
     <description>Delete the cache</description>
+	<warning>All covers will be re-cached on the next startup. This will slow down the application significantly until this process is finished.</warning>
     <action search="walk.all" command="delete" path="$MUSIC\iTunes\Album Artwork\Cache"/>
   </option>
   <option id="logs">
@@ -60,6 +61,7 @@
     <action search="glob" command="delete" path="$MUSIC\iTunes\*.tmp"/>
     <action search="walk.all" command="delete" path="$LocalAppData\Apple Computer\iTunes\iPhone Temporary Files"/>
     <action search="glob" command="delete" path="$LocalAppData\VirtualStore\Program Files*\Apple Computer\iTunes\iPhone Temporary Files\*"/>
+	<!--<action search="glob" command="delete" path="$AppData\Apple Computer\iTunes\iPhone Software Updates\*.ipsw"/> files cannot be deleted!?-->
   </option>
   <option id="ios_app">
     <label>iOS App files</label>
