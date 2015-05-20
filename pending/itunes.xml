@@ -21,11 +21,12 @@
     @app     iTunes
     @link    https://www.apple.com/itunes/
     @os      Windows
-    @version 0.2.0
+    @version 0.3.0
 -->
 <cleaner id="itunes" os="windows">
   <label>iTunes</label>
   <description>Media Player</description>
+  <running type="exe">iTunes.exe</running>
   <option id="cache">
     <label>Cache</label>
     <description>Delete the cache</description>
