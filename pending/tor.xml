@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+BleachBit
+Copyright (C) 2014 Andrew Ziem
+http://bleachbit.sourceforge.net
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>.
+-->
+<cleaner id="tor" os="linux">
+  <label>TOR</label>
+  <description>The Onion Router</description>
+  <option id="delete_cache">
+    <label>Cache</label>
+    <description>Delete cached certs and microdescs</description>
+    <action search="file" command="delete" path="~/.tor/cached-certs"/>
+    <action search="file" command="delete" path="~/.tor/cached-microdesc-consensus"/>
+    <action search="file" command="delete" path="~/.tor/cached-microdescs.new"/>
+    <action search="file" command="delete" path="/var/lib/tor/cached-certs"/>
+    <action search="file" command="delete" path="/var/lib/tor/cached-microdesc-consensus"/>
+    <action search="file" command="delete" path="/var/lib/tor/cached-microdescs.new"/>
+  </option>
+  <option id="state">
+    <label>State</label>
+    <description>Removes last state metadata file</description>
+    <action search="file" command="delete" path="~/.tor/state"/>
+    <action search="file" command="delete" path="/var/lib/tor/state"/>
+  </option>
+</cleaner>
