@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2015 Andrew Ziem
+    http://bleachbit.sourceforge.net
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+    @app     Composer
+    @link    https://getcomposer.org/
+    @os      Windows
+    @version 0.1.1
+-->
+<cleaner id="composer" os="windows">
+  <label>Composer</label>
+  <description>PHP Package Manager</description>
+  <option id="cache">
+    <label>Cache</label>
+    <description>Delete cached packages </description>
+    <action command="delete" search="walk.all" path="$LOCALAPPDATA\Composer\files\*"/>
+    <action command="delete" search="walk.all" path="$LOCALAPPDATA\Composer\repo\*"/>
+    <action command="delete" search="walk.all" path="$LOCALAPPDATA\Composer\vcs\*"/>
+  </option>
+  <option id="backup">
+    <label>Backup versions</label>
+    <description>Delete old versions of the composer.phar</description>
+    <action command="delete" search="glob" path="$APPDATA\Composer\*-old.phar"/>
+  </option>
+</cleaner>
