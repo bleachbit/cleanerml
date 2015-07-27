@@ -20,13 +20,14 @@
 
 	@app     Calibre
     @link    http://calibre-ebook.com/
-    @os      Windows
+    @os      Windows, GNU+Linux
 	@version 0.1.0
-	@os Windows, GNU+Linux
+
 -->
 <cleaner id="calibre">
   <label>Calibre</label>
   <description>E-book management</description>
+  <running type="exe">calibre.exe</running>
   <option id="cache">
     <label>Cache</label>
     <description>Delete the cache</description>
@@ -38,6 +39,8 @@
     <description>Delete the logs</description>
     <action command="delete" search="file" path="~/.config/calibre/server_access_log.txt"/>
     <action command="delete" search="file" path="~/.config/calibre/server_error_log.txt"/>
+    <action command="delete" search="file" path="$APPDATA\calibre\server_error_log.txt"/>
+    <action command="delete" search="file" path="$APPDATA\calibre\server_access_log.txt"/>
   </option>
   <option id="vacuum">
     <label>Vacuum</label>
