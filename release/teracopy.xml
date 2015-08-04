@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit cleaner for
+    Teracopy v2.2.2 (by Code Sector) and compatible versions
+    
+    This CleanerML mark-up is intended for use with the BleachBit program
+    (available at http://bleachbit.sourceforge.net) and was developed by
+    Erratalog blog (http://erratalog.blogspot.com). The mark-up may be
+    modified and/or redistributed so long as the Erratalog blog is cited
+    as a source for the mark-up or derivative works developed from it.
+
+-->
+<cleaner id="teracopy" os="windows">
+  <label>Teracopy</label>
+  <description>File copier manager</description>
+  <option id="lastdir">
+    <label>Last Target Folder</label>
+    <description>Deletes the last target folder path used.</description>
+    <action command="winreg" path="HKCU\Software\Code Sector\TeraCopy" name="LastTargetFolder"/>
+  </option>
+  <option id="log">
+    <label>Transfer history log</label>
+    <description>Deletes the history log.</description>
+    <action command="delete" search="glob" path="$APPDATA\TeraCopy\Transfer.log"/>
+  </option>
+  <option id="last">
+    <label>Last copied list</label>
+    <description>Deletes the list.</description>
+    <action command="delete" search="glob" path="$APPDATA\TeraCopy\FileList.dat"/>
+  </option>
+</cleaner>
