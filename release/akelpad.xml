@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2008-2015 Andrew Ziem
+    http://bleachbit.sourceforge.net
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+    CleanerML   : Akelpad v4.7.9 (by Kuznetsov and Aleksander)
+    Contributor : Erratalog
+    Web site    : http://erratalog.blogspot.com
+
+
+-->
+<cleaner id="akelpad" os="windows">
+  <label>Akelpad</label>
+  <description>Text editor</description>
+  <option id="recent">
+    <label>Recently accessed files</label>
+    <description>Deletes recent files entries from File menu.</description>
+    <action command="winreg" path="HKCU\Software\Akelsoft\AkelPad\Recent"/>
+  </option>
+  <option id="search">
+    <label>Saved search terms</label>
+    <description>Deletes terms from Search drop-down list.</description>
+    <action command="winreg" path="HKCU\Software\Akelsoft\AkelPad\Search"/>
+  </option>
+  <option id="lastdir">
+    <label>Last directory used</label>
+    <description>Deletes directory path trace.</description>
+    <action command="winreg" path="HKCU\Software\Akelsoft\AkelPad\Options" name="LastDirectory"/>
+  </option>
+</cleaner>
