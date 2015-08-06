@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit cleaner for
+    VirtualDub v1.9.11 (by Avery Lee) and compatible versions
+    
+    This CleanerML mark-up is intended for use with the BleachBit program
+    (available at http://bleachbit.sourceforge.net) and was developed by
+    Erratalog blog (http://erratalog.blogspot.com). The mark-up may be
+    modified and/or redistributed so long as the Erratalog blog is cited
+    as a source for the mark-up or derivative works developed from it.
+
+    Warnings are for purge actions that perform deep scans system-wide
+    and which may offer to delete files un-related to VirtualDub.
+
+-->
+<cleaner id="virtualdub" os="windows">
+  <label>VirtualDub</label>
+  <description>Video editor</description>
+  <option id="mru">
+    <label>Most recently used</label>
+    <description>Deletes the most recently used files list entries from the File menu</description>
+    <action command="winreg" path="HKCU\Software\VirtualDub.org\VirtualDub\MRU List"/>
+  </option>
+  <option id="filespec">
+    <label>Saved filespecs</label>
+    <description>Deletes most recently used destination folder record.</description>
+    <action command="winreg" path="HKCU\Software\VirtualDub.org\VirtualDub\Saved filespecs"/>
+  </option>
+  <option id="sylia">
+    <label>Sylia scripts</label>
+    <description>Purges all Sylia script files.</description>
+    <warning>Preview results for Sylia scripts you wish to keep!</warning>
+    <action command="delete" search="deep" regex="\.[Ss][Yy][Ll]$" cache="false"/>
+  </option>
+  <option id="vcf">
+    <label>Config script files</label>
+    <description>Purges all configuration script files.</description>
+    <warning>Preview results for any .VCF scripts you wish to keep!</warning>
+    <action command="delete" search="deep" regex="\.[Vv][Cc][Ff]$" cache="false"/>
+  </option>
+  <option id="jobs">
+    <label>Jobs scripts</label>
+    <description>Purges all jobs files.</description>
+    <warning>Preview results for any .JOBS files you wish to keep!</warning>
+    <action command="delete" search="deep" regex="\.[Jj][Oo][Bbl[Ss]$" cache="false"/>
+  </option>
+  <option id="sparsed">
+    <label>Sparsed AVI files</label>
+    <description>Purges all sparsed AVI files.</description>
+    <warning>Preview results for any .SPARSED files you wish to keep!</warning>
+    <action command="delete" search="deep" regex="\.[Ss][Pp][Aal[Rs][Ss][Ee][Dd]$" cache="false"/>
+  </option>
+</cleaner>
