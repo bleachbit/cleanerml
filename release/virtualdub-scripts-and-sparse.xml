@@ -43,12 +43,12 @@
     <label>Jobs scripts</label>
     <description>Purges all jobs files.</description>
     <warning>Preview results for any .JOBS files you wish to keep!</warning>
-    <action command="delete" search="deep" regex="\.[Jj][Oo][Bbl[Ss]$" cache="false"/>
+    <action command="delete" search="deep" regex="\.[Jj][Oo][Bb][Ss]$" cache="false"/>
   </option>
   <option id="sparsed">
     <label>Sparsed AVI files</label>
     <description>Purges all sparsed AVI files.</description>
     <warning>Preview results for any .SPARSED files you wish to keep!</warning>
-    <action command="delete" search="deep" regex="\.[Ss][Pp][Aal[Rs][Ss][Ee][Dd]$" cache="false"/>
+    <action command="delete" search="deep" regex="\.[Ss][Pp][Aa][Rs][Ss][Ee][Dd]$" cache="false"/>
   </option>
 </cleaner>
