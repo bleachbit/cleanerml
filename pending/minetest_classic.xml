@@ -27,4 +27,10 @@
     <description>Delete the debug logs</description>
     <action command="delete" search="file" path="~/.minetest-classic/debug.txt"/>
   </option>
+  <option id="worlds">
+    <label>Compress world</label>
+    <description>Compress the world database to make it occupy less disk space without deleting it.</description>
+    <warning>This option is slow.</warning>
+    <action command="sqlite.vacuum" search="file" path="~/.minetest-classic/world/map.sqlite"/>
+  </option>
 </cleaner>
