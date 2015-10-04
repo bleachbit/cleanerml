@@ -43,10 +43,10 @@
   </option>
   <option id="vacuum">
     <label>Vacuum</label>
-     <description>Clean database fragmentation to reduce space and improve speed without removing any data</description>
-     <!-- NOTE: "~/Calibre Library/" is the default suggested location, however when first setting up Calibre, the user is
+    <description>Clean database fragmentation to reduce space and improve speed without removing any data</description>
+    <!-- NOTE: "~/Calibre Library/" is the default suggested location, however when first setting up Calibre, the user is
      given the option of choosing a different location - many users may not have their library in the default location -->
-     <action command="sqlite.vacuum" search="file" path="~/Calibre Library/metadata.db"/>
+    <action command="sqlite.vacuum" search="file" path="~/Calibre Library/metadata.db"/>
   </option>
   <!-- FIXME: "~/Calibre Library/metadata_db_prefs_backup.json" contains some information which might be able to be
   cleaned, particularly "gui_view_history": [] which is a 2D array of the 15 most recently opened books. But I'm not

@@ -32,21 +32,21 @@
     <description>Delete the cache</description>
     <action command="delete" search="walk.all" path="$LOCALAPPDATA\JDownloader*2*\captchas\"/>
     <action command="delete" search="walk.all" path="$LOCALAPPDATA\JDownloader*2*\tmp\"/>
-    <action command="delete" search="glob"     path="$LOCALAPPDATA\JDownloader*2*\cfg\CaptchaDialogDimensions_*.json"/>
+    <action command="delete" search="glob" path="$LOCALAPPDATA\JDownloader*2*\cfg\CaptchaDialogDimensions_*.json"/>
     <action command="delete" search="walk.all" path="$LOCALAPPDATA\VirtualStore\Program Files*\JDownloader*2*\captchas\"/>
     <action command="delete" search="walk.all" path="$LOCALAPPDATA\VirtualStore\Program Files*\JDownloader*2*\tmp\"/>
-    <action command="delete" search="glob"     path="$LOCALAPPDATA\VirtualStore\Program Files*\JDownloader*2*\cfg\CaptchaDialogDimensions_*.json"/>
+    <action command="delete" search="glob" path="$LOCALAPPDATA\VirtualStore\Program Files*\JDownloader*2*\cfg\CaptchaDialogDimensions_*.json"/>
   </option>
   <option id="logs">
     <label>Logs</label>
     <description>Delete the logs</description>
-	<action command="delete" search="walk.all" path="$LOCALAPPDATA\JDownloader*2*\logs\"/>
-	<action command="delete" search="walk.all" path="$PROGRAMFILES\JDownloader*2*\logs\"/>
-	<action command="delete" search="walk.all" path="$LOCALAPPDATA\VirtualStore\Program Files*\JDownloader*2*\logs\"/>
+    <action command="delete" search="walk.all" path="$LOCALAPPDATA\JDownloader*2*\logs\"/>
+    <action command="delete" search="walk.all" path="$PROGRAMFILES\JDownloader*2*\logs\"/>
+    <action command="delete" search="walk.all" path="$LOCALAPPDATA\VirtualStore\Program Files*\JDownloader*2*\logs\"/>
   </option>
   <option id="backups">
     <label>Backups</label>
     <description>Delete config backups</description>
-	<action command="delete" search="glob" path="$LOCALAPPDATA\JDownloader*2*\cfg_backup_*"/>
+    <action command="delete" search="glob" path="$LOCALAPPDATA\JDownloader*2*\cfg_backup_*"/>
   </option>
 </cleaner>

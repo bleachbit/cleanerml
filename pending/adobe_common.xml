@@ -30,7 +30,7 @@
     <description>Delete the logs</description>
     <!-- Application Manager Updater -->
     <action command="delete" search="glob" path="$LOCALAPPDATA\Adobe\AAMUpdater\*\*.log"/>
-	<!-- Cloud Sync Library -->
+    <!-- Cloud Sync Library -->
     <action command="delete" search="glob" path="$APPDATA\Adobe\ACSL\logs\*.txt"/>
     <!-- Service Manager -->
     <action command="delete" search="glob" path="$APPDATA\Adobe\CS*ServiceManager\logs\*.log"/>
@@ -42,8 +42,8 @@
     <action command="delete" search="glob" path="$APPDATA\Adobe\CS*ServiceManager\cache\*.*"/>
     <!-- Camera Raw Library -->
     <action command="delete" search="glob" path="$LOCALAPPDATA\Adobe\CameraRaw\Cache\*.dat"/>
-	<!-- Media Caches -->
-	<action command="delete" search="glob" path="$APPDATA\Adobe\Common\Media Cache Files\*"/>
+    <!-- Media Caches -->
+    <action command="delete" search="glob" path="$APPDATA\Adobe\Common\Media Cache Files\*"/>
     <action command="delete" search="glob" path="$APPDATA\Adobe\Common\Media Cache\*"/>
   </option>
   <!-- Installers might also be included in cache -->

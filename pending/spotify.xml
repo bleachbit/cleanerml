@@ -34,10 +34,10 @@
   <option id="cache">
     <label>Cache</label>
     <description>Delete the cache</description>
-	<!-- @todo The Storage Folder can be moved. The location is saved in
+    <!-- @todo The Storage Folder can be moved. The location is saved in
          "%AppData%\Spotify\prefs" as storage.location="D:\\TEMP\\Spotify" -->
-	<action command="delete" search="walk.all" path="$LOCALAPPDATA\Spotify\Storage\"/>
+    <action command="delete" search="walk.all" path="$LOCALAPPDATA\Spotify\Storage\"/>
     <action command="delete" search="walk.all" path="$LOCALAPPDATA\Spotify\Browser\"/>
-    <action command="delete" search="glob"     path="$LOCALAPPDATA\Spotify\old_*"/>
+    <action command="delete" search="glob" path="$LOCALAPPDATA\Spotify\old_*"/>
   </option>
 </cleaner>
