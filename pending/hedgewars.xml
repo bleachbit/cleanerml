@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
 
     BleachBit
@@ -18,7 +19,6 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<?xml version="1.0" encoding="UTF-8"?>
 <cleaner id="hedgewars" os="linux">
   <label>Hedgewars</label>
   <description>Turn-based artillery strategy game</description>
