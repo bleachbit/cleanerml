@@ -21,6 +21,7 @@
 -->
 <cleaner id="minetest" os="linux">
   <label>Minetest</label>
+  <description>3D voxel world game engine</description>
   <option id="cache">
     <label>Cache</label>
     <description>Delete the cache</description>
@@ -36,10 +37,11 @@
     <description>Delete the list of favorite servers</description>
     <action command="delete" search="file" path="~/.minetest/client/serverlist/favoriteservers.txt"/>
   </option>
-  <option id="mods">
-    <label>Mods</label>
-    <description>Delete all mods.</description>
-    <warning>Any blocks or items from a removed mod in a world will become 'unknown'</warning>
-    <action command="delete" search="walk.all" path="~/.minetest/mods/"/>
+  <option id="worlds">
+    <label>Compress worlds</label>
+    <description>Compress the world and rollback files to save space without deleting them.</description>
+    <warning>This may take a long time. The duration increases with the number and size of the installed worlds.</warning>
+    <action command="sqlite.vacuum" search="glob" path="~/.minetest/worlds/*/map.sqlite"/>
+    <action command="sqlite.vacuum" search="glob" path="~/.minetest/worlds/*/rollback.sqlite"/>
   </option>
 </cleaner>
