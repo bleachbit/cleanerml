@@ -47,7 +47,7 @@
   <option id="temp">
     <label>Temp Files</label>
     <description>Delete temporary files</description>
-    <action command="delete" search="glob" path="~/.kde/tmp-*/*"/>
+    <action command="delete" search="glob" path="~/.kde/tmp-*/*" nregex="^xauth-"/>
   </option>
   <option id="thumbs">
     <label>Thumbnails</label>
