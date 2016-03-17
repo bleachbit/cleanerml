@@ -28,11 +28,11 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
     <label>Resumes</label>
     <description>Clear resumes. Make downloads start over.</description>
     <warning>This will make all downloads start over. Useful if qBittorrent freezes due to file corruption.</warning>
-    <action command="delete" search="walk.all" path="~/.local/share/data/qBittorrent/BT_backup/*.fastresume"/>
+    <action command="delete" search="glob" path="~/.local/share/data/qBittorrent/BT_backup/*.fastresume"/>
   </option>
   <option id="torrents">
     <label>Torrents</label>
     <description>Clear all torrent files</description>
-    <action command="delete" search="walk.all" path="~/.local/share/data/qBittorrent/BT_backup/*.torrent"/>
+    <action command="delete" search="glob" path="~/.local/share/data/qBittorrent/BT_backup/*.torrent"/>
   </option>
 </cleaner>
