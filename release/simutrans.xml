@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2008-2015 Andrew Ziem
+    http://bleachbit.sourceforge.net
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+    CleanerML   : Simutrans v111 (by Simutrans Team)
+    Contributor : Erratalog
+    Web site    : http://erratalog.blogspot.com
+
+
+-->
+<cleaner id="simutrans" os="windows">
+  <label>Simutrans</label>
+  <description>Transporation simulation game</description>
+  <option id="screenshot">
+    <label>Screenshots</label>
+    <description>Purges all files in the screenshot folder.</description>
+    <action command="delete" search="walk.files" path="$USERPROFILE\My Documents\Simutrans\screenshot\"/>
+  </option>
+  <option id="save">
+    <label>Saved games</label>
+    <description>Purges all files in the save folder.</description>
+    <action command="delete" search="walk.files" path="$USERPROFILE\My Documents\Simutrans\save\"/>
+  </option>
+  <option id="maps">
+    <label>Height map files</label>
+    <description>Purges all files in the maps folder.</description>
+    <action command="delete" search="walk.files" path="$USERPROFILE\My Documents\Simutrans\maps\"/>
+  </option>
+</cleaner>

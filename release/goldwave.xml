@@ -2,7 +2,7 @@
 <!--
 
     BleachBit
-    Copyright (C) 2015 Andrew Ziem
+    Copyright (C) 2008-2015 Andrew Ziem
     http://bleachbit.sourceforge.net
 
     This program is free software: you can redistribute it and/or modify
@@ -18,20 +18,19 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-    @app     ACDSee Pro
-    @link    http://www.acdsee.com/
-    @os      Windows
-    @version 0.1.0
+
+    CleanerML   : GoldWave v5.67 (by GoldWave Inc.)
+    Contributor : Erratalog
+    Web site    : http://erratalog.blogspot.com
+
+
 -->
-<!-- mikevainio. This slight change allows ACDSee Photo Manager 12 to be cleaned as well. -->
-<cleaner id="acdsee_pro" os="windows">
-  <label>ACDSee Pro</label>
-  <description>Image Viewer</description>
-  <option id="cache">
-    <label>Cache</label>
-    <description>Delete the cache</description>
-    <action search="walk.files" command="delete" path="$LOCALAPPDATA\ACD Systems\Catalogs\*\Default"/>
-    <action search="walk.files" command="delete" path="$LOCALAPPDATA\ACD Systems\ICMCache"/>
-    <action search="walk.files" command="delete" path="$LOCALAPPDATA\ACD Systems\SavedSearches"/>
+<cleaner id="goldwave" os="windows">
+  <label>Goldwave</label>
+  <description>Audio editor</description>
+  <option id="mru">
+    <label>Most recently used</label>
+    <description>Deletes recent files entries from File menu.</description>
+    <action command="winreg" path="HKCU\Software\GoldWave\GoldWave\Recent Files"/>
   </option>
 </cleaner>
