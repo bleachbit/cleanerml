@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2011 Andrew Ziem
+    http://bleachbit.sourceforge.net
+
+    Cleaner for godot by nodiscc
+    Copyright © 2016 nodiscc
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<cleaner id="godot" os="linux">
+  <label>Godot</label>
+  <description>Advanced 2D and 3D open source game engine</description>
+  <option id="tempfiles">
+    <label>Temporary files</label>
+    <description>Temporary files</description>
+    <action search="walk.files" command="delete" path="~/.godot/tmp/" />
+  </option>
+</cleaner>
