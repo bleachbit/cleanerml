@@ -18,9 +18,11 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-	@app     Sourcetree
-	@os      Windows
-	@version 0.2.0
+    @app     Sourcetree
+    @link    http://www.sourcetreeapp.com/
+    @os      Windows
+    @version 0.1.0
+
 -->
 <cleaner id="sourcetree" os="windows">
   <label>SourceTree</label>

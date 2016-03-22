@@ -18,10 +18,11 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-    @app     Calibre
+	@app     Calibre
     @link    http://calibre-ebook.com/
-    @version 0.1.0
     @os      Windows, GNU+Linux
+	@version 0.1.0
+
 -->
 <cleaner id="calibre">
   <label>Calibre</label>

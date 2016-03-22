@@ -21,6 +21,11 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+    @app     ccache
+    @link    https://ccache.samba.org/
+    @os      Linux
+    @version 0.1.0
+
 -->
 <cleaner id="ccache" os="linux">
   <!-- FIXME: Does it work under Windows? -->
