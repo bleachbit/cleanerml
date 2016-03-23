@@ -28,6 +28,6 @@
   <option id="tempfiles">
     <label>Temporary files</label>
     <description>Delete temporary files</description>
-    <action search="walk.files" command="delete" path="~/.ansible/tmp/" />
+    <action search="walk.files" command="delete" path="~/.ansible/tmp/"/>
   </option>
 </cleaner>

@@ -28,6 +28,6 @@
   <option id="fileassociations">
     <label>File associations</label>
     <description>Delete WINE programs file associations</description>
-    <action search="glob" command="delete" path="~/.local/share/applications/wine-extension*.desktop" />
+    <action search="glob" command="delete" path="~/.local/share/applications/wine-extension*.desktop"/>
   </option>
 </cleaner>

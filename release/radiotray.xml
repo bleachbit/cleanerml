@@ -28,6 +28,6 @@
   <option id="logs">
     <label>Logs</label>
     <description>Debug logs</description>
-    <action search="glob" command="delete" path="~/.local/share/radiotray/*.log" />
+    <action search="glob" command="delete" path="~/.local/share/radiotray/*.log"/>
   </option>
 </cleaner>

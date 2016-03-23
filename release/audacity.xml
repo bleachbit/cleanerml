@@ -28,6 +28,6 @@
   <option id="autosave">
     <label>Autosaved files</label>
     <description>Autosaved files for session restoration</description>
-    <action search="walk.files" command="delete" path="~/.audacity-data/autosave/" />
+    <action search="walk.files" command="delete" path="~/.audacity-data/autosave/"/>
   </option>
 </cleaner>

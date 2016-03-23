@@ -28,6 +28,6 @@
   <option id="maps">
     <label>Downloaded maps</label>
     <description>Custom maps downloaded from the "More maps" dialog</description>
-    <action search="walk.files" command="delete" path="~/.local/share/marble/maps/" />
+    <action search="walk.files" command="delete" path="~/.local/share/marble/maps/"/>
   </option>
 </cleaner>

@@ -28,6 +28,6 @@
   <option id="tempfiles">
     <label>Temporary files</label>
     <description>Temporary files</description>
-    <action search="walk.files" command="delete" path="~/.godot/tmp/" />
+    <action search="walk.files" command="delete" path="~/.godot/tmp/"/>
   </option>
 </cleaner>

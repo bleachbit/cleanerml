@@ -28,7 +28,7 @@
   <option id="cache">
     <label>Cache</label>
     <description>Cached modules and repositories</description>
-    <action search="walk.files" command="delete" path="~/.composer/files/" />
-    <action search="walk.files" command="delete" path="~/.composer/repo/" />
+    <action search="walk.files" command="delete" path="~/.composer/files/"/>
+    <action search="walk.files" command="delete" path="~/.composer/repo/"/>
   </option>
 </cleaner>

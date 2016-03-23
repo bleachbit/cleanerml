@@ -28,6 +28,6 @@
   <option id="Logs">
     <label>Backup logs</label>
     <description>Delete logs of previous backup operations</description>
-    <action search="glob" command="delete" path="~/.local/share/backintime/*.log" />
+    <action search="glob" command="delete" path="~/.local/share/backintime/*.log"/>
   </option>
 </cleaner>
