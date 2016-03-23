@@ -25,11 +25,11 @@
 
 
 -->
-<cleaner id="totalcommander" os="windows">
-	<label>TotalCommander</label>
-	<description>Filemmanager</description>
+<cleaner id="total_commander" os="windows">
+	<label>Total Commander</label>
+	<description>File manager</description>
 	<option id="history">
-		<label>File tab history deletion</label>
+		<label>File tab history</label>
 		<description>Delete the history of the file tabs</description>
 		<action search="file" path="$APPDATA\GHISLER\wincmd.ini" command="ini" section="left" parameter="path"/>
 		<action search="file" path="$APPDATA\GHISLER\wincmd.ini" command="ini" section="Left" parameter="path"/>
@@ -40,7 +40,7 @@
 		<action search="file" path="$APPDATA\GHISLER\wincmd.ini" command="ini" section="Command line history" />
 +		<action search="file" path="$APPDATA\GHISLER\wincmd.ini" command="ini" section="MkDirHistory"/>
 	</option>
-	<option id="searchhistory">
+	<option id="search_history">
 		<label>Search, replace and selection history</label>
 		<description>Delete the history of Search, Replace and Selection dialog</description>
 		<action search="file" path="$APPDATA\GHISLER\wincmd.ini" command="ini" section="SearchIn" />
