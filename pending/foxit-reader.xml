@@ -24,6 +24,10 @@
     Web site    :  https://www.foxitsoftware.com/products/pdf-reader/
 
 
+8ohmh tested in this environment
+Version: 7.0.6.1126
+OS: Windows 7 x64 SP1/2
+
 -->
 <cleaner id="foxit_reader" os="windows">
 	<label>Foxit Reader</label>

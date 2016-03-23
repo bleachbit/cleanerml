@@ -24,6 +24,23 @@
     Web site    :  https://mpc-hc.org/
 
 
+Testing environment
+
+Build information:
+    Version:            1.7.1 (9ae7b7c)
+    Compiler:           MSVC 2012 Update 4 (SSE)
+    Build date:         Nov 17 2013 09:24:49
+
+LAV Filters:
+    LAV Splitter:       0.59.1.26
+    LAV Video:          0.59.1.26
+    LAV Audio:          0.59.1.26
+    FFmpeg compiler:    MinGW-w64 GCC 4.8.2
+
+Operating system:
+    Name:               Windows NT 6.1 (build 7601, Service Pack 1)
+    Version:            6.1 (64-bit)
+
 -->
 <cleaner id="mpc-hc" os="windows">
 	<label>MPlayer-HC</label>
