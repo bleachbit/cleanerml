@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2008-2015 Andrew Ziem
+    http://bleachbit.sourceforge.net
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+
+    Contributor :  8ohmh
+    Web site    : -
+
+
+-->
+<cleaner id="foxit_reader" os="windows">
+	<label>Foxit Reader</label>
+	<description>PDF Reader</description>
+	<option id="history">
+		<label>Most recently used</label>
+		<description>Delete the most recently used list</description>
+		<action command="winreg" path="HKCU\Software\Foxit Software\Foxit Reader 7.0\Recent File List" />
+		<!-- Hello in Bleachbit I've got an error in handling the end-of-xml-tag "/>" I've to use a space
+		     otherwise the registry key won't be accepted... -->
+		<action command="winreg" path="HKCU\Software\Foxit Software\Foxit Reader 7.0\RecentFiles" />
+		<action command="winreg" path="HKCU\Software\Foxit Software\Foxit Reader 7.0\Preferences\History\LastOpen" />
+	</option>
+</cleaner>
+
