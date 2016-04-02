@@ -18,6 +18,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+    Okular 0.21.3 in KDE 4.14.6 on Ubuntu 15.10 uses ~/.kde and not ~/.kde4
 -->
 <cleaner id="okular" os="linux">
   <label>Okular</label>
@@ -32,11 +33,13 @@
   <option id="docdata">
     <label>Document meta data</label>
     <description>Includes name, location, and page placement of previously opened documents</description>
+    <action command="delete" search="walk.files" path="~/.kde/share/apps/okular/docdata/"/>
     <action command="delete" search="walk.files" path="~/.kde4/share/apps/okular/docdata/"/>
   </option>
   <option id="recent_documents">
     <label>Recent documents list</label>
     <description>Delete the list of recently used documents</description>
+    <action search="file" path="~/.kde/share/config/okularrc" command="ini" section="Recent Files"/>
     <action search="file" path="~/.kde4/share/config/okularrc" command="ini" section="Recent Files"/>
   </option>
 </cleaner>
