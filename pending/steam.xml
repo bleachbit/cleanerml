@@ -21,6 +21,11 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+    @app     Steam
+    @link    http://store.steampowered.com/
+    @os      Windows|Linux
+    @version 0.3.0
+
 -->
 <cleaner id="steam">
   <label>Steam</label>
@@ -29,6 +34,7 @@
     <label>Cookies</label>
     <description>Clean the program cookies</description>
     <action command="delete" search="walk.files" path="$ProgramFiles\Steam\config\cookies\"/>
+    <action command="delete" search="walk.files" path="$LocalAppData\VirtualStore\Program Files*\Steam\config\cookies\"/>
     <action command="delete" search="walk.files" path="~/.steam/config/cookies/"/>
   </option>
   <option id="cache">
@@ -36,6 +42,8 @@
     <description>Delete HTML and HTTP cache</description>
     <action command="delete" search="walk.all" path="$ProgramFiles\Steam\config\htmlcache\*"/>
     <action command="delete" search="walk.all" path="$ProgramFiles\Steam\appcache\httpcache\*"/>
+    <action command="delete" search="walk.all" path="$LocalAppData\VirtualStore\Program Files*\Steam\config\htmlcache\*"/>
+    <action command="delete" search="walk.all" path="$LocalAppData\VirtualStore\Program Files*\Steam\appcache\httpcache\*"/>
     <action command="delete" search="walk.all" path="~/.steam/config/htmlcache/*"/>
     <action command="delete" search="walk.all" path="~/.steam/appcache/httpscache/*"/>
   </option>
