@@ -18,14 +18,24 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+    @app     SpiderOak
+    @link    https://spideroak.com/
+    @os      Linux|Windows
+    @version 0.2.0
+
 -->
-<cleaner id="spideroak" os="linux">
+<cleaner id="spideroak">
   <label>SpiderOak</label>
   <description>File backup service</description>
   <option id="logs">
     <label>Logs</label>
     <description>Delete the logs</description>
-    <!-- Tested with Fedora 16 and SpiderOak 4.6.9945 -->
     <action command="delete" search="glob" path="~/.SpiderOak/*log"/>
+    <action command="delete" search="glob" path="$APPDATA\SpiderOak\*.log"/>
+  </option>
+  <option id="cache">
+    <label>Download Cache</label>
+    <description>Delete the download cache</description>
+    <action search="walk.files" command="delete" path="$APPDATA\SpiderOak\download_cache"/>
   </option>
 </cleaner>
