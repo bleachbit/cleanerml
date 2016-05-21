@@ -24,6 +24,6 @@
   <option id="logs">
     <label>Scan Logs</label>
     <description>Delete scan logs</description>
-    <action command="delete" search="walk.all" path="~/.clamtk/history/*.log"/>
+    <action command="delete" search="glob" path="~/.clamtk/history/*.log"/>
   </option>
 </cleaner>
