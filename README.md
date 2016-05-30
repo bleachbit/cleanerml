@@ -38,8 +38,17 @@ Contents
 --------
 
 The directory `pending` contains cleaners that are waiting for someone to verify they are safe and effective.
-
 The directory `release` contains cleaners that are considered safe and effective.
+
+
+Additional information
+--------
+
+Your cleaners should retain the copyright and information header found in `release/*.xml`. Please edit the copyright information accordingly. If needed, you can also include extra maintenance information in the header, as found in [release/openshot.xml](https://github.com/az0/cleanerml/blob/master/openshot.xml):
+
+    @url http://full.url.of/software-project
+    @tested ok softwareversion, OSnameandversion
+    @note Some notes for cleaner maintainers
 
 
 License
