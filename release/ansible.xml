@@ -8,6 +8,10 @@
     Cleaner for ansible by nodiscc
     Copyright © 2016 nodiscc
 
+    @url https://ansible.com
+    @tested ok 2.0.2.0-1, Debian Stretch
+    @note an empty ~/.ansible/cp directory remains. safe to remove?
+
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -28,6 +32,6 @@
   <option id="tempfiles">
     <label>Temporary files</label>
     <description>Delete temporary files</description>
-    <action search="walk.files" command="delete" path="~/.ansible/tmp/"/>
+    <action search="glob" command="delete" path="~/.ansible/tmp/ansible-tmp*"/>
   </option>
 </cleaner>
