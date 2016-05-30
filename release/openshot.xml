@@ -5,8 +5,12 @@
     Copyright (C) 2011 Andrew Ziem
     http://www.bleachbit.org
 
-    Cleaner for gthumb by nodiscc
-    Copyright © 2014 nodiscc
+    Cleaner for openshot by nodiscc
+    Copyright © 2014-2016 nodiscc
+
+    @url http://openshot.org/
+    @tested ok 1.4.3-1.2, Debian Stretch
+    @note More data can probably cleaned
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
