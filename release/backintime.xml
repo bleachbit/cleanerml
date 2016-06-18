@@ -25,7 +25,7 @@
 <cleaner id="backintime" os="linux">
   <label>Back In Time</label>
   <description>simple backup/snapshot system</description>
-  <option id="Logs">
+  <option id="logs">
     <label>Backup logs</label>
     <description>Delete logs of previous backup operations</description>
     <action search="glob" command="delete" path="~/.local/share/backintime/*.log"/>
