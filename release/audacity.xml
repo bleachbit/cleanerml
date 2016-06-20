@@ -8,6 +8,9 @@
     Cleaner for audacity by nodiscc
     Copyright © 2016 nodiscc
 
+    @url www.audacityteam.org
+    @win markup ok on xp/7 mikevainio
+
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -22,12 +25,13 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<cleaner id="audacity" os="linux">
+<cleaner id="audacity">
   <label>Audacity</label>
   <description>fast, cross-platform audio editor</description>
   <option id="autosave">
     <label>Autosaved files</label>
     <description>Autosaved files for session restoration</description>
     <action search="walk.files" command="delete" path="~/.audacity-data/autosave/"/>
+    <action search="walk.files" command="delete" path="$APPDATA\Audacity\AutoSave\*.autosave"/>
   </option>
 </cleaner>
