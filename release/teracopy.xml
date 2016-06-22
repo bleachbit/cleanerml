@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2008-2015 Andrew Ziem
+    http://bleachbit.sourceforge.net
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+    CleanerML   : Teracopy v2.2.2 (by Code Sector)
+    Contributor : Erratalog
+    Web site    : http://erratalog.blogspot.com
+
+
+-->
+<cleaner id="teracopy" os="windows">
+  <label>Teracopy</label>
+  <description>File copier manager</description>
+  <option id="lastdir">
+    <label>Last Target Folder</label>
+    <description>Deletes folder path link.</description>
+    <action command="winreg" path="HKCU\Software\Code Sector\TeraCopy" name="LastTargetFolder"/>
+  </option>
+  <option id="log">
+    <label>Transfer history log</label>
+    <description>Deletes the log.</description>
+    <action command="delete" search="file" path="$APPDATA\TeraCopy\Transfer.log"/>
+  </option>
+  <option id="last">
+    <label>Last copied list</label>
+    <description>Deletes the list.</description>
+    <action command="delete" search="file" path="$APPDATA\TeraCopy\FileList.dat"/>
+  </option>
+</cleaner>
