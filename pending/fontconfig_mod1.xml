@@ -3,9 +3,9 @@
 
 BleachBit
 Copyright (C) 2013 Andrew Ziem
-http://www.bleachbit.org
+http://bleachbit.sourceforge.net
 
-Edits by rbrito and Theatre-X
+Edits by rbrito and Theatre-X and Erratalog
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@ You should have received a copy of the GNU General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<cleaner id="fontconfig" os="linux">
+<cleaner id="fontconfig">
   <label>fontconfig</label>
   <option id="cache">
     <label>Cache</label>
@@ -31,10 +31,13 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
     <action command="delete" search="glob" path="~/fontconfig/*.cache-?"/>
     <action command="delete" search="glob" path="~/.cache/fontconfig/*"/>
     <action command="delete" search="glob" path="/var/cache/fontconfig/*"/>
+    <!-- Win XP -->
+    <action command="delete" search="glob" path="$LOCALAPPDATA\fontconfig\cache\*.cache-?"/>
   </option>
   <option id="log">
     <label>Log</label>
     <description>Delete the log</description>
     <action command="delete" search="glob" path="/var/log/fontconfig.log"/>
+    <!-- Erratalog - No log on my Win XP SP3 -->
   </option>
 </cleaner>
