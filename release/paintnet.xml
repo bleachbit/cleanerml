@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2008-2015 Andrew Ziem
+    http://bleachbit.sourceforge.net
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+    CleanerML   : Paint.NET 3.5.11 (by dotPDN LLC et al.)
+    Contributor : Erratalog
+    Web site    : http://erratalog.blogspot.com
+
+
+-->
+<cleaner id="paintnet" os="windows">
+  <label>Paint.NET</label>
+  <description>Painting editor</description>
+  <option id="lastdir">
+    <label>Last save directory</label>
+    <description>Deletes path link.</description>
+    <action command="winreg" path="HKCU\Software\Paint.NET" name="LastFileDialogDirectory"/>
+  </option>
+  <option id="mru">
+    <label>Most recently used</label>
+    <description>Deletes recently used links.</description>
+    <action command="winreg" path="HKCU\Software\Paint.NET" name="MRU0"/>
+    <action command="winreg" path="HKCU\Software\Paint.NET" name="MRU0Thumb"/>
+    <action command="winreg" path="HKCU\Software\Paint.NET" name="MRU1"/>
+    <action command="winreg" path="HKCU\Software\Paint.NET" name="MRU1Thumb"/>
+    <action command="winreg" path="HKCU\Software\Paint.NET" name="MRU2"/>
+    <action command="winreg" path="HKCU\Software\Paint.NET" name="MRU2Thumb"/>
+    <action command="winreg" path="HKCU\Software\Paint.NET" name="MRU3"/>
+    <action command="winreg" path="HKCU\Software\Paint.NET" name="MRU3Thumb"/>
+    <action command="winreg" path="HKCU\Software\Paint.NET" name="MRU4"/>
+    <action command="winreg" path="HKCU\Software\Paint.NET" name="MRU4Thumb"/>
+    <action command="winreg" path="HKCU\Software\Paint.NET" name="MRU5"/>
+    <action command="winreg" path="HKCU\Software\Paint.NET" name="MRU5Thumb"/>
+    <action command="winreg" path="HKCU\Software\Paint.NET" name="MRU6"/>
+    <action command="winreg" path="HKCU\Software\Paint.NET" name="MRU6Thumb"/>
+    <action command="winreg" path="HKCU\Software\Paint.NET" name="MRU7"/>
+    <action command="winreg" path="HKCU\Software\Paint.NET" name="MRU7Thumb"/>
+  </option>
+  <option id="lockdir">
+    <label>Session and file locks</label>
+    <description>Deletes lock folder.</description>
+    <action command="delete" search="walk.all" path="$localappdata\Paint.NET\"/>
+  </option>
+</cleaner>
