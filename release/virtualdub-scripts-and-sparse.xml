@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2008-2015 Andrew Ziem
+    http://bleachbit.sourceforge.net
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+    CleanerML   : VirtualDub v1.9.11 (by Avery Lee)
+    Contributor : Erratalog
+    Web site    : http://erratalog.blogspot.com
+
+
+-->
+<cleaner id="virtualdub" os="windows">
+  <label>VirtualDub</label>
+  <description>Video editor</description>
+  <option id="mru">
+    <label>Most recently used</label>
+    <description>Deletes the most recently used files list entries from the File menu</description>
+    <action command="winreg" path="HKCU\Software\VirtualDub.org\VirtualDub\MRU List"/>
+  </option>
+  <option id="filespec">
+    <label>Saved filespecs</label>
+    <description>Deletes most recently used destination folder record.</description>
+    <action command="winreg" path="HKCU\Software\VirtualDub.org\VirtualDub\Saved filespecs"/>
+  </option>
+  <option id="sylia">
+    <label>Sylia scripts</label>
+    <description>Purges all Sylia script files.</description>
+    <warning>Preview results for Sylia scripts you wish to keep!</warning>
+    <action command="delete" search="deep" regex="\.[Ss][Yy][Ll]$" cache="false"/>
+  </option>
+  <option id="vcf">
+    <label>Config script files</label>
+    <description>Purges all configuration script files.</description>
+    <warning>Preview results for any .VCF scripts you wish to keep!</warning>
+    <action command="delete" search="deep" regex="\.[Vv][Cc][Ff]$" cache="false"/>
+  </option>
+  <option id="jobs">
+    <label>Jobs scripts</label>
+    <description>Purges all jobs files.</description>
+    <warning>Preview results for any .JOBS files you wish to keep!</warning>
+    <action command="delete" search="deep" regex="\.[Jj][Oo][Bb][Ss]$" cache="false"/>
+  </option>
+  <option id="sparsed">
+    <label>Sparsed AVI files</label>
+    <description>Purges all sparsed AVI files.</description>
+    <warning>Preview results for any .SPARSED files you wish to keep!</warning>
+    <action command="delete" search="deep" regex="\.[Ss][Pp][Aa][Rs][Ss][Ee][Dd]$" cache="false"/>
+  </option>
+</cleaner>
