@@ -32,9 +32,8 @@ Cinnamon cleaner by Theatre X
     <action command="delete" search="glob" path="~/.cinnamon/spices.cache/theme/*"/>
   </option>
   <option id="recent">
-    <label>Recent Files</label>
-    <description>Delete the Recent Files content.</description>
-    <warning>This will not clear the Recent Files menu.</warning>
+    <label>Recent documents list</label>
+    <description>Delete the list of recently used documents</description>
     <action command="delete" search="file" path="~/.local/share/recently-used.xbel"/>
   </option>
 </cleaner>
