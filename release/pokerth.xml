@@ -23,7 +23,7 @@
     Web site   : http://erratalog.blogspot.com
     
 -->
-<cleaner id="pokerth">
+<cleaner id="pokerth" os="windows">
   <label>PokerTH</label>
   <description>Poker game</description>
   <option id="logs">
