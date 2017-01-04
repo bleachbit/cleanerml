@@ -23,8 +23,8 @@
   <option id="dumps">
     <label>Memory Dumps</label>
     <description>Deletes Windows memory dump files</description>
-    <action command="delete" search="file" path="$WINDIR/memory.dmp/>
-    <action command="delete" search="glob" path="$WINDIR/MiniDump/*.dmp>
-    <action command="delete" search="glob" path="$APPDATA/Local/CrashDumps/*.dmp>
+    <action command="delete" search="file" path="$WINDIR/memory.dmp"/>
+    <action command="delete" search="glob" path="$WINDIR/MiniDump/*.dmp"/>
+    <action command="delete" search="glob" path="$APPDATA/Local/CrashDumps/*.dmp"/>
   </option>
 </cleaner>
