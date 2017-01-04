@@ -1,7 +1,7 @@
 CleanerML Repository
 ====================
 
-This repository is an experiment whether GitHub provides an efficient platform for a community to develop safe and effective system cleaners.  If the experiment is successful, BleachBit will provide automated access to this repository to support a wide variety of applications.  For more background read the [announcement](http://www.bleachbit.org/news/bonus-pack-moved-svn-git).
+This repository is an experiment whether GitHub provides an efficient platform for a community to develop safe and effective system cleaners.  If the experiment is successful, BleachBit will provide automated access to this repository to support a wide variety of applications.  For more background read the [announcement](https://www.bleachbit.org/news/bonus-pack-moved-svn-git).
 
 
 CleanerML
@@ -20,9 +20,9 @@ BleachBit is an open source system cleaner for Windows and Linux.
 
 How to contribute
 -----------------
-1.  Download [BleachBit](http://www.bleachbit.org)
+1.  Download [BleachBit](https://www.bleachbit.org)
 1.  Read [Documentation on CleanerML](http://docs.bleachbit.org/doc/cleanerml.html)
-1.  Read [Contributing a cleaner](http://www.bleachbit.org/contribute/cleaner)
+1.  Read [Contributing a cleaner](https://www.bleachbit.org/contribute/cleaner)
 1.  Write your own cleaner *or* review someone else's submission
 
 
