@@ -19,7 +19,6 @@
 -->
 <cleaner id="memorydumps" os="windows">
   <label>Windows Memory Dumps</label>
-  <description>Memory Dumps</description>
   <option id="dumps">
     <label>Memory Dumps</label>
     <description>Deletes Windows memory dump files</description>
