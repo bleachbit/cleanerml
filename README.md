@@ -21,9 +21,10 @@ BleachBit is an open source system cleaner for Windows and Linux.
 How to contribute
 -----------------
 1.  Download [BleachBit](https://www.bleachbit.org)
-1.  Read [Documentation on CleanerML](http://docs.bleachbit.org/doc/cleanerml.html)
-1.  Read [Contributing a cleaner](https://www.bleachbit.org/contribute/cleaner)
-1.  Write your own cleaner *or* review someone else's submission
+2.  Read [Documentation on CleanerML](http://docs.bleachbit.org/doc/cleanerml.html)
+3.  Read [Contributing a cleaner](https://www.bleachbit.org/contribute/cleaner)
+4.  Help testing untested cleaners in [`pending/`](pending/) and submit an issue to have it moved to `release/`, or deleted.
+4.  Write your own cleaner *or* review someone else's submission
 
 
 How to use
