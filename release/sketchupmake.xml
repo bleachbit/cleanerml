@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2008-2015 Andrew Ziem
+    http://bleachbit.sourceforge.net
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+    CleanerML   : SketchUp Make v13 (by Trimble Navigation)
+    Contributor : Erratalog
+    Web site    : http://erratalog.blogspot.com
+
+
+-->
+<cleaner id="sketchupmake" os="windows">
+  <label>SketchUp Make</label>
+  <description>3D modelling editor</description>
+  <option id="recent">
+    <label>Recent file list</label>
+    <description>Deletes recent files entries from File menu.</description>
+    <action command="winreg" path="HKCU\Software\SketchUp\SketchUp 2013\Recent File List"/>
+  </option>
+  <option id="autosavefile">
+    <label>Auto-save file</label>
+    <description>Deletes file link.</description>
+    <action command="winreg" path="HKCU\Software\SketchUp\SketchUp 2013\AutoSave" name="AutoSaveFile"/>
+  </option>
+</cleaner>
