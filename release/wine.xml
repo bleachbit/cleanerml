@@ -27,7 +27,19 @@
   <description>Windows API implementation</description>
   <option id="fileassociations">
     <label>File associations</label>
-    <description>Delete WINE programs file associations</description>
-    <action search="glob" command="delete" path="~/.local/share/applications/wine-extension*.desktop"/>
+    <description>Delete WINE programs file associations</description>     
+    <action search="glob" command="delete" path="~/.local/share/mime/packages/x-wine*"/>
+    <action search="glob" command="delete" path="~/.local/share/applications/wine-extension*"/>
+    <action search="glob" command="delete" path="~/.local/share/icons/hicolor/*/*/application-x-wine-extension*"/>
+    <action search="glob" command="delete" path="~/.local/share/mime/application/x-wine-extension*"/>
+  </option>
+  <option id="menuentries">
+    <label>Menu entries</label>
+    <description>Delete WINE program menu entries</description>     
+    <action search="glob" command="delete" path="~/.config/menus/applications-merged/wine*"/>
+    <action search="glob" command="delete" path="~/.local/share/applications/wine"/>
+    <action search="glob" command="delete" path="~/.local/share/desktop-directories/wine*"/>
+    <action search="glob" command="delete" path="~/.local/share/icons/????_*.{xpm,png}"/>
+    <action search="glob" command="delete" path="~/.local/share/icons/*-x-wine-*.{xpm,png} }}}"/>
   </option>
 </cleaner>
