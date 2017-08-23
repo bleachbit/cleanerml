@@ -21,6 +21,10 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+    @url https://vivaldi.com/
+    @tested ok 1.11.917.39 (Stable channel) (64-bit), Arch Linux
+    @note I took the google_chrome.xml from the Bleachbit repo and modified it.
+
 -->
 <cleaner id="vivaldi">
   <label>Vivaldi</label>
