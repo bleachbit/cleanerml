@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2015 Andrew Ziem
+    http://bleachbit.sourceforge.net
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+    @app     VirtualBox
+    @link    https://www.virtualbox.org/
+    @os      Windows
+    @version 0.2.0
+-->
+<cleaner id="virtualbox" os="windows">
+  <label>VirtualBox</label>
+  <description>Virtual machine</description>
+  <option id="logs">
+    <label>Logs</label>
+    <description>Delete the logs (keep latest log)</description>
+	<!-- Virtualbox is heavily used in software development so deleting all logs is a bad idea -->
+    <action command="delete" search="walk.all" path="$USERPROFILE\.VirtualBox\" regex="\w+\.log(\.\d+)$"/>
+  </option>
+  <option id="installers">
+    <label>Installers</label>
+    <description>Delete installers</description>
+    <action command="delete" search="glob" path="$USERPROFILE\.VirtualBox\*.vbox-extpack"/>
+  </option>
+  <!--
+  <option id="vm-logs">
+    <label>VM Logs</label>
+    <description>Delete the logs of all VMs (keep latest log)</description>
+	<warning>This option is slow.</warning>
+    <action command="delete" search="deep" cache="false" regex="^VBox\.log(\.\d+)$"/>
+    <action command="delete" search="deep" cache="false" regex="^VBoxStartup\.log$"/>
+  </option>
+  -->
+</cleaner>
