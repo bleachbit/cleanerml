@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    BleachBit
+    Copyright (C) 2008-2016 Andrew Ziem
+    http://www.bleachbit.org
+
+    Cleaner for Windows memory Dumps by ROCKNROLLKID
+    
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<cleaner id="memorydumps" os="windows">
+  <label>Windows Memory Dumps</label>
+  <option id="dumps">
+    <label>Memory Dumps</label>
+    <description>Deletes Windows memory dump files</description>
+    <action command="delete" search="file" path="$WINDIR/memory.dmp"/>
+    <action command="delete" search="glob" path="$WINDIR/MiniDump/*.dmp"/>
+    <action command="delete" search="glob" path="$APPDATA/Local/CrashDumps/*.dmp"/>
+  </option>
+</cleaner>
