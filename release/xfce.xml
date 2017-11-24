@@ -21,12 +21,21 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+    @url https://xfce.org
+    @tested ok Thunar 1.6.11-1, Debian 9 stretch
+    @note Clicking on a 'Send to' right-click menu item in Thunar creates a temporary .desktop launcher which is never removed, sendto_cache deletes them
+
 -->
 <cleaner id="xfce" os="linux">
   <label>Xfce</label>
   <option id="history">
-    <label>History</label>
-    <description>Delete the command history</description>
+    <label>Command history</label>
+    <description>Delete the 'run command' dialog history</description>
     <action command="delete" search="file" path="~/.cache/xfce4/xfrun4/history"/>
+  </option>
+  <option id="sendto_cache">
+    <label>"Send to" cache</label>
+    <description>Delete cached desktop launchers leftover by 'Send to' menus</description>
+    <action command="delete" search="glob" path="~/.local/share/applications/userapp-*.desktop"/>
   </option>
 </cleaner>

@@ -21,6 +21,9 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+    @url http://marble.kde.org/
+    @tested ok 2.0.3, Debian 9 Stretch
+
 -->
 <cleaner id="marble" os="linux">
   <label>Marble</label>
@@ -28,6 +31,21 @@
   <option id="maps">
     <label>Downloaded maps</label>
     <description>Custom maps downloaded from the "More maps" dialog</description>
-    <action search="walk.files" command="delete" path="~/.local/share/marble/maps/"/>
+    <action search="walk.all" command="delete" path="~/.local/share/marble/maps/"/>
+  </option>
+  <option id="cache">
+    <label>Cache</label>
+    <description>Other cached files</description>
+    <action search="walk.all" command="delete" path="~/.local/share/marble/cache/"/>
+  </option>
+  <option id="routing">
+    <label>Routing data</label>
+    <description>Cached routing queries and paths</description>
+    <action search="walk.all" command="delete" path="~/.local/share/marble/routing/"/>
+  </option>
+  <option id="tracking">
+    <label>Tracking</label>
+    <description>Stored GPS traces</description>
+    <action search="walk.all" command="delete" path="~/.local/share/marble/tracking/"/>
   </option>
 </cleaner>
