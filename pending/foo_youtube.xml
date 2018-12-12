@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2008-2018 Andrew Ziem
+    
+    https://www.bleachbit.org
+
+    foo_youtube cleaner
+    Copyright (C) 2018 Leeroy
+
+    @url https://fy.3dyd.com/home/
+    @note Cleans thumbnails and metadata generated in the course of using foo_youtube component for foobar2000 music player. Thumbnails get rather large and are useless, metadata doesn't and provides a convenient playback history.
+    @tested ok 12/12/2018 Windows 7
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<cleaner id="foo_youtube" os="windows">
+  <label>YouTube Source</label>
+  <description>foobar2000 component that handles playback from YouTube</description>
+  <option id="cache">
+    <label>Thumbnail Cache</label>
+    <description>Delete the cache of video thumbnails (album art)</description>
+    <action command="delete" search="walk.files" path="$APPDATA\foobar2000\foo_youtube\cache\img"/>
+  </option>
+  <option id="metadata_history">
+    <label>Metadata History</label>
+    <description>Delete the cache of clip metadata (url, length, title, description, uploader, view_count, thumbnail_url, published_at, like_count, dislike_count, channel_url)</description>
+    <action command="delete" search="walk.files" path="$APPDATA\foobar2000\foo_youtube\cache\meta"/>
+  </option>
+</cleaner>
