@@ -21,7 +21,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 	CleanerML written by https://github.com/Tobias-B-Besemer
-	v0.1 done on 2018-12-19
+	v0.1 done on 2018-12-20
 
 -->
 <cleaner id="smplayer">
@@ -134,19 +134,19 @@
     <action command="ini" section="history" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini"/>
   </option>
   <option id="videopreview">
-    <label>Videopreview</label>
-    <description>Videopreview - Last directory and filename</description>
+    <label>Video Preview</label>
+    <description>Video Preview - Last directory and filename</description>
     <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="last_directory"/>
     <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="filename"/>
   </option>
   <option id="playlist_directory">
-    <label>Playlist directory</label>
-    <description>Playlist directory - Last directory</description>
+    <label>Playlist Directory</label>
+    <description>Playlist Directory - Last directory</description>
     <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\playlist.ini" name="latest_dir"/>
   </option>
   <option id="playlist_contents">
-    <label>Playlist contents</label>
-    <description>Playlist contents - Last directory and filename</description>
+    <label>Playlist Contents</label>
+    <description>Playlist Contents - Last directory and filename</description>
     <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\playlist.ini" name="items\1\item_0_filename"/>
     <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\playlist.ini" name="items\1\item_0_duration"/>
     <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\playlist.ini" name="items\1\item_0_name"/>
