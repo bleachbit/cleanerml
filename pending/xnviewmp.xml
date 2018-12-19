@@ -29,30 +29,62 @@
     <label>Custom Path of XnView MP</label>
     <description>Delete the custom path of XnView MP</description>
         <action command="ini" search="glob" path="$APPDATA\XnViewMP\xnview.ini" name="customPath"/>
+        <action command="ini" search="glob" path="%ProgramFiles%\XnViewMP\xnview.ini" name="customPath"/>
+        <action command="ini" search="glob" path="%ProgramFiles(x86)%\XnViewMP\xnview.ini" name="customPath"/>
+        <action command="winreg" path="HKCU\Software\XnView\XnViewMP\Start\customPath" />
   </option>
   <option id="savefolder">
     <label>Save Folder of Viewer</label>
     <description>Delete the Save Folder of Viewer</description>
         <action command="ini" search="glob" path="$APPDATA\XnViewMP\xnview.ini" name="saveFolder"/>
+        <action command="ini" search="glob" path="%ProgramFiles%\XnViewMP\xnview.ini" name="saveFolder"/>
+        <action command="ini" search="glob" path="%ProgramFiles(x86)%\XnViewMP\xnview.ini" name="saveFolder"/>
+        <action command="winreg" path="HKCU\Software\XnView\XnViewMP\Viewer\saveFolder" />
   </option>
   <option id="list_folders">
     <label>List folders of the Strip Maker and Slideshow</label>
     <description>Delete the list folders of the Strip Maker and Slideshow</description>
         <action command="ini" search="glob" path="$APPDATA\XnViewMP\xnview.ini" name="list_folder"/>
+        <action command="ini" search="glob" path="%ProgramFiles%\XnViewMP\xnview.ini" name="list_folder"/>
+        <action command="ini" search="glob" path="%ProgramFiles(x86)%\XnViewMP\xnview.ini" name="list_folder"/>
+        <action command="winreg" path="HKCU\Software\XnView\XnViewMP\Strip\list_folder" />
   </option>
   <option id="recentfiles">
     <label>Recent Files</label>
     <description>Delete list of recent files</description>
         <action command="ini" search="glob" path="$APPDATA\XnViewMP\xnview.ini" name="RecentFiles"/>
+        <action command="ini" search="glob" path="%ProgramFiles%\XnViewMP\xnview.ini" name="RecentFiles"/>
+        <action command="ini" search="glob" path="%ProgramFiles(x86)%\XnViewMP\xnview.ini" name="RecentFiles"/>
+        <action command="winreg" path="HKCU\Software\XnView\XnViewMP\Start\RecentFiles" />
+  </option>
+  <option id="history">
+    <label>History</label>
+    <description>Delete history</description>
+        <action command="ini" search="glob" path="$APPDATA\XnViewMP\xnview.ini" name="History"/>
+        <action command="ini" search="glob" path="%ProgramFiles%\XnViewMP\xnview.ini" name="History"/>
+        <action command="ini" search="glob" path="%ProgramFiles(x86)%\XnViewMP\xnview.ini" name="History"/>
+        <action command="winreg" path="HKCU\Software\XnView\XnViewMP\Start\History" />
+  </option>
+  <option id="pathbrowser">
+    <label>Path Browser</label>
+    <description>Delete path of Browser</description>
+        <action command="ini" search="glob" path="$APPDATA\XnViewMP\xnview.ini" name="PathBrowser"/>
+        <action command="ini" search="glob" path="%ProgramFiles%\XnViewMP\xnview.ini" name="PathBrowser"/>
+        <action command="ini" search="glob" path="%ProgramFiles(x86)%\XnViewMP\xnview.ini" name="PathBrowser"/>
+        <action command="winreg" path="HKCU\Software\XnView\XnViewMP\Start\PathBrowser" />
   </option>
   <option id="xnview.db">
-    <label>XnView.db (Cache)</label>
-    <description>Delete the XnView.db (Cache)</description>
+    <label>Catalog Database (XnView.db)</label>
+    <description>Delete the Catalog Database (XnView.db) (Cache)</description>
         <action command="delete" search="file" path="$APPDATA\XnViewMP\XnView.db"/>
+        <action command="delete" search="file" path="%ProgramFiles%\XnViewMP\XnView.db"/>
+        <action command="delete" search="file" path="%ProgramFiles(x86)%\XnViewMP\XnView.db"/>
   </option>
   <option id="thumb.db">
-    <label>Thumb.db</label>
-    <description>Delete the Thumb.db (Thumb Cache)</description>
+    <label>Thumbnails Database (Thumb.db)</label>
+    <description>Delete the Thumbnails Database (Thumb.db) (Cache)</description>
         <action command="delete" search="file" path="$APPDATA\XnViewMP\Thumb.db"/>
+        <action command="delete" search="file" path="%ProgramFiles%\XnViewMP\Thumb.db"/>
+        <action command="delete" search="file" path="%ProgramFiles(x86)%\XnViewMP\Thumb.db"/>
   </option>
 </cleaner>
