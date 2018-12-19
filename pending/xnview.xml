@@ -48,19 +48,26 @@
         <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_7"/>
         <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_8"/>
         <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_9"/>
+        <action command="ini" search="glob" path="%ProgramFiles(x86)%\XnView\xnview.ini" name="FileName_*"/>
+        <action command="ini" search="glob" path="%ProgramFiles(x86)%\XnView\xnview.ini" name="DirName_*"/>
+        <action command="ini" search="glob" path="%windir%\xnview.ini" name="FileName_*"/>
+        <action command="ini" search="glob" path="%windir%\xnview.ini" name="DirName_*"/>
+        <action command="winreg" path="HKCU\Software\XnView\Start\FileName_*" />
+        <action command="winreg" path="HKCU\Software\XnView\Start\DirName_*" />
   </option>
   <option id="cache">
-    <label>Cache files</label>
-    <description>Delete the cache files</description>
+    <label>Cache file</label>
+    <description>Delete the cache file</description>
         <action command="delete" search="file" path="$APPDATA\XnView\XnView.db"/>
+        <action command="delete" search="file" path="%ProgramFiles(x86)%\XnView\XnView.db"/>
+        <action command="delete" search="glob" path="%ProgramFiles(x86)%\XnView\cache\*.db"/>
         <action command="delete" search="glob" path="%LocalAppData%\VirtualStore\Program Files*\XnView\cache\*.db"/>
-        <action command="delete" search="glob" path="%ProgramFiles%\XnView\cache\*.db"/>
   </option>
   <option id="category_bak">
     <label>Category Backup</label>
-    <description>Delete the Category Backups</description>
+    <description>Delete the Category Backup</description>
         <action command="delete" search="file" path="$APPDATA\XnView\category.bak"/>
-        <action command="delete" search="file" path="%LocalAppData%\VirtualStore\Program Files*\XnView\category.bak"/>
         <action command="delete" search="file" path="%ProgramFiles%\XnView\category.bak"/>
+        <action command="delete" search="file" path="%LocalAppData%\VirtualStore\Program Files*\XnView\category.bak"/>
   </option>
 </cleaner>
