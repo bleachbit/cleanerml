@@ -19,32 +19,32 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<cleaner id="xnview">
+<cleaner id="xnview.new">
   <label>XnView Classic for Windows</label>
   <description>Picture Viewer</description>
-  <option id="mru_files">
-    <label>MRU Files</label>
-    <description>Delete list of MRU Files</description>
-    <action command="ini" search="deep" path="FileName_0="/>
-    <action command="ini" search="deep" path="FileName_1="/>
-    <action command="ini" search="deep" path="FileName_2="/>
-    <action command="ini" search="deep" path="FileName_3="/>
-    <action command="ini" search="deep" path="FileName_4="/>
-    <action command="ini" search="deep" path="FileName_5="/>
-    <action command="ini" search="deep" path="FileName_6="/>
-    <action command="ini" search="deep" path="FileName_7="/>
-    <action command="ini" search="deep" path="FileName_8="/>
-    <action command="ini" search="deep" path="FileName_9="/>
-    <action command="ini" search="deep" path="DirName_0="/>
-    <action command="ini" search="deep" path="DirName_1="/>
-    <action command="ini" search="deep" path="DirName_2="/>
-    <action command="ini" search="deep" path="DirName_3="/>
-    <action command="ini" search="deep" path="DirName_4="/>
-    <action command="ini" search="deep" path="DirName_5="/>
-    <action command="ini" search="deep" path="DirName_6="/>
-    <action command="ini" search="deep" path="DirName_7="/>
-    <action command="ini" search="deep" path="DirName_8="/>
-    <action command="ini" search="deep" path="DirName_9="/>
+  <option id="mru">
+    <label>MRU Files and Folders</label>
+    <description>Delete list of MRU (Most recently used) Files and Folders</description>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="FileName_0"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="FileName_1"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="FileName_2"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="FileName_3"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="FileName_4"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="FileName_5"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="FileName_6"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="FileName_7"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="FileName_8"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="FileName_9"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_0"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_1"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_2"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_3"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_4"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_5"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_6"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_7"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_8"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_9"/>
   </option>
   <option id="cache">
     <label>Cache files</label>
