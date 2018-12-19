@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2008-2018 Andrew Ziem
+    https://www.bleachbit.org
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	CleanerML written by https://github.com/Tobias-B-Besemer
+	v0.1 done on 2018-12-19
+
+-->
+<cleaner id="xnview.new">
+  <label>XnView Classic for Windows</label>
+  <description>Picture Viewer</description>
+  <option id="mru">
+    <label>MRU Files and Folders</label>
+    <description>Delete list of MRU (Most recently used) Files and Folders</description>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="FileName_0"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="FileName_1"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="FileName_2"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="FileName_3"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="FileName_4"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="FileName_5"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="FileName_6"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="FileName_7"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="FileName_8"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="FileName_9"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_0"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_1"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_2"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_3"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_4"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_5"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_6"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_7"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_8"/>
+        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_9"/>
+  </option>
+  <option id="cache">
+    <label>Cache files</label>
+    <description>Delete the cache files</description>
+        <action command="delete" search="file" path="$APPDATA\XnView\XnView.db"/>
+        <action command="delete" search="glob" path="%LocalAppData%\VirtualStore\Program Files*\XnView\cache\*.db"/>
+        <action command="delete" search="glob" path="%ProgramFiles%\XnView\cache\*.db"/>
+  </option>
+  <option id="category_bak">
+    <label>Category Backup</label>
+    <description>Delete the Category Backups</description>
+        <action command="delete" search="file" path="$APPDATA\XnView\category.bak"/>
+        <action command="delete" search="file" path="%LocalAppData%\VirtualStore\Program Files*\XnView\category.bak"/>
+        <action command="delete" search="file" path="%ProgramFiles%\XnView\category.bak"/>
+  </option>
+</cleaner>
