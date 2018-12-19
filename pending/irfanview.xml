@@ -19,7 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 	CleanerML written by https://github.com/Tobias-B-Besemer
-	v0.1 done on 2018-12-19
+	v0.1 done on 2018-12-20
 
 -->
 <cleaner id="irfanview">
@@ -54,5 +54,11 @@
     <description>Directory shown in the save dialog</description>
         <action command="ini" search="glob" path="%AppData%\IrfanView\i_view32.ini" name="SaveDir"/>
         <action command="ini" search="glob" path="%AppData%\IrfanView\i_view64.ini" name="SaveDir"/>
+  </option>
+  <option id="saveassingle">
+    <label>Save As Single</label>
+    <description>Save As Single Directory</description>
+        <action command="ini" search="glob" path="%AppData%\IrfanView\i_view32.ini" name="SaveAsSingle"/>
+        <action command="ini" search="glob" path="%AppData%\IrfanView\i_view64.ini" name="SaveAsSingle"/>
   </option>
 </cleaner>
