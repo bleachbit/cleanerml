@@ -20,8 +20,11 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+	CleanerML written by https://github.com/Tobias-B-Besemer
+	v0.1 done on 2018-12-19
+
 -->
-<cleaner id="smplayer" os="linux">
+<cleaner id="smplayer">
   <label>SMPlayer</label>
   <description>Video player</description>
   <option id="filesettings">
@@ -29,15 +32,126 @@
     <description>Remove file settings (last position, subtitles size, fonts)</description>
     <action command="delete" search="file" path="~/.config/smplayer/smplayer_files.ini"/>
     <action command="delete" search="walk.all" path="~/.config/smplayer/file_settings/"/>
+    <action command="delete" search="walk.all" path="%USERPROFILE%\.smplayer\file_settings\"/>
+  </option>
+  <option id="playlist_contents">
+    <label>Playlists on Windows</label>
+    <description>Remove saved (internal) playlists on Windows</description>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_0_filename"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_0_duration"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_0_name"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_1_filename"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_1_duration"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_1_name"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_2_filename"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_2_duration"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_2_name"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_3_filename"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_3_duration"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_3_name"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_4_filename"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_4_duration"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_4_name"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_5_filename"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_5_duration"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_5_name"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_6_filename"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_6_duration"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_6_name"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_7_filename"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_7_duration"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_7_name"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_8_filename"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_8_duration"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_8_name"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_9_filename"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_9_duration"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_9_name"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_10_filename"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_10_duration"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_10_name"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_11_filename"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_11_duration"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_11_name"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_12_filename"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_12_duration"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_12_name"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_13_filename"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_13_duration"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_13_name"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_14_filename"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_14_duration"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_14_name"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_15_filename"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_15_duration"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_15_name"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_16_filename"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_16_duration"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_16_name"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_17_filename"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_17_duration"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_17_name"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_18_filename"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_18_duration"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_18_name"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_19_filename"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_19_duration"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_19_name"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_20_filename"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_20_duration"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_20_name"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_21_filename"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_21_duration"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_21_name"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_22_filename"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_22_duration"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_22_name"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_23_filename"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_23_duration"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_23_name"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_24_filename"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_24_duration"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_24_name"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_25_filename"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_25_duration"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="item_25_name"/>
+  </option>
+  <option id="screenshot_folder">
+    <label>Screenshots path on Windows</label>
+    <description>Reset screenshots path on Windows</description>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="screenshot_folder"/>
   </option>
   <option id="screenshots">
     <label>Screenshots</label>
     <description>Remove screenshots image files from default location</description>
     <action command="delete" search="glob" path="~/.config/smplayer/screenshots/*"/>
+    <action command="delete" search="glob" path="%USERPROFILE%\.smplayer\screenshots\*"/>
   </option>
   <option id="history">
     <label>Recent Files</label>
     <description>Clear recent played files</description>
     <action command="ini" section="history" search="file" path="~/.config/smplayer/smplayer.ini"/>
+    <action command="ini" section="history" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini"/>
+  </option>
+  <option id="videopreview">
+    <label>Videopreview</label>
+    <description>Videopreview - Last directory and filename</description>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="last_directory"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\smplayer.ini" name="filename"/>
+  </option>
+  <option id="playlist_directory">
+    <label>Playlist directory</label>
+    <description>Playlist directory - Last directory</description>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\playlist.ini" name="latest_dir"/>
+  </option>
+  <option id="playlist_contents">
+    <label>Playlist contents</label>
+    <description>Playlist contents - Last directory and filename</description>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\playlist.ini" name="items\1\item_0_filename"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\playlist.ini" name="items\1\item_0_duration"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\playlist.ini" name="items\1\item_0_name"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\playlist.ini" name="items\1\item_0_params"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\playlist.ini" name="items\1\item_0_video_url"/>
+    <action command="ini" search="glob" path="%USERPROFILE%\.smplayer\playlist.ini" name="items\1\item_0_icon_url"/>
   </option>
 </cleaner>
