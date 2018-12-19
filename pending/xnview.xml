@@ -18,6 +18,9 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+	CleanerML written by https://github.com/Tobias-B-Besemer
+	v0.1 done on 2018-12-19
+
 -->
 <cleaner id="xnview.new">
   <label>XnView Classic for Windows</label>
