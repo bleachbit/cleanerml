@@ -79,6 +79,8 @@
         <action command="delete" search="file" path="$APPDATA\XnViewMP\XnView.db"/>
         <action command="delete" search="file" path="%ProgramFiles%\XnViewMP\XnView.db"/>
         <action command="delete" search="file" path="%ProgramFiles(x86)%\XnViewMP\XnView.db"/>
+        <action command="delete" search="file" path="%LocalAppData%\VirtualStore\Program Files*\XnViewMP\*.db"/>
+        <action command="delete" search="file" path="%LocalAppData%\VirtualStore\Program Files*\XnViewMP\category.bak"/>
   </option>
   <option id="thumb.db">
     <label>Thumbnails Database (Thumb.db)</label>
