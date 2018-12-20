@@ -19,39 +19,75 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 	CleanerML written by https://github.com/Tobias-B-Besemer
-	v0.1 done on 2018-12-19
+	v0.1 done on 2018-12-20
 
 -->
-<cleaner id="xnview.new">
+<cleaner id="xnview.new" os="windows">
   <label>XnView Classic for Windows</label>
   <description>Picture Viewer</description>
   <option id="mru">
     <label>MRU Files and Folders</label>
     <description>Delete list of MRU (Most recently used) Files and Folders</description>
-        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="FileName_0"/>
-        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="FileName_1"/>
-        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="FileName_2"/>
-        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="FileName_3"/>
-        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="FileName_4"/>
-        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="FileName_5"/>
-        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="FileName_6"/>
-        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="FileName_7"/>
-        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="FileName_8"/>
-        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="FileName_9"/>
-        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_0"/>
-        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_1"/>
-        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_2"/>
-        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_3"/>
-        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_4"/>
-        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_5"/>
-        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_6"/>
-        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_7"/>
-        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_8"/>
-        <action command="ini" search="glob" path="$APPDATA\XnView\xnview.ini" name="DirName_9"/>
-        <action command="ini" search="glob" path="%ProgramFiles(x86)%\XnView\xnview.ini" name="FileName_*"/>
-        <action command="ini" search="glob" path="%ProgramFiles(x86)%\XnView\xnview.ini" name="DirName_*"/>
-        <action command="ini" search="glob" path="%windir%\xnview.ini" name="FileName_*"/>
-        <action command="ini" search="glob" path="%windir%\xnview.ini" name="DirName_*"/>
+        <action command="ini" search="file" path="$APPDATA\XnView\xnview.ini" name="FileName_0"/>
+        <action command="ini" search="file" path="$APPDATA\XnView\xnview.ini" name="FileName_1"/>
+        <action command="ini" search="file" path="$APPDATA\XnView\xnview.ini" name="FileName_2"/>
+        <action command="ini" search="file" path="$APPDATA\XnView\xnview.ini" name="FileName_3"/>
+        <action command="ini" search="file" path="$APPDATA\XnView\xnview.ini" name="FileName_4"/>
+        <action command="ini" search="file" path="$APPDATA\XnView\xnview.ini" name="FileName_5"/>
+        <action command="ini" search="file" path="$APPDATA\XnView\xnview.ini" name="FileName_6"/>
+        <action command="ini" search="file" path="$APPDATA\XnView\xnview.ini" name="FileName_7"/>
+        <action command="ini" search="file" path="$APPDATA\XnView\xnview.ini" name="FileName_8"/>
+        <action command="ini" search="file" path="$APPDATA\XnView\xnview.ini" name="FileName_9"/>
+        <action command="ini" search="file" path="$APPDATA\XnView\xnview.ini" name="DirName_0"/>
+        <action command="ini" search="file" path="$APPDATA\XnView\xnview.ini" name="DirName_1"/>
+        <action command="ini" search="file" path="$APPDATA\XnView\xnview.ini" name="DirName_2"/>
+        <action command="ini" search="file" path="$APPDATA\XnView\xnview.ini" name="DirName_3"/>
+        <action command="ini" search="file" path="$APPDATA\XnView\xnview.ini" name="DirName_4"/>
+        <action command="ini" search="file" path="$APPDATA\XnView\xnview.ini" name="DirName_5"/>
+        <action command="ini" search="file" path="$APPDATA\XnView\xnview.ini" name="DirName_6"/>
+        <action command="ini" search="file" path="$APPDATA\XnView\xnview.ini" name="DirName_7"/>
+        <action command="ini" search="file" path="$APPDATA\XnView\xnview.ini" name="DirName_8"/>
+        <action command="ini" search="file" path="$APPDATA\XnView\xnview.ini" name="DirName_9"/>
+        <action command="ini" search="file" path="%ProgramFiles(x86)%\XnView\xnview.ini" name="FileName_0"/>
+        <action command="ini" search="file" path="%ProgramFiles(x86)%\XnView\xnview.ini" name="FileName_1"/>
+        <action command="ini" search="file" path="%ProgramFiles(x86)%\XnView\xnview.ini" name="FileName_2"/>
+        <action command="ini" search="file" path="%ProgramFiles(x86)%\XnView\xnview.ini" name="FileName_3"/>
+        <action command="ini" search="file" path="%ProgramFiles(x86)%\XnView\xnview.ini" name="FileName_4"/>
+        <action command="ini" search="file" path="%ProgramFiles(x86)%\XnView\xnview.ini" name="FileName_5"/>
+        <action command="ini" search="file" path="%ProgramFiles(x86)%\XnView\xnview.ini" name="FileName_6"/>
+        <action command="ini" search="file" path="%ProgramFiles(x86)%\XnView\xnview.ini" name="FileName_7"/>
+        <action command="ini" search="file" path="%ProgramFiles(x86)%\XnView\xnview.ini" name="FileName_8"/>
+        <action command="ini" search="file" path="%ProgramFiles(x86)%\XnView\xnview.ini" name="FileName_9"/>
+        <action command="ini" search="file" path="%ProgramFiles(x86)%\XnView\xnview.ini" name="DirName_0"/>
+        <action command="ini" search="file" path="%ProgramFiles(x86)%\XnView\xnview.ini" name="DirName_1"/>
+        <action command="ini" search="file" path="%ProgramFiles(x86)%\XnView\xnview.ini" name="DirName_2"/>
+        <action command="ini" search="file" path="%ProgramFiles(x86)%\XnView\xnview.ini" name="DirName_3"/>
+        <action command="ini" search="file" path="%ProgramFiles(x86)%\XnView\xnview.ini" name="DirName_4"/>
+        <action command="ini" search="file" path="%ProgramFiles(x86)%\XnView\xnview.ini" name="DirName_5"/>
+        <action command="ini" search="file" path="%ProgramFiles(x86)%\XnView\xnview.ini" name="DirName_6"/>
+        <action command="ini" search="file" path="%ProgramFiles(x86)%\XnView\xnview.ini" name="DirName_7"/>
+        <action command="ini" search="file" path="%ProgramFiles(x86)%\XnView\xnview.ini" name="DirName_8"/>
+        <action command="ini" search="file" path="%ProgramFiles(x86)%\XnView\xnview.ini" name="DirName_9"/>
+        <action command="ini" search="file" path="%windir%\xnview.ini" name="FileName_0"/>
+        <action command="ini" search="file" path="%windir%\xnview.ini" name="FileName_1"/>
+        <action command="ini" search="file" path="%windir%\xnview.ini" name="FileName_2"/>
+        <action command="ini" search="file" path="%windir%\xnview.ini" name="FileName_3"/>
+        <action command="ini" search="file" path="%windir%\xnview.ini" name="FileName_4"/>
+        <action command="ini" search="file" path="%windir%\xnview.ini" name="FileName_5"/>
+        <action command="ini" search="file" path="%windir%\xnview.ini" name="FileName_6"/>
+        <action command="ini" search="file" path="%windir%\xnview.ini" name="FileName_7"/>
+        <action command="ini" search="file" path="%windir%\xnview.ini" name="FileName_8"/>
+        <action command="ini" search="file" path="%windir%\xnview.ini" name="FileName_9"/>
+        <action command="ini" search="file" path="%windir%\xnview.ini" name="DirName_0"/>
+        <action command="ini" search="file" path="%windir%\xnview.ini" name="DirName_1"/>
+        <action command="ini" search="file" path="%windir%\xnview.ini" name="DirName_2"/>
+        <action command="ini" search="file" path="%windir%\xnview.ini" name="DirName_3"/>
+        <action command="ini" search="file" path="%windir%\xnview.ini" name="DirName_4"/>
+        <action command="ini" search="file" path="%windir%\xnview.ini" name="DirName_5"/>
+        <action command="ini" search="file" path="%windir%\xnview.ini" name="DirName_6"/>
+        <action command="ini" search="file" path="%windir%\xnview.ini" name="DirName_7"/>
+        <action command="ini" search="file" path="%windir%\xnview.ini" name="DirName_8"/>
+        <action command="ini" search="file" path="%windir%\xnview.ini" name="DirName_9"/>
         <action command="winreg" path="HKCU\Software\XnView\Start\FileName_*" />
         <action command="winreg" path="HKCU\Software\XnView\Start\DirName_*" />
   </option>
@@ -61,7 +97,7 @@
         <action command="delete" search="file" path="$APPDATA\XnView\XnView.db"/>
         <action command="delete" search="file" path="%ProgramFiles(x86)%\XnView\XnView.db"/>
         <action command="delete" search="glob" path="%ProgramFiles(x86)%\XnView\cache\*.db"/>
-        <action command="delete" search="file" path="%ProgramFiles%\XnView\cache\*.db"/>
+        <action command="delete" search="glob" path="%ProgramFiles%\XnView\cache\*.db"/>
         <action command="delete" search="glob" path="%LocalAppData%\VirtualStore\Program Files*\XnView\cache\*.db"/>
   </option>
   <option id="category_bak">
