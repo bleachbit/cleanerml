@@ -22,7 +22,7 @@
 	v0.1 done on 2018-12-20
 
 -->
-<cleaner id="lightalloy">
+<cleaner id="lightalloy" os="windows">
   <label>Light Alloy</label>
   <description>Media Player</description>
   <option id="MediaDir">
