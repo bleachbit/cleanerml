@@ -31,4 +31,9 @@
         <action command="winreg" path="HKCU\Software\Daum\PotPlayerMini\RememberFiles\*" />
         <action command="winreg" path="HKCU\Software\Daum\PotPlayerMini64\RememberFiles\*" />
   </option>
+  <option id="logs">
+    <label>Log Files</label>
+    <description>Delete the Log Files</description>
+        <action command="delete" search="file" path="$APPDATA\Daum\PotPlayer\Log\*"/>
+  </option>
 </cleaner>
