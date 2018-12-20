@@ -23,7 +23,7 @@
 
 -->
 <cleaner id="lightalloy">
-  <label>LightAlloy</label>
+  <label>Light Alloy</label>
   <description>Media Player</description>
   <option id="MediaDir">
     <label>Media Diretory</label>
