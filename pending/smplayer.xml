@@ -33,6 +33,7 @@
     <action command="delete" search="file" path="~/.config/smplayer/smplayer_files.ini"/>
     <action command="delete" search="walk.all" path="~/.config/smplayer/file_settings/"/>
     <action command="delete" search="walk.all" path="%USERPROFILE%\.smplayer\file_settings\"/>
+    <action command="delete" search="walk.all" path="%LocalAppData%\SMPlayer2\File_settings\"/>
   </option>
   <option id="playlist_contents">
     <label>Playlists on Windows</label>
@@ -126,6 +127,8 @@
     <description>Remove screenshots image files from default location</description>
     <action command="delete" search="glob" path="~/.config/smplayer/screenshots/*"/>
     <action command="delete" search="glob" path="%USERPROFILE%\.smplayer\screenshots\*"/>
+    <action command="delete" search="glob" path="%LocalAppData%\SMPlayer2\screenshots\*"/>
+    <action command="delete" search="glob" path="%Pictures%\smplayer*_screenshots\*"/>
   </option>
   <option id="history">
     <label>Recent Files</label>
