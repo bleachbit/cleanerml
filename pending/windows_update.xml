@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2011 Andrew Ziem
+    http://www.bleachbit.org
+
+    Cleaner for SMPlayer by xr09
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Rules in CleanerML written by https://github.com/Tobias-B-Besemer
+	v0.1 done on 2019-02-13
+
+-->
+<cleaner id="windows_update">
+  <label>Windows Update</label>
+  <description>Windows Update</description>
+  <option id="logs">
+    <label>Logs</label>
+    <description>Delete Logs</description>
+    <action command="delete" search="walk.all" path="%WinDir%\Logs\waasmedic"/>
+    <action command="delete" search="walk.all" path="%WinDir%\Logs\WindowsUpdate"/>
+    <action command="delete" search="walk.all" path="%WinDir%\SoftwareDistribution\DataStore\Logs"/>
+    <action command="delete" search="walk.all" path="%WinDir%\SoftwareDistribution\DataStore.bak\Logs"/>
+    <action command="delete" search="file" path="%WinDir%\WindowsUpdate.log"/>
+  </option>
+  <option id="temp">
+    <label>Temp Files</label>
+    <description>Delete Temp Files</description>
+    <action command="delete" search="walk.all" path="$WINDOWS.~BT"/>
+    <action command="delete" search="walk.all" path="$Windows.~WS"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Temp\KB*"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Temp\WUDiagTempFolder"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Temp\WindowsUpdate*"/>
+  </option>
+</cleaner>
