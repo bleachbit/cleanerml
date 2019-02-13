@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2011 Andrew Ziem
+    http://www.bleachbit.org
+
+    Cleaner for SMPlayer by xr09
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Rules in CleanerML written by https://github.com/Tobias-B-Besemer
+	v0.1 done on 2019-02-13
+
+-->
+<cleaner id="system_temp_folders">
+  <label>System Temp Folders</label>
+  <description>A more fine graded/careful deletion of the content of the system temp folders</description>
+  <option id="dot_tmp">
+    <label>*.tmp</label>
+    <description>Remove all files with the extension "tmp"</description>
+    <action command="delete" search="glob" path="%LocalAppData%\Temp\*.tmp"/>
+    <action command="delete" search="glob" path="%WinDir%\Temp\*.tmp"/>
+  </option>
+  <option id="temp_files">
+    <label>temp*</label>
+    <description>Remove all files starting with "temp"</description>
+    <action command="delete" search="glob" path="%LocalAppData%\Temp\temp*"/>
+    <action command="delete" search="glob" path="%WinDir%\Temp\temp*"/>
+  </option>
+  <option id="tmp_files">
+    <label>tmp*</label>
+    <description>Remove all files starting with "tmp"</description>
+    <action command="delete" search="glob" path="%LocalAppData%\Temp\tmp*"/>
+    <action command="delete" search="glob" path="%WinDir%\Temp\tmp*"/>
+  </option>
+  <option id="all_temp_files">
+    <label>All Temp Files</label>
+    <description>Remove all files of the system temp folders (Be careful!)</description>
+    <action command="delete" search="glob" path="%LocalAppData%\Temp\"/>
+    <action command="delete" search="glob" path="%WinDir%\Temp\"/>
+  </option>
+</cleaner>
