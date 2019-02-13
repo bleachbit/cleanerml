@@ -19,7 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 	Rules in CleanerML written by https://github.com/Tobias-B-Besemer
-	v0.1 done on 2019-02-12
+	v0.1 done on 2019-02-13
 
 -->
 <cleaner id="githubdesktop" os="windows">
@@ -31,6 +31,7 @@
     <action command="delete" search="walk.all" path="%AppData%\GitHubDesktop\logs\"/>
     <action command="delete" search="walk.all" path="%AppData%\GitHub Desktop\logs\"/>
     <action command="delete" search="walk.all" path="%LocalAppData%\GitHubDesktop\*.log"/>
+    <action command="delete" search="glob" path="%LocalAppData%\GitHubDesktop\app-*\SquirrelSetup.log"/>
   </option>
   <option id="cache">
     <label>Cache</label>
