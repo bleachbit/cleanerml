@@ -39,8 +39,12 @@
   <option id="temp">
     <label>Temp Files</label>
     <description>Delete Temp Files</description>
-    <action command="delete" search="walk.all" path="$WINDOWS.~BT"/>
-    <action command="delete" search="walk.all" path="$Windows.~WS"/>
+<!--
+    <action command="delete" search="glob" path="$WINDOWS.~BT"/>
+    <action command="delete" search="glob" path="$Windows.~WS"/>
+    Old try, but I want to delete the directories, too!
+-->
+    <action command="delete" search="glob" path="$Windows.*"/>
     <action command="delete" search="glob" path="%LocalAppData%\Temp\KB*"/>
     <action command="delete" search="glob" path="%LocalAppData%\Temp\WUDiagTempFolder"/>
     <action command="delete" search="glob" path="%LocalAppData%\Temp\WindowsUpdate*"/>
