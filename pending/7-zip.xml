@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2013 Andrew Ziem
+    http://www.bleachbit.org
+
+    7-zip cleaner
+    Copyright (c) 2013 Andrew Ziem
+    Copyright (c) 2014 2McCoy7
+    Copyright (c) 2016 mikevainio
+    
+    @note Zip stores history in the windows Registry, so this cleaner is more aimed towards maintaining privacy rather then freeing up disk space
+    @tested ok 10/01/2014 Windows 7
+    @tested ok 08/25/2015 15.06 beta, Windows 7
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Rules in CleanerML written/updated by https://github.com/Tobias-B-Besemer
+	Done on 2019-02-16
+
+-->
+<cleaner id="7-Zip" os="windows">
+  <label>7-Zip</label>
+  <option id="history">
+    <label>History</label>
+    <description>Delete History</description>
+    <action command="winreg" path="HKCU\Software\7-Zip\Compression" name="ArcHistory"/>
+    <action command="winreg" path="HKCU\Software\7-Zip\Extraction" name="PathHistory"/>
+    <action command="winreg" path="HKCU\Software\7-Zip\FM" name="FolderHistory"/>
+    <action command="winreg" path="HKCU\Software\7-Zip\FM" name="CopyHistory"/>
+    <action command="winreg" path="HKCU\Software\7-Zip\FM" name="PanelPath0"/>
+    <action command="winreg" path="HKCU\Software\7-Zip\FM" name="PanelPath1"/>
+  </option>
+</cleaner>
