@@ -19,7 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 	Rules in CleanerML written by https://github.com/Tobias-B-Besemer
-	v0.2 done on 2019-02-16
+	v0.3 done on 2019-02-16
 
 -->
 <cleaner id="windows_shellbags" os="windows">
@@ -29,5 +29,6 @@
     <label>Windows Shellbags</label>
     <description>Windows Shellbags</description>
     <action command="winreg" path="HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU"/>
+    <action command="winreg" path="HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags"/>
   </option>
 </cleaner>
