@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2008-2018 Andrew Ziem
+    https://www.bleachbit.org
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Rules in CleanerML written by https://github.com/Tobias-B-Besemer
+	v0.1 done on 2019-02-16
+
+-->
+<cleaner id="total_commander" os="windows">
+  <label>Total Commander</label>
+  <description>File Manager</description>
+  <option id="last_paths">
+    <label>Last Paths Left/Right</label>
+    <description>Delete the last Paths Left & Right</description>
+        <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="left" parameter="path"/>
+        <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="right" parameter="path"/>
+  </option>
+  <option id="mkdirhistory">
+    <label>Make Dir History</label>
+    <description>Delete the last Paths of the "Make Dir History"</description>
+        <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="MkDirHistory"/>
+  </option>
+  <option id="command_line_history">
+    <label>Command line history</label>
+    <description>Delete the "Command line history"</description>
+        <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="Command line history"/>
+  </option>
+  <option id="searchtext">
+    <label>Search Text</label>
+    <description>Delete the "Search Text"</description>
+        <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="SearchText"/>
+  </option>
+  <option id="renametemplates">
+    <label>Rename Templates</label>
+    <description>Delete the "Rename Templates" (Multi-Rename Tool)</description>
+        <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="RenameTemplates"/>
+  </option>
+  <option id="renamesearchfind">
+    <label>Rename Search Find</label>
+    <description>Delete the "Rename Search Find" (Multi-Rename Tool)</description>
+        <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="RenameSearchFind"/>
+  </option>
+  <option id="renamesearchreplace">
+    <label>Rename Search Replace</label>
+    <description>Delete the "Rename Search Replace" (Multi-Rename Tool)</description>
+        <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="RenameSearchReplace"/>
+  </option>
+  <option id="searchin">
+    <label>Search In</label>
+    <description>Delete the "Search In"</description>
+        <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="SearchIn"/>
+  </option>
+  <option id="righthistory">
+    <label>Right History</label>
+    <description>Delete the "Right History"</description>
+        <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="RightHistory"/>
+  </option>
+  <option id="lefthistory">
+    <label>Left History</label>
+    <description>Delete the "Left History"</description>
+        <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="LeftHistory"/>
+  </option>
+  <option id="logfile">
+    <label>Log File</label>
+    <description>Delete the Log File</description>
+        <action command="delete" search="file" path="%LocalAppData%\Temp\totalcmd.log"/>
+  </option>
+  <option id="thumbnails">
+    <label>Thumbnails Database</label>
+    <description>Delete the Thumbnails Database</description>
+        <action command="delete" search="file" path="%LocalAppData%\GHISLER\tcthumbs.db"/>
+        <action command="delete" search="file" path="%LocalAppData%\GHISLER\tcthumbs.idb"/>
+  </option>
+</cleaner>
