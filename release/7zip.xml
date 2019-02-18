@@ -31,7 +31,7 @@
 	Done on 2019-02-17
 
 -->
-<cleaner id="7-Zip" os="windows">
+<cleaner id="7zip" os="windows">
   <label>7-Zip</label>
   <option id="history">
     <label>History</label>
