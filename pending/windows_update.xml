@@ -19,7 +19,7 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 	Rules in CleanerML written by https://github.com/Tobias-B-Besemer
-	v0.5 done on 2019-02-17
+	v0.5 done on 2019-02-18
 
 -->
 <cleaner id="windows_update">
@@ -39,15 +39,19 @@
   <option id="temp">
     <label>Temp Files</label>
     <description>Delete Temp Files</description>
-    <action command="delete" search="walk.all" path="%SystemDrive%\$WINDOWS.~BT\"/>
-    <action command="delete" search="walk.all" path="%SystemDrive%\$Windows.~WS\"/>
+    <action command="delete" search="walk.all" path="%SystemDrive%\$WINDOWS.~BT"/>
+    <action command="delete" search="glob" path="%SystemDrive%\$WINDOWS.~BT"/>
+    <action command="delete" search="walk.all" path="%SystemDrive%\$Windows.~WS"/>
+    <action command="delete" search="glob" path="%SystemDrive%\$Windows.~WS"/>
     <action command="delete" search="glob" path="%LocalAppData%\Temp\KB*"/>
-    <action command="delete" search="glob" path="%LocalAppData%\Temp\WUDiagTempFolder\"/>
+    <action command="delete" search="walk.all" path="%LocalAppData%\Temp\WUDiagTempFolder"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Temp\WUDiagTempFolder"/>
     <action command="delete" search="glob" path="%LocalAppData%\Temp\WindowsUpdate*"/>
   </option>
   <option id="windows_update_files">
-    <label>Windows Update Files</label>
-    <description>Delete Windows Update Files</description>
+    <label>Windows Update Files and Database</label>
+    <description>Delete the Windows Update Files and the Database</description>
+    <warning>Use the option only if you know what you do!</warning>
     <action command="process" cmd="net stop wuauserv"/>
     <action command="delete" search="walk.all" path="%WinDir%\SoftwareDistribution\"/>
     <action command="process" cmd="net start wuauserv"/>
