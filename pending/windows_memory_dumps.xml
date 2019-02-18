@@ -33,5 +33,9 @@
     <action command="delete" search="walk.all" path="%windir%\System32\config\systemprofile\AppData\Local\CrashDumps\"/>
     <action command="delete" search="walk.all" path="%windir%\SysWOW64\config\systemprofile\AppData\Local\CrashDumps\"/>
     <action command="delete" search="walk.all" path="%LocalAppData%\CrashDumps\"/>
+    <action command="delete" search="glob" path="%windir%\Temp\WER*.hdmp"/>
+    <!-- Windows Error Reporting, HEAP-Dump -->
+    <action command="delete" search="glob" path="%windir%\Temp\WER*.mdmp"/>
+    <!-- Windows Error Reporting, Mini-Dump -->
   </option>
 </cleaner>
