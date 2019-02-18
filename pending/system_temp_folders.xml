@@ -19,7 +19,7 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 	Rules in CleanerML written by https://github.com/Tobias-B-Besemer
-	v0.2 done on 2019-02-17
+	v0.3 done on 2019-02-18
 
 -->
 <cleaner id="system_temp_folders">
@@ -30,23 +30,37 @@
     <description>Remove all files with the extension "tmp"</description>
     <action command="delete" search="walk.all" path="%LocalAppData%\Temp\*.tmp"/>
     <action command="delete" search="walk.all" path="%WinDir%\Temp\*.tmp"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Temp\*.tmp"/>
+    <action command="delete" search="glob" path="%WinDir%\Temp\*.tmp"/>
   </option>
   <option id="temp_files">
     <label>temp*</label>
     <description>Remove all files starting with "temp"</description>
     <action command="delete" search="walk.all" path="%LocalAppData%\Temp\temp*"/>
     <action command="delete" search="walk.all" path="%WinDir%\Temp\temp*"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Temp\temp*"/>
+    <action command="delete" search="glob" path="%WinDir%\Temp\temp*"/>
   </option>
   <option id="tmp_files">
     <label>tmp*</label>
     <description>Remove all files starting with "tmp"</description>
     <action command="delete" search="walk.all" path="%LocalAppData%\Temp\tmp*"/>
     <action command="delete" search="walk.all" path="%WinDir%\Temp\tmp*"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Temp\tmp*"/>
+    <action command="delete" search="glob" path="%WinDir%\Temp\tmp*"/>
+  </option>
+  <option id="msi_logs">
+    <label>MSI-Logs</label>
+    <description>Remove all files with "MSI*.log" (Microsoft Installer Logs)</description>
+    <action command="delete" search="glob" path="%LocalAppData%\Temp\MSI*.log"/>
+    <action command="delete" search="glob" path="%WinDir%\Temp\MSI*.log"/>
   </option>
   <option id="all_temp_files">
     <label>All Temp Files</label>
     <description>Remove all files of the system temp folders (Be careful!)</description>
     <action command="delete" search="walk.all" path="%LocalAppData%\Temp\"/>
     <action command="delete" search="walk.all" path="%WinDir%\Temp\"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Temp\"/>
+    <action command="delete" search="glob" path="%WinDir%\Temp\"/>
   </option>
 </cleaner>
