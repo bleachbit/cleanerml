@@ -19,7 +19,7 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 	Rules in CleanerML written by https://github.com/Tobias-B-Besemer
-	v0.2 done on 2019-02-17
+	v0.2 done on 2019-02-18
 
 -->
 <cleaner id="i2p">
@@ -37,5 +37,6 @@
     <label>Temp Files</label>
     <description>Remove the Temp Files</description>
     <action command="delete" search="walk.all" path="%LocalAppData%\Temp\i2p-*"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Temp\i2p-*"/>
   </option>
 </cleaner>
