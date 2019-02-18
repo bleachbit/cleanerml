@@ -35,7 +35,7 @@
   <label>7-Zip</label>
   <option id="history">
     <label>History</label>
-    <description>Delete History</description>
+    <description>Delete the usage history</description>
     <action command="winreg" path="HKCU\Software\7-Zip\Compression" name="ArcHistory"/>
     <action command="winreg" path="HKCU\Software\7-Zip\Extraction" name="PathHistory"/>
     <action command="winreg" path="HKCU\Software\7-Zip\FM" name="FolderHistory"/>
