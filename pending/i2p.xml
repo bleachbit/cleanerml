@@ -22,7 +22,7 @@
 	v0.2 done on 2019-02-18
 
 -->
-<cleaner id="i2p">
+<cleaner id="i2p" os="windows">
   <label>I2P</label>
   <description>I2P</description>
   <option id="logs">
