@@ -2,7 +2,7 @@
 <!--
 
     BleachBit
-    Copyright (C) 2008-2018 Andrew Ziem
+    Copyright (C) 2008-2019 Andrew Ziem
     https://www.bleachbit.org
 
     This program is free software: you can redistribute it and/or modify
@@ -12,14 +12,14 @@
 
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-	CleanerML written by https://github.com/Tobias-B-Besemer
-	v0.1 done on 2018-12-20
+	Rules in CleanerML written by https://github.com/Tobias-B-Besemer
+	v0.2.5 done on 2019-02-25
 
 -->
 <cleaner id="biglybt">
@@ -44,6 +44,8 @@
     <action command="delete" search="file" path="~/.biglybt/tracker.log"/>
     <action command="delete" search="file" path="~/.biglybt/update.log"/>
     <action command="delete" search="walk.all" path="$APPDATA\BiglyBT\logs\"/>
+    <action command="delete" search="file" path="$APPDATA\BiglyBT\update.log"/>
+    <action command="delete" search="file" path="$APPDATA\BiglyBT\tracker.log"/>
     <action command="delete" search="file" path="%ProgramFiles%\BiglyBT\*.log"/>
     <action command="delete" search="file" path="%ProgramFiles%\BiglyBT\.install4j\*.log"/>
   </option>
