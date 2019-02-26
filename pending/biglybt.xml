@@ -19,7 +19,7 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 	Rules in CleanerML written by https://github.com/Tobias-B-Besemer
-	v0.5 done on 2019-02-25
+	v0.5.5 done on 2019-02-26
 
 -->
 <cleaner id="biglybt">
@@ -32,8 +32,8 @@
     <action command="delete" search="glob" path="$APPDATA\BiglyBT\*.bak"/>
     <action command="delete" search="glob" path="$APPDATA\BiglyBT\active\*.bak"/>
     <action command="delete" search="glob" path="$APPDATA\BiglyBT\subs\*.biglybt.bak"/>
-    <action command="delete" search="walk.all" path="%ProgramFiles%\BiglyBT\backup\"/>
-    <action command="delete" search="walk.all" path="%ProgramFiles%\BiglyBT\BiglyBT AzConfigBackup\"/>
+    <action command="delete" search="walk.all" path="$ProgramFiles\BiglyBT\backup\"/>
+    <action command="delete" search="walk.all" path="$ProgramFiles\BiglyBT\BiglyBT AzConfigBackup\"/>
   </option>
   <option id="cache">
     <label>Cache</label>
@@ -58,9 +58,9 @@
     <action command="delete" search="glob" path="$APPDATA\BiglyBT\stats\*"/>
     <action command="delete" search="file" path="$APPDATA\BiglyBT\update.log"/>
     <action command="delete" search="file" path="$APPDATA\BiglyBT\tracker.log"/>
-    <action command="delete" search="glob" path="%ProgramFiles%\BiglyBT\*.log"/>
-    <action command="delete" search="walk.files" path="%ProgramFiles%\BiglyBT\log\"/>
-    <action command="delete" search="glob" path="%ProgramFiles%\BiglyBT\.install4j\*.log"/>
+    <action command="delete" search="glob" path="$ProgramFiles\BiglyBT\*.log"/>
+    <action command="delete" search="walk.files" path="$ProgramFiles\BiglyBT\log\"/>
+    <action command="delete" search="glob" path="$ProgramFiles\BiglyBT\.install4j\*.log"/>
   </option>
   <option id="tmp">
     <label>Temporary files</label>
