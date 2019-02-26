@@ -19,7 +19,7 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 	Rules in CleanerML written by https://github.com/Tobias-B-Besemer
-	v0.5 done on 2019-02-18
+	v0.6 done on 2019-02-26
 
 -->
 <cleaner id="windows_update">
@@ -55,5 +55,11 @@
     <action command="process" cmd="net stop wuauserv"/>
     <action command="delete" search="walk.all" path="%WinDir%\SoftwareDistribution\"/>
     <action command="process" cmd="net start wuauserv"/>
+  </option>
+  <option id="windows7sp1_backup_files">
+    <label>Windows 7 Service Pack 1 Backup Files</label>
+    <description>Delete Windows 7 Service Pack 1 Backup Files</description>
+    <warning>Use the option only if you know what you do! Process takes a few minutes to complete!</warning>
+    <action command="process" wait="true" cmd="dism.exe /online /cleanup-image /spsuperseded"/>
   </option>
 </cleaner>
