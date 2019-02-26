@@ -19,7 +19,7 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 	Rules in CleanerML written by https://github.com/Tobias-B-Besemer
-	v0.6 done on 2019-02-26
+	v0.7 done on 2019-02-26
 
 -->
 <cleaner id="windows_update">
@@ -56,10 +56,22 @@
     <action command="delete" search="walk.all" path="%WinDir%\SoftwareDistribution\"/>
     <action command="process" cmd="net start wuauserv"/>
   </option>
-  <option id="windows7sp1_backup_files">
-    <label>Windows 7 Service Pack 1 Backup Files</label>
-    <description>Delete Windows 7 Service Pack 1 Backup Files</description>
-    <warning>Use the option only if you know what you do! Process takes a few minutes to complete!</warning>
-    <action command="process" wait="true" cmd="dism.exe /online /cleanup-image /spsuperseded"/>
+  <option id="windows_sp_backup_files">
+    <label>Windows Service Pack Backup Files</label>
+    <description>Deletes the Windows Service Pack Backup Files (Windows 7 and higher)</description>
+    <warning>This may take a long time! (How long depends on your computer, but at least several minutes!) The program may seem to hang, but be patience, just wait! Attention: After use this option, you can't uninstall your Service Pack anymore! Use this option only if you know what you do!</warning>
+    <action command="process" wait="true" cmd="dism.exe /Online /Cleanup-Image /SPSuperseded /hideSP"/>
+  </option>
+  <option id="winsxs_backup_files">
+    <label>WinSxS Backup Files</label>
+    <description>Deletes the WinSxS Backup Files</description>
+    <warning>Use one your own risk! Use this option only if you know what you do!</warning>
+    <action command="delete" search="walk.files" path="%WinDir%\WinSxS\Backup\"/>
+  </option>
+  <option id="winsxs_component_cleanup">
+    <label>WinSxS Component Cleanup</label>
+    <description>Makes a WinSxS Component Cleanup (Windows 8 and higher)</description>
+    <warning>All existing service packs and updates cannot be uninstalled after this command is completed. But this will not block the uninstallation of future service packs or updates. Use this option only if you know what you do!</warning>
+    <action command="process" wait="true" cmd="dism.exe /Online /Cleanup-Image /StartComponentCleanup /ResetBase"/>
   </option>
 </cleaner>
