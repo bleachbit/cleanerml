@@ -19,7 +19,7 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 	Rules in CleanerML written by https://github.com/Tobias-B-Besemer
-	v0.2.5 done on 2019-02-25
+	v0.5 done on 2019-02-25
 
 -->
 <cleaner id="biglybt">
@@ -29,30 +29,52 @@
     <label>Backup files</label>
     <description>Delete the backup files</description>
     <action command="delete" search="glob" path="~/.biglybt/active/*.bak"/>
+    <action command="delete" search="glob" path="$APPDATA\BiglyBT\*.bak"/>
     <action command="delete" search="glob" path="$APPDATA\BiglyBT\active\*.bak"/>
+    <action command="delete" search="glob" path="$APPDATA\BiglyBT\subs\*.biglybt.bak"/>
+    <action command="delete" search="walk.all" path="%ProgramFiles%\BiglyBT\backup\"/>
+    <action command="delete" search="walk.all" path="%ProgramFiles%\BiglyBT\BiglyBT AzConfigBackup\"/>
   </option>
   <option id="cache">
     <label>Cache</label>
-    <description>Delete the IPFilter Cache</description>
+    <description>Delete the Caches</description>
     <action command="delete" search="file" path="~/.biglybt/ipfilter.cache"/>
     <action command="delete" search="file" path="$APPDATA\BiglyBT\ipfilter.cache"/>
+    <action command="delete" search="walk.all" path="$APPDATA\BiglyBT\cache"/>
+    
+    <!--<action command="delete" search="walk.all" path="$APPDATA\BiglyBT\shares\cache*\"/>-->
+    <!--Seems that not normal caches and shouldn't be deleted!-->
   </option>
   <option id="logs">
-    <label>Logs</label>
-    <description>Delete the logs</description>
+    <label>Logs and Stats</label>
+    <description>Delete the Logs and Stats</description>
     <action command="delete" search="walk.all" path="~/.biglybt/logs/"/>
     <action command="delete" search="file" path="~/.biglybt/tracker.log"/>
     <action command="delete" search="file" path="~/.biglybt/update.log"/>
     <action command="delete" search="walk.all" path="$APPDATA\BiglyBT\logs\"/>
+    <action command="delete" search="glob" path="$APPDATA\BiglyBT\plugins\*\*.log"/>
+    <action command="delete" search="glob" path="$APPDATA\BiglyBT\plugins\*\eventlog.txt"/>
+    <action command="delete" search="walk.all" path="$APPDATA\BiglyBT\stats\"/>
+    <action command="delete" search="glob" path="$APPDATA\BiglyBT\stats\*"/>
     <action command="delete" search="file" path="$APPDATA\BiglyBT\update.log"/>
     <action command="delete" search="file" path="$APPDATA\BiglyBT\tracker.log"/>
-    <action command="delete" search="file" path="%ProgramFiles%\BiglyBT\*.log"/>
-    <action command="delete" search="file" path="%ProgramFiles%\BiglyBT\.install4j\*.log"/>
+    <action command="delete" search="glob" path="%ProgramFiles%\BiglyBT\*.log"/>
+    <action command="delete" search="walk.files" path="%ProgramFiles%\BiglyBT\log\"/>
+    <action command="delete" search="glob" path="%ProgramFiles%\BiglyBT\.install4j\*.log"/>
   </option>
   <option id="tmp">
     <label>Temporary files</label>
     <description>Delete the temporary files</description>
     <action command="delete" search="walk.files" path="~/.biglybt/tmp/"/>
     <action command="delete" search="walk.files" path="$APPDATA\BiglyBT\tmp\"/>
+    <action command="delete" search="glob" path="$APPDATA\BiglyBT\torrents\*.tmp"/>
+    <action command="delete" search="glob" path="$APPDATA\BiglyBT\subs\*.results.bad*"/>
+    <action command="delete" search="walk.files" path="$APPDATA\BiglyBT\subs\temp\"/>
+    <action command="delete" search="glob" path="$APPDATA\BiglyBT\torrents\*.tmp._az"/>
+    <action command="delete" search="glob" path="$APPDATA\BiglyBT\torrents\*.torrent._az.saving"/>
+    <action command="delete" search="walk.all" path="$APPDATA\BiglyBT\updates\"/>
+    <action command="delete" search="walk.all" path="%LocalAppData%\Temp\BiglyBTInstall\"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Temp\BiglyBTInstall\"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Temp\core_BiglyBT*"/>
   </option>
 </cleaner>
