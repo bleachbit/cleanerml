@@ -19,7 +19,7 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 	Rules in CleanerML written by https://github.com/Tobias-B-Besemer
-	v0.2 done on 2019-02-18
+	v0.3 done on 2019-02-26
 
 -->
 <cleaner id="windows_memory_dumps" os="windows">
@@ -32,6 +32,7 @@
     <action command="delete" search="walk.all" path="%windir%\Minidump\"/>
     <action command="delete" search="walk.all" path="%windir%\System32\config\systemprofile\AppData\Local\CrashDumps\"/>
     <action command="delete" search="walk.all" path="%windir%\SysWOW64\config\systemprofile\AppData\Local\CrashDumps\"/>
+    <action command="delete" search="walk.all" path="%windir%\LiveKernelReports\WATCHDOG\"/>
     <action command="delete" search="walk.all" path="%LocalAppData%\CrashDumps\"/>
     <action command="delete" search="glob" path="%windir%\Temp\WER*.hdmp"/>
     <!-- Windows Error Reporting, HEAP-Dump -->
