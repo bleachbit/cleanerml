@@ -19,10 +19,10 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 	Rules in CleanerML written by https://github.com/Tobias-B-Besemer
-	v0.3 done on 2019-02-18
+	v0.3.5 done on 2019-02-26
 
 -->
-<cleaner id="system_temp_folders">
+<cleaner id="system_temp_folders" os="windows">
   <label>System Temp Folders</label>
   <description>A more fine graded/careful deletion of the content of the system temp folders</description>
   <option id="dot_tmp">
