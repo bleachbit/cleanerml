@@ -19,7 +19,7 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 	Rules in CleanerML written by https://github.com/Tobias-B-Besemer
-	v0.1.7 done on 2019-02-27
+	v0.3.0 done on 2019-02-27
 
 -->
 <cleaner id="windows" os="windows">
@@ -85,9 +85,15 @@
         <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Windows\WER\ERC\"/>
         <action command="delete" search="walk.all" path="%LocalAppData%\ElevatedDiagnostics\"/>
         <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Windows\WER\Temp\"/>
-        <action command="winreg" path="HKCU\Software\Microsoft\Windows\Windows Error Reporting\Debug\StoreLocation"/>
-        <action command="winreg" path="HKLM\Software\Microsoft\Windows\Windows Error Reporting\Debug\StoreLocation"/>
-        <action command="winreg" path="HKLM\Software\Microsoft\Windows\Windows Error Reporting\LocalDumps\"/>
-        <action command="winreg" path="HKU\.DEFAULT\Software\Microsoft\Windows\Windows Error Reporting\Debug\StoreLocation"/>
+        <action command="winreg" path="HKCU\Software\Microsoft\Windows\Windows Error Reporting\Debug"/> <!-- StoreLocation -->
+        <action command="winreg" path="HKLM\Software\Microsoft\Windows\Windows Error Reporting\Debug"/> <!-- StoreLocation -->
+        <action command="winreg" path="HKLM\Software\Microsoft\Windows\Windows Error Reporting\LocalDumps"/>
+        <action command="winreg" path="HKU\.DEFAULT\Software\Microsoft\Windows\Windows Error Reporting\Debug"/> <!-- StoreLocation -->
+  </option>
+  <option id="shadow_copies">
+    <label>Shadow Copies</label>
+    <description>Deletes all Shadow Copies on C:</description>
+    <warning>Use the option only if you know what you do!</warning>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=c: /all"/>
   </option>
 </cleaner>
