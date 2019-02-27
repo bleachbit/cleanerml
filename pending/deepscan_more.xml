@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2008-2019 Andrew Ziem
+    https://www.bleachbit.org
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+	Rules in CleanerML written/updated by https://github.com/Tobias-B-Besemer
+	v0.2.0 done on 2019-02-27
+
+-->
+<cleaner id="deepscan_more">
+  <label translate="true">Deep scan - more</label>
+  <description>Scans the complete disk for files</description>
+  <!-- Already in cleaner deepscan:
+  <option id="bak">
+    <label translate="true">All .bak files</label>
+    <description>Delete all .bak files</description>
+    <warning>Deletes all .bak files on your system! Use on your own risk! Inspect the preview for any files you want to keep. This option is slow.</warning>
+    <action command="delete" search="deep" regex="\.[Bb][Aa][Kk]$" cache="false"/>
+    < !-- Already in cleaner deepscan:
+    <action command="delete" search="deep" regex="[a-zA-Z]{1,4}~$" cache="false"/>
+    -- >
+  </option>
+  -->
+  <!-- Already in cleaner deepscan:
+  <option id="ds_store">
+    <label translate="false">.DS_Store</label>
+    <description>Delete the .DS_Store files</description>
+    <warning>This option is slow.</warning>
+    <action command="delete" search="deep" cache="false" regex="^\.DS_Store$"/>
+  </option>
+  -->
+  <!-- Already in cleaner deepscan:
+  <option id="thumbs_db">
+    <label translate="false">Thumbs.db</label>
+    <description>Delete the Thumbs.db files</description>
+    <warning>This option is slow.</warning>
+    <action command="delete" search="deep" regex="^Thumbs\.db$" cache="false"/>
+    <action command="delete" search="deep" regex="^Thumbs\.db:encryptable$" cache="false"/>
+  </option>
+  -->
+  <option id="tmp">
+    <label translate="true">All .tmp files</label>
+    <description>Delete all .tmp files</description>
+    <warning>Deletes all .tmp files on your system! Use on your own risk! Inspect the preview for any files you want to keep. This option is slow.</warning>
+    <!-- Already in cleaner deepscan:-->
+    <!-- http://support.microsoft.com/kb/211632 -->
+    <!-- <action command="delete" search="deep" cache="false" regex="^~wr[a-z][0-9]{4}\.tmp$"/>-->
+    <!-- http://support.microsoft.com/kb/826810 -->
+    <!-- <action command="delete" search="deep" cache="false" regex="^ppt[0-9]{4}\.tmp$"/>-->
+    <!-- Delete them all -->
+    <action command="delete" search="deep" cache="false" regex="\.[Tt][Mm][Pp]$"/>
+  </option>
+  <option id="log">
+    <label translate="true">All .log files</label>
+    <description>Delete all .log files</description>
+    <warning>Deletes all .log files on your system! Use on your own risk! Inspect the preview for any files you want to keep. This option is slow.</warning>
+    <action command="delete" search="deep" cache="false" regex="\.[Ll][Oo][Gg]$"/>
+  </option>
+  <option id="old">
+    <label translate="true">All .old files</label>
+    <description>Delete all .old files</description>
+    <warning>Deletes all .old files on your system! Use on your own risk! Inspect the preview for any files you want to keep. This option is slow.</warning>
+    <action command="delete" search="deep" cache="false" regex="\.[Oo][Ll][Dd]$"/>
+  </option>
+</cleaner>
