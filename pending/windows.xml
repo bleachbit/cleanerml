@@ -19,7 +19,7 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 	Rules in CleanerML written by https://github.com/Tobias-B-Besemer
-	v0.3.0 done on 2019-02-27
+	v0.4.0 done on 2019-02-27
 
 -->
 <cleaner id="windows" os="windows">
@@ -95,5 +95,13 @@
     <description>Deletes all Shadow Copies on C:</description>
     <warning>Use the option only if you know what you do!</warning>
     <action command="process" cmd="vssadmin.exe delete shadows /for=c: /all"/>
+  </option>
+  <option id="recycle_bin">
+    <label>Recycle Bin</label>
+    <description>Empty Recycle Bin on drive C: from all user accounts</description>
+    <warning>Empty Recycle Bin on drive C: from all user accounts! Use the option only if you know what you do!</warning>
+    <!-- <action command="process" cmd="cmd.exe /c rd /s c:\$Recycle.Bin"/> -->
+    <action command="delete" search="walk.all" path="%SystemDrive%\$Recycle.Bin"/>
+    <action command="delete" search="glob" path="%SystemDrive%\$Recycle.Bin"/>
   </option>
 </cleaner>
