@@ -19,11 +19,11 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 	Rules in CleanerML written/updated by https://github.com/Tobias-B-Besemer
-	v0.2.0 done on 2019-02-27
+	v0.2.1 done on 2019-02-27
 
 -->
 <cleaner id="deepscan_more">
-  <label translate="true">Deep scan - more</label>
+  <label translate="true">Deep Scan - More</label>
   <description>Scans the complete disk for files</description>
   <!-- Already in cleaner deepscan:
   <option id="bak">
