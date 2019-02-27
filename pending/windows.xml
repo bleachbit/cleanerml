@@ -19,7 +19,7 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 	Rules in CleanerML written by https://github.com/Tobias-B-Besemer
-	v0.1.5 done on 2019-02-27
+	v0.1.7 done on 2019-02-27
 
 -->
 <cleaner id="windows" os="windows">
@@ -35,9 +35,15 @@
     <label>Log Files</label>
     <description>Delete the Log Files in the Windows Directory</description>
         <action command="delete" search="glob" path="%WINDIR%\*.log"/>
-        <action command="delete" search="glob" path="%WINDIR%\System32\config\*.log"/>
-        <action command="delete" search="glob" path="%WINDIR%\System32\config\*.log1"/>
-        <action command="delete" search="glob" path="%WINDIR%\System32\config\*.log2"/>
+        
+        <!--
+        64-bit Windows redirects %windir%\sysnative\ for 32-bit applications to %windir%\system32 
+        https://docs.microsoft.com/en-us/windows/desktop/winprog64/file-system-redirector
+        -->
+        <action command="delete" search="glob" path="%WINDIR%\sysnative\config\*.log"/>
+        <action command="delete" search="glob" path="%WINDIR%\sysnative\config\*.log1"/>
+        <action command="delete" search="glob" path="%WINDIR%\sysnative\config\*.log2"/>
+        
         <action command="delete" search="glob" path="%SystemDrive%\Boot\*.log"/>
         <action command="delete" search="glob" path="%SystemDrive%\Boot\*.log1"/>
         <action command="delete" search="glob" path="%SystemDrive%\Boot\*.log2"/>
