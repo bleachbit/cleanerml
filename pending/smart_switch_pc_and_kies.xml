@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2008-2019 Andrew Ziem
+    https://www.bleachbit.org
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+	Rules in CleanerML written by https://github.com/Tobias-B-Besemer
+	v0.1.0 done on 2019-02-27
+
+-->
+<cleaner id="samsung_mobiles" os="windows">
+  <label>Smart Switch PC and Kies</label>
+  <description>Samsung Mobiles - Smart Switch PC and Kies</description>
+  <!--One cleaner for Smart Switch PC and Kies together, because they share files.-->
+  <option id="device_error_recovery_logs">
+    <label>Device Error Recovery Logs</label>
+    <description>Delete the Device Error Recovery Logs</description>
+        <action command="delete" search="glob" path="%ProgramData%\Samsung\Device Error Recovery\default-*.log"/>
+  </option>
+  <option id="device_profile_cache">
+    <label>Device Profile Cache</label>
+    <description>Delete the Device Profile Cache</description>
+        <action command="delete" search="walk.all" path="%ProgramData%\Samsung\DeviceProfile\Cache\"/>
+        <action command="delete" search="glob" path="%ProgramData%\Samsung\DeviceProfile\Cache\"/>
+  </option>
+  <option id="device_roms">
+    <label>Device ROMs</label>
+    <description>Delete the downloaded Device ROMs</description>
+        <action command="delete" search="walk.all" path="%LOCALAPPDATA%\Temp\Binary\"/>
+        <action command="delete" search="glob" path="%LOCALAPPDATA%\Temp\Binary\"/>
+  </option>
+  <option id="user_software_data">
+    <label>User Software Data</label>
+    <description>Delete the User Software Data</description>
+        <action command="delete" search="walk.all" path="%APPDATA%\Samsung\"/>
+        <action command="delete" search="glob" path="%APPDATA%\Samsung\"/>
+  </option>
+  <option id="selfmv_data">
+    <label>SelfMV Data</label>
+    <description>Delete the SelfMV Data</description>
+        <action command="delete" search="walk.all" path="%USERPROFILE%\Documents\SelfMV\"/>
+        <action command="delete" search="glob" path="%USERPROFILE%\Documents\SelfMV\"/>
+  </option>
+</cleaner>
