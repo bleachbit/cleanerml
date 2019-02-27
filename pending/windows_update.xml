@@ -19,7 +19,7 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 	Rules in CleanerML written by https://github.com/Tobias-B-Besemer
-	v0.7.8 done on 2019-02-27
+	v0.7.9 done on 2019-02-27
 
 -->
 <cleaner id="windows_update" os="windows">
@@ -68,15 +68,13 @@
     <warning>Use one your own risk! Use this option only if you know what you do!</warning>
     <action command="delete" search="walk.files" path="%WinDir%\WinSxS\Backup\"/>
   </option>
-  <!--Sad, but no chance this way for Win7 users, yet.
   <option id="winsxs_component_cleanup_win7">
     <label>WinSxS Component Cleanup (Win7)</label>
     <description>Makes a WinSxS Component Cleanup (on Windows 7)</description>
     <warning>All existing service packs and updates cannot be uninstalled after this command is completed. But this will not block the uninstallation of future service packs or updates. Use this option only if you know what you do!
 This option will open the Microsoft Windows Disk Cleanup Tool! You need to clean with it the WinSxS manual! Proceed only if you know what you do!</warning>
-    <action command="process" cmd="Cleanmgr.exe"/>
+    <action command="process" cmd="cmd.exe /c Cleanmgr.exe"/>
   </option>
-  -->
   <option id="winsxs_component_cleanup_win8">
     <label>WinSxS Component Cleanup (Win8)</label>
     <description>Makes a WinSxS Component Cleanup (with Windows 8 and higher)</description>
