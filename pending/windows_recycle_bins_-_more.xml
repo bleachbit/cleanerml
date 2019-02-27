@@ -19,7 +19,7 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 	Rules in CleanerML written by https://github.com/Tobias-B-Besemer
-	v0.1.0 done on 2019-02-27
+	v0.1.5 done on 2019-02-27
 
 -->
 <cleaner id="windows_recycle_bins_more" os="windows">
@@ -78,10 +78,5 @@
     <action command="delete" search="glob" path="Y:\$Recycle.Bin"/>
     <action command="delete" search="glob" path="Z:\$Recycle.Bin"/>
     <action command="winreg" path="HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\BitBucket\Volume"/>
-  </option>
-  <option id="logs">
-    <label>Log Files</label>
-    <description>Delete the Log Files</description>
-        <action command="delete" search="file" path="$APPDATA\Daum\PotPlayer\Log\*"/>
   </option>
 </cleaner>
