@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2008-2019 Andrew Ziem
+    https://www.bleachbit.org
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+	Rules in CleanerML written by https://github.com/Tobias-B-Besemer
+	v0.1.0 done on 2019-02-27
+
+-->
+<cleaner id="shadow_copies_more" os="windows">
+  <label translate="true">Shadow Copies - More</label>
+  <description>Deletes the Shadow Copies of all drives from C to Z</description>
+  <option id="shadow_copies_all">
+    <label>Shadow Copies - Delete all</label>
+    <description>Deletes the Shadow Copies of all drives from C to Z</description>
+    <warning>Use this cleaner only if you know what you do!</warning>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=C: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=D: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=E: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=F: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=G: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=H: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=I: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=J: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=K: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=L: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=M: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=N: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=O: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=P: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=Q: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=R: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=S: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=T: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=U: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=V: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=W: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=X: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=Y: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=Z: /all"/>
+  </option>
+</cleaner>
