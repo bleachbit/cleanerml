@@ -19,7 +19,7 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 	Rules in CleanerML written/updated by https://github.com/Tobias-B-Besemer
-	v0.2.0 done on 2019-03-07
+	v0.2.5 done on 2019-03-07
 
 -->
 <cleaner id="itunes" os="windows">
@@ -45,6 +45,9 @@
     <action command="delete" search="walk.all" path="%WinDir%\System32\config\systemprofile\AppData\Roaming\Apple Computer\Logs\"/>
     <action command="delete" search="walk.all" path="%WinDir%\SysWOW64\config\systemprofile\AppData\Roaming\Apple Computer\Logs\"/>
     <action command="delete" search="walk.all" path="%AppData%\Apple Computer\MediaStream\Thumbnails\"/>
+
+    <!-- Suggested by: https://github.com/sshermz -->
+    <action command="delete" search="walk.all" path="%AppData%\Apple Computer\iTunes\iPhone Updater Logs\"/>
   </option>
   <option id="mobilesync_bak">
     <label>MobileSync Backup</label>
