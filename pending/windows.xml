@@ -142,8 +142,8 @@
     <action command="process" wait="true" cmd="sc config WSearch start= disabled"/>
     <action command="delete" search="file" path="%ProgramData%\Microsoft\Search\Data\Applications\Windows\Windows.edb"/>
     <action command="delete" search="file" path="%ProgramData%\Microsoft\Search\Data\Applications\Windows\tmp.edb"/>
-    <action command="delete" search="walk.files" path="%ProgramData%\Microsoft\Search\Data\Applications\Windows\GatherLogs\SystemIndex\*"/>
-    <action command="delete" search="walk.files" path="%ProgramData%\Microsoft\Search\Data\Applications\Windows\Projects\SystemIndex\Indexer\CiFiles\*"/>
+    <action command="delete" search="glob" path="%ProgramData%\Microsoft\Search\Data\Applications\Windows\GatherLogs\SystemIndex\*"/>
+    <action command="delete" search="glob" path="%ProgramData%\Microsoft\Search\Data\Applications\Windows\Projects\SystemIndex\Indexer\CiFiles\*"/>
     <action command="process" cmd="sc config WSearch start= auto"/>
   </option>
 </cleaner>
