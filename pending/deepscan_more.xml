@@ -19,50 +19,16 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 	Rules in CleanerML written/updated by https://github.com/Tobias-B-Besemer
-	v0.2.1 done on 2019-02-27
+	v0.2.2 done on 2019-03-07
 
 -->
 <cleaner id="deepscan_more">
   <label translate="true">Deep Scan - More</label>
   <description>Scans the complete disk for files</description>
-  <!-- Already in cleaner deepscan:
-  <option id="bak">
-    <label translate="true">All .bak files</label>
-    <description>Delete all .bak files</description>
-    <warning>Deletes all .bak files on your system! Use on your own risk! Inspect the preview for any files you want to keep. This option is slow.</warning>
-    <action command="delete" search="deep" regex="\.[Bb][Aa][Kk]$" cache="false"/>
-    < !-- Already in cleaner deepscan:
-    <action command="delete" search="deep" regex="[a-zA-Z]{1,4}~$" cache="false"/>
-    -- >
-  </option>
-  -->
-  <!-- Already in cleaner deepscan:
-  <option id="ds_store">
-    <label translate="false">.DS_Store</label>
-    <description>Delete the .DS_Store files</description>
-    <warning>This option is slow.</warning>
-    <action command="delete" search="deep" cache="false" regex="^\.DS_Store$"/>
-  </option>
-  -->
-  <!-- Already in cleaner deepscan:
-  <option id="thumbs_db">
-    <label translate="false">Thumbs.db</label>
-    <description>Delete the Thumbs.db files</description>
-    <warning>This option is slow.</warning>
-    <action command="delete" search="deep" regex="^Thumbs\.db$" cache="false"/>
-    <action command="delete" search="deep" regex="^Thumbs\.db:encryptable$" cache="false"/>
-  </option>
-  -->
   <option id="tmp">
     <label translate="true">All .tmp files</label>
     <description>Delete all .tmp files</description>
     <warning>Deletes all .tmp files on your system! Use on your own risk! Inspect the preview for any files you want to keep. This option is slow.</warning>
-    <!-- Already in cleaner deepscan:-->
-    <!-- http://support.microsoft.com/kb/211632 -->
-    <!-- <action command="delete" search="deep" cache="false" regex="^~wr[a-z][0-9]{4}\.tmp$"/>-->
-    <!-- http://support.microsoft.com/kb/826810 -->
-    <!-- <action command="delete" search="deep" cache="false" regex="^ppt[0-9]{4}\.tmp$"/>-->
-    <!-- Delete them all -->
     <action command="delete" search="deep" cache="false" regex="\.[Tt][Mm][Pp]$"/>
   </option>
   <option id="log">
