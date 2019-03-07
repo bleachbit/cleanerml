@@ -19,7 +19,7 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 	Rules in CleanerML written by https://github.com/Tobias-B-Besemer
-	v0.6.2 done on 2019-03-07
+	v0.7.0 done on 2019-03-07
 
 -->
 <cleaner id="windows" os="windows">
@@ -106,7 +106,7 @@
   </option>
   <option id="caches">
     <label>Caches</label>
-    <description>Cleaning up some caches</description>
+    <description>Cleaning up some Caches</description>
     <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Feeds Cache\"/>
     <action command="delete" search="glob" path="%LocalAppData%\Microsoft\Feeds Cache\*"/>
     <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Terminal Server Client\Cache\"/>
@@ -120,5 +120,10 @@
     <action command="delete" search="walk.all" path="%USERPROFILE%\AppData\LocalLow\Microsoft\CryptnetUrlCache\"/>
     <action command="delete" search="walk.all" path="%USERPROFILE%\AppData\LocalLow\Microsoft\Windows\AppCache\"/>
     <action command="delete" search="walk.all" path="%USERPROFILE%\AppData\LocalLow\Microsoft\Windows\AppCache\*"/>
+  </option>
+  <option id="prefetch">
+    <label>Prefetch Cache</label>
+    <description>Cleaning up the Prefetch Cache</description>
+    <action command="delete" search="glob" path="%windir%\Prefetch\*"/>
   </option>
 </cleaner>
