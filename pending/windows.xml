@@ -19,7 +19,7 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 	Rules in CleanerML written by https://github.com/Tobias-B-Besemer
-	v0.5.0 done on 2019-03-06
+	v0.6.0 done on 2019-03-07
 
 -->
 <cleaner id="windows" os="windows">
@@ -103,5 +103,19 @@
     <!-- <action command="process" cmd="cmd.exe /c rd /s c:\$Recycle.Bin"/> -->
     <action command="delete" search="walk.all" path="%SystemDrive%\$Recycle.Bin"/>
     <action command="delete" search="glob" path="%SystemDrive%\$Recycle.Bin"/>
+  </option>
+  <option id="caches">
+    <label>Caches</label>
+    <description>Cleaning up some caches</description>
+    <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Feeds Cache\"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Microsoft\Feeds Cache\"/>
+    <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Terminal Server Client\Cache\"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Microsoft\Terminal Server Client\Cache\"/>
+    <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Windows\AppCache\"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Microsoft\Windows\AppCache\"/>
+    <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Windows\Caches\"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Microsoft\Windows\Caches\"/>
+    <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Windows\SchCache\"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Microsoft\Windows\SchCache\"/>
   </option>
 </cleaner>
