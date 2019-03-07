@@ -19,7 +19,7 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 	Rules in CleanerML written by https://github.com/Tobias-B-Besemer
-	v0.7.0 done on 2019-03-07
+	v0.7.5 done on 2019-03-07
 
 -->
 <cleaner id="windows" os="windows">
@@ -100,9 +100,17 @@
     <label>Recycle Bin</label>
     <description>Empty Recycle Bin on drive C: from all user accounts</description>
     <warning>Empty Recycle Bin on drive C: from all user accounts! Use the option only if you know what you do!</warning>
+
+    <!-- This is how it was documented, but don't work, because "rd" is no standalone app! -->
     <!-- <action command="process" cmd="cmd.exe /c rd /s c:\$Recycle.Bin"/> -->
+
+    <!-- Windows 7 and above: -->
     <action command="delete" search="walk.all" path="%SystemDrive%\$Recycle.Bin"/>
     <action command="delete" search="glob" path="%SystemDrive%\$Recycle.Bin"/>
+
+    <!-- Windows Vista and earlier: -->
+    <action command="delete" search="walk.all" path="%SystemDrive%\RECYCLER"/>
+    <action command="delete" search="glob" path="%SystemDrive%\RECYCLER"/>
   </option>
   <option id="caches">
     <label>Caches</label>
