@@ -19,7 +19,7 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 	Rules in CleanerML written by https://github.com/Tobias-B-Besemer
-	v0.8.0 done on 2019-03-07
+	v0.8.2 done on 2019-03-07
 
 -->
 <cleaner id="windows" os="windows">
@@ -28,67 +28,69 @@
   <option id="temp">
     <label>Windows Temp Files and Folders</label>
     <description>Delete the Temp Files and Folders in the Windows Directory</description>
-        <action command="delete" search="walk.all" path="%WINDIR%\Installer\MSI*.tmp*"/>
-        <action command="delete" search="glob" path="%WINDIR%\Installer\MSI*.tmp*"/>
+    <action command="delete" search="walk.all" path="%WINDIR%\Installer\MSI*.tmp*"/>
+    <action command="delete" search="glob" path="%WINDIR%\Installer\MSI*.tmp*"/>
   </option>
   <option id="logs">
     <label>Log Files</label>
     <description>Delete the Log Files in the Windows Directory</description>
-        <action command="delete" search="glob" path="%WINDIR%\*.log"/>
-        
-        <!--
-        64-bit Windows redirects %windir%\sysnative\ for 32-bit applications to %windir%\system32 
-        https://docs.microsoft.com/en-us/windows/desktop/winprog64/file-system-redirector
-        -->
-        <action command="delete" search="glob" path="%WINDIR%\sysnative\config\*.log"/>
-        <action command="delete" search="glob" path="%WINDIR%\sysnative\config\*.log1"/>
-        <action command="delete" search="glob" path="%WINDIR%\sysnative\config\*.log2"/>
-        
-        <action command="delete" search="glob" path="%SystemDrive%\Boot\*.log"/>
-        <action command="delete" search="glob" path="%SystemDrive%\Boot\*.log1"/>
-        <action command="delete" search="glob" path="%SystemDrive%\Boot\*.log2"/>
+    <action command="delete" search="glob" path="%WINDIR%\*.log"/>
+    
+    <!--
+    64-bit Windows redirects %windir%\sysnative\ for 32-bit applications to %windir%\system32 
+    https://docs.microsoft.com/en-us/windows/desktop/winprog64/file-system-redirector
+    -->
+    <action command="delete" search="glob" path="%WINDIR%\sysnative\config\*.log"/>
+    <action command="delete" search="glob" path="%WINDIR%\sysnative\config\*.log1"/>
+    <action command="delete" search="glob" path="%WINDIR%\sysnative\config\*.log2"/>
+    
+    <action command="delete" search="glob" path="%SystemDrive%\Boot\*.log"/>
+    <action command="delete" search="glob" path="%SystemDrive%\Boot\*.log1"/>
+    <action command="delete" search="glob" path="%SystemDrive%\Boot\*.log2"/>
+    
+    <action command="delete" search="glob" path="%ProgramData%\Microsoft\Search\Data\Applications\Windows\*.log"/>
   </option>
   <option id="hibernate">
     <label>Hibernate System</label>
     <description>Turns the Hibernate System of and deletes the Hibernate File</description>
-        <action command="process" cmd="powercfg.exe /hibernate off"/>
+    <action command="process" cmd="powercfg.exe /hibernate off"/>
   </option>
   <option id="junk">
     <label>Junk Files and Folders</label>
     <description>Delete the Junk Files and Folders of Windows</description>
-        <action command="delete" search="file" path="%HOMEPATH%\Desktop\desktop.ini"/>
-        <action command="delete" search="file" path="%SystemDrive%\BOOTSECT.BAK"/>
-        <action command="delete" search="walk.all" path="%SystemDrive%\Config.Msi\"/>
-        <action command="delete" search="glob" path="%SystemDrive%\Config.Msi\"/>
+    <action command="delete" search="file" path="%HOMEPATH%\Desktop\desktop.ini"/>
+    <action command="delete" search="file" path="%SystemDrive%\BOOTSECT.BAK"/>
+    <action command="delete" search="walk.all" path="%SystemDrive%\Config.Msi\"/>
+    <action command="delete" search="glob" path="%SystemDrive%\Config.Msi\"/>
   </option>
   <option id="backups">
     <label>Backup Files</label>
     <description>Delete the Backup Files of Windows</description>
-        <action command="delete" search="glob" path="%SystemDrive%\Boot\BCD.Backup.*"/>
+    <action command="delete" search="glob" path="%SystemDrive%\Boot\BCD.Backup.*"/>
   </option>
   <option id="chkdsk">
     <label>Chkdsk Files</label>
     <description>Delete the Chkdsk Files</description>
-        <action command="delete" search="walk.files" path="%SystemDrive%\File*.chk"/>
-        <action command="delete" search="walk.all" path="%SystemDrive%\System Volume Information\Chkdsk\"/>
-        <action command="delete" search="glob" path="%SystemDrive%\System Volume Information\Chkdsk\"/>
+    <action command="delete" search="walk.files" path="%SystemDrive%\File*.chk"/>
+    <action command="delete" search="walk.all" path="%SystemDrive%\System Volume Information\Chkdsk\"/>
+    <action command="delete" search="glob" path="%SystemDrive%\System Volume Information\Chkdsk\"/>
   </option>
   <option id="wer">
     <label>Windows Error Reporting</label>
     <description>Deletes the Windows Error Reporting Files</description>
-        <action command="delete" search="walk.all" path="%ALLUSERSPROFILE%\Microsoft\Windows\WER\ReportArchive\"/>
-        <action command="delete" search="walk.all" path="%ALLUSERSPROFILE%\Microsoft\Windows\WER\ReportQueue\"/>
-        <action command="delete" search="walk.all" path="%ALLUSERSPROFILE%\Microsoft\Windows\WER\Temp\"/>
-        <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Windows\WER\ReportArchive\"/>
-        <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Windows\WER\ReportQueue\"/>
-        <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Windows\WER\Temp\"/>
-        <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Windows\WER\ERC\"/>
-        <action command="delete" search="walk.all" path="%LocalAppData%\ElevatedDiagnostics\"/>
-        <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Windows\WER\Temp\"/>
-        <action command="winreg" path="HKCU\Software\Microsoft\Windows\Windows Error Reporting\Debug" name="StoreLocation"/>
-        <action command="winreg" path="HKLM\Software\Microsoft\Windows\Windows Error Reporting\Debug" name="StoreLocation"/>
-        <action command="winreg" path="HKLM\Software\Microsoft\Windows\Windows Error Reporting\LocalDumps"/>
-        <action command="winreg" path="HKU\.DEFAULT\Software\Microsoft\Windows\Windows Error Reporting\Debug" name="StoreLocation"/>
+    <action command="delete" search="walk.all" path="%ALLUSERSPROFILE%\Microsoft\Windows\WER\ReportArchive\"/>
+    <action command="delete" search="walk.all" path="%ALLUSERSPROFILE%\Microsoft\Windows\WER\ReportQueue\"/>
+    <action command="delete" search="walk.all" path="%ALLUSERSPROFILE%\Microsoft\Windows\WER\Temp\"/>
+    <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Windows\WER\ReportArchive\"/>
+    <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Windows\WER\ReportQueue\"/>
+    <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Windows\WER\Temp\"/>
+    <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Windows\WER\ERC\"/>
+    <action command="delete" search="walk.all" path="%LocalAppData%\ElevatedDiagnostics\"/>
+    <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Windows\WER\Temp\"/>
+    <action command="winreg" path="HKCU\Software\Microsoft\Windows\Windows Error Reporting\Debug" name="StoreLocation"/>
+    <action command="winreg" path="HKLM\Software\Microsoft\Windows\Windows Error Reporting\Debug" name="StoreLocation"/>
+    <action command="winreg" path="HKLM\Software\Microsoft\Windows\Windows Error Reporting\LocalDumps"/>
+    <action command="winreg" path="HKU\.DEFAULT\Software\Microsoft\Windows\Windows Error Reporting\Debug" name="StoreLocation"/>
   </option>
   <option id="shadow_copies">
     <label>Shadow Copies</label>
@@ -137,8 +139,11 @@
   <option id="search_index">
     <label>Windows Search Index</label>
     <description>Deletes the Windows Search Index</description>
-    <action command="process" cmd="sc config WSearch start= disabled"/>
+    <action command="process" wait="true" cmd="sc config WSearch start= disabled"/>
     <action command="delete" search="file" path="%ProgramData%\Microsoft\Search\Data\Applications\Windows\Windows.edb"/>
+    <action command="delete" search="file" path="%ProgramData%\Microsoft\Search\Data\Applications\Windows\tmp.edb"/>
+    <action command="delete" search="walk.files" path="%ProgramData%\Microsoft\Search\Data\Applications\Windows\GatherLogs\SystemIndex\*"/>
+    <action command="delete" search="walk.files" path="%ProgramData%\Microsoft\Search\Data\Applications\Windows\Projects\SystemIndex\Indexer\CiFiles\*"/>
     <action command="process" cmd="sc config WSearch start= auto"/>
   </option>
 </cleaner>
