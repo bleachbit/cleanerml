@@ -19,7 +19,7 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 	Rules in CleanerML written by https://github.com/Tobias-B-Besemer
-	v0.6.1 done on 2019-03-07
+	v0.6.2 done on 2019-03-07
 
 -->
 <cleaner id="windows" os="windows">
@@ -117,5 +117,8 @@
     <action command="delete" search="glob" path="%LocalAppData%\Microsoft\Windows\Caches\*"/>
     <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Windows\SchCache\"/>
     <action command="delete" search="glob" path="%LocalAppData%\Microsoft\Windows\SchCache\*"/>
+    <action command="delete" search="walk.all" path="%USERPROFILE%\AppData\LocalLow\Microsoft\CryptnetUrlCache\"/>
+    <action command="delete" search="walk.all" path="%USERPROFILE%\AppData\LocalLow\Microsoft\Windows\AppCache\"/>
+    <action command="delete" search="walk.all" path="%USERPROFILE%\AppData\LocalLow\Microsoft\Windows\AppCache\*"/>
   </option>
 </cleaner>
