@@ -28,6 +28,6 @@
   <option id="lastkey">
     <label>Last Key</label>
     <description>Delete the Last Key Setting</description>
-        <action command="winreg" path="HKCU\Software\Microsoft\Windows\CurrentVersion\Applets\Regedit" name="LastKey"/>
+    <action command="winreg" path="HKCU\Software\Microsoft\Windows\CurrentVersion\Applets\Regedit" name="LastKey"/>
   </option>
 </cleaner>

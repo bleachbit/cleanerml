@@ -41,7 +41,6 @@
     <action command="delete" search="file" path="~/.biglybt/ipfilter.cache"/>
     <action command="delete" search="file" path="$APPDATA\BiglyBT\ipfilter.cache"/>
     <action command="delete" search="walk.all" path="$APPDATA\BiglyBT\cache"/>
-    
     <!--<action command="delete" search="walk.all" path="$APPDATA\BiglyBT\shares\cache*\"/>-->
     <!--Seems that not normal caches and shouldn't be deleted!-->
   </option>

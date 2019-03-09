@@ -28,6 +28,6 @@
   <option id="MediaDir">
     <label>Media Diretory</label>
     <description>Delete the Media Diretory</description>
-        <action command="ini" search="glob" path="%LOCALAPPDATA%\LightAlloy\LA.xml" name="MediaDir"/>
+    <action command="ini" search="glob" path="%LOCALAPPDATA%\LightAlloy\LA.xml" name="MediaDir"/>
   </option>
 </cleaner>
