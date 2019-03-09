@@ -43,13 +43,12 @@ Operating system:
 
 -->
 <cleaner id="mpc-hc" os="windows">
-	<label>MPlayer-HC</label>
-	<description>Media player</description>
-	<option id="history">
-		<label>Most recently used</label>
-		<description>Delete the most recently used list</description>
-		<action command="winreg" path="HKCU\Software\MPC-HC\MPC-HC\Recent File List" />
-		<action command="delete" search="file" path="$APPDATA\MPC-HC\default.mpcpl"/>
-		</option>
+  <label>MPlayer-HC</label>
+  <description>Media player</description>
+  <option id="history">
+    <label>Most recently used</label>
+    <description>Delete the most recently used list</description>
+    <action command="winreg" path="HKCU\Software\MPC-HC\MPC-HC\Recent File List"/>
+    <action command="delete" search="file" path="$APPDATA\MPC-HC\default.mpcpl"/>
+  </option>
 </cleaner>
-
