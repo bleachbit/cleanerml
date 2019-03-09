@@ -1,9 +1,8 @@
 @echo off
 if "%1"=="" goto shorthelp
 if "%1"=="-help" goto help
-if "%1"=="-pandt" goto help
-if "%1"=="-pending" goto help
-if "%1"=="-release" goto help
+if "%1"=="-file" goto help
+if "%1"=="-folder" goto help
 goto shorthelp
 
 :help
@@ -15,12 +14,11 @@ echo There is NO WARRANTY, to the extent permitted by law.
 echo.
 echo Based on "Makefile" of Andrew Ziem.
 echo.
-echo Version: 0.1
+echo Version: 0.3
 echo Date: 2019-03-09
 echo.
-if "%1"=="-pandt" goto pandt
-if "%1"=="-pending" goto pending
-if "%1"=="-release" goto release
+if "%1"=="-file" goto file
+if "%1"=="-folder" goto folder
 echo Requirements:
 echo - MinGW
 echo - msys-libxml2-bin of MinGW and its dependencies
@@ -30,32 +28,34 @@ echo - Path to MinGW\msys\1.0\bin\ in the system environment variable "path"
 echo.
 if "%1"=="-help" goto shorthelp
 
-:errorO2
+:errorfile
 echo [file] missing!
+goto shorthelp
+
+:errorfolder
+echo [folder] missing!
+goto shorthelp
 
 :shorthelp
 echo.
 echo Makefile.bat makes CleanerML files pretty and test them.
 echo.
-echo Usage: Makefile.bat [option] [file]
+echo Usage: Makefile.bat [option] [file/folder]
 echo        -help : Shows more help
-echo        -pandt : Makes the [file] pretty and tests it
-echo        -pending : Makes the files in pending pretty and test them
-echo        -release : Makes the files in release pretty and test them
+echo        -file : Makes the [file] pretty and tests it
+echo        -folder : Makes the files in [folder] pretty and test them
 echo.
 echo CleanerML on GitHub: https://github.com/az0/cleanerml
 goto end
 
-:pending
-for %%f in (.\pending\*.*) do Makefile.bat -pandt %%f
+:folder
+if "%2"=="" goto errorfolder
+
+for %%f in (.\%2\*.*) do Makefile.bat -file %%f
 goto end
 
-:release
-for %%f in (.\release\*.*) do Makefile.bat -pandt %%f
-goto end
-
-:pandt
-if "%2"=="" goto errorO2
+:file
+if "%2"=="" goto errorfile
 
 rem pretty:
 xmllint --format %2 >%2.pretty
@@ -69,6 +69,6 @@ echo.
 
 :tests
 rem tests:
-xmllint --noout --schema ../bleachbit/doc/cleaner_markup_language.xsd %2
+xmllint --noout --schema ..\bleachbit\doc\cleaner_markup_language.xsd %2
 
 :end
