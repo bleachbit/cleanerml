@@ -2,8 +2,6 @@
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
 # This is free software: You are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
-#
-#
 
 # On some systems if not explicitly given, make uses /bin/sh, so 'make pretty' fails.
 SHELL := /bin/bash
@@ -22,7 +20,7 @@ pretty:
 	exit 0
 
 tests:
-	for f in {pending,release}/*xml; \
+	for f in {pending,release}/*.xml; \
 	do \
 		xmllint --noout --schema ../bleachbit/doc/cleaner_markup_language.xsd "$$f"; \
-	done \
+	done; \
