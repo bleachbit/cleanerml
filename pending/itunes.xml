@@ -45,7 +45,6 @@
     <action command="delete" search="walk.all" path="%WinDir%\System32\config\systemprofile\AppData\Roaming\Apple Computer\Logs\"/>
     <action command="delete" search="walk.all" path="%WinDir%\SysWOW64\config\systemprofile\AppData\Roaming\Apple Computer\Logs\"/>
     <action command="delete" search="walk.all" path="%AppData%\Apple Computer\MediaStream\Thumbnails\"/>
-
     <!-- Suggested by: https://github.com/sshermz -->
     <action command="delete" search="walk.all" path="%AppData%\Apple Computer\iTunes\iPhone Updater Logs\"/>
   </option>
