@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2008-2015 Andrew Ziem
+    http://www.bleachbit.org
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+
+    Contributor :  8ohmh
+    Web site    :  http://www.ghisler.com/
+
+Testing environment
+
+OS: Windows 7 x64, SP1/2
+Totalcommander 8.51a
+
+-->
+<cleaner id="total_commander" os="windows">
+  <label>Total Commander</label>
+  <description>File manager</description>
+  <option id="history"><label>File tab history</label><description>Delete the history of the file tabs</description><action search="file" path="$APPDATA\GHISLER\wincmd.ini" command="ini" section="left" parameter="path"/><action search="file" path="$APPDATA\GHISLER\wincmd.ini" command="ini" section="Left" parameter="path"/><action search="file" path="$APPDATA\GHISLER\wincmd.ini" command="ini" section="right" parameter="path"/><action search="file" path="$APPDATA\GHISLER\wincmd.ini" command="ini" section="Right" parameter="path"/><action search="file" path="$APPDATA\GHISLER\wincmd.ini" command="ini" section="LeftHistory"/><action search="file" path="$APPDATA\GHISLER\wincmd.ini" command="ini" section="RightHistory"/><action search="file" path="$APPDATA\GHISLER\wincmd.ini" command="ini" section="Command line history"/>
++		<action search="file" path="$APPDATA\GHISLER\wincmd.ini" command="ini" section="MkDirHistory"/>
+	</option>
+  <option id="search_history">
+    <label>Search, replace and selection history</label>
+    <description>Delete the history of Search, Replace and Selection dialog</description>
+    <action search="file" path="$APPDATA\GHISLER\wincmd.ini" command="ini" section="SearchIn"/>
+    <action search="file" path="$APPDATA\GHISLER\wincmd.ini" command="ini" section="SearchText"/>
+    <action search="file" path="$APPDATA\GHISLER\wincmd.ini" command="ini" section="SearchName"/>
+    <action search="file" path="$APPDATA\GHISLER\wincmd.ini" command="ini" section="Selection"/>
+    <action search="file" path="$APPDATA\GHISLER\wincmd.ini" command="ini" section="RenameTemplates"/>
+    <action search="file" path="$APPDATA\GHISLER\wincmd.ini" command="ini" section="RenameSearchFind"/>
+  </option>
+  <option id="ftp_client_history">
+    <label>FTP Client History deletion</label>
+    <warning>Using this option will DELETE ALL your saved FTP connections in TotalCommander!</warning>
+    <description>Delete the history the FTP Client</description>
+    <!-- <action search="file" path="$APPDATA\GHISLER\wcx_ftp.ini" command="ini" section="connections" />
+		@TODO everything after [default] section delete -->
+    <action command="delete" search="file" path="$APPDATA\GHISLER\wcx_ftp.ini"/>
+  </option>
+</cleaner>
