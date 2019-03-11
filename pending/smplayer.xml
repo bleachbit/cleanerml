@@ -19,11 +19,11 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
     @url https://www.smplayer.info/
-    @cleanerversion v1.0.0
+    @cleanerversion v1.1.0
     @cleanerdate 2019-03-11
     @cleanerby xr09 & https://github.com/Tobias-B-Besemer
     @tested ok v18.10.0, Windows 7
-    @testeddate 
+    @testeddate 2019-03-10
     @testedby https://github.com/Tobias-B-Besemer
     @note 
 
@@ -32,6 +32,7 @@
   <label>SMPlayer</label>
   <description>Video player</description>
   <var name="profile">
+    <value os="windows">%LocalAppData%\SMPlayer2</value>
     <value os="windows">%USERPROFILE%\.smplayer</value>
     <value os="linux">~/.config/smplayer</value>
   </var>
@@ -42,7 +43,6 @@
   <option id="filesettings">
     <label>File Settings</label>
     <description>Remove file settings (last position, subtitles size, fonts)</description>
-    <action command="delete" search="walk.all" path="%LocalAppData%\SMPlayer2\File_settings\"/>
     <action command="delete" search="file" path="$$profile$$/smplayer_files.ini"/>
     <action command="delete" search="walk.all" path="$$profile$$\file_settings\"/>
   </option>
@@ -303,7 +303,6 @@
     <label>Screenshots</label>
     <description>Remove screenshots image files from default location</description>
     <action command="delete" search="glob" path="$$profile$$\screenshots\*"/>
-    <action command="delete" search="glob" path="%LocalAppData%\SMPlayer2\screenshots\*"/>
     <action command="delete" search="glob" path="%Pictures%\smplayer*_screenshots\*"/>
   </option>
   <option id="history_files">
