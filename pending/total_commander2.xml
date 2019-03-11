@@ -18,8 +18,14 @@
     You should have received a copy of the GNU General Public License
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-	Rules in CleanerML written by https://github.com/Tobias-B-Besemer
-	v0.6 done on 2019-02-18
+    @url https://www.ghisler.com/index.htm
+    @cleanerversion v0.6.1
+    @cleanerdate 2019-03-11
+    @cleanerby https://github.com/Tobias-B-Besemer
+    @tested ok v9.21a, Windows 7
+    @testeddate 2019-03-11
+    @testedby https://github.com/Tobias-B-Besemer
+    @note 
 
 -->
 <cleaner id="total_commander" os="windows">
