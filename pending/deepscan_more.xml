@@ -18,8 +18,14 @@
     You should have received a copy of the GNU General Public License
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-	Rules in CleanerML written/updated by https://github.com/Tobias-B-Besemer
-	v0.2.2 done on 2019-03-07
+    @url none
+    @cleanerversion v0.2.5
+    @cleanerdate 2019-03-11
+    @cleanerby https://github.com/Tobias-B-Besemer
+    @tested ok 
+    @testeddate 
+    @testedby 
+    @note 
 
 -->
 <cleaner id="deepscan_more">
