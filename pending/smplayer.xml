@@ -2,10 +2,8 @@
 <!--
 
     BleachBit
-    Copyright (C) 2011 Andrew Ziem
-    http://www.bleachbit.org
-
-    Cleaner for SMPlayer by xr09
+    Copyright (C) 2008-2019 Andrew Ziem
+    https://www.bleachbit.org
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -14,153 +12,325 @@
 
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-	Rules in CleanerML written by https://github.com/Tobias-B-Besemer
-	v0.2 done on 2018-12-25
+    @url https://www.smplayer.info/
+    @cleanerversion v1.0.0
+    @cleanerdate 2019-03-11
+    @cleanerby xr09 & https://github.com/Tobias-B-Besemer
+    @tested ok v18.10.0, Windows 7
+    @testeddate 
+    @testedby https://github.com/Tobias-B-Besemer
+    @note 
 
 -->
 <cleaner id="smplayer">
   <label>SMPlayer</label>
   <description>Video player</description>
+  <var name="profile">
+    <value os="windows">%USERPROFILE%\.smplayer</value>
+    <value os="linux">~/.config/smplayer</value>
+  </var>
+  <var name="profile_smtube">
+    <value os="windows">%USERPROFILE%\.smtube</value>
+    <value os="linux">~/.config/smtube</value>
+  </var>
   <option id="filesettings">
     <label>File Settings</label>
     <description>Remove file settings (last position, subtitles size, fonts)</description>
-    <action command="delete" search="file" path="~/.config/smplayer/smplayer_files.ini"/>
-    <action command="delete" search="walk.all" path="~/.config/smplayer/file_settings/"/>
-    <action command="delete" search="walk.all" path="%USERPROFILE%\.smplayer\file_settings\"/>
     <action command="delete" search="walk.all" path="%LocalAppData%\SMPlayer2\File_settings\"/>
+    <action command="delete" search="file" path="$$profile$$/smplayer_files.ini"/>
+    <action command="delete" search="walk.all" path="$$profile$$\file_settings\"/>
   </option>
   <option id="playlist_contents">
-    <label>Playlists on Windows</label>
-    <description>Remove saved (internal) playlists on Windows</description>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_0_filename"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_0_duration"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_0_name"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_1_filename"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_1_duration"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_1_name"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_2_filename"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_2_duration"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_2_name"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_3_filename"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_3_duration"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_3_name"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_4_filename"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_4_duration"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_4_name"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_5_filename"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_5_duration"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_5_name"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_6_filename"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_6_duration"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_6_name"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_7_filename"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_7_duration"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_7_name"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_8_filename"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_8_duration"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_8_name"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_9_filename"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_9_duration"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_9_name"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_10_filename"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_10_duration"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_10_name"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_11_filename"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_11_duration"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_11_name"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_12_filename"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_12_duration"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_12_name"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_13_filename"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_13_duration"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_13_name"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_14_filename"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_14_duration"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_14_name"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_15_filename"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_15_duration"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_15_name"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_16_filename"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_16_duration"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_16_name"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_17_filename"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_17_duration"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_17_name"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_18_filename"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_18_duration"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_18_name"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_19_filename"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_19_duration"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_19_name"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_20_filename"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_20_duration"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_20_name"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_21_filename"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_21_duration"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_21_name"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_22_filename"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_22_duration"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_22_name"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_23_filename"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_23_duration"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_23_name"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_24_filename"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_24_duration"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_24_name"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_25_filename"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_25_duration"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="playlist_contents" parameter="item_25_name"/>
+    <label>Playlists Contents</label>
+    <description>Remove saved (internal) playlists contents</description>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_0_filename"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_0_duration"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_0_name"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_1_filename"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_1_duration"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_1_name"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_2_filename"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_2_duration"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_2_name"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_3_filename"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_3_duration"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_3_name"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_4_filename"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_4_duration"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_4_name"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_5_filename"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_5_duration"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_5_name"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_6_filename"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_6_duration"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_6_name"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_7_filename"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_7_duration"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_7_name"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_8_filename"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_8_duration"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_8_name"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_9_filename"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_9_duration"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_9_name"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_10_filename"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_10_duration"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_10_name"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_11_filename"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_11_duration"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_11_name"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_12_filename"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_12_duration"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_12_name"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_13_filename"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_13_duration"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_13_name"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_14_filename"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_14_duration"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_14_name"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_15_filename"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_15_duration"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_15_name"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_16_filename"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_16_duration"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_16_name"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_17_filename"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_17_duration"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_17_name"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_18_filename"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_18_duration"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_18_name"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_19_filename"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_19_duration"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_19_name"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_20_filename"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_20_duration"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_20_name"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_21_filename"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_21_duration"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_21_name"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_22_filename"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_22_duration"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_22_name"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_23_filename"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_23_duration"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_23_name"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_24_filename"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_24_duration"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_24_name"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_25_filename"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_25_duration"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_25_name"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\size"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="current_item"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="filename"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="modified"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\1\item_0_filename"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\1\item_0_duration"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\1\item_0_name"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\1\item_0_params"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\1\item_0_video_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\1\item_0_icon_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\2\item_1_filename"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\2\item_1_duration"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\2\item_1_name"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\2\item_1_params"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\2\item_1_video_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\2\item_1_icon_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\3\item_2_filename"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\3\item_2_duration"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\3\item_2_name"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\3\item_2_params"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\3\item_2_video_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\3\item_2_icon_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\4\item_3_filename"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\4\item_3_duration"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\4\item_3_name"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\4\item_3_params"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\4\item_3_video_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\4\item_3_icon_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\5\item_4_filename"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\5\item_4_duration"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\5\item_4_name"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\5\item_4_params"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\5\item_4_video_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\5\item_4_icon_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\6\item_5_filename"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\6\item_5_duration"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\6\item_5_name"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\6\item_5_params"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\6\item_5_video_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\6\item_5_icon_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\7\item_6_filename"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\7\item_6_duration"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\7\item_6_name"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\7\item_6_params"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\7\item_6_video_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\7\item_6_icon_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\8\item_7_filename"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\8\item_7_duration"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\8\item_7_name"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\8\item_7_params"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\8\item_7_video_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\8\item_7_icon_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\9\item_8_filename"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\9\item_8_duration"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\9\item_8_name"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\9\item_8_params"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\9\item_8_video_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\9\item_8_icon_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\10\item_9_filename"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\10\item_9_duration"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\10\item_9_name"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\10\item_9_params"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\10\item_9_video_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\10\item_9_icon_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\11\item_10_filename"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\11\item_10_duration"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\11\item_10_name"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\11\item_10_params"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\11\item_10_video_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\11\item_10_icon_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\12\item_11_filename"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\12\item_11_duration"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\12\item_11_name"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\12\item_11_params"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\12\item_11_video_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\12\item_11_icon_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\13\item_12_filename"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\13\item_12_duration"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\13\item_12_name"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\13\item_12_params"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\13\item_12_video_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\13\item_12_icon_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\14\item_13_filename"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\14\item_13_duration"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\14\item_13_name"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\14\item_13_params"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\14\item_13_video_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\14\item_13_icon_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\15\item_14_filename"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\15\item_14_duration"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\15\item_14_name"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\15\item_14_params"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\15\item_14_video_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\15\item_14_icon_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\16\item_15_filename"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\16\item_15_duration"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\16\item_15_name"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\16\item_15_params"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\16\item_15_video_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\16\item_15_icon_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\17\item_16_filename"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\17\item_16_duration"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\17\item_16_name"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\17\item_16_params"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\17\item_16_video_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\17\item_16_icon_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\18\item_17_filename"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\18\item_17_duration"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\18\item_17_name"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\18\item_17_params"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\18\item_17_video_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\18\item_17_icon_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\19\item_18_filename"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\19\item_18_duration"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\19\item_18_name"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\19\item_18_params"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\19\item_18_video_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\19\item_18_icon_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\20\item_19_filename"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\20\item_19_duration"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\20\item_19_name"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\20\item_19_params"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\20\item_19_video_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\20\item_19_icon_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\21\item_20_filename"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\21\item_20_duration"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\21\item_20_name"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\21\item_20_params"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\21\item_20_video_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\21\item_20_icon_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\22\item_21_filename"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\22\item_21_duration"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\22\item_21_name"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\22\item_21_params"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\22\item_21_video_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\22\item_21_icon_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\23\item_22_filename"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\23\item_22_duration"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\23\item_22_name"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\23\item_22_params"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\23\item_22_video_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\23\item_22_icon_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\24\item_23_filename"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\24\item_23_duration"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\24\item_23_name"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\24\item_23_params"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\24\item_23_video_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\24\item_23_icon_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\25\item_24_filename"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\25\item_24_duration"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\25\item_24_name"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\25\item_24_params"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\25\item_24_video_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\25\item_24_icon_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\26\item_25_filename"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\26\item_25_duration"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\26\item_25_name"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\26\item_25_params"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\26\item_25_video_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\26\item_25_icon_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\27\item_26_filename"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\27\item_26_duration"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\27\item_26_name"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\27\item_26_params"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\27\item_26_video_url"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\27\item_26_icon_url"/>
   </option>
   <option id="screenshot_folder">
-    <label>Screenshots path on Windows</label>
-    <description>Reset screenshots path on Windows</description>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="%General" parameter="screenshot_folder"/>
+    <label>Screenshots path</label>
+    <description>Reset screenshots path</description>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="%General" parameter="screenshot_folder"/>
   </option>
   <option id="screenshots">
     <label>Screenshots</label>
     <description>Remove screenshots image files from default location</description>
-    <action command="delete" search="glob" path="~/.config/smplayer/screenshots/*"/>
-    <action command="delete" search="glob" path="%USERPROFILE%\.smplayer\screenshots\*"/>
+    <action command="delete" search="glob" path="$$profile$$\screenshots\*"/>
     <action command="delete" search="glob" path="%LocalAppData%\SMPlayer2\screenshots\*"/>
     <action command="delete" search="glob" path="%Pictures%\smplayer*_screenshots\*"/>
   </option>
   <option id="history_files">
     <label>Recent Files</label>
     <description>Clear recent played files</description>
-    <action command="ini" search="file" path="~/.config/smplayer/smplayer.ini" section="history" parameter="recents"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="history" parameter="recents"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="history" parameter="recents"/>
   </option>
   <option id="history_urls">
     <label>Recent URLs</label>
     <description>Clear recent played URLs</description>
-    <action command="ini" search="file" path="~/.config/smplayer/smplayer.ini" section="history" parameter="urls"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="history" parameter="urls"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="history" parameter="urls"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="history" parameter="urls"/>
   </option>
   <option id="videopreview">
     <label>Video Preview</label>
     <description>Video Preview - Last directory and filename</description>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="videopreview" parameter="last_directory"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\smplayer.ini" section="videopreview" parameter="filename"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="videopreview" parameter="last_directory"/>
+    <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="videopreview" parameter="filename"/>
   </option>
   <option id="playlist_directory">
     <label>Playlist Directory</label>
     <description>Playlist Directory - Last directory</description>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\playlist.ini" section="directories" parameter="latest_dir"/>
+    <action command="ini" search="file" path="$$profile$$\playlist.ini" section="directories" parameter="latest_dir"/>
   </option>
-  <option id="playlist_contents">
-    <label>Playlist Contents</label>
-    <description>Playlist Contents - Last directory and filename</description>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\playlist.ini" section="playlist_contents" parameter="items\1\item_0_filename"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\playlist.ini" section="playlist_contents" parameter="items\1\item_0_duration"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\playlist.ini" section="playlist_contents" parameter="items\1\item_0_name"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\playlist.ini" section="playlist_contents" parameter="items\1\item_0_params"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\playlist.ini" section="playlist_contents" parameter="items\1\item_0_video_url"/>
-    <action command="ini" search="file" path="%USERPROFILE%\.smplayer\playlist.ini" section="playlist_contents" parameter="items\1\item_0_icon_url"/>
+  <option id="smtube.ini">
+    <label>SMTube Content</label>
+    <description>SMTube Content</description>
+    <action command="ini" search="file" path="$$profile_smtube$$\smtube.ini" section="%General" parameter="recording_directory"/>
   </option>
 </cleaner>
