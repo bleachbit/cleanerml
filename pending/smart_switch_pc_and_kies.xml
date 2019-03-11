@@ -29,30 +29,30 @@
   <option id="device_error_recovery_logs">
     <label>Device Error Recovery Logs</label>
     <description>Delete the Device Error Recovery Logs</description>
-        <action command="delete" search="glob" path="%ProgramData%\Samsung\Device Error Recovery\default-*.log"/>
+    <action command="delete" search="glob" path="%ProgramData%\Samsung\Device Error Recovery\default-*.log"/>
   </option>
   <option id="device_profile_cache">
     <label>Device Profile Cache</label>
     <description>Delete the Device Profile Cache</description>
-        <action command="delete" search="walk.all" path="%ProgramData%\Samsung\DeviceProfile\Cache\"/>
-        <action command="delete" search="glob" path="%ProgramData%\Samsung\DeviceProfile\Cache\"/>
+    <action command="delete" search="walk.all" path="%ProgramData%\Samsung\DeviceProfile\Cache\"/>
+    <action command="delete" search="glob" path="%ProgramData%\Samsung\DeviceProfile\Cache\"/>
   </option>
   <option id="device_roms">
     <label>Device ROMs</label>
     <description>Delete the downloaded Device ROMs</description>
-        <action command="delete" search="walk.all" path="%LOCALAPPDATA%\Temp\Binary\"/>
-        <action command="delete" search="glob" path="%LOCALAPPDATA%\Temp\Binary\"/>
+    <action command="delete" search="walk.all" path="%LOCALAPPDATA%\Temp\Binary\"/>
+    <action command="delete" search="glob" path="%LOCALAPPDATA%\Temp\Binary\"/>
   </option>
   <option id="user_software_data">
     <label>User Software Data</label>
     <description>Delete the User Software Data</description>
-        <action command="delete" search="walk.all" path="%APPDATA%\Samsung\"/>
-        <action command="delete" search="glob" path="%APPDATA%\Samsung\"/>
+    <action command="delete" search="walk.all" path="%APPDATA%\Samsung\"/>
+    <action command="delete" search="glob" path="%APPDATA%\Samsung\"/>
   </option>
   <option id="selfmv_data">
     <label>SelfMV Data</label>
     <description>Delete the SelfMV Data</description>
-        <action command="delete" search="walk.all" path="%USERPROFILE%\Documents\SelfMV\"/>
-        <action command="delete" search="glob" path="%USERPROFILE%\Documents\SelfMV\"/>
+    <action command="delete" search="walk.all" path="%USERPROFILE%\Documents\SelfMV\"/>
+    <action command="delete" search="glob" path="%USERPROFILE%\Documents\SelfMV\"/>
   </option>
 </cleaner>
