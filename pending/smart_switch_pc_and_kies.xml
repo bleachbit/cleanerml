@@ -18,8 +18,14 @@
     You should have received a copy of the GNU General Public License
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-	Rules in CleanerML written by https://github.com/Tobias-B-Besemer
-	v0.1.0 done on 2019-02-27
+    @url https://www.samsung.com/us/support/owners/app/smart-switch
+    @cleanerversion v0.1.1
+    @cleanerdate 2019-03-11
+    @cleanerby https://github.com/Tobias-B-Besemer
+    @tested ok 
+    @testeddate 
+    @testedby 
+    @note 
 
 -->
 <cleaner id="samsung_mobiles" os="windows">
