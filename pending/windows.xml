@@ -35,7 +35,6 @@
     <label>Log Files</label>
     <description>Delete the Log Files in the Windows Directory</description>
     <action command="delete" search="glob" path="%WINDIR%\*.log"/>
-    
     <!--
     64-bit Windows redirects %windir%\sysnative\ for 32-bit applications to %windir%\system32 
     https://docs.microsoft.com/en-us/windows/desktop/winprog64/file-system-redirector
@@ -43,11 +42,9 @@
     <action command="delete" search="glob" path="%WINDIR%\sysnative\config\*.log"/>
     <action command="delete" search="glob" path="%WINDIR%\sysnative\config\*.log1"/>
     <action command="delete" search="glob" path="%WINDIR%\sysnative\config\*.log2"/>
-    
     <action command="delete" search="glob" path="%SystemDrive%\Boot\*.log"/>
     <action command="delete" search="glob" path="%SystemDrive%\Boot\*.log1"/>
     <action command="delete" search="glob" path="%SystemDrive%\Boot\*.log2"/>
-    
     <action command="delete" search="glob" path="%ProgramData%\Microsoft\Search\Data\Applications\Windows\*.log"/>
   </option>
   <option id="hibernate">
@@ -102,14 +99,11 @@
     <label>Recycle Bin</label>
     <description>Empty Recycle Bin on drive C: from all user accounts</description>
     <warning>Empty Recycle Bin on drive C: from all user accounts! Use the option only if you know what you do!</warning>
-
     <!-- This is how it was documented, but don't work, because "rd" is no standalone app! -->
     <!-- <action command="process" cmd="cmd.exe /c rd /s c:\$Recycle.Bin"/> -->
-
     <!-- Windows 7 and above: -->
     <action command="delete" search="walk.all" path="%SystemDrive%\$Recycle.Bin"/>
     <action command="delete" search="glob" path="%SystemDrive%\$Recycle.Bin"/>
-
     <!-- Windows Vista and earlier: -->
     <action command="delete" search="walk.all" path="%SystemDrive%\RECYCLER"/>
     <action command="delete" search="glob" path="%SystemDrive%\RECYCLER"/>
