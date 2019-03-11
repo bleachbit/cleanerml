@@ -29,7 +29,6 @@
     <label>Windows Recycle Bins - Delete all</label>
     <description>Deletes the Windows Recycle Bins of all drives from C to Z</description>
     <warning>Use this cleaner only if you know what you do!</warning>
-
     <!-- Windows 7 and above: -->
     <action command="delete" search="walk.all" path="C:\$Recycle.Bin"/>
     <action command="delete" search="walk.all" path="D:\$Recycle.Bin"/>
@@ -79,8 +78,8 @@
     <action command="delete" search="glob" path="X:\$Recycle.Bin"/>
     <action command="delete" search="glob" path="Y:\$Recycle.Bin"/>
     <action command="delete" search="glob" path="Z:\$Recycle.Bin"/>
-
-    <!-- Windows Vista and earlier: --> <!-- Maybe on an old data partition? -->
+    <!-- Windows Vista and earlier: -->
+    <!-- Maybe on an old data partition? -->
     <action command="delete" search="walk.all" path="C:\RECYCLER"/>
     <action command="delete" search="walk.all" path="D:\RECYCLER"/>
     <action command="delete" search="walk.all" path="E:\RECYCLER"/>
@@ -129,7 +128,6 @@
     <action command="delete" search="glob" path="X:\RECYCLER"/>
     <action command="delete" search="glob" path="Y:\RECYCLER"/>
     <action command="delete" search="glob" path="Z:\RECYCLER"/>
-
     <!-- Delete the Registry Keys to all ever known Recycle Bins: -->
     <action command="winreg" path="HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\BitBucket\Volume"/>
   </option>
