@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2008-2019 Andrew Ziem
+    https://www.bleachbit.org
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+    @app Double Commander
+    @url https://doublecmd.sourceforge.io/
+    @os Windows, Linux, FreeBSD
+    @cleanerversion v0.2.5
+    @cleanerdate 2019-03-12
+    @cleanerby https://github.com/Tobias-B-Besemer
+    @tested ok v0.8.4, Windows 7
+    @testeddate 2019-03-12
+    @testedby https://github.com/Tobias-B-Besemer
+    @tested ok v0.9.1 beta, Windows 7
+    @testeddate 2019-03-12
+    @testedby https://github.com/Tobias-B-Besemer
+    @note As long we have no command="xml", we need to delete the complete file!
+
+-->
+<cleaner id="double_commander" os="windows">
+  <label>Double Commander</label>
+  <description>File Manager</description>
+  <var name="profile">
+    <value search="glob" os="windows">%AppData%\doublecmd</value>
+    <!-- Not yet figured out! I will do this later! Tobias.
+    <value search="glob" os="linux">~/.doublecmd</value>
+    -->
+    <!-- Can somebody else figured it out for FreeBSD ??? Tobias.
+    <value search="glob" os="freebsd">~/.doublecmd</value>
+    -->
+    <!-- After all: Don't forget to remove the os="windows" from the element "cleaner" !!! -->
+  </var>
+  <option id="openedtabs">
+    <label>Opened Tabs</label>
+    <description>Delete the history of Opened Tabs</description>
+    <warning>As long we have no command="xml", we need to delete the complete file! Use this option only if you know what you do!</warning>
+    <!-- This is how IMHO a CleanerML-XML-Cleaning-Syntax maybe can look like (Part 3). Tobias.
+    Explanation: Deletes with "/*" at the end the content of the element.
+                 Deletes without "/*" at the end the element itself and all of his content.
+    <action command="xml" search="file" path="$$profile$$\doublecmd.xml" element="doublecmd/Tabs/OpenedTabs/Left/ActiveTab/*"/>
+    <action command="xml" search="file" path="$$profile$$\doublecmd.xml" element="doublecmd/Tabs/OpenedTabs/Left/Tab/FileView/History/Entry/Paths/Path"/>
+    <action command="xml" search="file" path="$$profile$$\doublecmd.xml" element="doublecmd/Tabs/OpenedTabs/Right/Tab/FileView/History/Entry/Paths/Path"/>
+    -->
+    <!-- But as long we have no command="xml", we just delete the complete file - Double Commander creates them again. -->
+    <!-- Double Commander creates the file again after first session, when it gets closed! -->
+    <action command="delete" search="file" path="$$profile$$\doublecmd.xml"/>
+  </option>
+  <option id="logs">
+    <label>Logs</label>
+    <description>Delete the Logs</description>
+    <action command="delete" search="glob" path="$$profile$$\*.log"/>
+  </option>
+  <option id="history">
+    <label>History</label>
+    <description>Delete the History</description>
+    <warning>As long we have no command="xml", we need to delete the complete file! Use this option only if you know what you do!</warning>
+    <!-- This is how IMHO a CleanerML-XML-Cleaning-Syntax maybe can look like (Part 4). Tobias.
+    Explanation: Deletes with "/*" at the end the content of the element.
+     -> This element includes the child-elements:
+        <SearchReplaceHistory Save="True"/>
+        <DirHistory Save="True"/>
+        <CmdLineHistory Save="True"/>
+        <FileMaskHistory Save="True"/>
+     <- Gives syntax: -->
+    <!--
+    <action command="xml" search="file" path="$$profile$$\doublecmd.xml" element="doublecmd/History/*"/>
+    -->
+    <!-- But as long we have no command="xml", we just delete the complete file - Double Commander creates them again. -->
+    <!-- Double Commander creates the file again after first session, when it gets closed! -->
+    <action command="delete" search="file" path="$$profile$$\doublecmd.xml"/>
+    <!-- History gets saved in two files... -->
+    <action command="delete" search="file" path="$$profile$$\history.xml"/>
+  </option>
+</cleaner>
