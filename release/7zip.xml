@@ -18,17 +18,17 @@
     You should have received a copy of the GNU General Public License
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-    7-zip cleaner
-    Copyright (c) 2013 Andrew Ziem
-    Copyright (c) 2014 2McCoy7
-    Copyright (c) 2016 mikevainio
-    
+    @url https://www.7-zip.org/
+    @cleanerversion v???
+    @cleanerdate 2019-03-11
+    @cleanerby Andrew Ziem (2013), 2McCoy7 (2014), mikevainio (2016), Tobias B. Besemer (2019)
+    @tested ok v???, Windows 7
+    @testeddate 2014-10-01
+    @testedby 
+    @tested ok v15.06 beta, Windows 7
+    @testeddate 2015-08-25
+    @testedby 
     @note Zip stores history in the windows Registry, so this cleaner is more aimed towards maintaining privacy rather then freeing up disk space
-    @tested ok 10/01/2014 Windows 7
-    @tested ok 08/25/2015 15.06 beta, Windows 7
-
-	Rules in CleanerML written/updated by https://github.com/Tobias-B-Besemer
-	Done on 2019-02-17
 
 -->
 <cleaner id="7zip" os="windows">
