@@ -18,30 +18,31 @@
     You should have received a copy of the GNU General Public License
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
+    @app Samsung Mobiles Programs (Smart Switch PC and Kies)
     @url https://www.samsung.com/us/support/owners/app/smart-switch
-    @cleanerversion v0.1.1
-    @cleanerdate 2019-03-11
+    @os Windows
+    @cleanerversion v0.1.2
+    @cleanerdate 2019-03-12
     @cleanerby https://github.com/Tobias-B-Besemer
     @tested ok 
     @testeddate 
     @testedby 
-    @note 
+    @note One cleaner for Smart Switch PC and Kies together, because they share files.
 
 -->
 <cleaner id="samsung_mobiles" os="windows">
   <label>Smart Switch PC and Kies</label>
   <description>Samsung Mobiles - Smart Switch PC and Kies</description>
-  <!--One cleaner for Smart Switch PC and Kies together, because they share files.-->
   <option id="device_error_recovery_logs">
     <label>Device Error Recovery Logs</label>
     <description>Delete the Device Error Recovery Logs</description>
-    <action command="delete" search="glob" path="%ProgramData%\Samsung\Device Error Recovery\default-*.log"/>
+    <action command="delete" search="walk.files" path="%ProgramData%\Samsung\Device Error Recovery\default-*.log"/>
   </option>
   <option id="device_profile_cache">
     <label>Device Profile Cache</label>
     <description>Delete the Device Profile Cache</description>
     <action command="delete" search="walk.all" path="%ProgramData%\Samsung\DeviceProfile\Cache\"/>
-    <action command="delete" search="glob" path="%ProgramData%\Samsung\DeviceProfile\Cache\"/>
+    <action command="delete" search="glob" path="%ProgramData%\Samsung\DeviceProfile\Cache\*"/>
   </option>
   <option id="device_roms">
     <label>Device ROMs</label>
