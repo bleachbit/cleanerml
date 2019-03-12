@@ -18,9 +18,11 @@
     You should have received a copy of the GNU General Public License
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
+    @app Windows Update
     @url none
-    @cleanerversion v0.8.0
-    @cleanerdate 2019-03-11
+    @os Windows
+    @cleanerversion v0.8.2
+    @cleanerdate 2019-03-12
     @cleanerby https://github.com/Tobias-B-Besemer
     @tested ok v???, Windows 7
     @testeddate 2019-03-10
@@ -33,7 +35,7 @@
   <description>Windows Update</description>
   <option id="logs">
     <label>Logs</label>
-    <description>Delete Logs</description>
+    <description>Delete logs</description>
     <action command="delete" search="walk.all" path="%WinDir%\Logs\waasmedic"/>
     <action command="delete" search="walk.all" path="%WinDir%\Logs\WindowsUpdate"/>
     <action command="delete" search="walk.all" path="%WinDir%\SoftwareDistribution\DataStore\Logs"/>
@@ -44,7 +46,7 @@
   </option>
   <option id="temp">
     <label>Temp Files</label>
-    <description>Delete Temp Files</description>
+    <description>Delete temp files</description>
     <action command="delete" search="walk.all" path="%SystemDrive%\$WINDOWS.~BT"/>
     <action command="delete" search="glob" path="%SystemDrive%\$WINDOWS.~BT"/>
     <action command="delete" search="walk.all" path="%SystemDrive%\$Windows.~WS"/>
@@ -62,15 +64,15 @@
     <action command="delete" search="walk.all" path="%WinDir%\SoftwareDistribution\"/>
     <action command="process" cmd="net start wuauserv"/>
   </option>
-  <option id="windows_sp_backup_files">
-    <label>Windows Service Pack Backup Files</label>
-    <description>Deletes the Windows Service Pack Backup Files (Windows 7 and higher)</description>
+  <option id="sp_backup_files">
+    <label>Service Pack Backup Files</label>
+    <description>Delete the Service Pack Backup Files (Windows 7 and higher)</description>
     <warning>This may take a long time! (How long depends on your computer, but at least several minutes!) The program may seem to hang, but be patience, just wait! Attention: After use this option, you can't uninstall your Service Pack anymore! Use this option only if you know what you do!</warning>
     <action command="process" wait="true" cmd="dism.exe /Online /Cleanup-Image /SPSuperseded /hideSP"/>
   </option>
   <option id="winsxs_backup_files">
     <label>WinSxS Backup Files</label>
-    <description>Deletes the WinSxS Backup Files</description>
+    <description>Delete the WinSxS Backup Files</description>
     <warning>Use one your own risk! Use this option only if you know what you do!</warning>
     <action command="delete" search="walk.files" path="%WinDir%\WinSxS\Backup\"/>
   </option>
@@ -81,8 +83,8 @@
 This option will open the Microsoft Windows Disk Cleanup Tool! You need to clean with it the WinSxS manual! Proceed only if you know what you do!</warning>
     <action command="process" cmd="cmd.exe /c Cleanmgr.exe"/>
   </option>
-  <option id="winsxs_component_cleanup_win8">
-    <label>WinSxS Component Cleanup (Win8)</label>
+  <option id="winsxs_component_cleanup_win8plus">
+    <label>WinSxS Component Cleanup (Win8+)</label>
     <description>Makes a WinSxS Component Cleanup (with Windows 8 and higher)</description>
     <warning>All existing service packs and updates cannot be uninstalled after this command is completed. But this will not block the uninstallation of future service packs or updates. Use this option only if you know what you do!</warning>
     <action command="process" wait="true" cmd="dism.exe /Online /Cleanup-Image /StartComponentCleanup /ResetBase"/>
