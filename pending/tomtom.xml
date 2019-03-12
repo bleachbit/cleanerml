@@ -1,35 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-BleachBit
-Copyright (C) 2012 Andrew Ziem
-http://www.bleachbit.org
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+    BleachBit
+    Copyright (C) 2008-2019 Andrew Ziem
+    https://www.bleachbit.org
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
-You should have received a copy of the GNU General Public License
-along with this program. If not, see <http://www.gnu.org/licenses/>.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU General Public License for more details.
 
+    You should have received a copy of the GNU General Public License
+    along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+    @url https://www.tomtom.com/en_us/mydrive-connect/
+    @url https://us.support.tomtom.com/app/answers/detail/a_id/5122/locale/en_US
+    @cleanerversion v0.3.0
+    @cleanerdate 2019-03-11
+    @cleanerby ??? & https://github.com/Tobias-B-Besemer
+    @tested ok v???, Windows 7
+    @testeddate 2019-03-11
+    @testedby https://github.com/Tobias-B-Besemer
+    @note 
 
 -->
 <cleaner id="tomtom" os="windows">
   <label>TomTom</label>
-  <description>Navigation system</description>
+  <description>Navigation systems</description>
+  <!-- One cleaner to rule them all! -->
+  <!-- One cleaner for all TomTom SOftware Variants! -->
   <option id="cookies">
     <label>Cookies</label>
-    <description>Delete the cookies</description>
-    <action command="delete" search="glob" path="$USERPROFILE\AppData\Roaming\TomTom\HOME\Profiles\*.default\cookies.sqlite"/>
+    <description>Deletes the cookies</description>
+    <action command="delete" search="glob" path="%AppData%\TomTom\HOME\Profiles\*.default\cookies.sqlite"/>
+    <action command="delete" search="file" path="%AppData%\TomTom\MyDrive Connect\QtWebEngine\SALocalStorage\Cookies"/>
+    <action command="delete" search="file" path="%AppData%\TomTom\MyDrive Connect\QtWebEngine\SALocalStorage\Cookies-journal"/>
   </option>
   <option id="history">
     <label>History</label>
-    <description>Delete the history</description>
-    <action command="delete" search="glob" path="$USERPROFILE\AppData\Roaming\TomTom\HOME\Profiles\*.default\places.sqlite"/>
+    <description>Deletes the history</description>
+    <action command="delete" search="glob" path="%AppData%\TomTom\HOME\Profiles\*.default\places.sqlite"/>
+    <action command="delete" search="file" path="%AppData%\TomTom\MyDrive Connect\QtWebEngine\Default\Visited Links"/>
+    <action command="delete" search="file" path="%AppData%\TomTom\MyDrive Connect\QtWebEngine\SALocalStorage\Visited Links"/>
+  </option>
+  <option id="cache">
+    <label>Caches</label>
+    <description>Deletes the caches</description>
+    <action command="delete" search="walk.files" path="%LocalAppData%\TomTom\HOME3\cache"/>
+    <action command="delete" search="walk.all" path="%LocalAppData%\TomTom\MyDrive Connect\cache"/>
+    <action command="delete" search="glob" path="%LocalAppData\TomTom\MyDrive Connect\cache\*"/>
+    <action command="delete" search="walk.files" path="%LocalAppData%\TomTom\MyDrive Connect\QtWebEngine\SALocalStorage\Local Storage"/>
+  </option>
+  <option id="crashdumps">
+    <label>Crash Dumps</label>
+    <description>Deletes the Crash Dumps</description>
+    <action command="delete" search="walk.files" path="%LocalAppData%\TomTom\HOME3\CrashDumps"/>
+  </option>
+  <option id="logs">
+    <label>Logs</label>
+    <description>Deletes the Logs</description>
+    <action command="delete" search="walk.files" path="%LocalAppData%\TomTom\HOME3\Logs"/>
   </option>
 </cleaner>
