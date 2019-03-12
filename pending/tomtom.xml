@@ -18,39 +18,41 @@
     You should have received a copy of the GNU General Public License
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
+    @app TomTom Programs
     @url https://www.tomtom.com/en_us/mydrive-connect/
     @url https://us.support.tomtom.com/app/answers/detail/a_id/5122/locale/en_US
-    @cleanerversion v0.3.0
-    @cleanerdate 2019-03-11
+    @os Windows
+    @cleanerversion v0.5.0
+    @cleanerdate 2019-03-12
     @cleanerby ??? & https://github.com/Tobias-B-Besemer
     @tested ok v???, Windows 7
     @testeddate 2019-03-11
     @testedby https://github.com/Tobias-B-Besemer
-    @note 
+    @note One cleaner to rule them all! -> One cleaner for all TomTom Software Variants! -> We can split this later!
 
 -->
 <cleaner id="tomtom" os="windows">
   <label>TomTom</label>
   <description>Navigation systems</description>
-  <!-- One cleaner to rule them all! -->
-  <!-- One cleaner for all TomTom SOftware Variants! -->
   <option id="cookies">
     <label>Cookies</label>
-    <description>Deletes the cookies</description>
+    <description>Delete cookies, which contain information such as web site preferences, authentication, and tracking identification</description>
     <action command="delete" search="glob" path="%AppData%\TomTom\HOME\Profiles\*.default\cookies.sqlite"/>
+    <action command="sqlite.vacuum" search="glob" path="%AppData%\TomTom\HOME\Profiles\*.default\cookies.sqlite"/>
     <action command="delete" search="file" path="%AppData%\TomTom\MyDrive Connect\QtWebEngine\SALocalStorage\Cookies"/>
     <action command="delete" search="file" path="%AppData%\TomTom\MyDrive Connect\QtWebEngine\SALocalStorage\Cookies-journal"/>
   </option>
   <option id="history">
     <label>History</label>
-    <description>Deletes the history</description>
+    <description>List of visited web pages</description>
     <action command="delete" search="glob" path="%AppData%\TomTom\HOME\Profiles\*.default\places.sqlite"/>
+    <action command="sqlite.vacuum" search="glob" path="%AppData%\TomTom\HOME\Profiles\*.default\places.sqlite"/>
     <action command="delete" search="file" path="%AppData%\TomTom\MyDrive Connect\QtWebEngine\Default\Visited Links"/>
     <action command="delete" search="file" path="%AppData%\TomTom\MyDrive Connect\QtWebEngine\SALocalStorage\Visited Links"/>
   </option>
   <option id="cache">
-    <label>Caches</label>
-    <description>Deletes the caches</description>
+    <label>Cache</label>
+    <description>Delete the cache</description>
     <action command="delete" search="walk.files" path="%LocalAppData%\TomTom\HOME3\cache"/>
     <action command="delete" search="walk.all" path="%LocalAppData%\TomTom\MyDrive Connect\cache"/>
     <action command="delete" search="glob" path="%LocalAppData\TomTom\MyDrive Connect\cache\*"/>
@@ -58,12 +60,12 @@
   </option>
   <option id="crashdumps">
     <label>Crash Dumps</label>
-    <description>Deletes the Crash Dumps</description>
+    <description>Delete the crash dumps</description>
     <action command="delete" search="walk.files" path="%LocalAppData%\TomTom\HOME3\CrashDumps"/>
   </option>
   <option id="logs">
     <label>Logs</label>
-    <description>Deletes the Logs</description>
+    <description>Delete the logs</description>
     <action command="delete" search="walk.files" path="%LocalAppData%\TomTom\HOME3\Logs"/>
   </option>
 </cleaner>
