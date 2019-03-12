@@ -22,12 +22,15 @@
     @url https://doublecmd.sourceforge.io/
     @os Windows, Linux, FreeBSD
     @cleanerversion v0.2.5
-    @cleanerdate 2019-03-11
+    @cleanerdate 2019-03-12
     @cleanerby https://github.com/Tobias-B-Besemer
     @tested ok v0.8.4, Windows 7
-    @testeddate 2019-03-11
+    @testeddate 2019-03-12
     @testedby https://github.com/Tobias-B-Besemer
-    @note 
+    @tested ok v0.9.1 beta, Windows 7
+    @testeddate 2019-03-12
+    @testedby https://github.com/Tobias-B-Besemer
+    @note As long we have no command="xml", we need to delete the complete file!
 
 -->
 <cleaner id="double_commander" os="windows">
@@ -46,6 +49,7 @@
   <option id="openedtabs">
     <label>Opened Tabs</label>
     <description>Delete the history of Opened Tabs</description>
+    <warning>As long we have no command="xml", we need to delete the complete file! Use this option only if you know what you do!</warning>
     <!-- This is how IMHO a CleanerML-XML-Cleaning-Syntax maybe can look like (Part 3). Tobias.
     Explanation: Deletes with "/*" at the end the content of the element.
                  Deletes without "/*" at the end the element itself and all of his content.
@@ -53,10 +57,9 @@
     <action command="xml" search="file" path="$$profile$$\doublecmd.xml" element="doublecmd/Tabs/OpenedTabs/Left/Tab/FileView/History/Entry/Paths/Path"/>
     <action command="xml" search="file" path="$$profile$$\doublecmd.xml" element="doublecmd/Tabs/OpenedTabs/Right/Tab/FileView/History/Entry/Paths/Path"/>
     -->
-    <!-- But as long we have no command="xml", we just delete the complete file - Double Commander creates them again at next start. -->
-    <!-- NO, DOUBLE COMMANDER DO IT NOT !!! -> I make a bug report there...
+    <!-- But as long we have no command="xml", we just delete the complete file - Double Commander creates them again. -->
+    <!-- Double Commander creates the file again after first session, when it gets closed! -->
     <action command="delete" search="file" path="$$profile$$\doublecmd.xml"/>
-    -->
   </option>
   <option id="logs">
     <label>Logs</label>
@@ -66,6 +69,7 @@
   <option id="history">
     <label>History</label>
     <description>Delete the History</description>
+    <warning>As long we have no command="xml", we need to delete the complete file! Use this option only if you know what you do!</warning>
     <!-- This is how IMHO a CleanerML-XML-Cleaning-Syntax maybe can look like (Part 4). Tobias.
     Explanation: Deletes with "/*" at the end the content of the element.
      -> This element includes the child-elements:
@@ -77,12 +81,10 @@
     <!--
     <action command="xml" search="file" path="$$profile$$\doublecmd.xml" element="doublecmd/History/*"/>
     -->
-    <!-- But as long we have no command="xml", we just delete the complete file - Double Commander creates them again at next start. -->
-    <!-- NO, DOUBLE COMMANDER DO IT NOT !!! -> I make a bug report there...
+    <!-- But as long we have no command="xml", we just delete the complete file - Double Commander creates them again. -->
+    <!-- Double Commander creates the file again after first session, when it gets closed! -->
     <action command="delete" search="file" path="$$profile$$\doublecmd.xml"/>
-    -->
     <!-- History gets saved in two files... -->
-    <!-- history.xml seems to be a/the old file... -->
     <action command="delete" search="file" path="$$profile$$\history.xml"/>
   </option>
 </cleaner>
