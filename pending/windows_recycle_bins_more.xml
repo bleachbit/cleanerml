@@ -18,22 +18,24 @@
     You should have received a copy of the GNU General Public License
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
+    @app Windows Recycle Bin
     @url none
-    @cleanerversion v0.5.0
-    @cleanerdate 2019-03-11
+    @os Windows
+    @cleanerversion v0.5.2
+    @cleanerdate 2019-03-12
     @cleanerby https://github.com/Tobias-B-Besemer
     @tested ok v???, Windows 7
     @testeddate 2019-03-10
     @testedby https://github.com/Tobias-B-Besemer
-    @note 
+    @note Administrator tool! Delete the Windows Recycle Bins of all users on all drives from C to Z!
 
 -->
 <cleaner id="windows_recycle_bins_more" os="windows">
   <label translate="true">Windows Recycle Bins - More</label>
-  <description>Deletes the Windows Recycle Bins of all drives from C to Z</description>
-  <option id="windows_recycle_bins_all">
-    <label>Windows Recycle Bins - Delete all</label>
-    <description>Deletes the Windows Recycle Bins of all drives from C to Z</description>
+  <description>Delete the Windows Recycle Bins of all users on all drives from C to Z</description>
+  <option id="delete_all">
+    <label>Delete all</label>
+    <description>Delete the Windows Recycle Bins of all users on all drives from C to Z</description>
     <warning>Use this cleaner only if you know what you do!</warning>
     <!-- Windows 7 and above: -->
     <action command="delete" search="walk.all" path="C:\$Recycle.Bin"/>
