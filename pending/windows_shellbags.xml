@@ -18,9 +18,11 @@
     You should have received a copy of the GNU General Public License
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
+    @app Windows
     @url http://www.williballenthin.com/forensics/shellbags/
-    @cleanerversion v1.0.0
-    @cleanerdate 2019-03-11
+    @os Windows
+    @cleanerversion v1.1.0
+    @cleanerdate 2019-03-12
     @cleanerby https://github.com/Tobias-B-Besemer
     @tested ok v???, Windows 7
     @testeddate 2019-03-10
@@ -31,9 +33,9 @@
 <cleaner id="windows_shellbags" os="windows">
   <label>Windows Shellbags</label>
   <description>Windows Shellbags</description>
-  <option id="windows_shellbags">
-    <label>Windows Shellbags</label>
-    <description>Windows Shellbags</description>
+  <option id="remove">
+    <label>Remove</label>
+    <description>Delete the Windows Shellbags</description>
     <action command="winreg" path="HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU"/>
     <action command="winreg" path="HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags"/>
   </option>
