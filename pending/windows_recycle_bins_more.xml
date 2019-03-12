@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2008-2019 Andrew Ziem
+    https://www.bleachbit.org
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+    @url none
+    @cleanerversion v0.5.0
+    @cleanerdate 2019-03-11
+    @cleanerby https://github.com/Tobias-B-Besemer
+    @tested ok v???, Windows 7
+    @testeddate 2019-03-10
+    @testedby https://github.com/Tobias-B-Besemer
+    @note 
+
+-->
+<cleaner id="windows_recycle_bins_more" os="windows">
+  <label translate="true">Windows Recycle Bins - More</label>
+  <description>Deletes the Windows Recycle Bins of all drives from C to Z</description>
+  <option id="windows_recycle_bins_all">
+    <label>Windows Recycle Bins - Delete all</label>
+    <description>Deletes the Windows Recycle Bins of all drives from C to Z</description>
+    <warning>Use this cleaner only if you know what you do!</warning>
+    <!-- Windows 7 and above: -->
+    <action command="delete" search="walk.all" path="C:\$Recycle.Bin"/>
+    <action command="delete" search="walk.all" path="D:\$Recycle.Bin"/>
+    <action command="delete" search="walk.all" path="E:\$Recycle.Bin"/>
+    <action command="delete" search="walk.all" path="F:\$Recycle.Bin"/>
+    <action command="delete" search="walk.all" path="G:\$Recycle.Bin"/>
+    <action command="delete" search="walk.all" path="H:\$Recycle.Bin"/>
+    <action command="delete" search="walk.all" path="I:\$Recycle.Bin"/>
+    <action command="delete" search="walk.all" path="J:\$Recycle.Bin"/>
+    <action command="delete" search="walk.all" path="K:\$Recycle.Bin"/>
+    <action command="delete" search="walk.all" path="L:\$Recycle.Bin"/>
+    <action command="delete" search="walk.all" path="M:\$Recycle.Bin"/>
+    <action command="delete" search="walk.all" path="N:\$Recycle.Bin"/>
+    <action command="delete" search="walk.all" path="O:\$Recycle.Bin"/>
+    <action command="delete" search="walk.all" path="P:\$Recycle.Bin"/>
+    <action command="delete" search="walk.all" path="Q:\$Recycle.Bin"/>
+    <action command="delete" search="walk.all" path="R:\$Recycle.Bin"/>
+    <action command="delete" search="walk.all" path="S:\$Recycle.Bin"/>
+    <action command="delete" search="walk.all" path="T:\$Recycle.Bin"/>
+    <action command="delete" search="walk.all" path="U:\$Recycle.Bin"/>
+    <action command="delete" search="walk.all" path="V:\$Recycle.Bin"/>
+    <action command="delete" search="walk.all" path="W:\$Recycle.Bin"/>
+    <action command="delete" search="walk.all" path="X:\$Recycle.Bin"/>
+    <action command="delete" search="walk.all" path="Y:\$Recycle.Bin"/>
+    <action command="delete" search="walk.all" path="Z:\$Recycle.Bin"/>
+    <action command="delete" search="glob" path="C:\$Recycle.Bin"/>
+    <action command="delete" search="glob" path="D:\$Recycle.Bin"/>
+    <action command="delete" search="glob" path="E:\$Recycle.Bin"/>
+    <action command="delete" search="glob" path="F:\$Recycle.Bin"/>
+    <action command="delete" search="glob" path="G:\$Recycle.Bin"/>
+    <action command="delete" search="glob" path="H:\$Recycle.Bin"/>
+    <action command="delete" search="glob" path="I:\$Recycle.Bin"/>
+    <action command="delete" search="glob" path="J:\$Recycle.Bin"/>
+    <action command="delete" search="glob" path="K:\$Recycle.Bin"/>
+    <action command="delete" search="glob" path="L:\$Recycle.Bin"/>
+    <action command="delete" search="glob" path="M:\$Recycle.Bin"/>
+    <action command="delete" search="glob" path="N:\$Recycle.Bin"/>
+    <action command="delete" search="glob" path="O:\$Recycle.Bin"/>
+    <action command="delete" search="glob" path="P:\$Recycle.Bin"/>
+    <action command="delete" search="glob" path="Q:\$Recycle.Bin"/>
+    <action command="delete" search="glob" path="R:\$Recycle.Bin"/>
+    <action command="delete" search="glob" path="S:\$Recycle.Bin"/>
+    <action command="delete" search="glob" path="T:\$Recycle.Bin"/>
+    <action command="delete" search="glob" path="U:\$Recycle.Bin"/>
+    <action command="delete" search="glob" path="V:\$Recycle.Bin"/>
+    <action command="delete" search="glob" path="W:\$Recycle.Bin"/>
+    <action command="delete" search="glob" path="X:\$Recycle.Bin"/>
+    <action command="delete" search="glob" path="Y:\$Recycle.Bin"/>
+    <action command="delete" search="glob" path="Z:\$Recycle.Bin"/>
+    <!-- Windows Vista and earlier: -->
+    <!-- Maybe on an old data partition? -->
+    <action command="delete" search="walk.all" path="C:\RECYCLER"/>
+    <action command="delete" search="walk.all" path="D:\RECYCLER"/>
+    <action command="delete" search="walk.all" path="E:\RECYCLER"/>
+    <action command="delete" search="walk.all" path="F:\RECYCLER"/>
+    <action command="delete" search="walk.all" path="G:\RECYCLER"/>
+    <action command="delete" search="walk.all" path="H:\RECYCLER"/>
+    <action command="delete" search="walk.all" path="I:\RECYCLER"/>
+    <action command="delete" search="walk.all" path="J:\RECYCLER"/>
+    <action command="delete" search="walk.all" path="K:\RECYCLER"/>
+    <action command="delete" search="walk.all" path="L:\RECYCLER"/>
+    <action command="delete" search="walk.all" path="M:\RECYCLER"/>
+    <action command="delete" search="walk.all" path="N:\RECYCLER"/>
+    <action command="delete" search="walk.all" path="O:\RECYCLER"/>
+    <action command="delete" search="walk.all" path="P:\RECYCLER"/>
+    <action command="delete" search="walk.all" path="Q:\RECYCLER"/>
+    <action command="delete" search="walk.all" path="R:\RECYCLER"/>
+    <action command="delete" search="walk.all" path="S:\RECYCLER"/>
+    <action command="delete" search="walk.all" path="T:\RECYCLER"/>
+    <action command="delete" search="walk.all" path="U:\RECYCLER"/>
+    <action command="delete" search="walk.all" path="V:\RECYCLER"/>
+    <action command="delete" search="walk.all" path="W:\RECYCLER"/>
+    <action command="delete" search="walk.all" path="X:\RECYCLER"/>
+    <action command="delete" search="walk.all" path="Y:\RECYCLER"/>
+    <action command="delete" search="walk.all" path="Z:\RECYCLER"/>
+    <action command="delete" search="glob" path="C:\RECYCLER"/>
+    <action command="delete" search="glob" path="D:\RECYCLER"/>
+    <action command="delete" search="glob" path="E:\RECYCLER"/>
+    <action command="delete" search="glob" path="F:\RECYCLER"/>
+    <action command="delete" search="glob" path="G:\RECYCLER"/>
+    <action command="delete" search="glob" path="H:\RECYCLER"/>
+    <action command="delete" search="glob" path="I:\RECYCLER"/>
+    <action command="delete" search="glob" path="J:\RECYCLER"/>
+    <action command="delete" search="glob" path="K:\RECYCLER"/>
+    <action command="delete" search="glob" path="L:\RECYCLER"/>
+    <action command="delete" search="glob" path="M:\RECYCLER"/>
+    <action command="delete" search="glob" path="N:\RECYCLER"/>
+    <action command="delete" search="glob" path="O:\RECYCLER"/>
+    <action command="delete" search="glob" path="P:\RECYCLER"/>
+    <action command="delete" search="glob" path="Q:\RECYCLER"/>
+    <action command="delete" search="glob" path="R:\RECYCLER"/>
+    <action command="delete" search="glob" path="S:\RECYCLER"/>
+    <action command="delete" search="glob" path="T:\RECYCLER"/>
+    <action command="delete" search="glob" path="U:\RECYCLER"/>
+    <action command="delete" search="glob" path="V:\RECYCLER"/>
+    <action command="delete" search="glob" path="W:\RECYCLER"/>
+    <action command="delete" search="glob" path="X:\RECYCLER"/>
+    <action command="delete" search="glob" path="Y:\RECYCLER"/>
+    <action command="delete" search="glob" path="Z:\RECYCLER"/>
+    <!-- Delete the Registry Keys to all ever known Recycle Bins: -->
+    <action command="winreg" path="HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\BitBucket\Volume"/>
+  </option>
+</cleaner>
