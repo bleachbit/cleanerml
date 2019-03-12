@@ -18,25 +18,45 @@
     You should have received a copy of the GNU General Public License
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-	Rules in CleanerML written by https://github.com/Tobias-B-Besemer
-	v0.2 done on 2019-02-18
+    @url http://www.i2p-projekt.de/en/
+    @cleanerversion v0.3.0
+    @cleanerdate 2019-03-11
+    @cleanerby https://github.com/Tobias-B-Besemer
+    @tested ok v???, Windows 7
+    @testeddate 2019-03-10
+    @testedby https://github.com/Tobias-B-Besemer
+    @note 
 
 -->
 <cleaner id="i2p" os="windows">
   <label>I2P</label>
   <description>I2P</description>
+  <var name="profile">
+    <value search="glob" os="windows">%AppData%\I2P</value>
+    <!-- No Linux Support here, yet! Will do this later! Tobias.
+    -> Don't forget to remove os="windows"!
+    <value search="glob" os="linux">~/.I2P</value>
+    -->
+  </var>
+  <var name="temp-folder">
+    <value search="glob" os="windows">%LocalAppData%\Temp</value>
+    <!-- No Linux Support here, yet! Will do this later! Tobias.
+    -> Don't forget to remove os="windows"!
+    <value search="glob" os="linux">~/.Temp</value>
+    -->
+  </var>
   <option id="logs">
     <label>Logs</label>
     <description>Delete the logs</description>
-    <action command="delete" search="glob" path="%AppData%\I2P\logs\*"/>
-    <action command="delete" search="file" path="%AppData%\I2P\eventlog.txt"/>
-    <action command="delete" search="file" path="%AppData%\I2P\wrapper.log"/>
-    <action command="delete" search="file" path="%AppData%\I2P\addressbook\log.txt"/>
+    <action command="delete" search="glob" path="$$profile$$\logs\*"/>
+    <action command="delete" search="file" path="$$profile$$\eventlog.txt"/>
+    <action command="delete" search="file" path="$$profile$$\wrapper.log"/>
+    <action command="delete" search="file" path="$$profile$$\addressbook\log.txt"/>
   </option>
   <option id="temp_files">
     <label>Temp Files</label>
     <description>Remove the Temp Files</description>
-    <action command="delete" search="walk.all" path="%LocalAppData%\Temp\i2p-*"/>
-    <action command="delete" search="glob" path="%LocalAppData%\Temp\i2p-*"/>
+    <action command="delete" search="walk.all" path="$$temp-folder$$\i2p-*"/>
+    <action command="delete" search="glob" path="$$temp-folder$$\i2p-*"/>
   </option>
 </cleaner>
