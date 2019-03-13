@@ -8,9 +8,8 @@ SHELL := /bin/bash
 
 PHONY: pretty tests
 
-
 pretty:
-	for f in {pending,release}/*xml; \
+	for f in {pending,release}/*.xml; \
 	do \
 		xmllint --format "$$f" > "$$f.pretty"; \
 		diff=`diff -q "$$f" "$$f.pretty" | grep -o differ`; \
