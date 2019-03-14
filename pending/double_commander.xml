@@ -12,17 +12,17 @@
 
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program. If not, see <http://www.gnu.org/licenses/>.
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
     @app Double Commander
     @url https://doublecmd.sourceforge.io/
     @os Windows, Linux, FreeBSD
-    @cleanerversion v0.2.5
-    @cleanerdate 2019-03-12
+    @cleanerversion v0.2.8
+    @cleanerdate 2019-03-14
     @cleanerby https://github.com/Tobias-B-Besemer
     @tested ok v0.8.4, Windows 7
     @testeddate 2019-03-12
@@ -35,7 +35,7 @@
 -->
 <cleaner id="double_commander" os="windows">
   <label>Double Commander</label>
-  <description>File Manager</description>
+  <description>File manager</description>
   <var name="profile">
     <value search="glob" os="windows">%AppData%\doublecmd</value>
     <!-- Not yet figured out! I will do this later! Tobias.
@@ -48,7 +48,7 @@
   </var>
   <option id="openedtabs">
     <label>Opened Tabs</label>
-    <description>Delete the history of Opened Tabs</description>
+    <description>Delete the usage history</description>
     <warning>As long we have no command="xml", we need to delete the complete file! Use this option only if you know what you do!</warning>
     <!-- This is how IMHO a CleanerML-XML-Cleaning-Syntax maybe can look like (Part 3). Tobias.
     Explanation: Deletes with "/*" at the end the content of the element.
@@ -63,12 +63,12 @@
   </option>
   <option id="logs">
     <label>Logs</label>
-    <description>Delete the Logs</description>
+    <description>Delete the logs</description>
     <action command="delete" search="glob" path="$$profile$$\*.log"/>
   </option>
   <option id="history">
     <label>History</label>
-    <description>Delete the History</description>
+    <description>Delete the usage history</description>
     <warning>As long we have no command="xml", we need to delete the complete file! Use this option only if you know what you do!</warning>
     <!-- This is how IMHO a CleanerML-XML-Cleaning-Syntax maybe can look like (Part 4). Tobias.
     Explanation: Deletes with "/*" at the end the content of the element.
