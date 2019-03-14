@@ -18,19 +18,21 @@
     You should have received a copy of the GNU General Public License
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
+    @app Ashampoo Burning Studio 6 Free
     @url https://www.ashampoo.com/en/eur/pin/0710/Brenn_Software/Ashampoo-Burning-Studio-6-FREE
-    @cleanerversion v0.2.5
-    @cleanerdate 2019-03-11
+    @cleanerversion v0.5.0
+    @os Windows
+    @cleanerdate 2019-03-13
     @cleanerby https://github.com/Tobias-B-Besemer
     @tested ok v6, Windows 7
-    @testeddate 
+    @testeddate 2019-03-10
     @testedby https://github.com/Tobias-B-Besemer
     @note 
 
 -->
 <cleaner id="ashampoo_burning_studio_6_free" os="windows">
   <label>Ashampoo Burning Studio 6 Free</label>
-  <description>Burning Software</description>
+  <description>Burning software</description>
   <option id="adddialogs">
     <label>AddDialogs</label>
     <description>Delete the Paths in the Add-Dialogs</description>
@@ -39,14 +41,14 @@
     <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 6\Unknown Project\AddDialog" name="InitialDirectory"/>
   </option>
   <option id="images">
-    <label>Images</label>
-    <description>Delete the Paths and Name of the used Images</description>
+    <label>Last Images</label>
+    <description>Delete the data</description>
     <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 6\Burn Image Project\SelectImage" name="ImagePath"/>
     <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 6\Dump Image Project\DumpImage" name="ImagePath"/>
   </option>
   <option id="logs">
     <label>Logs</label>
-    <description>Delete the Logs</description>
+    <description>Delete the logs</description>
     <action command="delete" search="walk.all" path="%AppData%\Ashampoo\Ashampoo Burning Studio 6 Free\Logs\"/>
   </option>
 </cleaner>
