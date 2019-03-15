@@ -12,35 +12,53 @@
 
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program. If not, see <http://www.gnu.org/licenses/>.
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+    @app 7-Zip
     @url https://www.7-zip.org/
-    @cleanerversion v???
-    @cleanerdate 2019-03-11
+    @url http://p7zip.sourceforge.net/
+    @os Windows, Linux
+    @cleanerversion v2.0.0
+    @cleanerdate 2019-03-15
     @cleanerby Andrew Ziem (2013), 2McCoy7 (2014), mikevainio (2016), Tobias B. Besemer (2019)
     @tested ok v???, Windows 7
-    @testeddate 2014-10-01
+    @testeddate 2014-10-01 (... with an old version of the cleaner!)
     @testedby 
     @tested ok v15.06 beta, Windows 7
-    @testeddate 2015-08-25
+    @testeddate 2015-08-25 (... with an old version of the cleaner!)
     @testedby 
-    @note Zip stores history in the windows Registry, so this cleaner is more aimed towards maintaining privacy rather then freeing up disk space
+    @note 7-Zip stores history in the Windows Registry, so this cleaner is more aimed towards maintaining privacy rather then freeing up disk space.
+    @note 7-Zip-GUI for Linux: Package p7zip-gui, App 7zFM
+    @note I will try to figure the storage place of the Linux version later out. Tobias.
 
 -->
 <cleaner id="7zip" os="windows">
   <label>7-Zip</label>
+  <description>File archiver</description>
+  <!--
+  <var name="profile">
+    Windows: Seems 7-Zip have no profile directory...
+    <value search="glob" os="windows">none</value>
+    
+    Linux: Profile directory not yet figured out! I will do this later! Tobias.
+    <value search="glob" os="linux">~/.7zfm</value>
+  </var>
+  -->
   <option id="history">
     <label>History</label>
     <description>Delete the usage history</description>
+    <!-- History cleanup on Windows: -->
     <action command="winreg" path="HKCU\Software\7-Zip\Compression" name="ArcHistory"/>
     <action command="winreg" path="HKCU\Software\7-Zip\Extraction" name="PathHistory"/>
     <action command="winreg" path="HKCU\Software\7-Zip\FM" name="FolderHistory"/>
     <action command="winreg" path="HKCU\Software\7-Zip\FM" name="CopyHistory"/>
     <action command="winreg" path="HKCU\Software\7-Zip\FM" name="PanelPath0"/>
     <action command="winreg" path="HKCU\Software\7-Zip\FM" name="PanelPath1"/>
+    <!-- History cleanup on Linux: -->
+    <!-- Follows !!! -->
   </option>
 </cleaner>
