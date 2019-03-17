@@ -12,34 +12,44 @@
 
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program. If not, see <http://www.gnu.org/licenses/>.
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+    @app Total Commander
     @url https://www.ghisler.com/index.htm
-    @cleanerversion v0.6.1
-    @cleanerdate 2019-03-11
+    @os Windows
+    @cleanerversion v0.9.0
+    @cleanerdate 2019-03-15
     @cleanerby https://github.com/Tobias-B-Besemer
     @tested ok v9.21a, Windows 7
     @testeddate 2019-03-11
     @testedby https://github.com/Tobias-B-Besemer
-    @note 
+    @note That we don't need so much translation, we combine all in "History"! Tobias.
 
 -->
 <cleaner id="total_commander" os="windows">
   <label>Total Commander</label>
-  <description>File Manager</description>
+  <description>File manager</description>
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias. -->
+  <option id="history">
+    <label>History</label>
+    <description>Delete the usage history</description>
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   <option id="last_paths">
-    <label>Last Paths Left/Right</label>
-    <description>Delete the last Paths Left and Right</description>
+    <label>Last paths left/right</label>
+    <description>Delete the usage history</description>
+  -->
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="left" parameter="path"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="right" parameter="path"/>
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="mkdirhistory">
-    <label>Make Dir History</label>
-    <description>Delete the last Paths of the "Make Dir History"</description>
+    <label>Make dir history</label>
+    <description>Delete the usage history</description>
+  -->
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="MkDirHistory" parameter="0"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="MkDirHistory" parameter="1"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="MkDirHistory" parameter="2"/>
@@ -61,10 +71,12 @@
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="MkDirHistory" parameter="18"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="MkDirHistory" parameter="19"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="MkDirHistory" parameter="20"/>
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="command_line_history">
-    <label>Command Line History</label>
-    <description>Delete the "Command Line History"</description>
+    <label>Command line history</label>
+    <description>Delete the usage history</description>
+  -->
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="Command line history" parameter="0"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="Command line history" parameter="1"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="Command line history" parameter="2"/>
@@ -85,10 +97,12 @@
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="Command line history" parameter="17"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="Command line history" parameter="18"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="Command line history" parameter="19"/>
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="searchtext">
-    <label>Search Text</label>
-    <description>Delete the "Search Text"</description>
+    <label>Search text</label>
+    <description>Delete the usage history</description>
+  -->
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="SearchText" parameter="0"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="SearchText" parameter="1"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="SearchText" parameter="2"/>
@@ -109,10 +123,12 @@
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="SearchText" parameter="17"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="SearchText" parameter="18"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="SearchText" parameter="19"/>
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="renametemplates">
-    <label>Rename Templates</label>
-    <description>Delete the "Rename Templates" (Multi-Rename Tool)</description>
+    <label>Multi-Rename Tool - Rename Templates</label>
+    <description>Delete the usage history</description>
+  -->
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="RenameTemplates" parameter="0"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="RenameTemplates" parameter="1"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="RenameTemplates" parameter="2"/>
@@ -133,10 +149,12 @@
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="RenameTemplates" parameter="17"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="RenameTemplates" parameter="18"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="RenameTemplates" parameter="19"/>
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="renamesearchfind">
-    <label>Rename Search Find</label>
-    <description>Delete the "Rename Search Find" (Multi-Rename Tool)</description>
+    <label>Multi-Rename Tool - Rename Search Find</label>
+    <description>Delete the usage history</description>
+  -->
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="RenameSearchFind" parameter="0"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="RenameSearchFind" parameter="1"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="RenameSearchFind" parameter="2"/>
@@ -157,10 +175,12 @@
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="RenameSearchFind" parameter="17"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="RenameSearchFind" parameter="18"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="RenameSearchFind" parameter="19"/>
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="renamesearchreplace">
-    <label>Rename Search Replace</label>
-    <description>Delete the "Rename Search Replace" (Multi-Rename Tool)</description>
+    <label>Multi-Rename Tool - Rename Search Replace</label>
+    <description>Delete the usage history</description>
+  -->
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="RenameSearchReplace" parameter="0"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="RenameSearchReplace" parameter="1"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="RenameSearchReplace" parameter="2"/>
@@ -181,10 +201,12 @@
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="RenameSearchReplace" parameter="17"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="RenameSearchReplace" parameter="18"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="RenameSearchReplace" parameter="19"/>
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="searchname">
     <label>Search Name</label>
-    <description>Delete the "Search Name"</description>
+    <description>Delete the usage history</description>
+  -->
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="SearchName" parameter="0"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="SearchName" parameter="1"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="SearchName" parameter="2"/>
@@ -205,10 +227,12 @@
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="SearchName" parameter="17"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="SearchName" parameter="18"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="SearchName" parameter="19"/>
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="searchin">
     <label>Search In</label>
-    <description>Delete the "Search In"</description>
+    <description>Delete the usage history</description>
+  -->
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="SearchIn" parameter="0"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="SearchIn" parameter="1"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="SearchIn" parameter="2"/>
@@ -229,10 +253,12 @@
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="SearchIn" parameter="17"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="SearchIn" parameter="18"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="SearchIn" parameter="19"/>
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="righthistory">
-    <label>Right History</label>
-    <description>Delete the "Right History"</description>
+    <label>Right history</label>
+    <description>Delete the usage history</description>
+  -->
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="RightHistory" parameter="0"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="RightHistory" parameter="1"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="RightHistory" parameter="2"/>
@@ -259,10 +285,12 @@
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="RightHistory" parameter="23"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="RightHistory" parameter="24"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="RightHistory" parameter="25"/>
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="lefthistory">
-    <label>Left History</label>
-    <description>Delete the "Left History"</description>
+    <label>Left history</label>
+    <description>Delete the usage history</description>
+  -->
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="LeftHistory" parameter="0"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="LeftHistory" parameter="1"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="LeftHistory" parameter="2"/>
@@ -290,14 +318,14 @@
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="LeftHistory" parameter="24"/>
     <action command="ini" search="file" path="%AppData%\GHISLER\wincmd.ini" section="LeftHistory" parameter="25"/>
   </option>
-  <option id="logfile">
-    <label>Log File</label>
-    <description>Delete the Log File</description>
-    <action command="delete" search="file" path="%LocalAppData%\Temp\totalcmd.log"/>
+  <option id="logs">
+    <label>Logs</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="file" path="%Tmp%\totalcmd.log"/>
   </option>
   <option id="thumbnails">
-    <label>Thumbnails Database</label>
-    <description>Delete the Thumbnails Database</description>
+    <label>Thumbnails</label>
+    <description>Delete the cache</description>
     <action command="delete" search="file" path="%LocalAppData%\GHISLER\tcthumbs.db"/>
     <action command="delete" search="file" path="%LocalAppData%\GHISLER\tcthumbs.idb"/>
   </option>
