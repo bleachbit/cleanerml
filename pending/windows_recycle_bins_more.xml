@@ -21,8 +21,8 @@
     @app Windows Recycle Bin
     @url none
     @os Windows
-    @cleanerversion v0.5.2
-    @cleanerdate 2019-03-12
+    @cleanerversion v0.5.5
+    @cleanerdate 2019-03-13
     @cleanerby https://github.com/Tobias-B-Besemer
     @tested ok v???, Windows 7
     @testeddate 2019-03-10
@@ -32,9 +32,9 @@
 -->
 <cleaner id="windows_recycle_bins_more" os="windows">
   <label translate="true">Windows Recycle Bins - More</label>
-  <description>Delete the Windows Recycle Bins of all users on all drives from C to Z</description>
-  <option id="delete_all">
-    <label>Delete all</label>
+  <description>Windows component</description>
+  <option id="all">
+    <label>All</label>
     <description>Delete the Windows Recycle Bins of all users on all drives from C to Z</description>
     <warning>Use this cleaner only if you know what you do!</warning>
     <!-- Windows 7 and above: -->
