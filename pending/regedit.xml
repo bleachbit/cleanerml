@@ -12,28 +12,36 @@
 
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program. If not, see <http://www.gnu.org/licenses/>.
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+    @app Microsoft Windows
     @url none
-    @cleanerversion v1.0.0
-    @cleanerdate 2019-03-11
+    @os Windows
+    @cleanerversion v1.1.0
+    @cleanerdate 2019-03-15
     @cleanerby https://github.com/Tobias-B-Besemer
     @tested ok v???, Windows 7
-    @testeddate 2019-03-10
+    @testeddate 2019-03-10 (... with an old version of the cleaner!)
     @testedby https://github.com/Tobias-B-Besemer
-    @note 
+    @note That we don't need so much translation, we combine all in "History"! Tobias.
 
 -->
 <cleaner id="regedit" os="windows">
   <label>Registry Editor</label>
   <description>Utility</description>
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias. -->
+  <option id="history">
+    <label>History</label>
+    <description>Delete the usage history</description>
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   <option id="lastkey">
     <label>Last Key</label>
     <description>Delete the Last Key Setting</description>
+  -->
     <action command="winreg" path="HKCU\Software\Microsoft\Windows\CurrentVersion\Applets\Regedit" name="LastKey"/>
   </option>
 </cleaner>
