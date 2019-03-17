@@ -21,18 +21,18 @@
     @app Windows Update
     @url none
     @os Windows
-    @cleanerversion v0.8.2
-    @cleanerdate 2019-03-12
+    @cleanerversion v0.8.5
+    @cleanerdate 2019-03-13
     @cleanerby https://github.com/Tobias-B-Besemer
     @tested ok v???, Windows 7
     @testeddate 2019-03-10
     @testedby https://github.com/Tobias-B-Besemer
-    @note 
+    @note Can maybe one day be integrated into the windows.xml-cleaner...
 
 -->
 <cleaner id="windows_update" os="windows">
   <label>Windows Update</label>
-  <description>Windows Update</description>
+  <description>Windows component</description>
   <option id="logs">
     <label>Logs</label>
     <description>Delete logs</description>
@@ -43,18 +43,42 @@
     <action command="delete" search="file" path="%WinDir%\SoftwareDistribution\ReportingEvents.log"/>
     <action command="delete" search="file" path="%WinDir%\WindowsUpdate.log"/>
     <action command="delete" search="file" path="%WinDir%\svcpack.log"/>
+    <!-- No more used since: 2015-05-14: -->
+    <action command="delete" search="walk.all" path="%LocalAppDataLow%\Microsoft\MuCatalog"/>
+    <action command="delete" search="glob" path="%LocalAppDataLow%\Microsoft\MuCatalog"/>
   </option>
   <option id="temp">
-    <label>Temp Files</label>
-    <description>Delete temp files</description>
-    <action command="delete" search="walk.all" path="%SystemDrive%\$WINDOWS.~BT"/>
-    <action command="delete" search="glob" path="%SystemDrive%\$WINDOWS.~BT"/>
-    <action command="delete" search="walk.all" path="%SystemDrive%\$Windows.~WS"/>
-    <action command="delete" search="glob" path="%SystemDrive%\$Windows.~WS"/>
-    <action command="delete" search="glob" path="%LocalAppData%\Temp\KB*"/>
-    <action command="delete" search="walk.all" path="%LocalAppData%\Temp\WUDiagTempFolder"/>
-    <action command="delete" search="glob" path="%LocalAppData%\Temp\WUDiagTempFolder"/>
-    <action command="delete" search="glob" path="%LocalAppData%\Temp\WindowsUpdate*"/>
+    <label>Temporary files</label>
+    <description>Delete the temporary files</description>
+    <action command="delete" search="walk.all" path="%SystemDrive%\$WINDOWS.~BT\"/>
+    <action command="delete" search="glob" path="%SystemDrive%\$WINDOWS.~BT\"/>
+    <action command="delete" search="walk.all" path="%SystemDrive%\$Windows.~WS\"/>
+    <action command="delete" search="glob" path="%SystemDrive%\$Windows.~WS\"/>
+    <action command="delete" search="walk.all" path="%SystemDrive%\Config.Msi\"/>
+    <action command="delete" search="glob" path="%SystemDrive%\Config.Msi\"/>
+    <action command="delete" search="walk.all" path="%TMP%\WUDiagTempFolder\"/>
+    <action command="delete" search="glob" path="%TMP%\WUDiagTempFolder\"/>
+    <action command="delete" search="walk.files" path="%TMP%\KB*"/>
+    <action command="delete" search="walk.files" path="%TMP%\WindowsUpdate*"/>
+    <action command="delete" search="walk.files" path="%TMP%\WindowsUpdate*"/>
+    <action command="delete" search="walk.files" path="%TMP%\ASPNETSetup_*.log"/>
+    <action command="delete" search="walk.files" path="%TMP%\dd_NDP*"/>
+    <action command="delete" search="file" path="%TMP%\dd_SetupUtility.txt"/>
+    <action command="delete" search="walk.files" path="%TMP%\dd_X86_AMD64-all-ndp*"/>
+    <action command="delete" search="file" path="%TMP%\wurunSeq.txt"/>
+    <action command="delete" search="file" path="%TMP%\wuZipFilePaths"/>
+    <!-- .NETFramework: -->
+    <action command="delete" search="walk.files" path="%TMP%\.NETFramework*"/>
+    <action command="delete" search="walk.files" path="%TMP%\dd_dotNetFx*"/>
+    <action command="delete" search="walk.all" path="%TMP%\eraserInstallBootstrapper\"/>
+    <action command="delete" search="glob" path="%TMP%\eraserInstallBootstrapper\"/>
+    <action command="delete" search="walk.files" path="%TMP%\dd_wcf_CA_smci_*"/>
+    <action command="delete" search="walk.files" path="%TMP%\Microsoft .NET Framework *"/>
+    <!-- Visual C Redist: -->
+    <action command="delete" search="walk.files" path="%TMP%\dd_vcredist*"/>
+    <action command="delete" search="walk.all" path="%WinDir%\Temp\logishrd\"/>
+    <action command="delete" search="glob" path="%WinDir%\Temp\logishrd\"/>
+    <action command="delete" search="walk.files" path="%TMP%\Microsoft.VC*.manifest"/>
   </option>
   <option id="windows_update_files">
     <label>Windows Update Files and Database</label>
