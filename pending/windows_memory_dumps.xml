@@ -18,31 +18,33 @@
     You should have received a copy of the GNU General Public License
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
+    @app Windows
     @url none
-    @cleanerversion v0.3.1
-    @cleanerdate 2019-03-11
+    @os Windows
+    @cleanerversion v0.4.0
+    @cleanerdate 2019-03-13
     @cleanerby https://github.com/Tobias-B-Besemer
     @tested ok v???, Windows 7
     @testeddate 2019-03-10
     @testedby https://github.com/Tobias-B-Besemer
-    @note 
+    @note Can maybe one day be integrated into the windows.xml-cleaner...
 
 -->
 <cleaner id="windows_memory_dumps" os="windows">
   <label>Windows Memory Dumps</label>
-  <description>Memory Dumps intended for Developers</description>
-  <option id="dumps">
-    <label>Memory Dumps</label>
-    <description>Delete the Memory Dumps</description>
+  <description>Windows component</description>
+  <option id="all">
+    <label>All</label>
+    <description>Delete the files</description>
     <action command="delete" search="file" path="%windir%\MEMORY.DMP"/>
     <action command="delete" search="walk.all" path="%windir%\Minidump\"/>
     <action command="delete" search="walk.all" path="%windir%\System32\config\systemprofile\AppData\Local\CrashDumps\"/>
     <action command="delete" search="walk.all" path="%windir%\SysWOW64\config\systemprofile\AppData\Local\CrashDumps\"/>
     <action command="delete" search="walk.all" path="%windir%\LiveKernelReports\WATCHDOG\"/>
     <action command="delete" search="walk.all" path="%LocalAppData%\CrashDumps\"/>
-    <action command="delete" search="glob" path="%windir%\Temp\WER*.hdmp"/>
-    <!-- Windows Error Reporting, HEAP-Dump -->
-    <action command="delete" search="glob" path="%windir%\Temp\WER*.mdmp"/>
-    <!-- Windows Error Reporting, Mini-Dump -->
+    <!-- Windows Error Reporting, HEAP-Dumps: -->
+    <action command="delete" search="walk.files" path="%windir%\Temp\WER*.hdmp"/>
+    <!-- Windows Error Reporting, Mini-Dumps: -->
+    <action command="delete" search="walk.files" path="%windir%\Temp\WER*.mdmp"/>
   </option>
 </cleaner>
