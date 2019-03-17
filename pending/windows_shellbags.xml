@@ -19,23 +19,24 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
     @app Windows
-    @url http://www.williballenthin.com/forensics/shellbags/
+    @url none
     @os Windows
-    @cleanerversion v1.1.0
-    @cleanerdate 2019-03-12
+    @cleanerversion v1.1.1
+    @cleanerdate 2019-03-13
     @cleanerby https://github.com/Tobias-B-Besemer
     @tested ok v???, Windows 7
     @testeddate 2019-03-10
     @testedby https://github.com/Tobias-B-Besemer
-    @note 
+    @note More info: http://www.williballenthin.com/forensics/shellbags/
+    @note Can maybe one day be integrated into the windows.xml-cleaner...
 
 -->
 <cleaner id="windows_shellbags" os="windows">
   <label>Windows Shellbags</label>
-  <description>Windows Shellbags</description>
-  <option id="remove">
-    <label>Remove</label>
-    <description>Delete the Windows Shellbags</description>
+  <description>Windows component</description>
+  <option id="all">
+    <label>All</label>
+    <description>Delete the data</description>
     <action command="winreg" path="HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU"/>
     <action command="winreg" path="HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags"/>
   </option>
