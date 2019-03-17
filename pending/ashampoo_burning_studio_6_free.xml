@@ -12,17 +12,17 @@
 
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program. If not, see <http://www.gnu.org/licenses/>.
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
     @app Ashampoo Burning Studio 6 Free
     @url https://www.ashampoo.com/en/eur/pin/0710/Brenn_Software/Ashampoo-Burning-Studio-6-FREE
     @cleanerversion v0.5.0
     @os Windows
-    @cleanerdate 2019-03-13
+    @cleanerdate 2019-03-14
     @cleanerby https://github.com/Tobias-B-Besemer
     @tested ok v6, Windows 7
     @testeddate 2019-03-10
