@@ -18,93 +18,120 @@
     You should have received a copy of the GNU General Public License
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
+    @app Microsoft Windows
     @url https://www.microsoft.com/en-us/windows
-    @cleanerversion v0.8.6
-    @cleanerdate 2019-03-11
+    @os Windows
+    @cleanerversion v0.8.9
+    @cleanerdate 2019-03-14
     @cleanerby https://github.com/Tobias-B-Besemer
     @tested ok v???, Windows 7
     @testeddate 2019-03-10
     @testedby https://github.com/Tobias-B-Besemer
-    @note 
+    @note Can maybe one day replace the hardcoded Windows cleaner of BleachBit...
 
 -->
 <cleaner id="windows" os="windows">
   <label>Windows</label>
-  <description>Operating System</description>
+  <description>Operating system</description>
   <option id="temp">
-    <label>Windows Temp Files and Folders</label>
-    <description>Delete the Temp Files and Folders in the Windows Directory</description>
-    <action command="delete" search="walk.all" path="%WINDIR%\Installer\MSI*.tmp*"/>
-    <action command="delete" search="glob" path="%WINDIR%\Installer\MSI*.tmp*"/>
+    <label>Windows temp files and folders</label>
+    <description>Delete the temp files and folders in the Windows directory</description>
+    <action command="delete" search="walk.all" path="%WinDir%\Installer\MSI*.tmp*"/>
+    <action command="delete" search="glob" path="%WinDir%\Installer\MSI*.tmp*"/>
   </option>
   <option id="logs">
-    <label>Log Files</label>
-    <description>Delete the Log Files in the Windows Directory</description>
-    <action command="delete" search="glob" path="%WINDIR%\*.log"/>
+    <label>Logs</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="glob" path="%WinDir%\*.log"/>
     <!--
-    64-bit Windows redirects %windir%\sysnative\ for 32-bit applications to %windir%\system32 
+    64-bit Windows redirects %WinDir%\sysnative\ for 32-bit applications to %WinDir%\system32 
     https://docs.microsoft.com/en-us/windows/desktop/winprog64/file-system-redirector
     -->
-    <action command="delete" search="glob" path="%WINDIR%\sysnative\config\*.log"/>
-    <action command="delete" search="glob" path="%WINDIR%\sysnative\config\*.log1"/>
-    <action command="delete" search="glob" path="%WINDIR%\sysnative\config\*.log2"/>
+    <action command="delete" search="glob" path="%WinDir%\sysnative\config\*.log"/>
+    <action command="delete" search="glob" path="%WinDir%\sysnative\config\*.log1"/>
+    <action command="delete" search="glob" path="%WinDir%\sysnative\config\*.log2"/>
     <action command="delete" search="glob" path="%SystemDrive%\Boot\*.log"/>
     <action command="delete" search="glob" path="%SystemDrive%\Boot\*.log1"/>
     <action command="delete" search="glob" path="%SystemDrive%\Boot\*.log2"/>
     <action command="delete" search="glob" path="%ProgramData%\Microsoft\Search\Data\Applications\Windows\*.log"/>
   </option>
   <option id="hibernate">
-    <label>Hibernate System</label>
-    <description>Turns the Hibernate System of and deletes the Hibernate File</description>
+    <label>Hibernate system</label>
+    <description>Turns the hibernate system off and delete the hibernate file</description>
     <action command="process" cmd="powercfg.exe /hibernate off"/>
   </option>
   <option id="junk">
-    <label>Junk Files and Folders</label>
-    <description>Delete the Junk Files and Folders of Windows</description>
-    <action command="delete" search="file" path="%HOMEPATH%\Desktop\desktop.ini"/>
+    <label>Junk files and folders</label>
+    <description>Delete the junk files and folders</description>
+    <action command="delete" search="file" path="%UserProfile%\Desktop\desktop.ini"/>
     <action command="delete" search="file" path="%SystemDrive%\BOOTSECT.BAK"/>
     <action command="delete" search="walk.all" path="%SystemDrive%\Config.Msi\"/>
     <action command="delete" search="glob" path="%SystemDrive%\Config.Msi\"/>
   </option>
   <option id="backups">
-    <label>Backup Files</label>
-    <description>Delete the Backup Files of Windows</description>
+    <label>Backup files</label>
+    <description>Delete the backup files</description>
     <action command="delete" search="glob" path="%SystemDrive%\Boot\BCD.Backup.*"/>
   </option>
   <option id="chkdsk">
-    <label>Chkdsk Files</label>
-    <description>Delete the Chkdsk Files</description>
+    <label>Chkdsk files</label>
+    <description>Delete the files</description>
     <action command="delete" search="walk.files" path="%SystemDrive%\File*.chk"/>
     <action command="delete" search="walk.all" path="%SystemDrive%\System Volume Information\Chkdsk\"/>
     <action command="delete" search="glob" path="%SystemDrive%\System Volume Information\Chkdsk\"/>
   </option>
   <option id="wer">
     <label>Windows Error Reporting</label>
-    <description>Deletes the Windows Error Reporting Files</description>
-    <action command="delete" search="walk.all" path="%ALLUSERSPROFILE%\Microsoft\Windows\WER\ReportArchive\"/>
-    <action command="delete" search="walk.all" path="%ALLUSERSPROFILE%\Microsoft\Windows\WER\ReportQueue\"/>
-    <action command="delete" search="walk.all" path="%ALLUSERSPROFILE%\Microsoft\Windows\WER\Temp\"/>
+    <description>Delete the files</description>
+    <action command="delete" search="walk.all" path="%AllUsersProfile%\Microsoft\Windows\WER\ReportArchive\"/>
+    <action command="delete" search="walk.all" path="%AllUsersProfile%\Microsoft\Windows\WER\ReportQueue\"/>
+    <action command="delete" search="walk.all" path="%AllUsersProfile%\Microsoft\Windows\WER\Temp\"/>
+    <!--
+    As we want to delete the WER, why don't we do the following: (Tobias)
+    <action command="delete" search="walk.all" path="%AllUsersProfile%\Microsoft\Windows\WER\"/>
+    <action command="delete" search="file" path="%AllUsersProfile%\Microsoft\Windows\WER\"/>
+    -->
     <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Windows\WER\ReportArchive\"/>
     <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Windows\WER\ReportQueue\"/>
     <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Windows\WER\Temp\"/>
     <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Windows\WER\ERC\"/>
+    <!--
+    As we want to delete the WER, why don't we do the following: (Tobias)
+    <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Windows\WER\"/>
+    <action command="delete" search="file" path="%LocalAppData%\Microsoft\Windows\WER\"/>
+    -->
     <action command="delete" search="walk.all" path="%LocalAppData%\ElevatedDiagnostics\"/>
-    <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Windows\WER\Temp\"/>
+    <!--
+    As we want to delete the WER, why don't we do the following: (Tobias)
+    <action command="delete" search="walk.all" path="%LocalAppData%\ElevatedDiagnostics\"/>
+    <action command="delete" search="file" path="%LocalAppData%\ElevatedDiagnostics\"/>
+    -->
     <action command="winreg" path="HKCU\Software\Microsoft\Windows\Windows Error Reporting\Debug" name="StoreLocation"/>
     <action command="winreg" path="HKLM\Software\Microsoft\Windows\Windows Error Reporting\Debug" name="StoreLocation"/>
     <action command="winreg" path="HKLM\Software\Microsoft\Windows\Windows Error Reporting\LocalDumps"/>
     <action command="winreg" path="HKU\.DEFAULT\Software\Microsoft\Windows\Windows Error Reporting\Debug" name="StoreLocation"/>
+    <!-- WER file in the temp folder: -->
+    <action command="delete" search="file" path="%Temp%\WERFAB3.tmp.WERInternalMetadata.xml"/>
+    <!--
+    Windows Error Reporting, HEAP-Dumps:
+    <action command="delete" search="walk.files" path="%WinDir%\Temp\WER*.hdmp"/>
+    -->
+    <!--
+    Windows Error Reporting, Mini-Dumps:
+    <action command="delete" search="walk.files" path="%WinDir%\Temp\WER*.mdmp"/>
+    -->
+    <action command="delete" search="walk.files" path="%WinDir%\Temp\WER*"/>
   </option>
   <option id="shadow_copies">
     <label>Shadow Copies</label>
-    <description>Deletes all Shadow Copies on C:</description>
+    <description>Delete all Shadow Copies on C:</description>
     <warning>Use the option only if you know what you do!</warning>
     <action command="process" cmd="vssadmin.exe delete shadows /for=c: /all"/>
   </option>
   <option id="recycle_bin">
     <label>Recycle Bin</label>
-    <description>Empty Recycle Bin on drive C: from all user accounts</description>
-    <warning>Empty Recycle Bin on drive C: from all user accounts! Use the option only if you know what you do!</warning>
+    <description>Delete the Recycle Bin on drive C: from all user accounts</description>
+    <warning>Use the option only if you know what you do!</warning>
     <!-- This is how it was documented, but don't work, because "rd" is no standalone app! -->
     <!-- <action command="process" cmd="cmd.exe /c rd /s c:\$Recycle.Bin"/> -->
     <!-- Windows 7 and above: -->
@@ -114,9 +141,9 @@
     <action command="delete" search="walk.all" path="%SystemDrive%\RECYCLER"/>
     <action command="delete" search="glob" path="%SystemDrive%\RECYCLER"/>
   </option>
-  <option id="caches">
-    <label>Caches</label>
-    <description>Cleaning up some Caches</description>
+  <option id="cache">
+    <label>Cache</label>
+    <description>Delete the cache</description>
     <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Feeds Cache\"/>
     <action command="delete" search="glob" path="%LocalAppData%\Microsoft\Feeds Cache\*"/>
     <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Terminal Server Client\Cache\"/>
@@ -127,18 +154,19 @@
     <action command="delete" search="glob" path="%LocalAppData%\Microsoft\Windows\Caches\*"/>
     <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Windows\SchCache\"/>
     <action command="delete" search="glob" path="%LocalAppData%\Microsoft\Windows\SchCache\*"/>
-    <action command="delete" search="walk.all" path="%USERPROFILE%\AppData\LocalLow\Microsoft\CryptnetUrlCache\"/>
-    <action command="delete" search="walk.all" path="%USERPROFILE%\AppData\LocalLow\Microsoft\Windows\AppCache\"/>
-    <action command="delete" search="walk.all" path="%USERPROFILE%\AppData\LocalLow\Microsoft\Windows\AppCache\*"/>
+    <action command="delete" search="walk.all" path="%LocalAppDataLow%\Microsoft\CryptnetUrlCache\"/>
+    <!-- Empty folder on the demo machine: (Tobias) -->
+    <action command="delete" search="walk.all" path="%LocalAppDataLow%\Microsoft\Windows\AppCache\"/>
+    <action command="delete" search="glob" path="%LocalAppDataLow%\Microsoft\Windows\AppCache\*"/>
   </option>
   <option id="prefetch">
-    <label>Prefetch Cache</label>
-    <description>Cleaning up the Prefetch Cache</description>
-    <action command="delete" search="glob" path="%windir%\Prefetch\*"/>
+    <label>Prefetch cache</label>
+    <description>Delete the cache</description>
+    <action command="delete" search="glob" path="%WinDir%\Prefetch\*"/>
   </option>
   <option id="search_index">
     <label>Windows Search Index</label>
-    <description>Deletes the Windows Search Index</description>
+    <description>Delete the files</description>
     <warning>It may be nessesary that you deactivate the Windows Search Service first, manually!</warning>
     <action command="process" wait="true" cmd="sc config WSearch start= disabled"/>
     <action command="delete" search="file" path="%ProgramData%\Microsoft\Search\Data\Applications\Windows\Windows.edb"/>
