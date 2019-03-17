@@ -12,35 +12,36 @@
 
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program. If not, see <http://www.gnu.org/licenses/>.
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
     @app Notepad++
     @url https://notepad-plus-plus.org/
     @os Windows
-    @cleanerversion v0.2.5
-    @cleanerdate 2019-03-11
+    @cleanerversion v0.3.0
+    @cleanerdate 2019-03-17
     @cleanerby ??? & https://github.com/Tobias-B-Besemer
-    @tested ok v???, Windows 7
+    @tested ok v7.5.9, Windows 7
     @testeddate 2019-03-11
     @testedby https://github.com/Tobias-B-Besemer
-    @note 
+    @note As long we have no command="xml", we need to delete the complete file!
 
 -->
 <cleaner id="notepadplus" os="windows">
   <label>Notepad++</label>
   <description>Editor</description>
   <option id="backup">
-    <label>Backup Files</label>
-    <description>Delete the Backup Files</description>
+    <label>Backup files</label>
+    <description>Delete the backup files</description>
     <action command="delete" search="walk.files" path="%AppData%\Notepad++\backup"/>
   </option>
   <option id="history">
     <label>History</label>
-    <description>Delete the History</description>
+    <description>Delete the usage history</description>
+    <warning>As long we have no command="xml", we need to delete the complete file! Use this option only if you know what you do!</warning>
     <!-- This is how IMHO a CleanerML-XML-Cleaning-Syntax maybe can look like (Part 1). Tobias.
     Explanation: Deletes the name/value of the attribute in the element.
     <action command="xml" search="file" path="%AppData%\Notepad++\config.xml" element="NotepadPlus/FindHistory/Filter" attribute="name"/>
@@ -53,7 +54,8 @@
   </option>
   <option id="session">
     <label>Session</label>
-    <description>Delete the Session</description>
+    <description>Delete the current and last sessions</description>
+    <warning>As long we have no command="xml", we need to delete the complete file! Use this option only if you know what you do!</warning>
     <!-- This is how IMHO a CleanerML-XML-Cleaning-Syntax maybe can look like (Part 2). Tobias.
     Explanation: Deletes the complete element, because no attribute with name/value given!
     <action command="xml" search="file" path="%AppData%\Notepad++\session.xml" element="NotepadPlus/Session/mainView/File"/>
