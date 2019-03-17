@@ -12,80 +12,129 @@
 
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program. If not, see <http://www.gnu.org/licenses/>.
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+    @app Apple iTunes
     @url https://www.apple.com/itunes/
-    @cleanerversion v0.2.6
-    @cleanerdate 2019-03-11
+    @os Windows
+    @cleanerversion v0.4.0
+    @cleanerdate 2019-03-15
     @cleanerby https://github.com/Tobias-B-Besemer
     @tested ok v???, Windows 7
-    @testeddate 2019-03-11
+    @testeddate 2019-03-11 (... with an old version of the cleaner!)
     @testedby https://github.com/Tobias-B-Besemer
-    @note 
+    @note That we don't need so much translation, we combine some folders! Tobias.
 
 -->
 <cleaner id="itunes" os="windows">
   <label>iTunes</label>
-  <description>Apple All-in-one Software</description>
+  <description>All-in-one software</description>
   <option id="itunes_win8.1">
     <label>iTunes till Win8.1</label>
-    <description>Delete the iTunes files on Windows till version 8.1</description>
-    <action command="delete" search="glob" path="%AppData%\Apple Computer\iTunes\*.log"/>
-    <action command="delete" search="glob" path="%AppData%\Apple Computer\iTunes\*.ipcc"/>
-    <action command="delete" search="glob" path="%AppData%\Apple Computer\iTunes\*.ipsw"/>
-    <action command="delete" search="walk.all" path="%AppData%\Apple Computer\Logs\"/>
-    <action command="delete" search="walk.all" path="%AppData%\Apple Computer\Logs\CrashReporter\MobileDevice\"/>
-    <action command="delete" search="glob" path="%AppData%\Apple Computer\Logs\CrashReporter\MobileDevice\"/>
+    <description>Delete the files</description>
+    <action command="delete" search="walk.files" path="%AppData%\Apple Computer\iTunes\*.ipcc"/>
+    <action command="delete" search="walk.files" path="%AppData%\Apple Computer\iTunes\*.ipsw"/>
     <action command="delete" search="file" path="%LocalAppData%\Apple Computer\iTunes\iPodDevices.xml"/>
-    <action command="delete" search="file" path="%AppData%\Apple Computer\iTunes\Cookies\Cookies.binarycookies"/>
-    <action command="delete" search="walk.all" path="%CommonAppData%\Apple Computer\iTunes\iPhone Temporary Files\"/>
-    <action command="delete" search="walk.all" path="%LocalAppData%\VirtualStore\ProgramData\Apple Computer\iTunes\iPhone Temporary Files\"/>
-    <action command="delete" search="file" path="%LocalAppData%\Apple Computer\iTunes\Cache.db"/>
-    <action command="delete" search="glob" path="%Music%\iTunes\*.tmp"/>
-    <action command="delete" search="walk.all" path="%Music%\iTunes\Album Artwork\Cache\"/>
-    <action command="delete" search="glob" path="%UserProfile%\Apple Computer\logs\*.log"/>
-    <action command="delete" search="walk.all" path="%WinDir%\System32\config\systemprofile\AppData\Roaming\Apple Computer\Logs\"/>
-    <action command="delete" search="walk.all" path="%WinDir%\SysWOW64\config\systemprofile\AppData\Roaming\Apple Computer\Logs\"/>
-    <action command="delete" search="walk.all" path="%AppData%\Apple Computer\MediaStream\Thumbnails\"/>
-    <!-- Suggested by: https://github.com/sshermz -->
-    <action command="delete" search="walk.all" path="%AppData%\Apple Computer\iTunes\iPhone Updater Logs\"/>
-  </option>
-  <option id="mobilesync_bak">
-    <label>MobileSync Backup</label>
-    <description>Delete the MobileSync Backup</description>
-    <action command="delete" search="walk.all" path="%AppData%\Apple Computer\MobileSync\Backup\"/>
-    <action command="delete" search="glob" path="%AppData%\Apple Computer\MobileSync\Backup\"/>
   </option>
   <option id="syncservices_clientdata">
     <label>SyncServices ClientData</label>
-    <description>Delete the SyncServices ClientData</description>
+    <description>Delete the files</description>
     <action command="delete" search="walk.all" path="%AppData%\Apple Computer\SyncServices\Local\clientdata\"/>
-    <action command="delete" search="glob" path="%AppData%\Apple Computer\SyncServices\Local\clientdata\"/>
-  </option>
-  <option id="itunes_prev_lib">
-    <label>iTunes Previous Libraries</label>
-    <description>Delete the iTunes Previous Libraries</description>
-    <action command="delete" search="walk.all" path="%Music%\iTunes\Previous iTunes Libraries\"/>
   </option>
   <option id="itunes_win10">
     <label>iTunes on Win10</label>
-    <description>Delete the iTunes files on Windows version 10</description>
-    <action command="delete" search="walk.all" path="%LocalAppData%\Packages\AppleInc.iTunes_*\AC\AppCache\"/>
-    <action command="delete" search="walk.all" path="%LocalAppData%\Packages\AppleInc.iTunes_*\AC\INet*\"/>
-    <action command="delete" search="walk.all" path="%LocalAppData%\Packages\AppleInc.iTunes_*\AC\Temp\"/>
-    <action command="delete" search="file" path="%LocalAppData%\Packages\AppleInc.iTunes_*\LocalCache\Local\Apple Computer\iTunes\Cache.db"/>
-    <action command="delete" search="glob" path="%LocalAppData%\Packages\AppleInc.iTunes_*\LocalCache\Local\Apple Computer\iTunes\*.xml"/>
-    <action command="delete" search="walk.all" path="%LocalAppData%\Packages\AppleInc.iTunes_*\LocalCache\Local\Microsoft\Windows\Caches\"/>
-    <action command="delete" search="walk.all" path="%LocalAppData%\Packages\AppleInc.iTunes_*\LocalCache\LocalLow\Microsoft\CryptnetUrlCache\*\"/>
-    <action command="delete" search="file" path="%LocalAppData%\Packages\AppleInc.iTunes_*\LocalCache\Roaming\Apple Computer\iTunes\Cookies\Cookies.binarycookies"/>
-    <action command="delete" search="walk.all" path="%LocalAppData%\Packages\AppleInc.iTunes_*\LocalCache\Roaming\Apple Computer\iTunes\Device Support\"/>
-    <action command="delete" search="walk.all" path="%LocalAppData%\Packages\AppleInc.iTunes_*\LocalCache\Roaming\Apple Computer\Logs\"/>
-    <action command="delete" search="walk.all" path="%LocalAppData%\Packages\AppleInc.iTunes_*\SystemAppData\Helium\Cache\"/>
-    <action command="delete" search="walk.all" path="%LocalAppData%\Packages\AppleInc.iTunes_*\TempState\"/>
+    <description>Delete the files</description>
+    <action command="delete" search="glob" path="%LocalAppData%\Packages\AppleInc.iTunes_*\AC\INet*\"/>
+  </option>
+  <!-- That we don't need so much translation, we combine some folders! Tobias. -->
+  <option id="backup">
+    <label>Backup files</label>
+    <description>Delete the backup files</description>
+  <!-- That we don't need so much translation, we combine some folders! Tobias.
+  <option id="mobilesync_bak">
+    <label>MobileSync Backup</label>
+    <description>Delete the backup files</description>
+  -->
+    <action command="delete" search="walk.all" path="%AppData%\Apple Computer\MobileSync\Backup\"/>
+  <!-- That we don't need so much translation, we combine some folders! Tobias.
+  </option>
+  <option id="itunes_prev_lib">
+    <label>iTunes Previous Libraries</label>
+    <description>Delete the backup files</description>
+  -->
+    <action command="delete" search="walk.all" path="%Music%\iTunes\Previous iTunes Libraries\"/>
+    <action command="delete" search="file" path="%Music%\iTunes\Previous iTunes Libraries\"/>
+  </option>
+  <option id="logs">
+    <label>Logs</label>
+    <description>Delete the logs</description>
+    <!-- Delete the iTunes files on Windows till version 8.1: -->
+    <action command="delete" search="glob" path="%AppData%\Apple Computer\iTunes\*.log"/>
+    <!-- Was first... -->
+    <action command="delete" search="walk.all" path="%AppData%\Apple Computer\Logs\CrashReporter\MobileDevice\"/>
+    <action command="delete" search="file" path="%AppData%\Apple Computer\Logs\CrashReporter\MobileDevice\"/>
+    <action command="delete" search="file" path="%AppData%\Apple Computer\Logs\CrashReporter\"/>
+    <!-- ...is now: --->
+    <action command="delete" search="walk.all" path="%AppData%\Apple Computer\Logs\"/>
+    <!-- Was first... -->
+    <action command="delete" search="walk.files" path="%UserProfile%\Apple Computer\logs\*.log"/>
+    <!-- ...is now: --->
+    <action command="delete" search="walk.files" path="%UserProfile%\Apple Computer\logs\"/>
+    <!-- More... -->
     <action command="delete" search="walk.all" path="%WinDir%\System32\config\systemprofile\AppData\Roaming\Apple Computer\Logs\"/>
+    <action command="delete" search="walk.all" path="%WinDir%\SysWOW64\config\systemprofile\AppData\Roaming\Apple Computer\Logs\"/>
+    <!-- Suggested by: https://github.com/sshermz -->
+    <action command="delete" search="walk.all" path="%AppData%\Apple Computer\iTunes\iPhone Updater Logs\"/>
+    <action command="delete" search="file" path="%AppData%\Apple Computer\iTunes\iPhone Updater Logs\"/>
+    <!-- Delete the iTunes files on Windows version 10: -->
+    <action command="delete" search="walk.all" path="%WinDir%\System32\config\systemprofile\AppData\Roaming\Apple Computer\Logs\"/>
+  </option>
+  <option id="cache">
+    <label>Cache</label>
+    <description>Delete the cache</description>
+    <!-- Delete the iTunes files on Windows till version 8.1: -->
+    <action command="delete" search="file" path="%LocalAppData%\Apple Computer\iTunes\Cache.db"/>
+    <action command="delete" search="walk.all" path="%Music%\iTunes\Album Artwork\Cache\"/>
+    <!-- Delete the iTunes files on Windows version 10: -->
+    <action command="delete" search="glob" path="%LocalAppData%\Packages\AppleInc.iTunes_*\AC\AppCache\"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Packages\AppleInc.iTunes_*\LocalCache\Local\Apple Computer\iTunes\Cache.db"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Packages\AppleInc.iTunes_*\LocalCache\Local\Apple Computer\iTunes\*.xml"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Packages\AppleInc.iTunes_*\LocalCache\Local\Microsoft\Windows\Caches\"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Packages\AppleInc.iTunes_*\LocalCache\LocalLow\Microsoft\CryptnetUrlCache\*\"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Packages\AppleInc.iTunes_*\LocalCache\Roaming\Apple Computer\iTunes\Cookies\Cookies.binarycookies"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Packages\AppleInc.iTunes_*\LocalCache\Roaming\Apple Computer\iTunes\Device Support\"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Packages\AppleInc.iTunes_*\LocalCache\Roaming\Apple Computer\Logs\"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Packages\AppleInc.iTunes_*\SystemAppData\Helium\Cache\"/>
+  </option>
+  <option id="temp">
+    <label>Temporary files</label>
+    <description>Delete the temporary files</description>
+    <!-- Delete the iTunes files on Windows till version 8.1: -->
+    <action command="delete" search="walk.all" path="%CommonAppData%\Apple Computer\iTunes\iPhone Temporary Files\"/>
+    <action command="delete" search="file" path="%CommonAppData%\Apple Computer\iTunes\iPhone Temporary Files\"/>
+    <action command="delete" search="walk.all" path="%LocalAppData%\VirtualStore\ProgramData\Apple Computer\iTunes\iPhone Temporary Files\"/>
+    <action command="delete" search="file" path="%LocalAppData%\VirtualStore\ProgramData\Apple Computer\iTunes\iPhone Temporary Files\"/>
+    <action command="delete" search="walk.files" path="%Music%\iTunes\*.tmp"/>
+    <!-- Delete the iTunes files on Windows version 10: -->
+    <action command="delete" search="glob" path="%LocalAppData%\Packages\AppleInc.iTunes_*\AC\Temp\"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Packages\AppleInc.iTunes_*\TempState\"/>
+  </option>
+  <option id="cookies">
+    <label>Cookies</label>
+    <description>Delete cookies, which contain information such as web site preferences, authentication, and tracking identification</description>
+    <!-- Delete the iTunes files on Windows till version 8.1: -->
+    <action command="delete" search="file" path="%AppData%\Apple Computer\iTunes\Cookies\Cookies.binarycookies"/>
+    <!-- Delete the iTunes files on Windows version 10: -->
+  </option>
+  <option id="thumbnails">
+    <label>Thumbnails</label>
+    <description>Delete the files</description>
+    <!-- Delete the iTunes files on Windows till version 8.1: -->
+    <action command="delete" search="walk.all" path="%AppData%\Apple Computer\MediaStream\Thumbnails\"/>
+    <!-- Delete the iTunes files on Windows version 10: -->
   </option>
 </cleaner>
