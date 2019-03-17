@@ -1,36 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-BleachBit
-Copyright (C) 2014 Andrew Ziem
-http://www.bleachbit.org
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
-You should have received a copy of the GNU General Public License
-along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+    BleachBit
+    Copyright (C) 2008-2019 Andrew Ziem
+    https://www.bleachbit.org
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+    @app TOR
+    @url https://www.torproject.org/
+    @os Windows, Linux
+    @cleanerversion v0.4.5
+    @cleanerdate 2019-03-15
+    @cleanerby ??? & https://github.com/Tobias-B-Besemer
+    @tested ok v???, Windows 7
+    @testeddate 2019-03-13 (... with an old version of the cleaner!)
+    @testedby https://github.com/Tobias-B-Besemer
+    @note Linux $torbrowser not yet figured out! I will do this later! Tobias.
+    @note Linux $browser_data not yet figured out! I will do this later! Tobias.
+
 -->
-<cleaner id="tor" os="linux">
-  <label>TOR</label>
-  <description>The Onion Router</description>
-  <option id="delete_cache">
-    <label>Cache</label>
-    <description>Delete cached certs and microdescs</description>
-    <action search="file" command="delete" path="~/.tor/cached-certs"/>
-    <action search="file" command="delete" path="~/.tor/cached-microdesc-consensus"/>
-    <action search="file" command="delete" path="~/.tor/cached-microdescs.new"/>
-    <action search="file" command="delete" path="/var/lib/tor/cached-certs"/>
-    <action search="file" command="delete" path="/var/lib/tor/cached-microdesc-consensus"/>
-    <action search="file" command="delete" path="/var/lib/tor/cached-microdescs.new"/>
+<cleaner id="tor">
+  <label>TOR/TOR Browser</label>
+  <description>Network layer client</description>
+  <var name="torbrowser">
+    <value search="glob" os="windows">%UserProfile%\Desktop\Tor Browser\Browser\TorBrowser</value>
+    <!--
+    Linux $torbrowser not yet figured out! I will do this later! Tobias.
+    <value search="glob" os="linux">~/.tor</value>
+    <value search="glob" os="linux">/var/lib/tor</value>
+    -->
+  </var>
+  <var name="browser_data">
+    <value search="glob" os="windows">$torbrowser\Data\Browser</value>
+    <!--
+    Linux $browser_data not yet figured out! I will do this later! Tobias.
+    <value search="glob" os="linux">~/.tor</value>
+    <value search="glob" os="linux">/var/lib/tor</value>
+    -->
+  </var>
+  <var name="tor_data">
+    <value search="glob" os="windows">$torbrowser\Data\Tor</value>
+    <value search="glob" os="linux">~/.tor</value>
+    <value search="glob" os="linux">/var/lib/tor</value>
+  </var>
+  <option id="cache_tor">
+    <label>Cached certs and microdescs</label>
+    <description>Delete the cache</description>
+    <action search="file" command="delete" path="$tor_data/cached-certs"/>
+    <action search="file" command="delete" path="$tor_data/cached-microdesc-consensus"/>
+    <action search="file" command="delete" path="$tor_data/cached-microdescs"/>
+    <action search="file" command="delete" path="$tor_data/cached-microdescs.new"/>
   </option>
   <option id="state">
-    <label>State</label>
-    <description>Removes last state metadata file</description>
-    <action search="file" command="delete" path="~/.tor/state"/>
-    <action search="file" command="delete" path="/var/lib/tor/state"/>
+    <label>Last state metadata file</label>
+    <description>Delete the files</description>
+    <action search="file" command="delete" path="$tor_data/state"/>
+  </option>
+  <option id="cache_browser">
+    <label>Cache</label>
+    <description>Delete the web cache, which reduces time to display revisited pages</description>
+    <action search="file" command="walk.files" path="$browser_data\Caches\profile.default\startupCache\"/>
+  </option>
+  <option id="cookies">
+    <label>Cookies</label>
+    <description>Delete cookies, which contain information such as web site preferences, authentication, and tracking identification</description>
+    <action command="delete" search="file" path="$browser_data\profile.default\cookies.sqlite"/>
+  </option>
+  <option id="temp">
+    <label>Temporary files</label>
+    <description>Delete the temporary files</description>
+    <action command="delete" search="walk.files" path="$torbrowser\UpdateInfo\"/>
+    <action command="delete" search="glob" path="$torbrowser\UpdateInfo\*"/>
+  </option>
+  <option id="backup">
+    <label>Backup files</label>
+    <description>Delete the backup files</description>
+    <action search="file" command="walk.files" path="$browser_data\profile.default\bookmarkbackups\"/>
   </option>
 </cleaner>
