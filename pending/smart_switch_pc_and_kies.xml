@@ -12,17 +12,17 @@
 
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program. If not, see <http://www.gnu.org/licenses/>.
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
     @app Samsung Mobiles Programs (Smart Switch PC and Kies)
     @url https://www.samsung.com/us/support/owners/app/smart-switch
     @os Windows
-    @cleanerversion v0.1.5
-    @cleanerdate 2019-03-12
+    @cleanerversion v0.2.5
+    @cleanerdate 2019-03-14
     @cleanerby https://github.com/Tobias-B-Besemer
     @tested ok 
     @testeddate 
@@ -34,36 +34,57 @@
 -->
 <cleaner id="samsung_mobiles" os="windows">
   <label>Smart Switch PC and Kies</label>
-  <description>Samsung Mobiles - Smart Switch PC and Kies</description>
+  <description>Phone management</description>
   <option id="device_error_recovery_logs">
     <label>Device Error Recovery Logs</label>
-    <description>Delete the Device Error Recovery Logs</description>
+    <description>Delete the logs</description>
     <action command="delete" search="walk.files" path="%ProgramData%\Samsung\Device Error Recovery\default-*.log"/>
   </option>
   <option id="device_profile_cache">
     <label>Device Profile Cache</label>
-    <description>Delete the Device Profile Cache</description>
+    <description>Delete the cache</description>
     <action command="delete" search="walk.all" path="%ProgramData%\Samsung\DeviceProfile\Cache\"/>
-    <action command="delete" search="glob" path="%ProgramData%\Samsung\DeviceProfile\Cache\*"/>
   </option>
   <option id="device_roms">
     <label>Device ROMs</label>
     <description>Delete the downloaded Device ROMs</description>
-    <action command="delete" search="walk.all" path="%LOCALAPPDATA%\Temp\Binary\"/>
-    <action command="delete" search="glob" path="%LOCALAPPDATA%\Temp\Binary\"/>
+    <action command="delete" search="walk.all" path="%Temp%\Binary\"/>
+    <action command="delete" search="file" path="%Temp%\Binary\"/>
   </option>
   <option id="kies_user_software_data">
     <label>Kies User Software Data</label>
-    <description>Delete the old Kies User Software Data</description>
-    <action command="delete" search="walk.all" path="%APPDATA%\Samsung\Kies\"/>
-    <action command="delete" search="glob" path="%APPDATA%\Samsung\Kies\"/>
-    <action command="delete" search="walk.all" path="%APPDATA%\Samsung\Kies3.0\"/>
-    <action command="delete" search="glob" path="%APPDATA%\Samsung\Kies3.0\"/>
+    <!-- Delete the old Kies User Software Data -->
+    <description>Delete the files</description>
+    <action command="delete" search="walk.all" path="%AppData%\Samsung\Kies\"/>
+    <action command="delete" search="file" path="%AppData%\Samsung\Kies\"/>
+    <action command="delete" search="walk.all" path="%AppData%\Samsung\Kies3.0\"/>
+    <action command="delete" search="file" path="%AppData%\Samsung\Kies3.0\"/>
   </option>
   <option id="selfmv_data">
     <label>SelfMV Data</label>
-    <description>Delete the SelfMV Data</description>
-    <action command="delete" search="walk.all" path="%USERPROFILE%\Documents\SelfMV\"/>
-    <action command="delete" search="glob" path="%USERPROFILE%\Documents\SelfMV\"/>
+    <description>Delete the files</description>
+    <action command="delete" search="walk.all" path="%UserProfile%\Documents\SelfMV\"/>
+    <action command="delete" search="file" path="%UserProfile%\Documents\SelfMV\"/>
+  </option>
+  <option id="temp">
+    <label>Temporary files</label>
+    <description>Delete the temporary files</description>
+    <action command="delete" search="walk.all" path="%Temp%\Binary\"/>
+    <action command="delete" search="file" path="%Temp%\Binary\"/>
+    <action command="delete" search="walk.all" path="%Temp%\Samsung\"/>
+    <action command="delete" search="file" path="%Temp%\Samsung\"/>
+    <action command="delete" search="glob" path="%Temp%\SmartSwitch_*\"/>
+    <action command="delete" search="walk.all" path="%Temp%\SmartSwitchPCDumpFiles\"/>
+    <action command="delete" search="file" path="%Temp%\SmartSwitchPCDumpFiles\"/>
+    <action command="delete" search="file" path="%Temp%\Kies3Install.log"/>
+    <action command="delete" search="file" path="%Temp%\SmartSwitchPC_Install.Log"/>
+    <action command="delete" search="walk.all" path="%AppData%\Samsung\Kies3.0\FirmwareUpdateTemp\"/>
+    <action command="delete" search="walk.all" path="%AppData%\Samsung\Smart Switch PC\FirmwareUpdateTemp\"/>
+  </option>
+  <option id="history">
+    <label>History</label>
+    <description>Delete the usage history</description>
+    <action command="delete" search="walk.all" path="%AppData%\Samsung\Kies3.0\BackupHistory\"/>
+    <action command="delete" search="walk.all" path="%AppData%\Samsung\Smart Switch PC\Devices\"/>
   </option>
 </cleaner>
