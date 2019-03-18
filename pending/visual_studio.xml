@@ -20,13 +20,13 @@
 
     @app Microsoft Visual Studio
     @url https://visualstudio.microsoft.com/
-    @cleanerversion v0.2.2
     @os Windows
-    @cleanerdate 2019-03-18.2
-    @cleanerby https://github.com/Tobias-B-Besemer
-    @tested ok v???, Windows 7
-    @testeddate 2019-03-13
-    @testedby https://github.com/Tobias-B-Besemer
+    @cleanerversion v0.3.5
+    @cleanerdate 2019-03-18
+    @cleanerby https://github.com/Tobias-B-Besemer (2019-03-17 - 2019-03-18)
+    @tested ok v???, Windows ???
+    @testeddate ???
+    @testedby ???
     @note This cleaner is "unstable"! Please improve it before you use it! (Or do whatever you like! ;-))
 
 -->
@@ -36,7 +36,7 @@
   <option id="logs">
     <label>Logs</label>
     <description>Delete the logs</description>
-    <action command="delete" search="walk.files" path="%LocalAppData%\Microsoft\VisualStudio\*\*.LOG*"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Microsoft\VisualStudio\*\*.LOG*"/>
     <action command="delete" search="glob" path="%AppData%\Microsoft\VisualStudio\*\ActivityLog.Setup.xml"/>
     <action command="delete" search="glob" path="%AppData%\Microsoft\VisualStudio\*\ActivityLog.xsl"/>
     <action command="delete" search="walk.files" path="%AppData%\Microsoft Visual Studio\logs\"/>
@@ -44,36 +44,29 @@
   <option id="temp">
     <label>Temporary files</label>
     <description>Delete the temporary files</description>
-    <action command="delete" search="walk.files" path="%Temp%\dd_bootstrapper_*"/>
-    <action command="delete" search="walk.files" path="%Temp%\dd_client_*"/>
-    <action command="delete" search="walk.files" path="%Temp%\dd_service_*"/>
-    <action command="delete" search="walk.files" path="%Temp%\dd_setup_*"/>
+    <action command="delete" search="glob" path="%Temp%\dd_bootstrapper_*"/>
+    <action command="delete" search="glob" path="%Temp%\dd_client_*"/>
+    <action command="delete" search="glob" path="%Temp%\dd_service_*"/>
+    <action command="delete" search="glob" path="%Temp%\dd_setup_*"/>
     <action command="delete" search="file" path="%Temp%\dd_SetupUtility.txt"/>
-    <action command="delete" search="walk.files" path="%Temp%\dd_vs_*"/>
-    <!-- .NET Framework: -->
-    <action command="delete" search="walk.files" path="%Temp%\.NETFramework*"/>
-    <action command="delete" search="walk.files" path="%Temp%\dd_dotNetFx*"/>
-    <action command="delete" search="walk.all" path="%Temp%\eraserInstallBootstrapper\"/>
-    <action command="delete" search="glob" path="%Temp%\eraserInstallBootstrapper\"/>
-    <action command="delete" search="walk.files" path="%Temp%\dd_wcf_CA_smci_*"/>
-    <action command="delete" search="walk.files" path="%Temp%\Microsoft .NET Framework *"/>
+    <action command="delete" search="glob" path="%Temp%\dd_vs_*"/>
     <!-- Visual C++ Redist: -->
-    <action command="delete" search="walk.files" path="%Temp%\dd_vcredist*"/>
+    <action command="delete" search="glob" path="%Temp%\dd_vcredist*"/>
     <action command="delete" search="walk.all" path="%WinDir%\Temp\logishrd\"/>
     <action command="delete" search="file" path="%WinDir%\Temp\logishrd\"/>
-    <action command="delete" search="walk.files" path="%Temp%\Microsoft.VC*.manifest"/>
+    <action command="delete" search="glob" path="%Temp%\Microsoft.VC*.manifest"/>
   </option>
   <option id="backup">
     <label>Backup files</label>
     <description>Delete the backup files</description>
-    <action command="delete" search="walk.files" path="%ProgramData%\Microsoft Visual Studio\MachineStorage.dat.bak"/>
+    <action command="delete" search="file" path="%ProgramData%\Microsoft Visual Studio\MachineStorage.dat.bak"/>
   </option>
   <option id="cache">
     <label>Cache</label>
     <description>Delete the cache</description>
-    <action command="delete" search="walk.files" path="%LocalAppData%\Microsoft\VisualStudio\*\ComponentModelCache\"/>
-    <action command="delete" search="walk.files" path="%LocalAppData%\Microsoft\VisualStudio\*\Extensions\extensions.*.cache"/>
-    <action command="delete" search="walk.files" path="%LocalAppData%\Microsoft\VisualStudio\*\Extensions\extensionSdks.*.cache"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Microsoft\VisualStudio\*\ComponentModelCache\"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Microsoft\VisualStudio\*\Extensions\extensions.*.cache"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Microsoft\VisualStudio\*\Extensions\extensionSdks.*.cache"/>
     <action command="delete" search="glob" path="%LocalAppData%\Microsoft\VisualStudio\*\ImageLibrary\ImageLibrary.cache"/>
     <action command="delete" search="walk.files" path="%AppData%\Visual Studio Setup\GPUCache\"/>
   </option>
