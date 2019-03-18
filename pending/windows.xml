@@ -22,8 +22,8 @@
     @url https://www.microsoft.com/en-us/windows
     @os Windows
     @cleanerversion v1.9.0
-    @cleanerdate 2019-03-18
-    @cleanerby https://github.com/Tobias-B-Besemer
+    @cleanerdate 2019-03-18.2
+    @cleanerby https://github.com/Tobias-B-Besemer (2019-02-26 - 2019-03-18)
     @tested ok v???, Windows 7
     @testeddate 2019-03-10
     @testedby https://github.com/Tobias-B-Besemer
@@ -68,7 +68,6 @@
     <action command="delete" search="glob" path="%WinDir%\Debug\UserMode\*.log"/>
     <action command="delete" search="file" path="%WinDir%\Debug\UserMode\ChkAcc.bak"/>
     <action command="delete" search="file" path="%WinDir%\Debug\UserMode\userenv.bak"/>
-    <action command="delete" search="glob" path="%WinDir%\Microsoft.NET\Framework\*\*.log"/>
     <action command="delete" search="glob" path="%WinDir%\security\logs\*.log"/>
     <action command="delete" search="glob" path="%WinDir%\security\logs\*.old"/>
     <action command="delete" search="glob" path="%WinDir%\SoftwareDistribution\*.log"/>
