@@ -24,7 +24,7 @@
     @url https://www.comodo.com/home/internet-security/free-internet-security.php
     @os Windows
     @cleanerversion v0.3.0
-    @cleanerdate 2019-03-14
+    @cleanerdate 2019-03-18
     @cleanerby https://github.com/Tobias-B-Besemer
     @tested ok v???, Windows 7
     @testeddate 2019-03-14
@@ -41,7 +41,7 @@
     <action command="delete" search="walk.all" path="%WinDir%\Temp\TempFiles\"/>
     <action command="delete" search="file" path="%WinDir%\Temp\TempFiles\"/>
     <action command="delete" search="glob" path="%WinDir%\Temp\cmdinstall.exe_*.7z"/>
-    <action command="delete" search="glob" path="%Tmp%\cmdinstall.exe_*.7z"/>
+    <action command="delete" search="glob" path="%Temp%\cmdinstall.exe_*.7z"/>
     <action command="delete" search="walk.files" path="%ProgramData%\Comodo\Cis\Quarantine\Temp\"/>
     <action command="delete" search="walk.files" path="%ProgramData%\Comodo\Cis\tempscrpt\"/>
     <action command="delete" search="walk.all" path="%ProgramData%\Comodo\Cis\wpTemp\"/>
