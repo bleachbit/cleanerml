@@ -20,9 +20,9 @@
 
     @app Microsoft Visual Studio
     @url https://visualstudio.microsoft.com/
-    @cleanerversion v0.2.0
+    @cleanerversion v0.2.1
     @os Windows
-    @cleanerdate 2019-03-17
+    @cleanerdate 2019-03-18
     @cleanerby https://github.com/Tobias-B-Besemer
     @tested ok v???, Windows 7
     @testeddate 2019-03-13
@@ -44,24 +44,24 @@
   <option id="temp">
     <label>Temporary files</label>
     <description>Delete the temporary files</description>
-    <action command="delete" search="walk.files" path="%TMP%\dd_bootstrapper_*"/>
-    <action command="delete" search="walk.files" path="%TMP%\dd_client_*"/>
-    <action command="delete" search="walk.files" path="%TMP%\dd_service_*"/>
-    <action command="delete" search="walk.files" path="%TMP%\dd_setup_*"/>
-    <action command="delete" search="file" path="%TMP%\dd_SetupUtility.txt"/>
-    <action command="delete" search="walk.files" path="%TMP%\dd_vs_*"/>
-    <!-- .NETFramework: -->
-    <action command="delete" search="walk.files" path="%TMP%\.NETFramework*"/>
-    <action command="delete" search="walk.files" path="%TMP%\dd_dotNetFx*"/>
-    <action command="delete" search="walk.all" path="%TMP%\eraserInstallBootstrapper\"/>
-    <action command="delete" search="glob" path="%TMP%\eraserInstallBootstrapper\"/>
-    <action command="delete" search="walk.files" path="%TMP%\dd_wcf_CA_smci_*"/>
-    <action command="delete" search="walk.files" path="%TMP%\Microsoft .NET Framework *"/>
+    <action command="delete" search="walk.files" path="%Temp%\dd_bootstrapper_*"/>
+    <action command="delete" search="walk.files" path="%Temp%\dd_client_*"/>
+    <action command="delete" search="walk.files" path="%Temp%\dd_service_*"/>
+    <action command="delete" search="walk.files" path="%Temp%\dd_setup_*"/>
+    <action command="delete" search="file" path="%Temp%\dd_SetupUtility.txt"/>
+    <action command="delete" search="walk.files" path="%Temp%\dd_vs_*"/>
+    <!-- .NET Framework: -->
+    <action command="delete" search="walk.files" path="%Temp%\.NETFramework*"/>
+    <action command="delete" search="walk.files" path="%Temp%\dd_dotNetFx*"/>
+    <action command="delete" search="walk.all" path="%Temp%\eraserInstallBootstrapper\"/>
+    <action command="delete" search="glob" path="%Temp%\eraserInstallBootstrapper\"/>
+    <action command="delete" search="walk.files" path="%Temp%\dd_wcf_CA_smci_*"/>
+    <action command="delete" search="walk.files" path="%Temp%\Microsoft .NET Framework *"/>
     <!-- Visual C++ Redist: -->
-    <action command="delete" search="walk.files" path="%TMP%\dd_vcredist*"/>
+    <action command="delete" search="walk.files" path="%Temp%\dd_vcredist*"/>
     <action command="delete" search="walk.all" path="%WinDir%\Temp\logishrd\"/>
     <action command="delete" search="glob" path="%WinDir%\Temp\logishrd\"/>
-    <action command="delete" search="walk.files" path="%TMP%\Microsoft.VC*.manifest"/>
+    <action command="delete" search="walk.files" path="%Temp%\Microsoft.VC*.manifest"/>
   </option>
   <option id="backup">
     <label>Backup files</label>
@@ -74,7 +74,7 @@
     <action command="delete" search="walk.files" path="%LocalAppData%\Microsoft\VisualStudio\*\ComponentModelCache\"/>
     <action command="delete" search="walk.files" path="%LocalAppData%\Microsoft\VisualStudio\*\Extensions\extensions.*.cache"/>
     <action command="delete" search="walk.files" path="%LocalAppData%\Microsoft\VisualStudio\*\Extensions\extensionSdks.*.cache"/>
-    <action command="delete" search="file" path="%LocalAppData%\Microsoft\VisualStudio\*\ImageLibrary\ImageLibrary.cache"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Microsoft\VisualStudio\*\ImageLibrary\ImageLibrary.cache"/>
     <action command="delete" search="walk.files" path="%AppData%\Visual Studio Setup\GPUCache\"/>
   </option>
 </cleaner>
