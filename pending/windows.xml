@@ -22,7 +22,7 @@
     @url https://www.microsoft.com/en-us/windows
     @os Windows
     @cleanerversion v0.8.9
-    @cleanerdate 2019-03-17
+    @cleanerdate 2019-03-18
     @cleanerby https://github.com/Tobias-B-Besemer
     @tested ok v???, Windows 7
     @testeddate 2019-03-10
@@ -54,6 +54,45 @@
     <action command="delete" search="glob" path="%SystemDrive%\Boot\*.log1"/>
     <action command="delete" search="glob" path="%SystemDrive%\Boot\*.log2"/>
     <action command="delete" search="glob" path="%ProgramData%\Microsoft\Search\Data\Applications\Windows\*.log"/>
+    <!-- Logs to delete in Windows, taken from:
+    https://github.com/bleachbit/bleachbit/blob/4bd296808a6342a8d80f169adce35216a3330cd0/bleachbit/Cleaner.py#L400
+    Start: -->
+    <action command="delete" search="glob" path="%AllUsersProfile%\Application Data\Microsoft\Dr Watson\*.log"/>
+    <action command="delete" search="walk.files" path="%LocalAppData%\Microsoft\Windows\WER\ReportArchive\*\*"/>
+    <action command="delete" search="walk.files" path="%LocalAppData%\Microsoft\Windows\WER\ReportQueue\*\*"/>
+    <action command="delete" search="walk.files" path="%ProgramData%\Microsoft\Windows\WER\ReportArchive\*\*"/>
+    <action command="delete" search="walk.files" path="%ProgramData%\Microsoft\Windows\WER\ReportQueue\*\*"/>
+    <action command="delete" search="file" path="%LocalAppData%\Microsoft\Internet Explorer\brndlog.bak"/>
+    <action command="delete" search="file" path="%LocalAppData%\Microsoft\Internet Explorer\brndlog.txt"/>
+    <action command="delete" search="glob" path="%WinDir%\*.log"/>
+    <action command="delete" search="file" path="%WinDir%\imsins.BAK"/>
+    <action command="delete" search="file" path="%WinDir%\OEWABLog.txt"/>
+    <action command="delete" search="file" path="%WinDir%\SchedLgU.txt"/>
+    <action command="delete" search="file" path="%WinDir%\ntbtlog.txt"/>
+    <action command="delete" search="file" path="%WinDir%\setuplog.txt"/>
+    <action command="delete" search="file" path="%WinDir%\REGLOCS.OLD"/>
+    <action command="delete" search="glob" path="%WinDir%\Debug\*.log"/>
+    <action command="delete" search="file" path="%WinDir%\Debug\Setup\UpdSh.log"/>
+    <action command="delete" search="glob" path="%WinDir%\Debug\UserMode\*.log"/>
+    <action command="delete" search="file" path="%WinDir%\Debug\UserMode\ChkAcc.bak"/>
+    <action command="delete" search="file" path="%WinDir%\Debug\UserMode\userenv.bak"/>
+    <action command="delete" search="glob" path="%WinDir%\Microsoft.NET\Framework\*\*.log"/>
+    <action command="delete" search="file" path="%WinDir%\pchealth\helpctr\Logs\hcupdate.log"/>
+    <action command="delete" search="glob" path="%WinDir%\security\logs\*.log"/>
+    <action command="delete" search="glob" path="%WinDir%\security\logs\*.old"/>
+    <action command="delete" search="glob" path="%WinDir%\SoftwareDistribution\*.log"/>
+    <action command="delete" search="walk.files" path="%WinDir%\SoftwareDistribution\DataStore\Logs\*"/>
+    <action command="delete" search="file" path="%WinDir%\system32\TZLog.log"/>
+    <action command="delete" search="file" path="%WinDir%\system32\config\systemprofile\Application Data\Microsoft\Internet Explorer\brndlog.bak"/>
+    <action command="delete" search="file" path="%WinDir%\system32\config\systemprofile\Application Data\Microsoft\Internet Explorer\brndlog.txt"/>
+    <action command="delete" search="glob" path="%WinDir%\system32\LogFiles\AIT\AitEventLog.etl.???"/>
+    <action command="delete" search="glob" path="%WinDir%\system32\LogFiles\Firewall\pfirewall.log*"/>
+    <action command="delete" search="glob" path="%WinDir%\system32\LogFiles\Scm\SCM.EVM*"/>
+    <action command="delete" search="glob" path="%WinDir%\system32\LogFiles\WMI\Terminal*.etl"/>
+    <action command="delete" search="glob" path="%WinDir%\system32\LogFiles\WMI\RTBackup\EtwRT.*etl"/>
+    <action command="delete" search="glob" path="%WinDir%\system32\wbem\Logs\*.lo_"/>
+    <action command="delete" search="glob" path="%WinDir%\system32\wbem\Logs\*.log"/>
+    <!-- Finish! -->
   </option>
   <option id="hibernate">
     <label>Hibernate system</label>
