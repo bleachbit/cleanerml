@@ -12,38 +12,48 @@
 
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program. If not, see <http://www.gnu.org/licenses/>.
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
     @app Light Alloy
     @url http://light-alloy.verona.im/
     @os Windows
-    @cleanerversion v0.1.7
-    @cleanerdate 2019-03-12
-    @cleanerby https://github.com/Tobias-B-Besemer
+    @cleanerversion v0.2.5
+    @cleanerdate 2019-03-18
+    @cleanerby https://github.com/Tobias-B-Besemer (2019-03-12 - 2019-03-18)
     @tested ok v???, Windows 7
     @testeddate 2019-03-12
     @testedby https://github.com/Tobias-B-Besemer
     @note As long we have no command="xml", we need to delete the complete file!
+    @note Later: That we don't need so much translation, we combine some options in "History"! Tobias.
 
 -->
 <cleaner id="light_alloy" os="windows">
   <label>Light Alloy</label>
-  <description>Media Player</description>
+  <description>Media player</description>
   <!-- Works only with a command="xml" - as long we delete the complete config file!
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias. -->
+  <!-- Not yet...
+  <option id="history">
+    <label>History</label>
+    <description>Delete the usage history</description>
+  ...later!-->
+  <!-- That we don't need so much translation, we combine some options in "History"! Tobias.
   <option id="MediaDir">
     <label>Media Diretory</label>
     <description>Delete the Media Diretory</description>
+  -->
+  <!-- Not yet...
     <action command="xml" search="file" path="%LocalAppData%\LightAlloy\LA.xml" element="APP/FrontEnd" attribute="MediaDir"/>
   </option>
-  -->
+  ...later!-->
   <option id="config_file">
     <label>Config File</label>
-    <description>Deletes the Config File</description>
-    <warning>As long we have no command="xml", we need to delete the complete file! Use this option only if you know what you do!</warning>
+    <description>Delete the file</description>
+    <warning>Use this option only if you know what you do!</warning>
     <action command="delete" search="file" path="%LocalAppData%\LightAlloy\LA.xml"/>
   </option>
 </cleaner>
