@@ -22,7 +22,7 @@
     @url http://www.i2p-projekt.de/en/
     @os Windows, Linux
     @cleanerversion v0.4.5
-    @cleanerdate 2019-03-14
+    @cleanerdate 2019-03-18
     @cleanerby https://github.com/Tobias-B-Besemer
     @tested ok v0.9.38, Windows 7
     @testeddate 2019-03-10 (... with an old version of the cleaner!)
@@ -33,10 +33,24 @@
 <cleaner id="i2p" os="windows">
   <label>I2P</label>
   <description>Network layer client</description>
-  <var name="profile">
+  <var name="Profile">
     <value search="glob" os="windows">%AppData%\I2P</value>
     <!-- No Linux Support here, yet! Will do this later! Tobias.
     -> Don't forget to remove os="windows"!
+    <value search="glob" os="linux">~/.i2p</value>
+    -->
+  </var>
+  <var name="ProgramFiles">
+    <!--
+    Windows itself changes %ProgramFiles% for 32-bit processes running in a 64-bit operating system as documented here:
+    https://docs.microsoft.com/en-us/windows/desktop/winprog64/wow64-implementation-details
+    ...so we use %SystemDrive%\Program Files\ & %SystemDrive%\Program Files (x86)\...
+    -->
+    <value search="glob" os="windows">%SystemDrive%\Program Files\i2p</value>
+    <value search="glob" os="windows">%SystemDrive%\Program Files (x86)\i2p</value>
+    <!--
+    Linux $$ProgramFiles$$ not yet figured out! I will do this later! Tobias.
+    Don't forget to remove os="windows" !!!
     <value search="glob" os="linux">~/.i2p</value>
     -->
   </var>
@@ -50,14 +64,15 @@
   <option id="logs">
     <label>Logs</label>
     <description>Delete the logs</description>
-    <action command="delete" search="walk.files" path="$$profile$$\logs\"/>
-    <action command="delete" search="file" path="$$profile$$\eventlog.txt"/>
-    <action command="delete" search="file" path="$$profile$$\wrapper.log"/>
-    <action command="delete" search="file" path="$$profile$$\addressbook\log.txt"/>
+    <action command="delete" search="walk.files" path="$$Profile$$\logs\"/>
+    <action command="delete" search="file" path="$$Profile$$\eventlog.txt"/>
+    <action command="delete" search="file" path="$$Profile$$\wrapper.log"/>
+    <action command="delete" search="file" path="$$ProgramFiles$$\wrapper.log"/>
+    <action command="delete" search="file" path="$$Profile$$\addressbook\log.txt"/>
   </option>
   <option id="temp">
     <label>Temporary files</label>
     <description>Delete the temporary files</description>
-    <action command="delete" search="glob" path="$$temp-folder$$\i2p-*"/>
+    <action command="delete" search="glob" path="$$Temp-Folder$$\i2p-*"/>
   </option>
 </cleaner>
