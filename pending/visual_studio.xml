@@ -20,9 +20,9 @@
 
     @app Microsoft Visual Studio
     @url https://visualstudio.microsoft.com/
-    @cleanerversion v0.2.1
+    @cleanerversion v0.2.2
     @os Windows
-    @cleanerdate 2019-03-18
+    @cleanerdate 2019-03-18.2
     @cleanerby https://github.com/Tobias-B-Besemer
     @tested ok v???, Windows 7
     @testeddate 2019-03-13
@@ -37,8 +37,8 @@
     <label>Logs</label>
     <description>Delete the logs</description>
     <action command="delete" search="walk.files" path="%LocalAppData%\Microsoft\VisualStudio\*\*.LOG*"/>
-    <action command="delete" search="file" path="%AppData%\Microsoft\VisualStudio\*\ActivityLog.Setup.xml"/>
-    <action command="delete" search="file" path="%AppData%\Microsoft\VisualStudio\*\ActivityLog.xsl"/>
+    <action command="delete" search="glob" path="%AppData%\Microsoft\VisualStudio\*\ActivityLog.Setup.xml"/>
+    <action command="delete" search="glob" path="%AppData%\Microsoft\VisualStudio\*\ActivityLog.xsl"/>
     <action command="delete" search="walk.files" path="%AppData%\Microsoft Visual Studio\logs\"/>
   </option>
   <option id="temp">
@@ -60,7 +60,7 @@
     <!-- Visual C++ Redist: -->
     <action command="delete" search="walk.files" path="%Temp%\dd_vcredist*"/>
     <action command="delete" search="walk.all" path="%WinDir%\Temp\logishrd\"/>
-    <action command="delete" search="glob" path="%WinDir%\Temp\logishrd\"/>
+    <action command="delete" search="file" path="%WinDir%\Temp\logishrd\"/>
     <action command="delete" search="walk.files" path="%Temp%\Microsoft.VC*.manifest"/>
   </option>
   <option id="backup">
