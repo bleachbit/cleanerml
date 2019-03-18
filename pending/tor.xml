@@ -18,75 +18,75 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-    @app TOR
+    @app TOR/TOR Browser
     @url https://www.torproject.org/
     @os Windows, Linux
     @cleanerversion v0.4.5
-    @cleanerdate 2019-03-15
-    @cleanerby ??? & https://github.com/Tobias-B-Besemer
+    @cleanerdate 2019-03-18
+    @cleanerby g4jc (2015-05-24) & Tobias B. Besemer (2019-03-17 - 2019-03-18)
     @tested ok v???, Windows 7
     @testeddate 2019-03-13 (... with an old version of the cleaner!)
     @testedby https://github.com/Tobias-B-Besemer
-    @note Linux $torbrowser not yet figured out! I will do this later! Tobias.
-    @note Linux $browser_data not yet figured out! I will do this later! Tobias.
+    @note Linux $$TorBrowser$$$$ not yet figured out! I will do this later! Tobias.
+    @note Linux $$Browser_Data$$ not yet figured out! I will do this later! Tobias.
 
 -->
 <cleaner id="tor">
   <label>TOR/TOR Browser</label>
   <description>Network layer client</description>
-  <var name="torbrowser">
-    <value search="glob" os="windows">%UserProfile%\Desktop\Tor Browser\Browser\TorBrowser</value>
+  <var name="TorBrowser">
+    <value os="windows">%UserProfile%\Desktop\Tor Browser\Browser\TorBrowser</value>
     <!--
-    Linux $torbrowser not yet figured out! I will do this later! Tobias.
-    <value search="glob" os="linux">~/.tor</value>
-    <value search="glob" os="linux">/var/lib/tor</value>
+    Linux $$TorBrowser$$ not yet figured out! I will do this later! Tobias.
+    <value os="linux">~/.tor</value>
+    <value os="linux">/var/lib/tor</value>
     -->
   </var>
-  <var name="browser_data">
-    <value search="glob" os="windows">$torbrowser\Data\Browser</value>
+  <var name="Browser_Data">
+    <value os="windows">$$TorBrowser$$\Data\Browser</value>
     <!--
-    Linux $browser_data not yet figured out! I will do this later! Tobias.
-    <value search="glob" os="linux">~/.tor</value>
-    <value search="glob" os="linux">/var/lib/tor</value>
+    Linux $$Browser_Data$$ not yet figured out! I will do this later! Tobias.
+    <value os="linux">~/.tor</value>
+    <value os="linux">/var/lib/tor</value>
     -->
   </var>
-  <var name="tor_data">
-    <value search="glob" os="windows">$torbrowser\Data\Tor</value>
-    <value search="glob" os="linux">~/.tor</value>
-    <value search="glob" os="linux">/var/lib/tor</value>
+  <var name="Tor_Data">
+    <value os="windows">$$TorBrowser$$\Data\Tor</value>
+    <value os="linux">~/.tor</value>
+    <value os="linux">/var/lib/tor</value>
   </var>
   <option id="cache_tor">
     <label>Cached certs and microdescs</label>
     <description>Delete the cache</description>
-    <action search="file" command="delete" path="$tor_data/cached-certs"/>
-    <action search="file" command="delete" path="$tor_data/cached-microdesc-consensus"/>
-    <action search="file" command="delete" path="$tor_data/cached-microdescs"/>
-    <action search="file" command="delete" path="$tor_data/cached-microdescs.new"/>
+    <action command="delete" search="file" path="$$Tor_Data$$/cached-certs"/>
+    <action command="delete" search="file" path="$$Tor_Data$$/cached-microdesc-consensus"/>
+    <action command="delete" search="file" path="$$Tor_Data$$/cached-microdescs"/>
+    <action command="delete" search="file" path="$$Tor_Data$$/cached-microdescs.new"/>
   </option>
   <option id="state">
     <label>Last state metadata file</label>
     <description>Delete the files</description>
-    <action search="file" command="delete" path="$tor_data/state"/>
+    <action command="delete" search="file" path="$$Tor_Data$$/state"/>
   </option>
   <option id="cache_browser">
     <label>Cache</label>
     <description>Delete the web cache, which reduces time to display revisited pages</description>
-    <action search="file" command="walk.files" path="$browser_data\Caches\profile.default\startupCache\"/>
+    <action command="delete" search="walk.files" path="$$Browser_Data$$\Caches\profile.default\startupCache\"/>
   </option>
   <option id="cookies">
     <label>Cookies</label>
     <description>Delete cookies, which contain information such as web site preferences, authentication, and tracking identification</description>
-    <action command="delete" search="file" path="$browser_data\profile.default\cookies.sqlite"/>
+    <action command="delete" search="file" path="$$Browser_Data$$\profile.default\cookies.sqlite"/>
   </option>
   <option id="temp">
     <label>Temporary files</label>
     <description>Delete the temporary files</description>
-    <action command="delete" search="walk.files" path="$torbrowser\UpdateInfo\"/>
-    <action command="delete" search="glob" path="$torbrowser\UpdateInfo\*"/>
+    <action command="delete" search="walk.files" path="$$TorBrowser$$\UpdateInfo\"/>
+    <action command="delete" search="file" path="$$TorBrowser$$\UpdateInfo\"/>
   </option>
   <option id="backup">
     <label>Backup files</label>
     <description>Delete the backup files</description>
-    <action search="file" command="walk.files" path="$browser_data\profile.default\bookmarkbackups\"/>
+    <action command="delete" search="walk.files" path="$$Browser_Data$$\profile.default\bookmarkbackups\"/>
   </option>
 </cleaner>
