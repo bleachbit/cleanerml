@@ -2,8 +2,8 @@
 <!--
 
     BleachBit
-    Copyright (C) 2008-2015 Andrew Ziem
-    http://www.bleachbit.org
+    Copyright (C) 2008-2019 Andrew Ziem
+    https://www.bleachbit.org
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -18,83 +18,82 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+    @app MPC-HC/MPC-BE (Media Player Classic)
+    @url https://mpc-hc.org/
+    @os Windows
+    @cleanerversion v0.2.5
+    @cleanerdate 2019-03-17
+    @cleanerby 8ohmh & https://github.com/Tobias-B-Besemer
+    @tested ok v1.7.1 (9ae7b7c), Windows NT 6.1 (build 7601, Service Pack 1) (64-bit)
+    @testeddate ??? (... with an old version of the cleaner!)
+    @testedby 8ohmh
+    @tested ok v???, Windows 7
+    @testeddate 2019-03-11 (... with an old version of the cleaner!)
+    @testedby https://github.com/Tobias-B-Besemer
+    @note That we don't need so much translation, we combine some options! Tobias.
 
-    Contributor :  8ohmh
-    Web site    :  https://mpc-hc.org/
-
-Testing environment
-
-Build information:
-    Version:            1.7.1 (9ae7b7c)
-    Compiler:           MSVC 2012 Update 4 (SSE)
-    Build date:         Nov 17 2013 09:24:49
-
-LAV Filters:
-    LAV Splitter:       0.59.1.26
-    LAV Video:          0.59.1.26
-    LAV Audio:          0.59.1.26
-    FFmpeg compiler:    MinGW-w64 GCC 4.8.2
-
-Operating system:
-    Name:               Windows NT 6.1 (build 7601, Service Pack 1)
-    Version:            6.1 (64-bit)
-
-
-	CleanerML written by https://github.com/Tobias-B-Besemer
-	v0.1 done on 2018-12-20
-
-	-->
+-->
 <cleaner id="mpc-hc" os="windows">
-	<label>MPC-HC/MPC-BE (Media Player Classic)</label>
-	<description>Media Player</description>
-	<option id="history">
-		<label>Most recently used (MRU)</label>
-		<description>Delete the most recently used (MRU) list</description>
-		<action command="delete" search="file" path="$APPDATA\MPC-HC\default.mpcpl"/>
-		<action command="winreg" path="HKCU\Software\MPC-HC\MPC-HC\Recent File List" />
-		<action command="winreg" path="HKCU\Software\MPC-HC\MPC-HC\Recent Dub List" />
-		<action command="winreg" path="HKCU\Software\MPC-BE\Recent File List" />
-		<action command="winreg" path="HKCU\Software\MPC-HC\MPC-HC\Settings\LastOpenDir" />
-	</option>
-	<option id="dmp-files">
-		<label>DMP Files</label>
-		<description>Delete DMP Files</description>
-		<action command="delete" search="file" path="%AppData%\Media Player Classic\*.dmp"/>
-		<action command="delete" search="file" path="%AppData%\MPC-*\*.dmp"/>
-	</option>
-	<option id="dvd-positions">
-		<label>DVD Positions</label>
-		<description>Delete the DVD Positions</description>
-		<action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 0" />
-		<action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 1" />
-		<action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 2" />
-		<action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 3" />
-		<action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 4" />
-		<action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 5" />
-		<action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 6" />
-		<action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 7" />
-		<action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 8" />
-		<action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 9" />
-		<action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 10" />
-		<action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 11" />
-		<action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 12" />
-		<action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 13" />
-		<action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 14" />
-		<action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 15" />
-		<action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 16" />
-		<action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 17" />
-		<action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 18" />
-		<action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 19" />
-	</option>
-	<option id="file-positions">
-		<label>File Positions</label>
-		<description>Delete the File Positions</description>
-		<action command="winreg" path="HKCU\Software\MPC-HC\MPC-HC\Settings\File Name *" />
-		<action command="winreg" path="HKCU\Software\MPC-HC\MPC-HC\Settings\File Position *" />
-	</option>
-	<option id="snapshotpath">
-		<label>Snapshot Path</label>
-		<description>Delete the Snapshot Path</description>
-		<action command="winreg" path="HKCU\Software\MPC-HC\MPC-HC\Settings\SnapshotPath" />
-	</option>
+  <label>MPC-HC/MPC-BE (Media Player Classic)</label>
+  <description>Media player</description>
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias. -->
+  <option id="history">
+    <label>History</label>
+    <description>Delete the usage history</description>
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
+  <option id="mru">
+    <label>Most recently used (MRU)</label>
+    <description>Delete the most recently used (MRU) list</description>
+  -->
+    <action command="delete" search="file" path="$AppData\MPC-HC\default.mpcpl"/>
+    <action command="winreg" path="HKCU\Software\MPC-HC\MPC-HC\Recent File List"/>
+    <action command="winreg" path="HKCU\Software\MPC-HC\MPC-HC\Recent Dub List"/>
+    <action command="winreg" path="HKCU\Software\MPC-BE\Recent File List"/>
+    <action command="winreg" path="HKCU\Software\MPC-HC\MPC-HC\Settings\LastOpenDir"/>
+  </option>
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
+  <option id="dvd-positions">
+    <label>DVD Positions</label>
+  -->
+    <description>Delete the DVD Positions</description>
+    <action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 0"/>
+    <action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 1"/>
+    <action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 2"/>
+    <action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 3"/>
+    <action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 4"/>
+    <action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 5"/>
+    <action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 6"/>
+    <action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 7"/>
+    <action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 8"/>
+    <action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 9"/>
+    <action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 10"/>
+    <action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 11"/>
+    <action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 12"/>
+    <action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 13"/>
+    <action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 14"/>
+    <action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 15"/>
+    <action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 16"/>
+    <action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 17"/>
+    <action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 18"/>
+    <action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings\DVD Position 19"/>
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
+  </option>
+  <option id="file-positions">
+    <label>File Positions</label>
+    <description>Delete the File Positions</description>
+  -->
+    <action command="winreg" path="HKCU\Software\MPC-HC\MPC-HC\Settings\File Name *"/>
+    <action command="winreg" path="HKCU\Software\MPC-HC\MPC-HC\Settings\File Position *"/>
+  </option>
+  <option id="snapshotpath">
+    <label>Snapshot Path</label>
+    <description>Delete the data</description>
+    <action command="winreg" path="HKCU\Software\MPC-HC\MPC-HC\Settings\SnapshotPath"/>
+  </option>
+  <option id="dmp-files">
+    <label>DMP Files</label>
+    <description>Delete the files</description>
+    <action command="delete" search="glob" path="%AppData%\Media Player Classic\*.dmp"/>
+    <action command="delete" search="glob" path="%AppData%\MPC-*\*.dmp"/>
+  </option>
 </cleaner>
