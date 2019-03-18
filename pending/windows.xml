@@ -21,7 +21,7 @@
     @app Microsoft Windows
     @url https://www.microsoft.com/en-us/windows
     @os Windows
-    @cleanerversion v0.8.9
+    @cleanerversion v1.9.0
     @cleanerdate 2019-03-18
     @cleanerby https://github.com/Tobias-B-Besemer
     @tested ok v???, Windows 7
@@ -57,14 +57,6 @@
     <!-- Logs to delete in Windows, taken from:
     https://github.com/bleachbit/bleachbit/blob/4bd296808a6342a8d80f169adce35216a3330cd0/bleachbit/Cleaner.py#L400
     Start: -->
-    <action command="delete" search="glob" path="%AllUsersProfile%\Application Data\Microsoft\Dr Watson\*.log"/>
-    <action command="delete" search="walk.files" path="%LocalAppData%\Microsoft\Windows\WER\ReportArchive\*\*"/>
-    <action command="delete" search="walk.files" path="%LocalAppData%\Microsoft\Windows\WER\ReportQueue\*\*"/>
-    <action command="delete" search="walk.files" path="%ProgramData%\Microsoft\Windows\WER\ReportArchive\*\*"/>
-    <action command="delete" search="walk.files" path="%ProgramData%\Microsoft\Windows\WER\ReportQueue\*\*"/>
-    <action command="delete" search="file" path="%LocalAppData%\Microsoft\Internet Explorer\brndlog.bak"/>
-    <action command="delete" search="file" path="%LocalAppData%\Microsoft\Internet Explorer\brndlog.txt"/>
-    <action command="delete" search="glob" path="%WinDir%\*.log"/>
     <action command="delete" search="file" path="%WinDir%\imsins.BAK"/>
     <action command="delete" search="file" path="%WinDir%\OEWABLog.txt"/>
     <action command="delete" search="file" path="%WinDir%\SchedLgU.txt"/>
@@ -77,14 +69,11 @@
     <action command="delete" search="file" path="%WinDir%\Debug\UserMode\ChkAcc.bak"/>
     <action command="delete" search="file" path="%WinDir%\Debug\UserMode\userenv.bak"/>
     <action command="delete" search="glob" path="%WinDir%\Microsoft.NET\Framework\*\*.log"/>
-    <action command="delete" search="file" path="%WinDir%\pchealth\helpctr\Logs\hcupdate.log"/>
     <action command="delete" search="glob" path="%WinDir%\security\logs\*.log"/>
     <action command="delete" search="glob" path="%WinDir%\security\logs\*.old"/>
     <action command="delete" search="glob" path="%WinDir%\SoftwareDistribution\*.log"/>
     <action command="delete" search="walk.files" path="%WinDir%\SoftwareDistribution\DataStore\Logs\*"/>
     <action command="delete" search="file" path="%WinDir%\system32\TZLog.log"/>
-    <action command="delete" search="file" path="%WinDir%\system32\config\systemprofile\Application Data\Microsoft\Internet Explorer\brndlog.bak"/>
-    <action command="delete" search="file" path="%WinDir%\system32\config\systemprofile\Application Data\Microsoft\Internet Explorer\brndlog.txt"/>
     <action command="delete" search="glob" path="%WinDir%\system32\LogFiles\AIT\AitEventLog.etl.???"/>
     <action command="delete" search="glob" path="%WinDir%\system32\LogFiles\Firewall\pfirewall.log*"/>
     <action command="delete" search="glob" path="%WinDir%\system32\LogFiles\Scm\SCM.EVM*"/>
@@ -105,7 +94,7 @@
     <action command="delete" search="file" path="%UserProfile%\Desktop\desktop.ini"/>
     <action command="delete" search="file" path="%SystemDrive%\BOOTSECT.BAK"/>
     <action command="delete" search="walk.all" path="%SystemDrive%\Config.Msi\"/>
-    <action command="delete" search="glob" path="%SystemDrive%\Config.Msi\"/>
+    <action command="delete" search="file" path="%SystemDrive%\Config.Msi\"/>
   </option>
   <option id="backups">
     <label>Backup files</label>
@@ -117,7 +106,7 @@
     <description>Delete the files</description>
     <action command="delete" search="walk.files" path="%SystemDrive%\File*.chk"/>
     <action command="delete" search="walk.all" path="%SystemDrive%\System Volume Information\Chkdsk\"/>
-    <action command="delete" search="glob" path="%SystemDrive%\System Volume Information\Chkdsk\"/>
+    <action command="delete" search="file" path="%SystemDrive%\System Volume Information\Chkdsk\"/>
   </option>
   <option id="wer">
     <label>Windows Error Reporting</label>
@@ -160,6 +149,17 @@
     <action command="delete" search="walk.files" path="%WinDir%\Temp\WER*.mdmp"/>
     -->
     <action command="delete" search="walk.files" path="%WinDir%\Temp\WER*"/>
+    <!-- Logs to delete in Windows, taken from:
+    https://github.com/bleachbit/bleachbit/blob/4bd296808a6342a8d80f169adce35216a3330cd0/bleachbit/Cleaner.py#L400
+    Start: -->
+    <action command="delete" search="glob" path="%AllUsersProfile%\Application Data\Microsoft\Dr Watson\*.log"/>
+    <!--
+    <action command="delete" search="walk.files" path="%LocalAppData%\Microsoft\Windows\WER\ReportArchive\*\*"/>
+    <action command="delete" search="walk.files" path="%LocalAppData%\Microsoft\Windows\WER\ReportQueue\*\*"/>
+    -->
+    <action command="delete" search="walk.files" path="%ProgramData%\Microsoft\Windows\WER\ReportArchive\*\*"/>
+    <action command="delete" search="walk.files" path="%ProgramData%\Microsoft\Windows\WER\ReportQueue\*\*"/>
+    <action command="delete" search="file" path="%WinDir%\pchealth\helpctr\Logs\hcupdate.log"/>
   </option>
   <option id="shadow_copies">
     <label>Shadow Copies</label>
@@ -175,33 +175,27 @@
     <!-- <action command="process" cmd="cmd.exe /c rd /s c:\$Recycle.Bin"/> -->
     <!-- Windows 7 and above: -->
     <action command="delete" search="walk.all" path="%SystemDrive%\$Recycle.Bin"/>
-    <action command="delete" search="glob" path="%SystemDrive%\$Recycle.Bin"/>
+    <action command="delete" search="file" path="%SystemDrive%\$Recycle.Bin"/>
     <!-- Windows Vista and earlier: -->
     <action command="delete" search="walk.all" path="%SystemDrive%\RECYCLER"/>
-    <action command="delete" search="glob" path="%SystemDrive%\RECYCLER"/>
+    <action command="delete" search="file" path="%SystemDrive%\RECYCLER"/>
   </option>
   <option id="cache">
     <label>Cache</label>
     <description>Delete the cache</description>
     <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Feeds Cache\"/>
-    <action command="delete" search="glob" path="%LocalAppData%\Microsoft\Feeds Cache\*"/>
     <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Terminal Server Client\Cache\"/>
-    <action command="delete" search="glob" path="%LocalAppData%\Microsoft\Terminal Server Client\Cache\*"/>
     <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Windows\AppCache\"/>
-    <action command="delete" search="glob" path="%LocalAppData%\Microsoft\Windows\AppCache\*"/>
     <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Windows\Caches\"/>
-    <action command="delete" search="glob" path="%LocalAppData%\Microsoft\Windows\Caches\*"/>
     <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Windows\SchCache\"/>
-    <action command="delete" search="glob" path="%LocalAppData%\Microsoft\Windows\SchCache\*"/>
     <action command="delete" search="walk.all" path="%LocalAppDataLow%\Microsoft\CryptnetUrlCache\"/>
     <!-- Empty folder on the demo machine: (Tobias) -->
     <action command="delete" search="walk.all" path="%LocalAppDataLow%\Microsoft\Windows\AppCache\"/>
-    <action command="delete" search="glob" path="%LocalAppDataLow%\Microsoft\Windows\AppCache\*"/>
   </option>
   <option id="prefetch">
     <label>Prefetch cache</label>
     <description>Delete the cache</description>
-    <action command="delete" search="glob" path="%WinDir%\Prefetch\*"/>
+    <action command="delete" search="walk.files" path="%WinDir%\Prefetch\*"/>
   </option>
   <option id="search_index">
     <label>Windows Search Index</label>
@@ -210,8 +204,8 @@
     <action command="process" wait="true" cmd="sc config WSearch start= disabled"/>
     <action command="delete" search="file" path="%ProgramData%\Microsoft\Search\Data\Applications\Windows\Windows.edb"/>
     <action command="delete" search="file" path="%ProgramData%\Microsoft\Search\Data\Applications\Windows\tmp.edb"/>
-    <action command="delete" search="glob" path="%ProgramData%\Microsoft\Search\Data\Applications\Windows\GatherLogs\SystemIndex\*"/>
-    <action command="delete" search="glob" path="%ProgramData%\Microsoft\Search\Data\Applications\Windows\Projects\SystemIndex\Indexer\CiFiles\*"/>
+    <action command="delete" search="walk.all" path="%ProgramData%\Microsoft\Search\Data\Applications\Windows\GatherLogs\SystemIndex\"/>
+    <action command="delete" search="walk.all" path="%ProgramData%\Microsoft\Search\Data\Applications\Windows\Projects\SystemIndex\Indexer\CiFiles\"/>
     <action command="process" cmd="sc config WSearch start= auto"/>
   </option>
 </cleaner>
