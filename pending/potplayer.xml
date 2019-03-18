@@ -20,34 +20,43 @@
 
     @app Daum PotPlayer
     @url http://potplayer.daum.net/
-    @cleanerversion v0.2.0
+    @cleanerversion v0.2.5
     @os Windows
-    @cleanerdate 2019-03-17
+    @cleanerdate 2019-03-18
     @cleanerby https://github.com/Tobias-B-Besemer
     @tested ok v???, Windows 7
     @testeddate 2019-02-25 (... with an old version of the cleaner!)
     @testedby https://github.com/Tobias-B-Besemer
     @note This cleaner is "unstable"! Please improve it before you use it! (Or do whatever you like! ;-))
+    @note That we don't need so much translation, we change some things... Tobias.
 
 -->
 <cleaner id="potplayer" os="windows">
   <label>PotPlayer</label>
   <description>Media player</description>
+  <!--
+  That we don't need so much translation, we change some things... Tobias.
+  Was:
   <option id="rememberfiles">
     <label>Remember Files</label>
     <description>Delete the data</description>
+  Is now: 
+  -->
+  <option id="mru">
+    <label>Most recently used</label>
+    <description>Delete the list of recently used documents</description>
     <action command="winreg" path="HKCU\Software\Daum\PotPlayerMini\RememberFiles\"/>
     <action command="winreg" path="HKCU\Software\Daum\PotPlayerMini64\RememberFiles\"/>
   </option>
   <option id="logs">
     <label>Logs</label>
     <description>Delete the logs</description>
-    <action command="delete" search="walk.files" path="$APPDATA\Daum\PotPlayer\Log\*"/>
+    <action command="delete" search="walk.files" path="%AppData%\Daum\PotPlayer\Log\*"/>
   </option>
   <option id="temp">
     <label>Temporary files</label>
     <description>Delete the temporary files</description>
-    <action command="delete" search="walk.files" path="$TMP\PotUpdate\"/>
-    <action command="delete" search="glob" path="$TMP\PotUpdate\"/>
+    <action command="delete" search="walk.files" path="%Temp%\PotUpdate\"/>
+    <action command="delete" search="file" path="%Temp%\PotUpdate\"/>
   </option>
 </cleaner>
