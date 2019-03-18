@@ -21,9 +21,9 @@
     @app XnView Classic for Windows
     @url https://www.xnview.com/en/xnview/
     @os Windows
-    @cleanerversion v0.3.5
+    @cleanerversion v0.4.5
     @cleanerdate 2019-03-18
-    @cleanerby https://github.com/Tobias-B-Besemer
+    @cleanerby https://github.com/Tobias-B-Besemer (2018-12-19 - 2019-03-18)
     @tested ok v???, Windows 7
     @testeddate 2019-03-11 (... with an old version of the cleaner!)
     @testedby https://github.com/Tobias-B-Besemer
@@ -39,8 +39,13 @@
     https://docs.microsoft.com/en-us/windows/desktop/winprog64/wow64-implementation-details
     ...so we use %SystemDrive%\Program Files\ & %SystemDrive%\Program Files (x86)\...
     -->
-    <value search="glob">%SystemDrive%\Program Files\XnView</value>
-    <value search="glob">%SystemDrive%\Program Files (x86)\XnView</value>
+    <value>%SystemDrive%\Program Files\XnView</value>
+    <value>%SystemDrive%\Program Files (x86)\XnView</value>
+  </var>
+  <var name="Save-Path">
+    <value>%AppData%\XnView</value>
+    <value>$$ProgramFiles$$\XnView</value>
+    <value>%WinDir%</value>
   </var>
   <option id="mru">
     <!-- That we don't need so much translation, we change some things... Tobias. -->
@@ -51,68 +56,62 @@
     <label>MRU Files and Folders</label>
     <description>Delete list of MRU (Most recently used) Files and Folders</description>
     -->
-    <action command="ini" search="file" path="%AppData%\XnView\xnview.ini" name="FileName_0"/>
-    <action command="ini" search="file" path="%AppData%\XnView\xnview.ini" name="FileName_1"/>
-    <action command="ini" search="file" path="%AppData%\XnView\xnview.ini" name="FileName_2"/>
-    <action command="ini" search="file" path="%AppData%\XnView\xnview.ini" name="FileName_3"/>
-    <action command="ini" search="file" path="%AppData%\XnView\xnview.ini" name="FileName_4"/>
-    <action command="ini" search="file" path="%AppData%\XnView\xnview.ini" name="FileName_5"/>
-    <action command="ini" search="file" path="%AppData%\XnView\xnview.ini" name="FileName_6"/>
-    <action command="ini" search="file" path="%AppData%\XnView\xnview.ini" name="FileName_7"/>
-    <action command="ini" search="file" path="%AppData%\XnView\xnview.ini" name="FileName_8"/>
-    <action command="ini" search="file" path="%AppData%\XnView\xnview.ini" name="FileName_9"/>
-    <action command="ini" search="file" path="%AppData%\XnView\xnview.ini" name="DirName_0"/>
-    <action command="ini" search="file" path="%AppData%\XnView\xnview.ini" name="DirName_1"/>
-    <action command="ini" search="file" path="%AppData%\XnView\xnview.ini" name="DirName_2"/>
-    <action command="ini" search="file" path="%AppData%\XnView\xnview.ini" name="DirName_3"/>
-    <action command="ini" search="file" path="%AppData%\XnView\xnview.ini" name="DirName_4"/>
-    <action command="ini" search="file" path="%AppData%\XnView\xnview.ini" name="DirName_5"/>
-    <action command="ini" search="file" path="%AppData%\XnView\xnview.ini" name="DirName_6"/>
-    <action command="ini" search="file" path="%AppData%\XnView\xnview.ini" name="DirName_7"/>
-    <action command="ini" search="file" path="%AppData%\XnView\xnview.ini" name="DirName_8"/>
-    <action command="ini" search="file" path="%AppData%\XnView\xnview.ini" name="DirName_9"/>
-    <action command="ini" search="file" path="$$ProgramFiles$$\XnView\xnview.ini" name="FileName_0"/>
-    <action command="ini" search="file" path="$$ProgramFiles$$\XnView\xnview.ini" name="FileName_1"/>
-    <action command="ini" search="file" path="$$ProgramFiles$$\XnView\xnview.ini" name="FileName_2"/>
-    <action command="ini" search="file" path="$$ProgramFiles$$\XnView\xnview.ini" name="FileName_3"/>
-    <action command="ini" search="file" path="$$ProgramFiles$$\XnView\xnview.ini" name="FileName_4"/>
-    <action command="ini" search="file" path="$$ProgramFiles$$\XnView\xnview.ini" name="FileName_5"/>
-    <action command="ini" search="file" path="$$ProgramFiles$$\XnView\xnview.ini" name="FileName_6"/>
-    <action command="ini" search="file" path="$$ProgramFiles$$\XnView\xnview.ini" name="FileName_7"/>
-    <action command="ini" search="file" path="$$ProgramFiles$$\XnView\xnview.ini" name="FileName_8"/>
-    <action command="ini" search="file" path="$$ProgramFiles$$\XnView\xnview.ini" name="FileName_9"/>
-    <action command="ini" search="file" path="$$ProgramFiles$$\XnView\xnview.ini" name="DirName_0"/>
-    <action command="ini" search="file" path="$$ProgramFiles$$\XnView\xnview.ini" name="DirName_1"/>
-    <action command="ini" search="file" path="$$ProgramFiles$$\XnView\xnview.ini" name="DirName_2"/>
-    <action command="ini" search="file" path="$$ProgramFiles$$\XnView\xnview.ini" name="DirName_3"/>
-    <action command="ini" search="file" path="$$ProgramFiles$$\XnView\xnview.ini" name="DirName_4"/>
-    <action command="ini" search="file" path="$$ProgramFiles$$\XnView\xnview.ini" name="DirName_5"/>
-    <action command="ini" search="file" path="$$ProgramFiles$$\XnView\xnview.ini" name="DirName_6"/>
-    <action command="ini" search="file" path="$$ProgramFiles$$\XnView\xnview.ini" name="DirName_7"/>
-    <action command="ini" search="file" path="$$ProgramFiles$$\XnView\xnview.ini" name="DirName_8"/>
-    <action command="ini" search="file" path="$$ProgramFiles$$\XnView\xnview.ini" name="DirName_9"/>
-    <action command="ini" search="file" path="%WinDir%\xnview.ini" name="FileName_0"/>
-    <action command="ini" search="file" path="%WinDir%\xnview.ini" name="FileName_1"/>
-    <action command="ini" search="file" path="%WinDir%\xnview.ini" name="FileName_2"/>
-    <action command="ini" search="file" path="%WinDir%\xnview.ini" name="FileName_3"/>
-    <action command="ini" search="file" path="%WinDir%\xnview.ini" name="FileName_4"/>
-    <action command="ini" search="file" path="%WinDir%\xnview.ini" name="FileName_5"/>
-    <action command="ini" search="file" path="%WinDir%\xnview.ini" name="FileName_6"/>
-    <action command="ini" search="file" path="%WinDir%\xnview.ini" name="FileName_7"/>
-    <action command="ini" search="file" path="%WinDir%\xnview.ini" name="FileName_8"/>
-    <action command="ini" search="file" path="%WinDir%\xnview.ini" name="FileName_9"/>
-    <action command="ini" search="file" path="%WinDir%\xnview.ini" name="DirName_0"/>
-    <action command="ini" search="file" path="%WinDir%\xnview.ini" name="DirName_1"/>
-    <action command="ini" search="file" path="%WinDir%\xnview.ini" name="DirName_2"/>
-    <action command="ini" search="file" path="%WinDir%\xnview.ini" name="DirName_3"/>
-    <action command="ini" search="file" path="%WinDir%\xnview.ini" name="DirName_4"/>
-    <action command="ini" search="file" path="%WinDir%\xnview.ini" name="DirName_5"/>
-    <action command="ini" search="file" path="%WinDir%\xnview.ini" name="DirName_6"/>
-    <action command="ini" search="file" path="%WinDir%\xnview.ini" name="DirName_7"/>
-    <action command="ini" search="file" path="%WinDir%\xnview.ini" name="DirName_8"/>
-    <action command="ini" search="file" path="%WinDir%\xnview.ini" name="DirName_9"/>
-    <action command="winreg" path="HKCU\Software\XnView\Start\FileName_*"/>
-    <action command="winreg" path="HKCU\Software\XnView\Start\DirName_*"/>
+    <action command="ini" search="file" path="$$Save-Path$$\xnview.ini" section="Start" parameter="DirName_0"/>
+    <action command="ini" search="file" path="$$Save-Path$$\xnview.ini" section="Start" parameter="DirName_1"/>
+    <action command="ini" search="file" path="$$Save-Path$$\xnview.ini" section="Start" parameter="DirName_2"/>
+    <action command="ini" search="file" path="$$Save-Path$$\xnview.ini" section="Start" parameter="DirName_3"/>
+    <action command="ini" search="file" path="$$Save-Path$$\xnview.ini" section="Start" parameter="DirName_4"/>
+    <action command="ini" search="file" path="$$Save-Path$$\xnview.ini" section="Start" parameter="DirName_5"/>
+    <action command="ini" search="file" path="$$Save-Path$$\xnview.ini" section="Start" parameter="DirName_6"/>
+    <action command="ini" search="file" path="$$Save-Path$$\xnview.ini" section="Start" parameter="DirName_7"/>
+    <action command="ini" search="file" path="$$Save-Path$$\xnview.ini" section="Start" parameter="DirName_8"/>
+    <action command="ini" search="file" path="$$Save-Path$$\xnview.ini" section="Start" parameter="DirName_9"/>
+    <action command="ini" search="file" path="$$Save-Path$$\xnview.ini" section="Start" parameter="FileName_0"/>
+    <action command="ini" search="file" path="$$Save-Path$$\xnview.ini" section="Start" parameter="FileName_1"/>
+    <action command="ini" search="file" path="$$Save-Path$$\xnview.ini" section="Start" parameter="FileName_2"/>
+    <action command="ini" search="file" path="$$Save-Path$$\xnview.ini" section="Start" parameter="FileName_3"/>
+    <action command="ini" search="file" path="$$Save-Path$$\xnview.ini" section="Start" parameter="FileName_4"/>
+    <action command="ini" search="file" path="$$Save-Path$$\xnview.ini" section="Start" parameter="FileName_5"/>
+    <action command="ini" search="file" path="$$Save-Path$$\xnview.ini" section="Start" parameter="FileName_6"/>
+    <action command="ini" search="file" path="$$Save-Path$$\xnview.ini" section="Start" parameter="FileName_7"/>
+    <action command="ini" search="file" path="$$Save-Path$$\xnview.ini" section="Start" parameter="FileName_8"/>
+    <action command="ini" search="file" path="$$Save-Path$$\xnview.ini" section="Start" parameter="FileName_9"/>
+    <action command="ini" search="file" path="$$Save-Path$$\xnview.ini" section="Start" parameter="PathBrowse"/>
+    <action command="ini" search="file" path="$$Save-Path$$\xnview.ini" section="Start" parameter="PathLoad"/>
+    <action command="ini" search="file" path="$$Save-Path$$\xnview.ini" section="Search" parameter="Directory"/>
+    <action command="winreg" path="HKCU\Software\XnView\File" name="DirName_0"/>
+    <action command="winreg" path="HKCU\Software\XnView\File" name="DirName_1"/>
+    <action command="winreg" path="HKCU\Software\XnView\File" name="DirName_2"/>
+    <action command="winreg" path="HKCU\Software\XnView\File" name="DirName_3"/>
+    <action command="winreg" path="HKCU\Software\XnView\File" name="DirName_4"/>
+    <action command="winreg" path="HKCU\Software\XnView\File" name="DirName_5"/>
+    <action command="winreg" path="HKCU\Software\XnView\File" name="DirName_6"/>
+    <action command="winreg" path="HKCU\Software\XnView\File" name="DirName_7"/>
+    <action command="winreg" path="HKCU\Software\XnView\File" name="DirName_8"/>
+    <action command="winreg" path="HKCU\Software\XnView\File" name="DirName_9"/>
+    <action command="winreg" path="HKCU\Software\XnView\Start" name="DirName_0"/>
+    <action command="winreg" path="HKCU\Software\XnView\Start" name="DirName_1"/>
+    <action command="winreg" path="HKCU\Software\XnView\Start" name="DirName_2"/>
+    <action command="winreg" path="HKCU\Software\XnView\Start" name="DirName_3"/>
+    <action command="winreg" path="HKCU\Software\XnView\Start" name="DirName_4"/>
+    <action command="winreg" path="HKCU\Software\XnView\Start" name="DirName_5"/>
+    <action command="winreg" path="HKCU\Software\XnView\Start" name="DirName_6"/>
+    <action command="winreg" path="HKCU\Software\XnView\Start" name="DirName_7"/>
+    <action command="winreg" path="HKCU\Software\XnView\Start" name="DirName_8"/>
+    <action command="winreg" path="HKCU\Software\XnView\Start" name="DirName_9"/>
+    <action command="winreg" path="HKCU\Software\XnView\Start" name="FileName_0"/>
+    <action command="winreg" path="HKCU\Software\XnView\Start" name="FileName_1"/>
+    <action command="winreg" path="HKCU\Software\XnView\Start" name="FileName_2"/>
+    <action command="winreg" path="HKCU\Software\XnView\Start" name="FileName_3"/>
+    <action command="winreg" path="HKCU\Software\XnView\Start" name="FileName_4"/>
+    <action command="winreg" path="HKCU\Software\XnView\Start" name="FileName_5"/>
+    <action command="winreg" path="HKCU\Software\XnView\Start" name="FileName_6"/>
+    <action command="winreg" path="HKCU\Software\XnView\Start" name="FileName_7"/>
+    <action command="winreg" path="HKCU\Software\XnView\Start" name="FileName_8"/>
+    <action command="winreg" path="HKCU\Software\XnView\Start" name="FileName_9"/>
+    <action command="winreg" path="HKCU\Software\XnView\Start" name="PathBrowse"/>
+    <action command="winreg" path="HKCU\Software\XnView\Start" name="PathLoad"/>
+    <action command="winreg" path="HKCU\Software\XnView\Search" name="Directory"/>
   </option>
   <option id="cache">
     <label>Cache</label>
