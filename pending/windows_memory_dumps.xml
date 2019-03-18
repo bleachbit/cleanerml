@@ -21,8 +21,8 @@
     @app Windows
     @url none
     @os Windows
-    @cleanerversion v0.4.0
-    @cleanerdate 2019-03-13
+    @cleanerversion v0.4.1
+    @cleanerdate 2019-03-18
     @cleanerby https://github.com/Tobias-B-Besemer
     @tested ok v???, Windows 7
     @testeddate 2019-03-10
@@ -36,15 +36,17 @@
   <option id="all">
     <label>All</label>
     <description>Delete the files</description>
-    <action command="delete" search="file" path="%windir%\MEMORY.DMP"/>
-    <action command="delete" search="walk.all" path="%windir%\Minidump\"/>
-    <action command="delete" search="walk.all" path="%windir%\System32\config\systemprofile\AppData\Local\CrashDumps\"/>
-    <action command="delete" search="walk.all" path="%windir%\SysWOW64\config\systemprofile\AppData\Local\CrashDumps\"/>
-    <action command="delete" search="walk.all" path="%windir%\LiveKernelReports\WATCHDOG\"/>
+    <action command="delete" search="file" path="%WinDir%\MEMORY.DMP"/>
+    <action command="delete" search="walk.all" path="%WinDir%\Minidump\"/>
+    <action command="delete" search="walk.all" path="%WinDir%\System32\config\systemprofile\AppData\Local\CrashDumps\"/>
+    <action command="delete" search="walk.all" path="%WinDir%\SysWOW64\config\systemprofile\AppData\Local\CrashDumps\"/>
+    <action command="delete" search="walk.all" path="%WinDir%\LiveKernelReports\WATCHDOG\"/>
     <action command="delete" search="walk.all" path="%LocalAppData%\CrashDumps\"/>
     <!-- Windows Error Reporting, HEAP-Dumps: -->
-    <action command="delete" search="walk.files" path="%windir%\Temp\WER*.hdmp"/>
+    <action command="delete" search="walk.files" path="%WinDir%\Temp\WER*.hdmp"/>
     <!-- Windows Error Reporting, Mini-Dumps: -->
-    <action command="delete" search="walk.files" path="%windir%\Temp\WER*.mdmp"/>
+    <action command="delete" search="walk.files" path="%WinDir%\Temp\WER*.mdmp"/>
+    <!-- Dr Watson, user.dmp: -->
+    <action command="delete" search="file" path="%AllUsersProfile%\Application Data\Microsoft\Dr Watson\user.dmp"/>
   </option>
 </cleaner>
