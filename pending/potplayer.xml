@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2008-2019 Andrew Ziem
+    https://www.bleachbit.org
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+    @app Daum PotPlayer
+    @url http://potplayer.daum.net/
+    @cleanerversion v0.4.5
+    @os Windows
+    @cleanerdate 2019-03-18
+    @cleanerby https://github.com/Tobias-B-Besemer (2018-12-20 - 2019-03-18)
+    @tested ok v???, Windows 7
+    @testeddate 2019-02-25 (... with an old version of the cleaner!)
+    @testedby https://github.com/Tobias-B-Besemer
+    @note That we don't need so much translation, we change some things... Tobias.
+
+-->
+<cleaner id="potplayer" os="windows">
+  <label>PotPlayer</label>
+  <description>Media player</description>
+  <!--
+  That we don't need so much translation, we change some things... Tobias.
+  Was:
+  <option id="rememberfiles">
+    <label>Remember Files</label>
+    <description>Delete the data</description>
+  Is now: 
+  -->
+  <option id="mru">
+    <label>Most recently used</label>
+    <description>Delete the list of recently used documents</description>
+    <action command="winreg" path="HKCU\Software\Daum\PotPlayerMini\DvbcList"/>
+    <action command="winreg" path="HKCU\Software\Daum\PotPlayerMini\DvbsList"/>
+    <action command="winreg" path="HKCU\Software\Daum\PotPlayerMini\DvbtList"/>
+    <action command="winreg" path="HKCU\Software\Daum\PotPlayerMini\RememberFiles"/>
+    <action command="winreg" path="HKCU\Software\Daum\PotPlayerMini\Settings" name="LastPlayListName"/>
+    <action command="winreg" path="HKCU\Software\Daum\PotPlayerMini64\DvbcList"/>
+    <action command="winreg" path="HKCU\Software\Daum\PotPlayerMini64\DvbsList"/>
+    <action command="winreg" path="HKCU\Software\Daum\PotPlayerMini64\DvbtList"/>
+    <action command="winreg" path="HKCU\Software\Daum\PotPlayerMini64\RememberFiles"/>
+    <action command="winreg" path="HKCU\Software\Daum\PotPlayerMini64\Settings" name="LastPlayListName"/>
+  </option>
+  <option id="logs">
+    <label>Logs</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="walk.files" path="%AppData%\Daum\PotPlayer\Log\"/>
+  </option>
+  <option id="temp">
+    <label>Temporary files</label>
+    <description>Delete the temporary files</description>
+    <action command="delete" search="walk.files" path="%Temp%\PotUpdate\"/>
+    <action command="delete" search="file" path="%Temp%\PotUpdate\"/>
+  </option>
+</cleaner>
