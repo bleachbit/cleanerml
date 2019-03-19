@@ -19,15 +19,18 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 
     @app Windows
-    @url none
+    @url http://support.microsoft.com/kb/813711
     @os Windows
-    @cleanerversion v1.1.1
-    @cleanerdate 2019-03-13
-    @cleanerby https://github.com/Tobias-B-Besemer
+    @cleanerversion v1.9.0
+    @cleanerdate 2019-03-19
+    @cleanerby https://github.com/Tobias-B-Besemer (2019-02-16 - 2019-03-19)
     @tested ok v???, Windows 7
-    @testeddate 2019-03-10
+    @testeddate 2019-03-10 (... with an old version of the cleaner!)
     @testedby https://github.com/Tobias-B-Besemer
+    @note More info: https://www.ghacks.net/2014/06/09/remove-old-shellbag-entries-windows-privacy/
     @note More info: http://www.williballenthin.com/forensics/shellbags/
+    @note You can delete the Registry keys according to Microsoft to reset the settings for all folders.
+    @note Read: http://support.microsoft.com/kb/813711
     @note Can maybe one day be integrated into the windows.xml-cleaner...
 
 -->
@@ -37,7 +40,19 @@
   <option id="all">
     <label>All</label>
     <description>Delete the data</description>
-    <action command="winreg" path="HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU"/>
+    <!-- We need to delete: (http://support.microsoft.com/kb/813711) -->
+    <action command="winreg" path="HKCU\Software\Microsoft\Windows\Shell\Bags"/>
+    <action command="winreg" path="HKCU\Software\Microsoft\Windows\Shell\BagMRU"/>
+    <action command="winreg" path="HKCU\Software\Microsoft\Windows\ShellNoRoam\Bags"/>
+    <action command="winreg" path="HKCU\Software\Microsoft\Windows\ShellNoRoam\BagMRU"/>
     <action command="winreg" path="HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags"/>
+    <action command="winreg" path="HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU"/>
+    <action command="winreg" path="HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU" name="0"/>
+    <action command="winreg" path="HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU" name="1"/>
+    <action command="winreg" path="HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU" name="2"/>
+    <action command="winreg" path="HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU" name="3"/>
+    <!-- And on 64-bit systems additionally: -->
+    <action command="winreg" path="HKCU\Software\Classes\Wow6432Node\Local Settings\Software\Microsoft\Windows\Shell\Bags"/>
+    <action command="winreg" path="HKCU\Software\Classes\Wow6432Node\Local Settings\Software\Microsoft\Windows\Shell\BagMRU"/>
   </option>
 </cleaner>
