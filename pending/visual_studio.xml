@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2008-2019 Andrew Ziem
+    https://www.bleachbit.org
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+    @app Microsoft Visual Studio
+    @url https://visualstudio.microsoft.com/
+    @os Windows
+    @cleanerversion v0.3.5
+    @cleanerdate 2019-03-18
+    @cleanerby https://github.com/Tobias-B-Besemer (2019-03-17 - 2019-03-18)
+    @tested ok v???, Windows ???
+    @testeddate ???
+    @testedby ???
+    @note This cleaner is "unstable"! Please improve it before you use it! (Or do whatever you like! ;-))
+
+-->
+<cleaner id="visual_studio" os="windows">
+  <label>Visual Studio</label>
+  <description>Integrated Development Environment (IDE)</description>
+  <option id="logs">
+    <label>Logs</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="glob" path="%LocalAppData%\Microsoft\VisualStudio\*\*.LOG*"/>
+    <action command="delete" search="glob" path="%AppData%\Microsoft\VisualStudio\*\ActivityLog.Setup.xml"/>
+    <action command="delete" search="glob" path="%AppData%\Microsoft\VisualStudio\*\ActivityLog.xsl"/>
+    <action command="delete" search="walk.files" path="%AppData%\Microsoft Visual Studio\logs\"/>
+  </option>
+  <option id="temp">
+    <label>Temporary files</label>
+    <description>Delete the temporary files</description>
+    <action command="delete" search="glob" path="%Temp%\dd_bootstrapper_*"/>
+    <action command="delete" search="glob" path="%Temp%\dd_client_*"/>
+    <action command="delete" search="glob" path="%Temp%\dd_service_*"/>
+    <action command="delete" search="glob" path="%Temp%\dd_setup_*"/>
+    <action command="delete" search="file" path="%Temp%\dd_SetupUtility.txt"/>
+    <action command="delete" search="glob" path="%Temp%\dd_vs_*"/>
+    <!-- Visual C++ Redist: -->
+    <action command="delete" search="glob" path="%Temp%\dd_vcredist*"/>
+    <action command="delete" search="walk.all" path="%WinDir%\Temp\logishrd\"/>
+    <action command="delete" search="file" path="%WinDir%\Temp\logishrd\"/>
+    <action command="delete" search="glob" path="%Temp%\Microsoft.VC*.manifest"/>
+  </option>
+  <option id="backup">
+    <label>Backup files</label>
+    <description>Delete the backup files</description>
+    <action command="delete" search="file" path="%ProgramData%\Microsoft Visual Studio\MachineStorage.dat.bak"/>
+  </option>
+  <option id="cache">
+    <label>Cache</label>
+    <description>Delete the cache</description>
+    <action command="delete" search="glob" path="%LocalAppData%\Microsoft\VisualStudio\*\ComponentModelCache\"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Microsoft\VisualStudio\*\Extensions\extensions.*.cache"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Microsoft\VisualStudio\*\Extensions\extensionSdks.*.cache"/>
+    <action command="delete" search="glob" path="%LocalAppData%\Microsoft\VisualStudio\*\ImageLibrary\ImageLibrary.cache"/>
+    <action command="delete" search="walk.files" path="%AppData%\Visual Studio Setup\GPUCache\"/>
+  </option>
+</cleaner>
