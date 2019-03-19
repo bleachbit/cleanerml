@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2008-2019 Andrew Ziem
+    https://www.bleachbit.org
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+    @app COMODO Internet Security / COMODO Firewall
+    @url https://www.comodo.com/home/internet-security/
+    @url https://www.comodo.com/home/internet-security/firewall.php
+    @url https://www.comodo.com/home/internet-security/free-internet-security.php
+    @os Windows
+    @cleanerversion v0.3.0
+    @cleanerdate 2019-03-18.2
+    @cleanerby https://github.com/Tobias-B-Besemer (2019-03-14 - 2019-03-18)
+    @tested ok v???, Windows 7
+    @testeddate 2019-03-14
+    @testedby https://github.com/Tobias-B-Besemer
+    @note This cleaner is "unstable"! Please improve it before you use it! Or do whatever you like! ;-)
+
+-->
+<cleaner id="comodo_internet_security" os="windows">
+  <label>COMODO Internet Security</label>
+  <description>Internet Security</description>
+  <option id="temp">
+    <label>Temporary files</label>
+    <description>Delete the temporary files</description>
+    <action command="delete" search="walk.all" path="%WinDir%\Temp\TempFiles\"/>
+    <action command="delete" search="file" path="%WinDir%\Temp\TempFiles\"/>
+    <action command="delete" search="glob" path="%WinDir%\Temp\cmdinstall.exe_*.7z"/>
+    <action command="delete" search="glob" path="%Temp%\cmdinstall.exe_*.7z"/>
+    <action command="delete" search="walk.files" path="%ProgramData%\Comodo\Cis\Quarantine\Temp\"/>
+    <action command="delete" search="walk.files" path="%ProgramData%\Comodo\Cis\tempscrpt\"/>
+    <action command="delete" search="walk.all" path="%ProgramData%\Comodo\Cis\wpTemp\"/>
+    <action command="delete" search="file" path="%ProgramData%\Comodo\Cis\wpTemp\"/>
+  </option>
+  <option id="logs">
+    <label>Logs</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="walk.files" path="%AppData%\Comodo\CCE\Logs\"/>
+    <action command="delete" search="walk.files" path="%AppData%\Comodo\KillSwitch\KsLogs\"/>
+    <action command="delete" search="walk.files" path="%ProgramData%\Comodo\ISE\Log\"/>
+  </option>
+  <option id="crashdumps">
+    <label>Crash dumps</label>
+    <description>Delete the files</description>
+    <action command="delete" search="walk.files" path="%AppData%\Comodo\KillSwitch\Dumps\"/>
+    <action command="delete" search="walk.files" path="%ProgramData%\Comodo\CisDumps\"/>
+  </option>
+  <option id="quarantine">
+    <label>Quarantine</label>
+    <description>Delete the files</description>
+    <action command="delete" search="walk.files" path="%ProgramData%\Comodo\Cis\Quarantine\data\"/>
+    <action command="delete" search="walk.files" path="%ProgramData%\Comodo\Cis\Quarantine\info\"/>
+    <action command="delete" search="walk.files" path="%ProgramData%\Comodo\Cis\Quarantine\Temp\"/>
+  </option>
+  <option id="telemetry">
+    <label>Telemetry</label>
+    <description>Delete the files</description>
+    <action command="delete" search="walk.all" path="%ProgramData%\Comodo\Cis\telemetry\"/>
+  </option>
+  <option id="installer">
+    <label>Installer</label>
+    <description>Delete the files</description>
+    <!--
+    Don't know, but maybe better not... Tobias.
+    <action command="delete" search="walk.files" path="%ProgramData%\Comodo\Installer\"/>
+    -->
+    <action command="delete" search="walk.all" path="%ProgramData%\Comodo Downloader\"/>
+    <action command="delete" search="file" path="%ProgramData%\Comodo Downloader\"/>
+  </option>
+</cleaner>
