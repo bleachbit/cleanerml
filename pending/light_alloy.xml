@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2008-2019 Andrew Ziem
+    https://www.bleachbit.org
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+    @app Light Alloy
+    @url http://light-alloy.verona.im/
+    @os Windows
+    @cleanerversion v0.2.5
+    @cleanerdate 2019-03-18
+    @cleanerby https://github.com/Tobias-B-Besemer (2019-03-12 - 2019-03-18)
+    @tested ok v???, Windows 7
+    @testeddate 2019-03-12
+    @testedby https://github.com/Tobias-B-Besemer
+    @note As long we have no command="xml", we need to delete the complete file!
+    @note Later: That we don't need so much translation, we combine some options in "History"! Tobias.
+
+-->
+<cleaner id="light_alloy" os="windows">
+  <label>Light Alloy</label>
+  <description>Media player</description>
+  <!-- Works only with a command="xml" - as long we delete the complete config file!
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias. -->
+  <!-- Not yet...
+  <option id="history">
+    <label>History</label>
+    <description>Delete the usage history</description>
+  ...later!-->
+  <!-- That we don't need so much translation, we combine some options in "History"! Tobias.
+  <option id="MediaDir">
+    <label>Media Diretory</label>
+    <description>Delete the Media Diretory</description>
+  -->
+  <!-- Not yet...
+    <action command="xml" search="file" path="%LocalAppData%\LightAlloy\LA.xml" element="APP/FrontEnd" attribute="MediaDir"/>
+  </option>
+  ...later!-->
+  <option id="config_file">
+    <label>Config File</label>
+    <description>Delete the file</description>
+    <warning>Use this option only if you know what you do!</warning>
+    <action command="delete" search="file" path="%LocalAppData%\LightAlloy\LA.xml"/>
+  </option>
+</cleaner>
