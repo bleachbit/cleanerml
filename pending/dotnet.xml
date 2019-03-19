@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2008-2019 Andrew Ziem
+    https://www.bleachbit.org
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+    @app Microsoft .NET Framework
+    @url https://dotnet.microsoft.com/
+    @os Windows, Linux
+    @cleanerversion v0.3.5
+    @cleanerdate 2019-03-18
+    @cleanerby https://github.com/Tobias-B-Besemer (2019-03-18)
+    @tested ok v???, Windows ???
+    @testeddate ???
+    @testedby ???
+    @note 
+
+-->
+<cleaner id="dotnet" os="windows">
+  <label>.NET</label>
+  <description>Framework</description>
+  <option id="logs">
+    <label>Logs</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="glob" path="%WinDir%\Microsoft.NET\Framework\*\*.log"/>
+  </option>
+  <option id="temp">
+    <label>Temporary files</label>
+    <description>Delete the temporary files</description>
+    <action command="delete" search="glob" path="%Temp%\.NETFramework*"/>
+    <action command="delete" search="glob" path="%Temp%\dd_dotNetFx*"/>
+    <action command="delete" search="walk.all" path="%Temp%\eraserInstallBootstrapper\"/>
+    <action command="delete" search="glob" path="%Temp%\eraserInstallBootstrapper\"/>
+    <action command="delete" search="glob" path="%Temp%\dd_wcf_CA_smci_*"/>
+    <action command="delete" search="glob" path="%Temp%\Microsoft .NET Framework *"/>
+  </option>
+</cleaner>
