@@ -12,15 +12,17 @@
 
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program. If not, see <http://www.gnu.org/licenses/>.
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+    @app Microsoft Windows
     @url none
-    @cleanerversion v0.1.1
-    @cleanerdate 2019-03-11
+    @os Windows
+    @cleanerversion v0.3.0
+    @cleanerdate 2019-03-15
     @cleanerby https://github.com/Tobias-B-Besemer
     @tested ok 
     @testeddate 
@@ -30,10 +32,10 @@
 -->
 <cleaner id="shadow_copies_more" os="windows">
   <label translate="true">Shadow Copies - More</label>
-  <description>Deletes the Shadow Copies of all drives from C to Z</description>
-  <option id="shadow_copies_all">
-    <label>Shadow Copies - Delete all</label>
-    <description>Deletes the Shadow Copies of all drives from C to Z</description>
+  <description>Windows component</description>
+  <option id="all">
+    <label>Delete all</label>
+    <description>Deletes the shadow copies of all drives from C to Z</description>
     <warning>Use this cleaner only if you know what you do!</warning>
     <action command="process" cmd="vssadmin.exe delete shadows /for=C: /all"/>
     <action command="process" cmd="vssadmin.exe delete shadows /for=D: /all"/>
