@@ -12,20 +12,22 @@
 
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program. If not, see <http://www.gnu.org/licenses/>.
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+    @app SMPlayer
     @url https://www.smplayer.info/
-    @cleanerversion v1.1.0
-    @cleanerdate 2019-03-11
+    @os Windows, Linux
+    @cleanerversion v1.5.0
+    @cleanerdate 2019-03-15
     @cleanerby xr09 & https://github.com/Tobias-B-Besemer
     @tested ok v18.10.0, Windows 7
-    @testeddate 2019-03-10
+    @testeddate 2019-03-10 (... with an old version of the cleaner!)
     @testedby https://github.com/Tobias-B-Besemer
-    @note 
+    @note That we don't need so much translation, we combine all in "History"! Tobias.
 
 -->
 <cleaner id="smplayer">
@@ -33,22 +35,30 @@
   <description>Video player</description>
   <var name="profile">
     <value os="windows">%LocalAppData%\SMPlayer2</value>
-    <value os="windows">%USERPROFILE%\.smplayer</value>
+    <value os="windows">%UserProfile%\.smplayer</value>
     <value os="linux">~/.config/smplayer</value>
   </var>
   <var name="profile_smtube">
-    <value os="windows">%USERPROFILE%\.smtube</value>
+    <value os="windows">%UserProfile%\.smtube</value>
     <value os="linux">~/.config/smtube</value>
   </var>
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias. -->
+  <option id="history">
+    <label>History</label>
+    <description>Delete the usage history</description>
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   <option id="filesettings">
     <label>File Settings</label>
     <description>Remove file settings (last position, subtitles size, fonts)</description>
+  -->
     <action command="delete" search="file" path="$$profile$$/smplayer_files.ini"/>
     <action command="delete" search="walk.all" path="$$profile$$\file_settings\"/>
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="playlist_contents">
     <label>Playlists Contents</label>
     <description>Remove saved (internal) playlists contents</description>
+  -->
     <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_0_filename"/>
     <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_0_duration"/>
     <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="playlist_contents" parameter="item_0_name"/>
@@ -293,43 +303,57 @@
     <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\27\item_26_params"/>
     <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\27\item_26_video_url"/>
     <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\27\item_26_icon_url"/>
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="screenshot_folder">
     <label>Screenshots path</label>
     <description>Reset screenshots path</description>
+  -->
     <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="%General" parameter="screenshot_folder"/>
-  </option>
-  <option id="screenshots">
-    <label>Screenshots</label>
-    <description>Remove screenshots image files from default location</description>
-    <action command="delete" search="glob" path="$$profile$$\screenshots\*"/>
-    <action command="delete" search="glob" path="%Pictures%\smplayer*_screenshots\*"/>
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="history_files">
     <label>Recent Files</label>
     <description>Clear recent played files</description>
+  -->
     <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="history" parameter="recents"/>
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="history_urls">
     <label>Recent URLs</label>
     <description>Clear recent played URLs</description>
+  -->
     <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="history" parameter="urls"/>
     <action command="ini" search="file" path="$$profile$$\playlist.ini" section="history" parameter="urls"/>
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="videopreview">
     <label>Video Preview</label>
     <description>Video Preview - Last directory and filename</description>
+  -->
     <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="videopreview" parameter="last_directory"/>
     <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="videopreview" parameter="filename"/>
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="playlist_directory">
     <label>Playlist Directory</label>
     <description>Playlist Directory - Last directory</description>
+  -->
     <action command="ini" search="file" path="$$profile$$\playlist.ini" section="directories" parameter="latest_dir"/>
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="smtube.ini">
-    <label>SMTube Content</label>
-    <description>SMTube Content</description>
+    <label>SMTube Recording Directory</label>
+    <description>SMTube Recording Directory</description>
+  -->
     <action command="ini" search="file" path="$$profile_smtube$$\smtube.ini" section="%General" parameter="recording_directory"/>
   </option>
+  <!-- We shouldn't delete the screenshots the user created! It's user created content! Tobias.
+  <option id="screenshots">
+    <label>Screenshots</label>
+    <description>Remove screenshots image files from default location</description>
+    <action command="delete" search="glob" path="%Pictures%\smplayer*_screenshots\*"/>
+    <action command="delete" search="walk.files" path="$$profile$$\screenshots\"/>
+  </option>
+  -->
 </cleaner>
