@@ -22,8 +22,8 @@
     @url https://www.ashampoo.com/en/eur/pca/6/burning-software
     @os Windows
     @cleanerversion v1.0.0
-    @cleanerdate 2019-03-19
-    @cleanerby https://github.com/Tobias-B-Besemer (2019-03-10 - 2019-03-19)
+    @cleanerdate 2019-03-21
+    @cleanerby https://github.com/Tobias-B-Besemer (2019-03-10 - 2019-03-21)
     @tested ok v6, Windows 7
     @testeddate 2019-03-10 (... with an old version of the cleaner!)
     @testedby https://github.com/Tobias-B-Besemer
@@ -132,7 +132,7 @@
     <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\DVD-Video Disc Project\MoviesPage" name="Path"/>
     <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\DVD-Video Disc Project\SaveDialog_authed.CMoviesPage.Movies" name="InitialDirectory"/>
     <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\Logs"/>
-    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\tempFilesv
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\tempFiles"/>
     <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\Unknown Project"/>
     <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\VCD Project\SaveDialog_OnAddMovies" name="InitialDirectory"/>
     <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\VIDEO_TS Disc Project\DumpImage" name="ImagePath"/>
