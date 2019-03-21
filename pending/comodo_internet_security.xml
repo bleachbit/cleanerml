@@ -24,8 +24,8 @@
     @url https://www.comodo.com/home/internet-security/free-internet-security.php
     @os Windows
     @cleanerversion v0.3.0
-    @cleanerdate 2019-03-18.2
-    @cleanerby https://github.com/Tobias-B-Besemer (2019-03-14 - 2019-03-18)
+    @cleanerdate 2019-03-21
+    @cleanerby https://github.com/Tobias-B-Besemer (2019-03-14 - 2019-03-21)
     @tested ok v???, Windows 7
     @testeddate 2019-03-14
     @testedby https://github.com/Tobias-B-Besemer
@@ -72,9 +72,9 @@
     <description>Delete the files</description>
     <action command="delete" search="walk.all" path="%ProgramData%\Comodo\Cis\telemetry\"/>
   </option>
-  <option id="installer">
-    <label>Installer</label>
-    <description>Delete the files</description>
+  <option id="installers">
+    <label>Installers</label>
+    <description>Delete cached patches and installers</description>
     <!--
     Don't know, but maybe better not... Tobias.
     <action command="delete" search="walk.files" path="%ProgramData%\Comodo\Installer\"/>
