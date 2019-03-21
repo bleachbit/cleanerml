@@ -21,9 +21,9 @@
     @app IrfanView
     @url https://www.irfanview.com/
     @os Windows
-    @cleanerversion v0.5.0
-    @cleanerdate 2019-03-15
-    @cleanerby https://github.com/Tobias-B-Besemer
+    @cleanerversion v0.6.0
+    @cleanerdate 2019-03-21
+    @cleanerby https://github.com/Tobias-B-Besemer (2018-12-20 - 2019-03-21)
     @tested ok v???, Windows 7
     @testeddate 2019-03-10 (... with an old version of the cleaner!)
     @testedby https://github.com/Tobias-B-Besemer
@@ -33,6 +33,13 @@
 <cleaner id="irfanview" os="windows">
   <label>IrfanView</label>
   <description>Picture viewer</description>
+  <!-- To reduce the lines we need, lets work with a variable for the filename. Tobias. -->
+  <var name="Filename">
+    <!-- 32-bit version of IrfanView: -->
+    <value>i_view32.ini</value>
+    <!-- 64-bit version of IrfanView: -->
+    <value>i_view64.ini</value>
+  </var>
   <!-- That we don't need so much translation, we combine all in "History"! Tobias. -->
   <option id="history">
     <label>History</label>
@@ -42,171 +49,103 @@
     <label>Open Directory</label>
     <description>Directory shown in the open dialog</description>
   -->
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Open" parameter="OpenDir"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Open" parameter="OpenDir"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Open" parameter="OpenDir"/>
   <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="thumbnails_mrud">
     <label>MRU - Thumbnails</label>
     <description>Most recent used (MRU) - Thumbnails Directories</description>
   -->
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Thumbnails" parameter="MRUD1"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Thumbnails" parameter="MRUD2"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Thumbnails" parameter="MRUD3"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Thumbnails" parameter="MRUD4"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Thumbnails" parameter="MRUD5"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Thumbnails" parameter="MRUD6"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Thumbnails" parameter="MRUD7"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Thumbnails" parameter="MRUD8"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Thumbnails" parameter="MRUD9"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Thumbnails" parameter="MRUD10"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Thumbnails" parameter="MRUD11"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Thumbnails" parameter="MRUD12"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Thumbnails" parameter="MRUD13"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Thumbnails" parameter="MRUD14"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Thumbnails" parameter="MRUD15"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Thumbnails" parameter="MRUD16"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Thumbnails" parameter="MRUD17"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Thumbnails" parameter="MRUD18"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Thumbnails" parameter="MRUD19"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Thumbnails" parameter="MRUD20"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Thumbnails" parameter="MRUD21"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Thumbnails" parameter="MRUD22"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Thumbnails" parameter="MRUD23"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Thumbnails" parameter="MRUD24"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Thumbnails" parameter="MRUD25"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Thumbnails" parameter="MRUD26"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Thumbnails" parameter="MRUD27"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Thumbnails" parameter="MRUD28"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Thumbnails" parameter="MRUD29"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Thumbnails" parameter="MRUD30"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD1"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD2"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD3"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD4"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD5"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD6"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD7"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD8"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD9"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD10"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD11"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD12"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD13"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD14"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD15"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD16"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD17"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD18"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD19"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD20"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD21"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD22"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD23"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD24"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD25"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD26"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD27"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD28"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD29"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD30"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Thumbnails" parameter="MRUD1"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Thumbnails" parameter="MRUD2"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Thumbnails" parameter="MRUD3"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Thumbnails" parameter="MRUD4"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Thumbnails" parameter="MRUD5"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Thumbnails" parameter="MRUD6"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Thumbnails" parameter="MRUD7"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Thumbnails" parameter="MRUD8"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Thumbnails" parameter="MRUD9"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Thumbnails" parameter="MRUD10"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Thumbnails" parameter="MRUD11"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Thumbnails" parameter="MRUD12"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Thumbnails" parameter="MRUD13"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Thumbnails" parameter="MRUD14"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Thumbnails" parameter="MRUD15"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Thumbnails" parameter="MRUD16"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Thumbnails" parameter="MRUD17"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Thumbnails" parameter="MRUD18"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Thumbnails" parameter="MRUD19"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Thumbnails" parameter="MRUD20"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Thumbnails" parameter="MRUD21"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Thumbnails" parameter="MRUD22"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Thumbnails" parameter="MRUD23"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Thumbnails" parameter="MRUD24"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Thumbnails" parameter="MRUD25"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Thumbnails" parameter="MRUD26"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Thumbnails" parameter="MRUD27"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Thumbnails" parameter="MRUD28"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Thumbnails" parameter="MRUD29"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Thumbnails" parameter="MRUD30"/>
   <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="thumbnails_saveassingle">
     <label>Save As Single Directory</label>
     <description>Save As Single Image Directory</description>
   -->
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Thumbnails" parameter="SaveAsSingle"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="SaveAsSingle"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Thumbnails" parameter="SaveAsSingle"/>
   <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="save_savedir">
     <label>Save Directory</label>
     <description>Directory shown in the save dialog</description>
   -->
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Save" parameter="SaveDir"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Save" parameter="SaveDir"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="Save" parameter="SaveDir"/>
   <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="mrud_savedir">
     <label>MRU - Save Directories</label>
     <description>Most recent used (MRU) - Save Directories</description>
   -->
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="MRUD" parameter="SaveDir1"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="MRUD" parameter="SaveDir2"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="MRUD" parameter="SaveDir3"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="MRUD" parameter="SaveDir4"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="MRUD" parameter="SaveDir5"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="MRUD" parameter="SaveDir6"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="MRUD" parameter="SaveDir7"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="MRUD" parameter="SaveDir8"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="MRUD" parameter="SaveDir9"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="MRUD" parameter="SaveDir10"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="MRUD" parameter="SaveDir11"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="MRUD" parameter="SaveDir12"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="MRUD" parameter="SaveDir13"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="MRUD" parameter="SaveDir14"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="MRUD" parameter="SaveDir15"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="MRUD" parameter="SaveDir16"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="MRUD" parameter="SaveDir17"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="MRUD" parameter="SaveDir18"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="MRUD" parameter="SaveDir19"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="MRUD" parameter="SaveDir20"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="MRUD" parameter="SaveDir1"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="MRUD" parameter="SaveDir2"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="MRUD" parameter="SaveDir3"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="MRUD" parameter="SaveDir4"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="MRUD" parameter="SaveDir5"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="MRUD" parameter="SaveDir6"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="MRUD" parameter="SaveDir7"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="MRUD" parameter="SaveDir8"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="MRUD" parameter="SaveDir9"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="MRUD" parameter="SaveDir10"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="MRUD" parameter="SaveDir11"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="MRUD" parameter="SaveDir12"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="MRUD" parameter="SaveDir13"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="MRUD" parameter="SaveDir14"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="MRUD" parameter="SaveDir15"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="MRUD" parameter="SaveDir16"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="MRUD" parameter="SaveDir17"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="MRUD" parameter="SaveDir18"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="MRUD" parameter="SaveDir19"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="MRUD" parameter="SaveDir20"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="MRUD" parameter="SaveDir1"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="MRUD" parameter="SaveDir2"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="MRUD" parameter="SaveDir3"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="MRUD" parameter="SaveDir4"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="MRUD" parameter="SaveDir5"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="MRUD" parameter="SaveDir6"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="MRUD" parameter="SaveDir7"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="MRUD" parameter="SaveDir8"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="MRUD" parameter="SaveDir9"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="MRUD" parameter="SaveDir10"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="MRUD" parameter="SaveDir11"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="MRUD" parameter="SaveDir12"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="MRUD" parameter="SaveDir13"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="MRUD" parameter="SaveDir14"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="MRUD" parameter="SaveDir15"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="MRUD" parameter="SaveDir16"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="MRUD" parameter="SaveDir17"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="MRUD" parameter="SaveDir18"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="MRUD" parameter="SaveDir19"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="MRUD" parameter="SaveDir20"/>
   <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="recentfiles_file">
     <label>MRU - Files</label>
     <description>Most recent used (MRU) - Files</description>
   -->
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="RecentFiles" parameter="File0"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="RecentFiles" parameter="File1"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="RecentFiles" parameter="File2"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="RecentFiles" parameter="File3"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="RecentFiles" parameter="File4"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="RecentFiles" parameter="File5"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="RecentFiles" parameter="File6"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="RecentFiles" parameter="File7"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="RecentFiles" parameter="File8"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="RecentFiles" parameter="File9"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="RecentFiles" parameter="File10"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="RecentFiles" parameter="File11"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="RecentFiles" parameter="File12"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="RecentFiles" parameter="File13"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="RecentFiles" parameter="File14"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="RecentFiles" parameter="File0"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="RecentFiles" parameter="File1"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="RecentFiles" parameter="File2"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="RecentFiles" parameter="File3"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="RecentFiles" parameter="File4"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="RecentFiles" parameter="File5"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="RecentFiles" parameter="File6"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="RecentFiles" parameter="File7"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="RecentFiles" parameter="File8"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="RecentFiles" parameter="File9"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="RecentFiles" parameter="File10"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="RecentFiles" parameter="File11"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="RecentFiles" parameter="File12"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="RecentFiles" parameter="File13"/>
-    <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="RecentFiles" parameter="File14"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="RecentFiles" parameter="File0"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="RecentFiles" parameter="File1"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="RecentFiles" parameter="File2"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="RecentFiles" parameter="File3"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="RecentFiles" parameter="File4"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="RecentFiles" parameter="File5"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="RecentFiles" parameter="File6"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="RecentFiles" parameter="File7"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="RecentFiles" parameter="File8"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="RecentFiles" parameter="File9"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="RecentFiles" parameter="File10"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="RecentFiles" parameter="File11"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="RecentFiles" parameter="File12"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="RecentFiles" parameter="File13"/>
+    <action command="ini" search="file" path="%AppData%\IrfanView\$$Filename$$" section="RecentFiles" parameter="File14"/>
   </option>
 </cleaner>
