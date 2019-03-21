@@ -44,8 +44,12 @@
   <option id="cache">
     <label>Cache</label>
     <description>Delete the cache</description>
-    <action command="delete" search="glob" path="%AppData%\GitHubDesktop\*Cache\"/>
-    <action command="delete" search="glob" path="%AppData%\GitHub Desktop\*Cache\"/>
+    <!-- Examples:
+    - C:\Users\Administrator\AppData\Roaming\GitHub Desktop\Cache
+    - C:\Users\Administrator\AppData\Roaming\GitHub Desktop\GPUCache
+    -->
+    <action command="delete" search="walk.all" path="%AppData%\GitHubDesktop\*Cache\"/>
+    <action command="delete" search="walk.all" path="%AppData%\GitHub Desktop\*Cache\"/>
   </option>
   <option id="temp">
     <label>Temporary files</label>
