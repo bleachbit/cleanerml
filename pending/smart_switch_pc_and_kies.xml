@@ -22,8 +22,8 @@
     @url https://www.samsung.com/us/support/owners/app/smart-switch
     @os Windows
     @cleanerversion v0.2.5
-    @cleanerdate 2019-03-14
-    @cleanerby https://github.com/Tobias-B-Besemer
+    @cleanerdate 2019-03-21
+    @cleanerby https://github.com/Tobias-B-Besemer (2019-03-11 - 2019-03-21)
     @tested ok 
     @testeddate 
     @testedby 
@@ -38,7 +38,7 @@
   <option id="device_error_recovery_logs">
     <label>Device Error Recovery Logs</label>
     <description>Delete the logs</description>
-    <action command="delete" search="walk.files" path="%ProgramData%\Samsung\Device Error Recovery\default-*.log"/>
+    <action command="delete" search="glob" path="%ProgramData%\Samsung\Device Error Recovery\default-*.log"/>
   </option>
   <option id="device_profile_cache">
     <label>Device Profile Cache</label>
@@ -47,7 +47,10 @@
   </option>
   <option id="device_roms">
     <label>Device ROMs</label>
+    <!-- Was:
     <description>Delete the downloaded Device ROMs</description>
+    Is now: -->
+    <description>Delete the files</description>
     <action command="delete" search="walk.all" path="%Temp%\Binary\"/>
     <action command="delete" search="file" path="%Temp%\Binary\"/>
   </option>
@@ -73,6 +76,7 @@
     <action command="delete" search="file" path="%Temp%\Binary\"/>
     <action command="delete" search="walk.all" path="%Temp%\Samsung\"/>
     <action command="delete" search="file" path="%Temp%\Samsung\"/>
+    <action command="delete" search="walk.all" path="%Temp%\SmartSwitch_*\"/>
     <action command="delete" search="glob" path="%Temp%\SmartSwitch_*\"/>
     <action command="delete" search="walk.all" path="%Temp%\SmartSwitchPCDumpFiles\"/>
     <action command="delete" search="file" path="%Temp%\SmartSwitchPCDumpFiles\"/>
