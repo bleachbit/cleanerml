@@ -23,8 +23,8 @@
     @url http://p7zip.sourceforge.net/
     @os Windows, Linux
     @cleanerversion v2.0.0
-    @cleanerdate 2019-03-15
-    @cleanerby Andrew Ziem (2013), 2McCoy7 (2014), mikevainio (2016), Tobias B. Besemer (2019)
+    @cleanerdate 2019-03-21
+    @cleanerby Andrew Ziem (2013) & 2McCoy7 (2014) & mikevainio (2016) & Tobias B. Besemer (2019-02-18 - 2019-03-21)
     @tested ok v???, Windows 7
     @testeddate 2014-10-01 (... with an old version of the cleaner!)
     @testedby 
@@ -42,10 +42,10 @@
   <!--
   <var name="profile">
     Windows: Seems 7-Zip have no profile directory...
-    <value search="glob" os="windows">none</value>
+    <value os="windows">none</value>
     
     Linux: Profile directory not yet figured out! I will do this later! Tobias.
-    <value search="glob" os="linux">~/.7zfm</value>
+    <value os="linux">~/.7zfm</value>
   </var>
   -->
   <option id="history">
