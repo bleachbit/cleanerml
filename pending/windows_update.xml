@@ -21,21 +21,21 @@
     @app Windows Update
     @url none
     @os Windows
-    @cleanerversion v0.8.5
-    @cleanerdate 2019-03-13
-    @cleanerby https://github.com/Tobias-B-Besemer
+    @cleanerversion v0.9.0
+    @cleanerdate 2019-03-22
+    @cleanerby https://github.com/Tobias-B-Besemer (2019-02-13 - 2019-03-22)
     @tested ok v???, Windows 7
     @testeddate 2019-03-10
     @testedby https://github.com/Tobias-B-Besemer
     @note Can maybe one day be integrated into the windows.xml-cleaner...
-
+    @note Should make Pyhton code un-necessary. https://github.com/bleachbit/bleachbit/blob/057694a08301b4939d59f7bed5cc996c94a1de52/bleachbit/Windows.py#L205
 -->
 <cleaner id="windows_update" os="windows">
   <label>Windows Update</label>
   <description>Windows component</description>
   <option id="logs">
     <label>Logs</label>
-    <description>Delete logs</description>
+    <description>Delete the logs</description>
     <action command="delete" search="walk.all" path="%WinDir%\Logs\waasmedic"/>
     <action command="delete" search="walk.all" path="%WinDir%\Logs\WindowsUpdate"/>
     <action command="delete" search="walk.all" path="%WinDir%\SoftwareDistribution\DataStore\Logs"/>
@@ -45,44 +45,44 @@
     <action command="delete" search="file" path="%WinDir%\svcpack.log"/>
     <!-- No more used since: 2015-05-14: -->
     <action command="delete" search="walk.all" path="%LocalAppDataLow%\Microsoft\MuCatalog"/>
-    <action command="delete" search="glob" path="%LocalAppDataLow%\Microsoft\MuCatalog"/>
+    <action command="delete" search="file" path="%LocalAppDataLow%\Microsoft\MuCatalog"/>
   </option>
   <option id="temp">
     <label>Temporary files</label>
     <description>Delete the temporary files</description>
     <action command="delete" search="walk.all" path="%SystemDrive%\$WINDOWS.~BT\"/>
-    <action command="delete" search="glob" path="%SystemDrive%\$WINDOWS.~BT\"/>
+    <action command="delete" search="file" path="%SystemDrive%\$WINDOWS.~BT\"/>
     <action command="delete" search="walk.all" path="%SystemDrive%\$Windows.~WS\"/>
-    <action command="delete" search="glob" path="%SystemDrive%\$Windows.~WS\"/>
+    <action command="delete" search="file" path="%SystemDrive%\$Windows.~WS\"/>
     <action command="delete" search="walk.all" path="%SystemDrive%\Config.Msi\"/>
-    <action command="delete" search="glob" path="%SystemDrive%\Config.Msi\"/>
-    <action command="delete" search="walk.all" path="%TMP%\WUDiagTempFolder\"/>
-    <action command="delete" search="glob" path="%TMP%\WUDiagTempFolder\"/>
-    <action command="delete" search="walk.files" path="%TMP%\KB*"/>
-    <action command="delete" search="walk.files" path="%TMP%\WindowsUpdate*"/>
-    <action command="delete" search="walk.files" path="%TMP%\WindowsUpdate*"/>
-    <action command="delete" search="walk.files" path="%TMP%\ASPNETSetup_*.log"/>
-    <action command="delete" search="walk.files" path="%TMP%\dd_NDP*"/>
-    <action command="delete" search="file" path="%TMP%\dd_SetupUtility.txt"/>
-    <action command="delete" search="walk.files" path="%TMP%\dd_X86_AMD64-all-ndp*"/>
-    <action command="delete" search="file" path="%TMP%\wurunSeq.txt"/>
-    <action command="delete" search="file" path="%TMP%\wuZipFilePaths"/>
+    <action command="delete" search="file" path="%SystemDrive%\Config.Msi\"/>
+    <action command="delete" search="walk.all" path="%Temp%\WUDiagTempFolder\"/>
+    <action command="delete" search="file" path="%Temp%\WUDiagTempFolder\"/>
+    <action command="delete" search="glob" path="%Temp%\KB*"/>
+    <action command="delete" search="glob" path="%Temp%\WindowsUpdate*"/>
+    <action command="delete" search="glob" path="%Temp%\WindowsUpdate*"/>
+    <action command="delete" search="glob" path="%Temp%\ASPNETSetup_*.log"/>
+    <action command="delete" search="glob" path="%Temp%\dd_NDP*"/>
+    <action command="delete" search="file" path="%Temp%\dd_SetupUtility.txt"/>
+    <action command="delete" search="glob" path="%Temp%\dd_X86_AMD64-all-ndp*"/>
+    <action command="delete" search="file" path="%Temp%\wurunSeq.txt"/>
+    <action command="delete" search="file" path="%Temp%\wuZipFilePaths"/>
     <!-- .NETFramework: -->
-    <action command="delete" search="walk.files" path="%TMP%\.NETFramework*"/>
-    <action command="delete" search="walk.files" path="%TMP%\dd_dotNetFx*"/>
-    <action command="delete" search="walk.all" path="%TMP%\eraserInstallBootstrapper\"/>
-    <action command="delete" search="glob" path="%TMP%\eraserInstallBootstrapper\"/>
-    <action command="delete" search="walk.files" path="%TMP%\dd_wcf_CA_smci_*"/>
-    <action command="delete" search="walk.files" path="%TMP%\Microsoft .NET Framework *"/>
-    <!-- Visual C Redist: -->
-    <action command="delete" search="walk.files" path="%TMP%\dd_vcredist*"/>
+    <action command="delete" search="glob" path="%Temp%\.NETFramework*"/>
+    <action command="delete" search="glob" path="%Temp%\dd_dotNetFx*"/>
+    <action command="delete" search="walk.all" path="%Temp%\eraserInstallBootstrapper\"/>
+    <action command="delete" search="file" path="%Temp%\eraserInstallBootstrapper\"/>
+    <action command="delete" search="glob" path="%Temp%\dd_wcf_CA_smci_*"/>
+    <action command="delete" search="glob" path="%Temp%\Microsoft .NET Framework *"/>
+    <!-- Visual C++ Redist: -->
+    <action command="delete" search="glob" path="%Temp%\dd_vcredist*"/>
     <action command="delete" search="walk.all" path="%WinDir%\Temp\logishrd\"/>
-    <action command="delete" search="glob" path="%WinDir%\Temp\logishrd\"/>
-    <action command="delete" search="walk.files" path="%TMP%\Microsoft.VC*.manifest"/>
+    <action command="delete" search="file" path="%WinDir%\Temp\logishrd\"/>
+    <action command="delete" search="glob" path="%Temp%\Microsoft.VC*.manifest"/>
   </option>
   <option id="windows_update_files">
     <label>Windows Update Files and Database</label>
-    <description>Delete the Windows Update Files and the Database</description>
+    <description>Delete the files</description>
     <warning>Use the option only if you know what you do!</warning>
     <action command="process" cmd="net stop wuauserv"/>
     <action command="delete" search="walk.all" path="%WinDir%\SoftwareDistribution\"/>
@@ -94,11 +94,20 @@
     <warning>This may take a long time! (How long depends on your computer, but at least several minutes!) The program may seem to hang, but be patience, just wait! Attention: After use this option, you can't uninstall your Service Pack anymore! Use this option only if you know what you do!</warning>
     <action command="process" wait="true" cmd="dism.exe /Online /Cleanup-Image /SPSuperseded /hideSP"/>
   </option>
+  <!-- Is now: (Tobias) -->
+  <option id="backup">
+    <label>Backup files</label>
+    <description>Delete the backup files</description>
+  <!--
+  Was: (Tobias)
   <option id="winsxs_backup_files">
     <label>WinSxS Backup Files</label>
     <description>Delete the WinSxS Backup Files</description>
     <warning>Use one your own risk! Use this option only if you know what you do!</warning>
-    <action command="delete" search="walk.files" path="%WinDir%\WinSxS\Backup\"/>
+  -->
+    <action command="delete" search="walk.all" path="%WinDir%\WinSxS\Backup\"/>
+    <action command="delete" search="walk.all" path="%WinDir%\SoftwareDistribution\DataStore.bak\"/>
+    <action command="delete" search="file" path="%WinDir%\SoftwareDistribution\DataStore.bak\"/>
   </option>
   <option id="winsxs_component_cleanup_win7">
     <label>WinSxS Component Cleanup (Win7)</label>
@@ -112,5 +121,20 @@ This option will open the Microsoft Windows Disk Cleanup Tool! You need to clean
     <description>Makes a WinSxS Component Cleanup (with Windows 8 and higher)</description>
     <warning>All existing service packs and updates cannot be uninstalled after this command is completed. But this will not block the uninstallation of future service packs or updates. Use this option only if you know what you do!</warning>
     <action command="process" wait="true" cmd="dism.exe /Online /Cleanup-Image /StartComponentCleanup /ResetBase"/>
+  </option>
+  <option id="ie_updates">
+    <label>Internet Explorer Update Files</label>
+    <description>Delete the backup files</description>
+    <action command="delete" search="walk.all" path="%WinDir%\ie7updates\"/>
+    <action command="delete" search="file" path="%WinDir%\ie7updates\"/>
+    <action command="delete" search="walk.all" path="%WinDir%\ie8updates\"/>
+    <action command="delete" search="file" path="%WinDir%\ie8updates\"/>
+  </option>
+  <option id="sd_downloads">
+    <label>Software Distribution Downloads</label>
+    <description>Delete the files</description>
+    <action command="process" cmd="net stop wuauserv"/>
+    <action command="delete" search="walk.all" path="%WinDir%\SoftwareDistribution\Download\"/>
+    <action command="process" cmd="net start wuauserv"/>
   </option>
 </cleaner>
