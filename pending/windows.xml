@@ -22,32 +22,49 @@
     @url https://www.microsoft.com/en-us/windows
     @os Windows
     @cleanerversion v1.9.0
-    @cleanerdate 2019-03-18.2
-    @cleanerby https://github.com/Tobias-B-Besemer (2019-02-26 - 2019-03-18)
+    @cleanerdate 2019-03-22
+    @cleanerby https://github.com/Tobias-B-Besemer (2019-02-26 - 2019-03-22)
     @tested ok v???, Windows 7
-    @testeddate 2019-03-10
+    @testeddate 2019-03-10 (... with an old version of the cleaner!)
     @testedby https://github.com/Tobias-B-Besemer
     @note Can maybe one day replace the hardcoded Windows cleaner of BleachBit...
+    @note Should maybe be integrated:
+    @note - windows_memory_dumps.xml
+    @note - windows_shellbags.xml
+    @note - windows_update.xml
 
 -->
 <cleaner id="windows" os="windows">
   <label>Windows</label>
   <description>Operating system</description>
   <option id="temp">
+    <!-- I don't like it, but lets delete the Windows temp folder with the temp folder of the user together. Tobias.
+    Was:
     <label>Windows temp files and folders</label>
     <description>Delete the temp files and folders in the Windows directory</description>
+    Is now: -->
+    <label>Temporary files</label>
+    <description>Delete the temporary files</description>
+    <!-- Temp files and folders of the installers: -->
     <action command="delete" search="walk.all" path="%WinDir%\Installer\MSI*.tmp*"/>
     <action command="delete" search="glob" path="%WinDir%\Installer\MSI*.tmp*"/>
+    <!-- Windows temp folder: -->
+    <action command="delete" search="walk.all" path="%WinDir%\Temp\"/>
+    <!-- User temp folder: -->
+    <action command="delete" search="walk.all" path="%Temp%\"/>
+    <!-- Delete *.tmp recursive in %WinDir%: -->
+    <action command="delete" search="walk.files" path="%WinDir%\" regex="\.[Tt][Mm][Pp]$"/>
   </option>
   <option id="logs">
     <label>Logs</label>
     <description>Delete the logs</description>
-    <action command="delete" search="glob" path="%WinDir%\*.log"/>
+    <!-- Delete *.log recursive in %WinDir%: -->
+    <action command="delete" search="walk.files" path="%WinDir%\" regex="\.[Ll][Oo][Gg]$"/>
     <!--
     64-bit Windows redirects %WinDir%\sysnative\ for 32-bit applications to %WinDir%\system32 
     https://docs.microsoft.com/en-us/windows/desktop/winprog64/file-system-redirector
     -->
-    <action command="delete" search="glob" path="%WinDir%\sysnative\config\*.log"/>
+    <!-- Already deleted: <action command="delete" search="glob" path="%WinDir%\sysnative\config\*.log"/> -->
     <action command="delete" search="glob" path="%WinDir%\sysnative\config\*.log1"/>
     <action command="delete" search="glob" path="%WinDir%\sysnative\config\*.log2"/>
     <action command="delete" search="glob" path="%SystemDrive%\Boot\*.log"/>
@@ -57,29 +74,53 @@
     <!-- Logs to delete in Windows, taken from:
     https://github.com/bleachbit/bleachbit/blob/4bd296808a6342a8d80f169adce35216a3330cd0/bleachbit/Cleaner.py#L400
     Start: -->
-    <action command="delete" search="file" path="%WinDir%\imsins.BAK"/>
     <action command="delete" search="file" path="%WinDir%\OEWABLog.txt"/>
     <action command="delete" search="file" path="%WinDir%\SchedLgU.txt"/>
     <action command="delete" search="file" path="%WinDir%\ntbtlog.txt"/>
     <action command="delete" search="file" path="%WinDir%\setuplog.txt"/>
-    <action command="delete" search="file" path="%WinDir%\REGLOCS.OLD"/>
-    <action command="delete" search="glob" path="%WinDir%\Debug\*.log"/>
-    <action command="delete" search="file" path="%WinDir%\Debug\Setup\UpdSh.log"/>
-    <action command="delete" search="glob" path="%WinDir%\Debug\UserMode\*.log"/>
-    <action command="delete" search="file" path="%WinDir%\Debug\UserMode\ChkAcc.bak"/>
-    <action command="delete" search="file" path="%WinDir%\Debug\UserMode\userenv.bak"/>
-    <action command="delete" search="glob" path="%WinDir%\security\logs\*.log"/>
-    <action command="delete" search="glob" path="%WinDir%\security\logs\*.old"/>
-    <action command="delete" search="glob" path="%WinDir%\SoftwareDistribution\*.log"/>
     <action command="delete" search="walk.files" path="%WinDir%\SoftwareDistribution\DataStore\Logs\*"/>
-    <action command="delete" search="file" path="%WinDir%\system32\TZLog.log"/>
     <action command="delete" search="glob" path="%WinDir%\system32\LogFiles\AIT\AitEventLog.etl.???"/>
     <action command="delete" search="glob" path="%WinDir%\system32\LogFiles\Firewall\pfirewall.log*"/>
     <action command="delete" search="glob" path="%WinDir%\system32\LogFiles\Scm\SCM.EVM*"/>
     <action command="delete" search="glob" path="%WinDir%\system32\LogFiles\WMI\Terminal*.etl"/>
     <action command="delete" search="glob" path="%WinDir%\system32\LogFiles\WMI\RTBackup\EtwRT.*etl"/>
     <action command="delete" search="glob" path="%WinDir%\system32\wbem\Logs\*.lo_"/>
+    <!-- Already deleted:
+    <action command="delete" search="glob" path="%WinDir%\Debug\*.log"/>
+    <action command="delete" search="file" path="%WinDir%\Debug\Setup\UpdSh.log"/>
+    <action command="delete" search="glob" path="%WinDir%\Debug\UserMode\*.log"/>
+    <action command="delete" search="glob" path="%WinDir%\security\logs\*.log"/>
+    <action command="delete" search="glob" path="%WinDir%\SoftwareDistribution\*.log"/>
+    <action command="delete" search="file" path="%WinDir%\system32\TZLog.log"/>
     <action command="delete" search="glob" path="%WinDir%\system32\wbem\Logs\*.log"/>
+    -->
+    <!-- Finish! -->
+    <!-- More: -->
+    <action command="delete" search="glob" path="%WinDir%\system32\LogFiles\HTTPERR\httperr?.log"/>
+    <action command="delete" search="file" path="%WinDir%\system32\LogFiles\Srt\bcdinfo.txt"/>
+    <action command="delete" search="file" path="%WinDir%\system32\LogFiles\Srt\bootfailure.txt"/>
+    <action command="delete" search="file" path="%WinDir%\system32\LogFiles\Srt\disklayout.txt"/>
+    <action command="delete" search="file" path="%WinDir%\system32\LogFiles\Srt\SrtTrail.txt"/>
+  </option>
+  <option id="backups">
+    <label>Backup files</label>
+    <description>Delete the backup files</description>
+    <!-- Delete *.bak recursive in %WinDir%: -->
+    <action command="delete" search="walk.files" path="%WinDir%\" regex="\.[Bb][Aa][Kk]$"/>
+    <!-- Delete *.old recursive in %WinDir%: -->
+    <action command="delete" search="walk.files" path="%WinDir%\" regex="\.[Oo][Ll][Dd]$"/>
+    <!-- Backup files of the boot manager: -->
+    <action command="delete" search="glob" path="%SystemDrive%\Boot\BCD.Backup.*"/>
+    <!-- Backup files to delete in Windows, taken from:
+    https://github.com/bleachbit/bleachbit/blob/4bd296808a6342a8d80f169adce35216a3330cd0/bleachbit/Cleaner.py#L400
+    Start: -->
+    <!-- Already deleted:
+    <action command="delete" search="file" path="%WinDir%\imsins.BAK"/>
+    <action command="delete" search="file" path="%WinDir%\REGLOCS.OLD"/>
+    <action command="delete" search="file" path="%WinDir%\Debug\UserMode\ChkAcc.bak"/>
+    <action command="delete" search="file" path="%WinDir%\Debug\UserMode\userenv.bak"/>
+    <action command="delete" search="glob" path="%WinDir%\security\logs\*.old"/>
+    -->
     <!-- Finish! -->
   </option>
   <option id="hibernate">
@@ -89,16 +130,11 @@
   </option>
   <option id="junk">
     <label>Junk files and folders</label>
-    <description>Delete the junk files and folders</description>
+    <description>Delete old files and folders that are no more needed</description>
     <action command="delete" search="file" path="%UserProfile%\Desktop\desktop.ini"/>
     <action command="delete" search="file" path="%SystemDrive%\BOOTSECT.BAK"/>
     <action command="delete" search="walk.all" path="%SystemDrive%\Config.Msi\"/>
     <action command="delete" search="file" path="%SystemDrive%\Config.Msi\"/>
-  </option>
-  <option id="backups">
-    <label>Backup files</label>
-    <description>Delete the backup files</description>
-    <action command="delete" search="glob" path="%SystemDrive%\Boot\BCD.Backup.*"/>
   </option>
   <option id="chkdsk">
     <label>Chkdsk files</label>
@@ -135,7 +171,6 @@
     -->
     <action command="winreg" path="HKCU\Software\Microsoft\Windows\Windows Error Reporting\Debug" name="StoreLocation"/>
     <action command="winreg" path="HKLM\Software\Microsoft\Windows\Windows Error Reporting\Debug" name="StoreLocation"/>
-    <action command="winreg" path="HKLM\Software\Microsoft\Windows\Windows Error Reporting\LocalDumps"/>
     <action command="winreg" path="HKU\.DEFAULT\Software\Microsoft\Windows\Windows Error Reporting\Debug" name="StoreLocation"/>
     <!-- WER file in the temp folder: -->
     <action command="delete" search="file" path="%Temp%\WERFAB3.tmp.WERInternalMetadata.xml"/>
@@ -152,7 +187,7 @@
     https://github.com/bleachbit/bleachbit/blob/4bd296808a6342a8d80f169adce35216a3330cd0/bleachbit/Cleaner.py#L400
     Start: -->
     <action command="delete" search="glob" path="%AllUsersProfile%\Application Data\Microsoft\Dr Watson\*.log"/>
-    <!--
+    <!-- Already done above:
     <action command="delete" search="walk.files" path="%LocalAppData%\Microsoft\Windows\WER\ReportArchive\*\*"/>
     <action command="delete" search="walk.files" path="%LocalAppData%\Microsoft\Windows\WER\ReportQueue\*\*"/>
     -->
@@ -161,14 +196,14 @@
     <action command="delete" search="file" path="%WinDir%\pchealth\helpctr\Logs\hcupdate.log"/>
   </option>
   <option id="shadow_copies">
-    <label>Shadow Copies</label>
-    <description>Delete all Shadow Copies on C:</description>
+    <label>Shadow copies</label>
+    <description>Delete all shadow copies on C:</description>
     <warning>Use the option only if you know what you do!</warning>
     <action command="process" cmd="vssadmin.exe delete shadows /for=c: /all"/>
   </option>
   <option id="recycle_bin">
-    <label>Recycle Bin</label>
-    <description>Delete the Recycle Bin on drive C: from all user accounts</description>
+    <label>Recycle bin</label>
+    <description>Delete the recycle bin on drive C: from all user accounts</description>
     <warning>Use the option only if you know what you do!</warning>
     <!-- This is how it was documented, but don't work, because "rd" is no standalone app! -->
     <!-- <action command="process" cmd="cmd.exe /c rd /s c:\$Recycle.Bin"/> -->
@@ -192,7 +227,7 @@
     <action command="delete" search="walk.all" path="%LocalAppDataLow%\Microsoft\Windows\AppCache\"/>
   </option>
   <option id="prefetch">
-    <label>Prefetch cache</label>
+    <label>Prefetch</label>
     <description>Delete the cache</description>
     <action command="delete" search="walk.files" path="%WinDir%\Prefetch\*"/>
   </option>
@@ -206,5 +241,11 @@
     <action command="delete" search="walk.all" path="%ProgramData%\Microsoft\Search\Data\Applications\Windows\GatherLogs\SystemIndex\"/>
     <action command="delete" search="walk.all" path="%ProgramData%\Microsoft\Search\Data\Applications\Windows\Projects\SystemIndex\Indexer\CiFiles\"/>
     <action command="process" cmd="sc config WSearch start= auto"/>
+  </option>
+  <option id="muicache">
+    <label>MUICache</label>
+    <description>Delete the cache</description>
+    <action command="winreg" path="HKCU\Software\Microsoft\Windows\ShellNoRoam\MUICache"/>
+    <action command="winreg" path="HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\MuiCache"/>
   </option>
 </cleaner>
