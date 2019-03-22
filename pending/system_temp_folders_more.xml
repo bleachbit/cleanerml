@@ -69,8 +69,6 @@
     <warning>Use the option only if you know what you do!</warning>
     <action command="delete" search="walk.all" path="%Temp%\"/>
     <action command="delete" search="walk.all" path="%WinDir%\Temp\"/>
-    <action command="delete" search="glob" path="%Temp%\"/>
-    <action command="delete" search="glob" path="%WinDir%\Temp\"/>
   </option>
   <option id="dot_part">
     <label>*.part</label>
