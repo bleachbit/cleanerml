@@ -22,8 +22,8 @@
     @url none
     @os Windows
     @cleanerversion v0.3.0
-    @cleanerdate 2019-03-15
-    @cleanerby https://github.com/Tobias-B-Besemer
+    @cleanerdate 2019-03-22
+    @cleanerby https://github.com/Tobias-B-Besemer (2019-02-27 - 2019-03-22)
     @tested ok 
     @testeddate 
     @testedby 
@@ -34,7 +34,7 @@
   <label translate="true">Shadow Copies - More</label>
   <description>Windows component</description>
   <option id="all">
-    <label>Delete all</label>
+    <label>All</label>
     <description>Deletes the shadow copies of all drives from C to Z</description>
     <warning>Use this cleaner only if you know what you do!</warning>
     <action command="process" cmd="vssadmin.exe delete shadows /for=C: /all"/>
