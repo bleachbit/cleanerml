@@ -21,9 +21,9 @@
     @app Windows
     @url none
     @os Windows
-    @cleanerversion v0.4.1
-    @cleanerdate 2019-03-18
-    @cleanerby https://github.com/Tobias-B-Besemer
+    @cleanerversion v0.4.2
+    @cleanerdate 2019-03-22
+    @cleanerby https://github.com/Tobias-B-Besemer (2019-02-17 - 2019-03-22)
     @tested ok v???, Windows 7
     @testeddate 2019-03-10
     @testedby https://github.com/Tobias-B-Besemer
@@ -48,5 +48,7 @@
     <action command="delete" search="walk.files" path="%WinDir%\Temp\WER*.mdmp"/>
     <!-- Dr Watson, user.dmp: -->
     <action command="delete" search="file" path="%AllUsersProfile%\Application Data\Microsoft\Dr Watson\user.dmp"/>
+    <!-- Windows Error Reporting, LocalDumps, saved in Registry: -->
+    <action command="winreg" path="HKLM\Software\Microsoft\Windows\Windows Error Reporting\LocalDumps"/>
   </option>
 </cleaner>
