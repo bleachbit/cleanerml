@@ -18,13 +18,13 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-    @app TomTom Programs
+    @app TomTom Navigation Systems Programs
     @url https://www.tomtom.com/en_us/mydrive-connect/
     @url https://us.support.tomtom.com/app/answers/detail/a_id/5122/locale/en_US
     @os Windows
     @cleanerversion v0.5.1
-    @cleanerdate 2019-03-17
-    @cleanerby ??? & https://github.com/Tobias-B-Besemer
+    @cleanerdate 2019-03-22
+    @cleanerby theatre-x (2012-12-26) & Tobias B. Besemer (2019-03-11 - 2019-03-22)
     @tested ok v???, Windows 7
     @testeddate 2019-03-11
     @testedby https://github.com/Tobias-B-Besemer
