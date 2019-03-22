@@ -22,8 +22,8 @@
     @url http://support.microsoft.com/kb/813711
     @os Windows
     @cleanerversion v1.9.0
-    @cleanerdate 2019-03-19
-    @cleanerby https://github.com/Tobias-B-Besemer (2019-02-16 - 2019-03-19)
+    @cleanerdate 2019-03-22
+    @cleanerby https://github.com/Tobias-B-Besemer (2019-02-16 - 2019-03-22)
     @tested ok v???, Windows 7
     @testeddate 2019-03-10 (... with an old version of the cleaner!)
     @testedby https://github.com/Tobias-B-Besemer
@@ -40,7 +40,8 @@
   <option id="all">
     <label>All</label>
     <description>Delete the data</description>
-    <!-- We need to delete: (http://support.microsoft.com/kb/813711) -->
+    <warning>This will reset folders size, view, icon or position settings to default and remove traces of the folders that do not exist anymore.</warning>
+    <!-- What we need to delete: (http://support.microsoft.com/kb/813711) -->
     <action command="winreg" path="HKCU\Software\Microsoft\Windows\Shell\Bags"/>
     <action command="winreg" path="HKCU\Software\Microsoft\Windows\Shell\BagMRU"/>
     <action command="winreg" path="HKCU\Software\Microsoft\Windows\ShellNoRoam\Bags"/>
