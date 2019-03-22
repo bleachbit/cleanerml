@@ -21,9 +21,9 @@
     @app SMPlayer
     @url https://www.smplayer.info/
     @os Windows, Linux
-    @cleanerversion v1.5.0
-    @cleanerdate 2019-03-15
-    @cleanerby xr09 & https://github.com/Tobias-B-Besemer
+    @cleanerversion v2.0.0
+    @cleanerdate 2019-03-22
+    @cleanerby Manuel E. Gutierrez (xr09) (2013-09-17) & Tobias B. Besemer (2018-12-25 - 2019-03-22)
     @tested ok v18.10.0, Windows 7
     @testeddate 2019-03-10 (... with an old version of the cleaner!)
     @testedby https://github.com/Tobias-B-Besemer
