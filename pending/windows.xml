@@ -21,17 +21,17 @@
     @app Microsoft Windows
     @url https://www.microsoft.com/en-us/windows
     @os Windows
-    @cleanerversion v1.9.0
-    @cleanerdate 2019-03-22
-    @cleanerby https://github.com/Tobias-B-Besemer (2019-02-26 - 2019-03-22)
+    @cleanerversion v1.9.10
+    @cleanerdate 2019-03-23
+    @cleanerby https://github.com/Tobias-B-Besemer (2019-02-26 - 2019-03-23)
     @tested ok v???, Windows 7
     @testeddate 2019-03-10 (... with an old version of the cleaner!)
     @testedby https://github.com/Tobias-B-Besemer
     @note Can maybe one day replace the hardcoded Windows cleaner of BleachBit...
     @note Should maybe be integrated:
-    @note - windows_memory_dumps.xml
-    @note - windows_shellbags.xml
-    @note - windows_update.xml
+    @note - windows_memory_dumps.xml (Done!)
+    @note - windows_shellbags.xml (Done!)
+    @note - windows_update.xml (I'm not sure!)
 
 -->
 <cleaner id="windows" os="windows">
@@ -101,6 +101,68 @@
     <action command="delete" search="file" path="%WinDir%\system32\LogFiles\Srt\bootfailure.txt"/>
     <action command="delete" search="file" path="%WinDir%\system32\LogFiles\Srt\disklayout.txt"/>
     <action command="delete" search="file" path="%WinDir%\system32\LogFiles\Srt\SrtTrail.txt"/>
+    <!-- Finish! -->
+    <!-- Logs to delete in Windows, taken from:
+    WinApp2.ini, [Windows Logs *], Version 190312, by Tobias
+    Start: -->
+    <action command="delete" search="walk.all" path="%CommonAppData%\Microsoft\Network\Downloader\"/>
+    <action command="delete" search="walk.all" path="%CommonAppData%\Microsoft\Windows Security Health\Logs\"/>
+    <action command="delete" search="walk.all" path="%CommonAppData%\USOShared\Logs\"/>
+    <action command="delete" search="glob" path="%LocalAppData%\ConnectedDevicesPlatform\*.log"/>
+    <action command="delete" search="walk.all" path="%LocalAppData%\Diagnostics\"/>
+    <action command="delete" search="walk.all" path="%ProgramFiles%\UNP\Logs\"/>
+    <action command="delete" search="walk.all" path="%SystemDrive%\PerfLogs\System\Diagnostics\"/>
+    <action command="delete" search="walk.all" path="%SystemDrive%\PerfLogs\System\Performance\"/>
+    <action command="delete" search="glob" path="%WinDir%\debug\WIA\*.log"/>
+    <action command="delete" search="glob" path="%WinDir%\inf\*.log*"/>
+    <action command="delete" search="glob" path="%WinDir%\Logs\CBS\*.cab"/>
+    <action command="delete" search="walk.all" path="%WinDir%\Logs\dosvc\"/>
+    <action command="delete" search="walk.all" path="%WinDir%\Logs\NetSetup\"/>
+    <action command="delete" search="walk.all" path="%WinDir%\Logs\SIH\"/>
+    <action command="delete" search="glob" path="%WinDir%\Logs\WindowsBackup\*.etl"/>
+    <action command="delete" search="file" path="%WinDir%\Panther\cbs.log"/>
+    <action command="delete" search="file" path="%WinDir%\Panther\DDACLSys.log"/>
+    <action command="delete" search="file" path="%WinDir%\Panther\miglog.xml"/>
+    <action command="delete" search="file" path="%WinDir%\Panther\Migrep.html"/>
+    <action command="delete" search="file" path="%WinDir%\Panther\PostGatherPnPList.log"/>
+    <action command="delete" search="file" path="%WinDir%\Panther\PreGatherPnPList.log"/>
+    <action command="delete" search="glob" path="%WinDir%\Panther\FastCleanup\*.log"/>
+    <action command="delete" search="glob" path="%WinDir%\Panther\Rollback\*.txt"/>
+    <action command="delete" search="file" path="%WinDir%\Panther\UnattendGC\diagerr.xml"/>
+    <action command="delete" search="file" path="%WinDir%\Panther\UnattendGC\diagwrn.xml"/>
+    <action command="delete" search="file" path="%WinDir%\repair\setup.log"/>
+    <action command="delete" search="walk.all" path="%WinDir%\security\logs\"/>
+    <action command="delete" search="glob" path="%WinDir%\System32\catroot2\*.chk"/>
+    <action command="delete" search="glob" path="%WinDir%\System32\catroot2\*.log"/>
+    <action command="delete" search="glob" path="%WinDir%\System32\catroot2\*.jrs"/>
+    <action command="delete" search="glob" path="%WinDir%\System32\catroot2\*.txt"/>
+    <action command="delete" search="glob" path="%WinDir%\System32\LogFiles\HTTPERR\*.log"/>
+    <action command="delete" search="walk.all" path="%WinDir%\System32\LogFiles\Scm\"/>
+    <action command="delete" search="walk.all" path="%WinDir%\System32\LogFiles\setupcln\"/>
+    <action command="delete" search="walk.all" path="%WinDir%\System32\LogFiles\Srt\"/>
+    <action command="delete" search="walk.all" path="%WinDir%\System32\LogFiles\WMI\"/>
+    <action command="delete" search="glob" path="%WinDir%\System32\SleepStudy\*.etl"/>
+    <action command="delete" search="glob" path="%WinDir%\System32\SleepStudy\ScreenOn\*.etl"/>
+    <action command="delete" search="file" path="%WinDir%\System32\sysprep\Panther\IE\diagerr.xml"/>
+    <action command="delete" search="file" path="%WinDir%\System32\sysprep\Panther\IE\diagwrn.xml"/>
+    <action command="delete" search="glob" path="%WinDir%\System32\sysprep\Panther\IE\*.log"/>
+    <action command="delete" search="walk.all" path="%WinDir%\System32\WDI\*\snapshot.etl\"/>
+    <action command="delete" search="file" path="%WinDir%\System32\WDI\*\snapshot.etl"/>
+    <action command="delete" search="walk.all" path="%WinDir%\System32\WDI\LogFiles\StartupInfo\"/>
+    <action command="winreg" path="HKLM\Software\Microsoft\RADAR\HeapLeakDetection\DiagnosedApplications"/>
+    <action command="winreg" path="HKLM\Software\Microsoft\Tracing"/>
+    <action command="winreg" path="HKLM\Software\Wow6432Node\Microsoft\RADAR\HeapLeakDetection\DiagnosedApplications"/>
+    <action command="winreg" path="HKLM\Software\Wow6432Node\Microsoft\Tracing"/>
+    <!-- Finish! -->
+    <!-- Logs to delete in Windows, taken from:
+    WinApp2.ini, [Windows Logs Extras *], Version 190312, by Tobias
+    Start: -->
+    <action command="delete" search="file" path="%WinDir%\INF\setupapi.app.log"/>
+    <action command="delete" search="file" path="%WinDir%\INF\setupapi.dev.log"/>
+    <action command="delete" search="walk.files" path="%WinDir%\Logs\" regex="\.[Ll][Oo][Gg]$"/>
+    <action command="delete" search="file" path="%WinDir%\Performance\Winsat\winsat.log"/>
+    <action command="delete" search="glob" path="%WinDir%\SoftwareDistribution\*.log"/>
+    <!-- Finish! -->
   </option>
   <option id="backups">
     <label>Backup files</label>
@@ -139,21 +201,24 @@
   <option id="chkdsk">
     <label>Chkdsk files</label>
     <description>Delete the files</description>
-    <action command="delete" search="walk.files" path="%SystemDrive%\File*.chk"/>
     <action command="delete" search="walk.all" path="%SystemDrive%\System Volume Information\Chkdsk\"/>
-    <action command="delete" search="file" path="%SystemDrive%\System Volume Information\Chkdsk\"/>
+    <action command="delete" search="file" path="%SystemDrive%\System Volume Information\Chkdsk"/>
+    <action command="delete" search="glob" path="%SystemDrive%\File*.chk"/>
   </option>
   <option id="wer">
     <label>Windows Error Reporting</label>
     <description>Delete the files</description>
+    <!-- WER in %AllUsersProfile%: -->
     <action command="delete" search="walk.all" path="%AllUsersProfile%\Microsoft\Windows\WER\ReportArchive\"/>
     <action command="delete" search="walk.all" path="%AllUsersProfile%\Microsoft\Windows\WER\ReportQueue\"/>
     <action command="delete" search="walk.all" path="%AllUsersProfile%\Microsoft\Windows\WER\Temp\"/>
+    <!-- In %LocalAppData% we delete "\Microsoft\Windows\WER\ERC\" - does this folder exist in %AllUsersProfile%, too? -->
     <!--
     As we want to delete the WER, why don't we do the following: (Tobias)
     <action command="delete" search="walk.all" path="%AllUsersProfile%\Microsoft\Windows\WER\"/>
     <action command="delete" search="file" path="%AllUsersProfile%\Microsoft\Windows\WER\"/>
     -->
+    <!-- WER in %LocalAppData%: -->
     <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Windows\WER\ReportArchive\"/>
     <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Windows\WER\ReportQueue\"/>
     <action command="delete" search="walk.all" path="%LocalAppData%\Microsoft\Windows\WER\Temp\"/>
@@ -173,16 +238,19 @@
     <action command="winreg" path="HKLM\Software\Microsoft\Windows\Windows Error Reporting\Debug" name="StoreLocation"/>
     <action command="winreg" path="HKU\.DEFAULT\Software\Microsoft\Windows\Windows Error Reporting\Debug" name="StoreLocation"/>
     <!-- WER file in the temp folder: -->
+    <!--
     <action command="delete" search="file" path="%Temp%\WERFAB3.tmp.WERInternalMetadata.xml"/>
+    -->
+    <action command="delete" search="glob" path="%Temp%\WER*"/>
     <!--
     Windows Error Reporting, HEAP-Dumps:
-    <action command="delete" search="walk.files" path="%WinDir%\Temp\WER*.hdmp"/>
+    <action command="delete" search="glob" path="%WinDir%\Temp\WER*.hdmp"/>
     -->
     <!--
     Windows Error Reporting, Mini-Dumps:
-    <action command="delete" search="walk.files" path="%WinDir%\Temp\WER*.mdmp"/>
+    <action command="delete" search="glob" path="%WinDir%\Temp\WER*.mdmp"/>
     -->
-    <action command="delete" search="walk.files" path="%WinDir%\Temp\WER*"/>
+    <action command="delete" search="glob" path="%WinDir%\Temp\WER*"/>
     <!-- Logs to delete in Windows, taken from:
     https://github.com/bleachbit/bleachbit/blob/4bd296808a6342a8d80f169adce35216a3330cd0/bleachbit/Cleaner.py#L400
     Start: -->
@@ -190,10 +258,37 @@
     <!-- Already done above:
     <action command="delete" search="walk.files" path="%LocalAppData%\Microsoft\Windows\WER\ReportArchive\*\*"/>
     <action command="delete" search="walk.files" path="%LocalAppData%\Microsoft\Windows\WER\ReportQueue\*\*"/>
-    -->
+    ...done as %AllUsersProfile%...
     <action command="delete" search="walk.files" path="%ProgramData%\Microsoft\Windows\WER\ReportArchive\*\*"/>
     <action command="delete" search="walk.files" path="%ProgramData%\Microsoft\Windows\WER\ReportQueue\*\*"/>
+    -->
     <action command="delete" search="file" path="%WinDir%\pchealth\helpctr\Logs\hcupdate.log"/>
+    <!-- End! -->
+    <!-- WER to delete in Windows, taken from:
+    WinApp2.ini, [Windows Error Reporting *], Version 190312, by Tobias
+    Start: -->
+    <!-- Was...
+    <action command="delete" search="walk.files" path="%LocalAppData%\PCHealth\ErrorRep\QSignoff\"/>
+    ...and is now... -->
+    <action command="delete" search="walk.all" path="%LocalAppData%\PCHealth\ErrorRep\"/>
+    <!-- Why? See next line! Tobias. -->
+    <action command="delete" search="walk.all" path="%WinDir%\pchealth\ERRORREP\"/>
+    <action command="delete" search="glob" path="%WinDir%\pchealth\helpctr\DataColl\*.xml"/>
+    <action command="delete" search="walk.all" path="%WinDir%\pchealth\helpctr\OfflineCache\"/>
+    <!-- Crash Dumps are deleted by now with windows_memory_dumps.xml!
+    <action command="delete" search="glob" path="%WinDir%\System32\config\systemprofile\AppData\Local\CrashDumps\*.dmp"/>
+    <action command="delete" search="glob" path="%WinDir%\System32\config\systemprofile\Local Settings\Application Data\CrashDumps\*.dmp"/>
+    <action command="delete" search="glob" path="%WinDir%\SysWOW64\config\systemprofile\AppData\Local\CrashDumps\*.dmp"/>
+    <action command="delete" search="glob" path="%WinDir%\SysWOW64\config\systemprofile\Local Settings\Application Data\CrashDumps\*.dmp"/>
+    -->
+    <action command="winreg" path="HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelReports" name="LastFullLiveReport"/>
+    <action command="winreg" path="HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelReports\win32k.sys"/>
+    <action command="winreg" path="HKLM\Software\Microsoft\Windows\Windows Error Reporting\LiveKernelReports\win32k.sys"/>
+    <!-- Deleted by now with windows_memory_dumps.xml:
+    <action command="winreg" path="HKLM\Software\Microsoft\Windows\Windows Error Reporting\LocalDumps"/>
+    -->
+    <action command="winreg" path="HKU\.DEFAULT\Software\Microsoft\Windows\Windows Error Reporting\Debug" name="StoreLocation"/>
+    <!-- End! -->
   </option>
   <option id="shadow_copies">
     <label>Shadow copies</label>
@@ -244,8 +339,193 @@
   </option>
   <option id="muicache">
     <label>MUICache</label>
-    <description>Delete the cache</description>
+    <description>Delete the list of previously run applications</description>
+    <!-- MUICache to delete in Windows, taken from:
+    https://github.com/bleachbit/bleachbit/blob/4bd296808a6342a8d80f169adce35216a3330cd0/bleachbit/Cleaner.py#L575
+    Start: -->
     <action command="winreg" path="HKCU\Software\Microsoft\Windows\ShellNoRoam\MUICache"/>
     <action command="winreg" path="HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\MuiCache"/>
+    <!-- End! -->
+    <!-- MUICache to delete in Windows, taken from:
+    WinApp2.ini, [Windows MUICache *], Version 190312, by Tobias
+    Start: -->
+    <action command="winreg" path="HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\MuiCache"/>
+    <action command="winreg" path="HKCU\Software\Microsoft\Windows\Shell\MUICache"/>
+    <action command="winreg" path="HKCU\Software\Microsoft\Windows\ShellNoRoam\MUICache"/>
+    <!-- Finish! -->
+  </option>
+  <option id="memory_dumps">
+    <label>Windows Memory Dumps</label>
+    <description>Delete the files</description>
+    <action command="delete" search="file" path="%WinDir%\MEMORY.DMP"/>
+    <action command="delete" search="walk.all" path="%WinDir%\Minidump\"/>
+    <action command="delete" search="walk.all" path="%WinDir%\System32\config\systemprofile\AppData\Local\CrashDumps\"/>
+    <action command="delete" search="walk.all" path="%WinDir%\System32\config\systemprofile\Local Settings\Application Data\CrashDumps\"/>
+    <action command="delete" search="walk.all" path="%WinDir%\SysWOW64\config\systemprofile\AppData\Local\CrashDumps\"/>
+    <action command="delete" search="walk.all" path="%WinDir%\SysWOW64\config\systemprofile\Local Settings\Application Data\CrashDumps\"/>
+    <action command="delete" search="walk.all" path="%WinDir%\LiveKernelReports\WATCHDOG\"/>
+    <action command="delete" search="walk.all" path="%LocalAppData%\CrashDumps\"/>
+    <!-- Windows Error Reporting, HEAP-Dumps: -->
+    <action command="delete" search="glob" path="%WinDir%\Temp\WER*.hdmp"/>
+    <!-- Windows Error Reporting, Mini-Dumps: -->
+    <action command="delete" search="glob" path="%WinDir%\Temp\WER*.mdmp"/>
+    <!-- Dr Watson, user.dmp: -->
+    <action command="delete" search="file" path="%AllUsersProfile%\Application Data\Microsoft\Dr Watson\user.dmp"/>
+    <!-- Windows Error Reporting, LocalDumps, saved in Registry: -->
+    <action command="winreg" path="HKLM\Software\Microsoft\Windows\Windows Error Reporting\LocalDumps"/>
+  </option>
+  <option id="windows_shellbags">
+    <label>Windows Shellbags</label>
+    <description>Delete the data</description>
+    <warning>This will reset folders size, view, icon or position settings to default and remove traces of the folders that do not exist anymore.</warning>
+    <!-- What we need to delete: (http://support.microsoft.com/kb/813711) -->
+    <action command="winreg" path="HKCU\Software\Microsoft\Windows\Shell\Bags"/>
+    <action command="winreg" path="HKCU\Software\Microsoft\Windows\Shell\BagMRU"/>
+    <action command="winreg" path="HKCU\Software\Microsoft\Windows\ShellNoRoam\Bags"/>
+    <action command="winreg" path="HKCU\Software\Microsoft\Windows\ShellNoRoam\BagMRU"/>
+    <action command="winreg" path="HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags"/>
+    <action command="winreg" path="HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU"/>
+    <action command="winreg" path="HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU" name="0"/>
+    <action command="winreg" path="HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU" name="1"/>
+    <action command="winreg" path="HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU" name="2"/>
+    <action command="winreg" path="HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU" name="3"/>
+    <!-- And on 64-bit systems additionally: -->
+    <action command="winreg" path="HKCU\Software\Classes\Wow6432Node\Local Settings\Software\Microsoft\Windows\Shell\Bags"/>
+    <action command="winreg" path="HKCU\Software\Classes\Wow6432Node\Local Settings\Software\Microsoft\Windows\Shell\BagMRU"/>
   </option>
 </cleaner>
+<!--
+Start "Trimmer Block"...
+@trimmercheckedversion: 190312
+@trimmercheckedby: https://github.com/Tobias-B-Besemer
+[Windows Chkdsk File Fragments Extras *]
+LangSecRef=3025
+Detect=HKCU\Software\Microsoft\Windows
+Default=False
+FileKey1=%SystemDrive%|File*.chk
+...end "Trimmer Block".
+-->
+<!--
+Start "Trimmer Block"...
+@trimmercheckedversion: 190312
+@trimmercheckedby: https://github.com/Tobias-B-Besemer
+[Windows Error Reporting *]
+LangSecRef=3025
+Detect=HKCU\Software\Microsoft\Windows\Windows Error Reporting
+Default=False
+FileKey1=%LocalAppData%\PCHealth\ErrorRep\QSignoff|*.*
+FileKey2=%WinDir%\pchealth\ERRORREP|*.*|RECURSE
+FileKey3=%WinDir%\pchealth\helpctr\DataColl|*.xml
+FileKey4=%WinDir%\pchealth\helpctr\OfflineCache|*.*|RECURSE
+FileKey5=%WinDir%\System32\config\systemprofile\AppData\Local\CrashDumps|*.dmp
+FileKey6=%WinDir%\System32\config\systemprofile\Local Settings\Application Data\CrashDumps|*.dmp
+FileKey7=%WinDir%\SysWOW64\config\systemprofile\AppData\Local\CrashDumps|*.dmp
+FileKey8=%WinDir%\SysWOW64\config\systemprofile\Local Settings\Application Data\CrashDumps|*.dmp
+RegKey1=HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelReports|LastFullLiveReport
+RegKey2=HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelReports\win32k.sys
+RegKey3=HKLM\Software\Microsoft\Windows\Windows Error Reporting\LiveKernelReports\win32k.sys
+RegKey4=HKLM\Software\Microsoft\Windows\Windows Error Reporting\LocalDumps
+RegKey5=HKU\.DEFAULT\Software\Microsoft\Windows\Windows Error Reporting\Debug|StoreLocation
+...end "Trimmer Block".
+-->
+<!--
+Start "Trimmer Block"...
+@trimmercheckedversion: 190312
+@trimmercheckedby: https://github.com/Tobias-B-Besemer
+[Windows Logs *]
+LangSecRef=3025
+Detect=HKLM\Software\Microsoft\Windows
+Default=False
+FileKey1=%CommonAppData%\Microsoft\Network\Downloader|*.*|RECURSE
+FileKey2=%CommonAppData%\Microsoft\Windows Security Health\Logs|*.*|RECURSE
+FileKey3=%CommonAppData%\USOShared\Logs|*.*|RECURSE
+FileKey4=%LocalAppData%\ConnectedDevicesPlatform|*.log
+FileKey5=%LocalAppData%\Diagnostics|*.*|RECURSE
+FileKey6=%ProgramFiles%\UNP\Logs|*.*
+FileKey7=%SystemDrive%\PerfLogs\System\Diagnostics|*.*|RECURSE
+FileKey8=%SystemDrive%\PerfLogs\System\Performance|*.*|RECURSE
+FileKey9=%WinDir%\debug\WIA|*.log
+FileKey10=%WinDir%\inf|*.log*
+FileKey11=%WinDir%\Logs\CBS|*.cab
+FileKey12=%WinDir%\Logs\dosvc|*.*|RECURSE
+FileKey13=%WinDir%\Logs\NetSetup|*.*|RECURSE
+FileKey14=%WinDir%\Logs\SIH|*.*|RECURSE
+FileKey15=%WinDir%\Logs\WindowsBackup|*.etl
+FileKey16=%WinDir%\Panther|cbs.log;DDACLSys.log;miglog.xml;Migrep.html;PostGatherPnPList.log;PreGatherPnPList.log
+FileKey17=%WinDir%\Panther\FastCleanup|*.log
+FileKey18=%WinDir%\Panther\Rollback|*.txt
+FileKey19=%WinDir%\Panther\UnattendGC|diagerr.xml;diagwrn.xml
+FileKey20=%WinDir%\repair|setup.log
+FileKey21=%WinDir%\security\logs|*.*|RECURSE
+FileKey22=%WinDir%\System32\catroot2|*.chk;*.log;*.jrs;*.txt
+FileKey23=%WinDir%\System32\LogFiles\HTTPERR|*.log
+FileKey24=%WinDir%\System32\LogFiles\Scm|*.*|RECURSE
+FileKey25=%WinDir%\System32\LogFiles\setupcln|*.*|RECURSE
+FileKey26=%WinDir%\System32\LogFiles\Srt|*.*|RECURSE
+FileKey27=%WinDir%\System32\LogFiles\WMI|*.*|RECURSE
+FileKey28=%WinDir%\System32\SleepStudy|*.etl
+FileKey29=%WinDir%\System32\SleepStudy\ScreenOn|*.etl
+FileKey30=%WinDir%\System32\sysprep\Panther\IE|diagerr.xml;diagwrn.xml;*.log
+FileKey31=%WinDir%\System32\WDI\*|snapshot.etl|REMOVESELF
+FileKey32=%WinDir%\System32\WDI\LogFiles\StartupInfo|*.*|RECURSE
+RegKey1=HKLM\Software\Microsoft\RADAR\HeapLeakDetection\DiagnosedApplications
+RegKey2=HKLM\Software\Microsoft\Tracing
+RegKey3=HKLM\Software\Wow6432Node\Microsoft\RADAR\HeapLeakDetection\DiagnosedApplications
+RegKey4=HKLM\Software\Wow6432Node\Microsoft\Tracing
+...end "Trimmer Block".
+-->
+<!--
+Start "Trimmer Block"...
+@trimmercheckedversion: 190312
+@trimmercheckedby: https://github.com/Tobias-B-Besemer
+[Windows Logs Extras *]
+LangSecRef=3025
+Detect=HKCU\Software\Microsoft\Windows
+Default=False
+FileKey1=%WinDir%\INF|setupapi.app.log;setupapi.dev.log
+FileKey2=%WinDir%\Logs|*.log|RECURSE
+FileKey3=%WinDir%\Performance\Winsat|winsat.log
+FileKey4=%WinDir%\SoftwareDistribution|*.log
+...end "Trimmer Block".
+-->
+<!--
+Start "Trimmer Block"...
+@trimmercheckedversion: 190312
+@trimmercheckedby: https://github.com/Tobias-B-Besemer
+[Windows ShellBags *]
+LangSecRef=3025
+Detect=HKCU\Software\Microsoft\Windows
+Default=False
+Warning=This will reset folders size, view, icon or position settings to default and remove traces of the folders that do not exist anymore.
+RegKey1=HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU
+RegKey2=HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags
+RegKey3=HKCU\Software\Microsoft\Windows\Shell\BagMRU
+RegKey4=HKCU\Software\Microsoft\Windows\Shell\Bags
+RegKey5=HKCU\Software\Microsoft\Windows\ShellNoRoam\BagMRU
+RegKey6=HKCU\Software\Microsoft\Windows\ShellNoRoam\Bags
+ExcludeKey1=REG|HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\AllFolders
+ExcludeKey2=REG|HKCU\Software\Microsoft\Windows\Shell\Bags\1\Desktop
+ExcludeKey3=REG|HKCU\Software\Microsoft\Windows\Shell\Bags\AllFolders
+ExcludeKey4=REG|HKCU\Software\Microsoft\Windows\ShellNoRoam\Bags\1\Desktop
+ExcludeKey5=REG|HKCU\Software\Microsoft\Windows\ShellNoRoam\Bags\AllFolders
+...end "Trimmer Block".
+-->
+<!--
+Developer Notes:
+CleanerML don't support ATM "ExcludeKey"s!
+The ExcludeKeys are not noted in the Micrsoft documentation, too!
+Tobias.
+-->
+<!--
+Start "Trimmer Block"...
+@trimmercheckedversion: 190312
+@trimmercheckedby: https://github.com/Tobias-B-Besemer
+[Windows MUICache *]
+LangSecRef=3025
+Detect=HKCU\Software\Microsoft\Windows
+Default=False
+RegKey1=HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\MuiCache
+RegKey2=HKCU\Software\Microsoft\Windows\Shell\MUICache
+RegKey3=HKCU\Software\Microsoft\Windows\ShellNoRoam\MUICache
+...end "Trimmer Block".
+-->
