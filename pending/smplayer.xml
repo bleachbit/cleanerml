@@ -21,9 +21,9 @@
     @app SMPlayer
     @url https://www.smplayer.info/
     @os Windows, Linux
-    @cleanerversion v1.5.0
-    @cleanerdate 2019-03-15
-    @cleanerby xr09 & https://github.com/Tobias-B-Besemer
+    @cleanerversion v2.1.0
+    @cleanerdate 2019-03-29
+    @cleanerby Manuel E. Gutierrez (xr09) (2013-09-17) & Tobias B. Besemer (2018-12-25 - 2019-03-29)
     @tested ok v18.10.0, Windows 7
     @testeddate 2019-03-10 (... with an old version of the cleaner!)
     @testedby https://github.com/Tobias-B-Besemer
@@ -36,11 +36,11 @@
   <var name="profile">
     <value os="windows">%LocalAppData%\SMPlayer2</value>
     <value os="windows">%UserProfile%\.smplayer</value>
-    <value os="linux">~/.config/smplayer</value>
+    <value os="linux">$XDG_CONFIG_HOME/smplayer</value>
   </var>
   <var name="profile_smtube">
     <value os="windows">%UserProfile%\.smtube</value>
-    <value os="linux">~/.config/smtube</value>
+    <value os="linux">$XDG_CONFIG_HOME/smtube</value>
   </var>
   <!-- That we don't need so much translation, we combine all in "History"! Tobias. -->
   <option id="history">
