@@ -22,8 +22,8 @@
     @url https://www.adobe.com/
     @os Windows, Linux
     @cleanerversion v0.5.0
-    @cleanerdate 2019-03-30
-    @cleanerby cfoellmann (2015-03-14) & Tobias B. Besemer (2019-03-26 - 2019-03-30)
+    @cleanerdate 2019-03-31
+    @cleanerby cfoellmann (2015-03-14) & Tobias B. Besemer (2019-03-26 - 2019-03-31)
     @tested ok v???, Windows ???
     @testeddate ??? (... with an old version of the cleaner!)
     @testedby ???
@@ -127,7 +127,9 @@
     <action command="delete" search="walk.all" path="%ProgramData%\Adobe\SLStore\"/>
     <action command="delete" search="file" path="%ProgramData%\Adobe\SLStore"/>
     -->
+  <!--
   </option>
+  -->
 </cleaner>
 <!--
 Start "Trimmer Block"...
