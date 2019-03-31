@@ -21,9 +21,9 @@
     @app Microsoft Windows
     @url https://www.microsoft.com/en-us/windows
     @os Windows
-    @cleanerversion v1.9.10
-    @cleanerdate 2019-03-23
-    @cleanerby https://github.com/Tobias-B-Besemer (2019-02-26 - 2019-03-23)
+    @cleanerversion v1.9.50
+    @cleanerdate 2019-03-31
+    @cleanerby https://github.com/Tobias-B-Besemer (2019-02-26 - 2019-03-31)
     @tested ok v???, Windows 7
     @testeddate 2019-03-10 (... with an old version of the cleaner!)
     @testedby https://github.com/Tobias-B-Besemer
@@ -37,6 +37,24 @@
 <cleaner id="windows" os="windows">
   <label>Windows</label>
   <description>Operating system</description>
+  <var name="ProgramFiles">
+    <!--
+    Windows itself changes %ProgramFiles% for 32-bit processes running in a 64-bit operating system as documented here:
+    https://docs.microsoft.com/en-us/windows/desktop/winprog64/wow64-implementation-details
+    ...so we used "%SystemDrive%\Program Files\" & "%SystemDrive%\Program Files (x86)\"...
+    <value os="windows">%SystemDrive%\Program Files\[ProgramName]</value>
+    <value os="windows">%SystemDrive%\Program Files (x86)\[ProgramName]</value>
+    ...but %ProgramFiles% & %ProgramFiles(x86)% don't need to be on %SystemDrive% !!!
+    So we use: -->
+    <value os="windows">%ProgramW6432%</value>
+    <!-- ...that BleachBit as 32-bit program can find "\Program Files\XYZ" and... -->
+    <value os="windows">%ProgramFiles(x86)%</value>
+    <!-- ...that BleachBit can find "\Program Files (x86)\XYZ" and... -->
+    <value os="windows">%ProgramFiles%</value>
+    <!-- ...that BleachBit can find "\Program Files\XYZ" on a x86 system...
+    ...and later, as 64-bit program, "\Program Files\XYZ" (x64)!
+    So all cases solved! ;-) Tobias. -->
+  </var>
   <option id="temp">
     <!-- I don't like it, but lets delete the Windows temp folder with the temp folder of the user together. Tobias.
     Was:
@@ -110,7 +128,7 @@
     <action command="delete" search="walk.all" path="%CommonAppData%\USOShared\Logs\"/>
     <action command="delete" search="glob" path="%LocalAppData%\ConnectedDevicesPlatform\*.log"/>
     <action command="delete" search="walk.all" path="%LocalAppData%\Diagnostics\"/>
-    <action command="delete" search="walk.all" path="%ProgramFiles%\UNP\Logs\"/>
+    <action command="delete" search="walk.all" path="$$ProgramFiles$$\UNP\Logs\"/>
     <action command="delete" search="walk.all" path="%SystemDrive%\PerfLogs\System\Diagnostics\"/>
     <action command="delete" search="walk.all" path="%SystemDrive%\PerfLogs\System\Performance\"/>
     <action command="delete" search="glob" path="%WinDir%\debug\WIA\*.log"/>
@@ -196,7 +214,9 @@
     <action command="delete" search="file" path="%UserProfile%\Desktop\desktop.ini"/>
     <action command="delete" search="file" path="%SystemDrive%\BOOTSECT.BAK"/>
     <action command="delete" search="walk.all" path="%SystemDrive%\Config.Msi\"/>
-    <action command="delete" search="file" path="%SystemDrive%\Config.Msi\"/>
+    <action command="delete" search="file" path="%SystemDrive%\Config.Msi"/>
+    <!-- Empty folder on the test machine! Folder date: 2009-07-14 - Lets delete them if he is empty... -->
+    <action command="delete" search="file" path="$$ProgramFiles$$\Uninstall Information"/>
   </option>
   <option id="chkdsk">
     <label>Chkdsk files</label>
@@ -292,23 +312,52 @@
   </option>
   <option id="shadow_copies">
     <label>Shadow copies</label>
-    <description>Delete all shadow copies on C:</description>
+    <description>Delete the files</description>
     <warning>Use the option only if you know what you do!</warning>
-    <action command="process" cmd="vssadmin.exe delete shadows /for=c: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=C: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=D: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=E: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=F: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=G: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=H: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=I: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=J: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=K: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=L: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=M: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=N: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=O: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=P: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=Q: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=R: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=S: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=T: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=U: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=V: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=W: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=X: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=Y: /all"/>
+    <action command="process" cmd="vssadmin.exe delete shadows /for=Z: /all"/>
   </option>
+  <!-- Lets make this option to a comment for the moment...
   <option id="recycle_bin">
     <label>Recycle bin</label>
     <description>Delete the recycle bin on drive C: from all user accounts</description>
     <warning>Use the option only if you know what you do!</warning>
+  -->
     <!-- This is how it was documented, but don't work, because "rd" is no standalone app! -->
     <!-- <action command="process" cmd="cmd.exe /c rd /s c:\$Recycle.Bin"/> -->
     <!-- Windows 7 and above: -->
+  <!--
     <action command="delete" search="walk.all" path="%SystemDrive%\$Recycle.Bin"/>
     <action command="delete" search="file" path="%SystemDrive%\$Recycle.Bin"/>
+  -->
     <!-- Windows Vista and earlier: -->
+  <!--
     <action command="delete" search="walk.all" path="%SystemDrive%\RECYCLER"/>
     <action command="delete" search="file" path="%SystemDrive%\RECYCLER"/>
   </option>
+  -->
   <option id="cache">
     <label>Cache</label>
     <description>Delete the cache</description>
