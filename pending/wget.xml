@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!--
 
     BleachBit
-    Copyright (C) 2010-2014 Andrew Ziem
-    http://www.bleachbit.org
-
-    ZSH cleaner
-    Copyright (C) 2010-2014 Andrew Ziem
+    Copyright (C) 2008-2019 Andrew Ziem
+    https://www.bleachbit.org
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -22,6 +20,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
+
 <cleaner id="wget" os="linux">
   <label>Wget</label>
   <option id="history">
