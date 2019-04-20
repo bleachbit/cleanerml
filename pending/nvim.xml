@@ -21,18 +21,18 @@
 
 -->
 
-<cleaner id="nvim">
+<cleaner id="nvim" os="linux">
   <label>Neovim</label>
   <description>Editor</description>
   <option id="history">
     <label>History</label>
     <description>Delete netrw directory history, command history</description>
-    <action search="file" command="delete" path="~/.config/nvim/.netrwhist"/>
-    <action search="file" command="delete" path="~/.local/share/nvim/shada/main.shada"/>
+    <action search="file" command="delete" path="$XDG_CONFIG_HOME/nvim/.netrwhist"/>
+    <action search="file" command="delete" path="$XDG_DATA_HOME/nvim/shada/main.shada"/>
   </option>
   <option id="swap">
     <label>Swap</label>
     <description>Delete swap</description>
-    <action search="glob" command="delete" path="~/.local/share/nvim/swap/*"/>
+    <action search="glob" command="delete" path="$XDG_DATA_HOME/nvim/swap/*"/>
   </option>
 </cleaner>
