@@ -27,16 +27,16 @@
   <option id="bookmarks">
     <label>Bookmarks</label>
     <description>Delete the bookmark history</description>
-    <action search="file" command="delete" path="~/.local/share/zathura/bookmarks"/>
+    <action search="file" command="delete" path="$XDG_DATA_HOME/zathura/bookmarks"/>
   </option>
   <option id="history">
     <label>History</label>
     <description>Delete document history</description>
-    <action search="file" command="delete" path="~/.local/share/zathura/history"/>
+    <action search="file" command="delete" path="$XDG_DATA_HOME/zathura/history"/>
   </option>
   <option id="input-history">
     <label>Input</label>
     <description>Delete the input command history</description>
-    <action search="file" command="delete" path="~/.local/share/zathura/input-history"/>
+    <action search="file" command="delete" path="$XDG_DATA_HOME/zathura/input-history"/>
   </option>
 </cleaner>
