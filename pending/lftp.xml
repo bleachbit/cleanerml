@@ -19,22 +19,22 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<cleaner id="lftp">
-  <label>Lftp</label>
+<cleaner id="lftp" os="linux">
+  <label>LFTP</label>
   <description>File transfer client</description>
   <option id="cwd_history">
     <label>cwd_history</label>
     <description>Delete the working directory history</description>
-    <action command="delete" search="file" path="~/.local/share/lftp/cwd_history"/>
+    <action command="delete" search="file" path="$XDG_DATA_HOME/lftp/cwd_history"/>
   </option>
   <option id="rl_history">
     <label>rl_history</label>
     <description>Delete the rl history</description>
-    <action command="delete" search="file" path="~/.local/share/lftp/rl_history"/>
+    <action command="delete" search="file" path="$XDG_DATA_HOME/lftp/rl_history"/>
   </option>
   <option id="transfer_log">
     <label>transfer_log</label>
     <description>Delete the transfer log</description>
-    <action command="delete" search="file" path="~/.local/share/lftp/transfer_log"/>
+    <action command="delete" search="file" path="$XDG_DATA_HOME/lftp/transfer_log"/>
   </option>
 </cleaner>
