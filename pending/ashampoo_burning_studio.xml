@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2008-2019 Andrew Ziem
+    https://www.bleachbit.org
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+    @app Ashampoo Burning Studio
+    @url https://www.ashampoo.com/en/eur/pca/6/burning-software
+    @os Windows
+    @cleanerversion v1.1.0
+    @cleanerdate 2019-03-30
+    @cleanerby https://github.com/Tobias-B-Besemer (2019-03-10 - 2019-03-30)
+    @tested ok v6, Windows 7
+    @testeddate 2019-03-10 (... with an old version of the cleaner!)
+    @testedby https://github.com/Tobias-B-Besemer
+    @note That we don't need so much translation, we combine some options in "History"! Tobias.
+
+-->
+<cleaner id="ashampoo_burning_studio" os="windows">
+  <label>Ashampoo Burning Studio</label>
+  <description>Burning software</description>
+  <!-- That we don't need so much translation, we combine some options in "History"! Tobias.
+  Is now: -->
+  <option id="history">
+    <label>History</label>
+    <description>Delete the usage history</description>
+  <!-- Was:
+  <option id="adddialogs">
+    <label>AddDialogs</label>
+    <description>Delete the Paths in the Add-Dialogs</description>
+  -->
+    <!-- Ashampoo Burning Studio FREE: -->
+    <!-- https://www.ashampoo.com/en/eur/pin/7110/burning-software/burning-studio-free -->
+    <!-- ??? Can't see it !!! Maybe I add it later... Tobias. -->
+    <!-- Ashampoo Burning Studio 5: -->
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 5\Burn Image Project\SelectImage"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 5\Data Disc Project\AddDialog"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 5\Data Disc Project\DumpImage"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 5\Unknown Project\AddDialog"/>
+    <!-- Ashampoo Burning Studio 6 Free: -->
+    <!-- https://www.ashampoo.com/en/eur/pin/0710/burning-software/Ashampoo-Burning-Studio-6-FREE -->
+    <!-- Was...
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 6\Burn Image Project\AddDialog" name="InitialDirectory"/>
+    ...but WinApp2.ini deletes all: -->
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 6\Burn Image Project\AddDialog"/>
+    <!-- Should be...
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 6\Data Disc Project\AddDialog" name="InitialDirectory"/>
+    ...but WinApp2.ini deletes all: -->
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 6\Data Disc Project\AddDialog"/>
+    <!-- Was...
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 6\Dump Image Project\AddDialog" name="InitialDirectory"/>
+    ...but WinApp2.ini deletes all: -->
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 6\Dump Image Project\AddDialog"/>
+    <!-- Was...
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 6\Unknown Project\AddDialog" name="InitialDirectory"/>
+    ...but WinApp2.ini deletes all: -->
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 6\Unknown Project\AddDialog"/>
+    <!-- Was...
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 6\Burn Image Project\SelectImage" name="ImagePath"/>
+    ...but WinApp2.ini deletes all: -->
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 6\Burn Image Project\SelectImage"/>
+    <!-- Was...
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 6\Dump Image Project\DumpImage" name="ImagePath"/>
+    ...but WinApp2.ini deletes all: -->
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 6\Dump Image Project\DumpImage"/>
+    <!-- Ashampoo Burning Studio 7: -->
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 7\Burn Image Project\SelectImage"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 7\Data Disc Project\AddDialog"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 7\Unknown Project\AddDialog"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 8\Data Disc Project\AddDialog"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 14\Data Disc Project\SaveDialog_AddFilesAndDirs" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 14\tempFiles"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 15\Data Disc Project\SaveDialog_AddFilesAndDirs" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 15\tempFiles"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\Audio Disc Project\SaveDialog_CPlaylistDlgEx" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\Backup Project\BackupOptions" name="CustomLocation"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\BDMV Disc Project\SelectBDMVFolder" name="BdmvPath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\Browse Image Project\BrowseImageFile" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\Browse Image Project\SaveDialog_SelectImageBrowse" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\Burn Image Project\SaveDialog_SelectImageBrowse" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\Burn Image Project\SelectImage" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\Data Disc Project\DumpImage" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\Data Disc Project\SaveDialog_AddFilesAndDirs" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\DVD-Video Disc Project\MoviesPage" name="Path"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\DVD-Video Disc Project\SaveDialog_authed.CMoviesPage.Movies" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\Logs"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\tempFiles"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\Unknown Project"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\VCD Project\SaveDialog_OnAddMovies" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\VIDEO_TS Disc Project\DumpImage" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\VIDEO_TS Disc Project\SelectVideoTSFolder" name="VideoTSPath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\Audio Disc Project\SaveDialog_CPlaylistDlgEx" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\Backup Project\BackupOptions" name="CustomLocation"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\BDMV Disc Project\SelectBDMVFolder" name="BdmvPath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\Browse Image Project\BrowseImageFile" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\Browse Image Project\SaveDialog_SelectImageBrowse" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\Burn Image Project\SaveDialog_SelectImageBrowse" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\Burn Image Project\SelectImage" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\Data Disc Project\DumpImage" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\Data Disc Project\SaveDialog_AddFilesAndDirs" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\DVD-Video Disc Project\MoviesPage" name="Path"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\DVD-Video Disc Project\SaveDialog_authed.CMoviesPage.Movies" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\Logs"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\tempFiles"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\Unknown Project"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\VCD Project\SaveDialog_OnAddMovies" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\VIDEO_TS Disc Project\DumpImage" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\VIDEO_TS Disc Project\SelectVideoTSFolder" name="VideoTSPath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\Audio Disc Project\SaveDialog_CPlaylistDlgEx" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\Backup Project\BackupOptions" name="CustomLocation"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\BDMV Disc Project\SelectBDMVFolder" name="BdmvPath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\Browse Image Project\BrowseImageFile" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\Browse Image Project\SaveDialog_SelectImageBrowse" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\Burn Image Project\SaveDialog_SelectImageBrowse" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\Burn Image Project\SelectImage" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\Data Disc Project\DumpImage" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\Data Disc Project\SaveDialog_AddFilesAndDirs" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\DVD-Video Disc Project\MoviesPage" name="Path"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\DVD-Video Disc Project\SaveDialog_authed.CMoviesPage.Movies" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\Logs"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\tempFiles"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\Unknown Project"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\VCD Project\SaveDialog_OnAddMovies" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\VIDEO_TS Disc Project\DumpImage" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\VIDEO_TS Disc Project\SelectVideoTSFolder" name="VideoTSPath"/>
+    <!-- Ashampoo Burning Studio 20: -->
+    <!-- https://www.ashampoo.com/en/eur/pin/5510/burning-software/burning-studio-20 -->
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\Audio Disc Project\SaveDialog_CPlaylistDlgEx" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\Backup Project\BackupOptions" name="CustomLocation"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\BDMV Disc Project\SelectBDMVFolder" name="BdmvPath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\Browse Image Project\BrowseImageFile" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\Browse Image Project\SaveDialog_SelectImageBrowse" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\Burn Image Project\SaveDialog_SelectImageBrowse" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\Burn Image Project\SelectImage" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\Data Disc Project\DumpImage" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\Data Disc Project\SaveDialog_AddFilesAndDirs" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\DVD-Video Disc Project\MoviesPage" name="Path"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\DVD-Video Disc Project\SaveDialog_authed.CMoviesPage.Movies" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\Logs"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\tempFiles"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\Unknown Project"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\VCD Project\SaveDialog_OnAddMovies" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\VIDEO_TS Disc Project\DumpImage" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\VIDEO_TS Disc Project\SelectVideoTSFolder" name="VideoTSPath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2007\Burn Image Project\AddDialog"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2007\Data Disc Project\AddDialog"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2007\Dump Image Project\DumpImage"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2007\Unknown Project\AddDialog"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2016\Audio Disc Project\SaveDialog_CPlaylistDlgEx" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2016\Backup Project\BackupOptions" name="CustomLocation"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2016\Browse Image Project\BrowseImageFile" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2016\Browse Image Project\SaveDialog_SelectImageBrowse" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2016\Burn Image Project\SaveDialog_SelectImageBrowse" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2016\Burn Image Project\SelectImage" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2016\Data Disc Project\DumpImage" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2016\Data Disc Project\SaveDialog_AddFilesAndDirs" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2016\Logs"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2016\tempFiles"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2016\Unknown Project"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2016\VCD Project\SaveDialog_OnAddMovies" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2016\VIDEO_TS Disc Project\DumpImage" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2016\VIDEO_TS Disc Project\SelectVideoTSFolder" name="VideoTSPath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2017\Audio Disc Project\SaveDialog_CPlaylistDlgEx" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2017\Backup Project\BackupOptions" name="CustomLocation"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2017\Browse Image Project\BrowseImageFile" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2017\Browse Image Project\SaveDialog_SelectImageBrowse" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2017\Burn Image Project\SaveDialog_SelectImageBrowse" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2017\Burn Image Project\SelectImage" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2017\Data Disc Project\DumpImage" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2017\Data Disc Project\SaveDialog_AddFilesAndDirs" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2017\Logs"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2017\tempFiles"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2017\Unknown Project"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2017\VCD Project\SaveDialog_OnAddMovies" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2017\VIDEO_TS Disc Project\DumpImage" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2017\VIDEO_TS Disc Project\SelectVideoTSFolder" name="VideoTSPath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2018\Audio Disc Project\SaveDialog_CPlaylistDlgEx" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2018\Backup Project\BackupOptions" name="CustomLocation"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2018\Browse Image Project\BrowseImageFile" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2018\Browse Image Project\SaveDialog_SelectImageBrowse" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2018\Burn Image Project\SaveDialog_SelectImageBrowse" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2018\Burn Image Project\SelectImage" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2018\Data Disc Project\DumpImage" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2018\Data Disc Project\SaveDialog_AddFilesAndDirs" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2018\Logs"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2018\tempFiles"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2018\Unknown Project"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2018\VCD Project\SaveDialog_OnAddMovies" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2018\VIDEO_TS Disc Project\DumpImage" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2018\VIDEO_TS Disc Project\SelectVideoTSFolder" name="VideoTSPath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2019\Audio Disc Project\SaveDialog_CPlaylistDlgEx" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2019\Backup Project\BackupOptions" name="CustomLocation"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2019\Browse Image Project\BrowseImageFile" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2019\Browse Image Project\SaveDialog_SelectImageBrowse" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2019\Burn Image Project\SaveDialog_SelectImageBrowse" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2019\Burn Image Project\SelectImage" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2019\Data Disc Project\DumpImage" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2019\Data Disc Project\SaveDialog_AddFilesAndDirs" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2019\Logs"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2019\tempFiles"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2019\Unknown Project"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2019\VCD Project\SaveDialog_OnAddMovies" name="InitialDirectory"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2019\VIDEO_TS Disc Project\DumpImage" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 2019\VIDEO_TS Disc Project\SelectVideoTSFolder" name="VideoTSPath"/>
+  <!-- And was:
+  </option>
+  <option id="images">
+    <label>Last Images</label>
+    <description>Delete the data</description>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 6\Burn Image Project\SelectImage" name="ImagePath"/>
+    <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 6\Dump Image Project\DumpImage" name="ImagePath"/>
+  -->
+  </option>
+  <option id="logs">
+    <label>Logs</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="walk.all" path="%AppData%\Ashampoo\Ashampoo Burning Studio *\Logs\"/>
+    <!-- Delete *.log recursive: -->
+    <action command="delete" search="walk.files" path="%AppData%\Ashampoo\" regex="\.[Ll][Oo][Gg]$"/>
+  </option>
+</cleaner>
+<!--
+Additionaly WinApp2.ini have this rules...
+FileKey1=%AppData%\Ashampoo|*.txt;*.xml|RECURSE
+FileKey2=%LocalAppData%\Ashampoo\BaNT|*.*|RECURSE
+...but I preffer to don't do them by now! Tobias.
+-->
+<!--
+Start "Trimmer Block"...
+@trimmercheckedversion: 190312
+@trimmercheckedby: https://github.com/Tobias-B-Besemer
+[Ashampoo Burning Studio *]
+LangSecRef=3021
+Detect1=HKCU\Software\Ashampoo\Ashampoo Burning Studio 5
+Detect2=HKCU\Software\Ashampoo\Ashampoo Burning Studio 6
+Detect3=HKCU\Software\Ashampoo\Ashampoo Burning Studio 7
+Detect4=HKCU\Software\Ashampoo\Ashampoo Burning Studio 8
+Detect5=HKCU\Software\Ashampoo\Ashampoo Burning Studio 12
+Detect6=HKCU\Software\Ashampoo\Ashampoo Burning Studio 14
+Detect7=HKCU\Software\Ashampoo\Ashampoo Burning Studio 15
+Detect8=HKCU\Software\Ashampoo\Ashampoo Burning Studio 16
+Detect9=HKCU\Software\Ashampoo\Ashampoo Burning Studio 18
+Detect10=HKCU\Software\Ashampoo\Ashampoo Burning Studio 19
+Detect11=HKCU\Software\Ashampoo\Ashampoo Burning Studio 20
+Detect12=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2007
+Detect13=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2009
+Detect14=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2016
+Detect15=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2017
+Detect16=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2018
+Detect17=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2019
+Default=False
+FileKey1=%AppData%\Ashampoo|*.log;*.txt;*.xml|RECURSE
+FileKey2=%LocalAppData%\Ashampoo\BaNT|*.*|RECURSE
+RegKey1=HKCU\Software\Ashampoo\Ashampoo Burning Studio 5\Burn Image Project\SelectImage
+RegKey2=HKCU\Software\Ashampoo\Ashampoo Burning Studio 5\Data Disc Project\AddDialog
+RegKey3=HKCU\Software\Ashampoo\Ashampoo Burning Studio 5\Data Disc Project\DumpImage
+RegKey4=HKCU\Software\Ashampoo\Ashampoo Burning Studio 5\Unknown Project\AddDialog
+RegKey5=HKCU\Software\Ashampoo\Ashampoo Burning Studio 6\Burn Image Project\SelectImage
+RegKey6=HKCU\Software\Ashampoo\Ashampoo Burning Studio 6\Data Disc Project\AddDialog
+RegKey7=HKCU\Software\Ashampoo\Ashampoo Burning Studio 6\Unknown Project\AddDialog
+RegKey8=HKCU\Software\Ashampoo\Ashampoo Burning Studio 7\Burn Image Project\SelectImage
+RegKey9=HKCU\Software\Ashampoo\Ashampoo Burning Studio 7\Data Disc Project\AddDialog
+RegKey10=HKCU\Software\Ashampoo\Ashampoo Burning Studio 7\Unknown Project\AddDialog
+RegKey11=HKCU\Software\Ashampoo\Ashampoo Burning Studio 8\Data Disc Project\AddDialog
+RegKey12=HKCU\Software\Ashampoo\Ashampoo Burning Studio 14\Data Disc Project\SaveDialog_AddFilesAndDirs|InitialDirectory
+RegKey13=HKCU\Software\Ashampoo\Ashampoo Burning Studio 14\tempFiles
+RegKey14=HKCU\Software\Ashampoo\Ashampoo Burning Studio 15\Data Disc Project\SaveDialog_AddFilesAndDirs|InitialDirectory
+RegKey15=HKCU\Software\Ashampoo\Ashampoo Burning Studio 15\tempFiles
+RegKey16=HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\Audio Disc Project\SaveDialog_CPlaylistDlgEx|InitialDirectory
+RegKey17=HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\Backup Project\BackupOptions|CustomLocation
+RegKey18=HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\BDMV Disc Project\SelectBDMVFolder|BdmvPath
+RegKey19=HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\Browse Image Project\BrowseImageFile|ImagePath
+RegKey20=HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\Browse Image Project\SaveDialog_SelectImageBrowse|InitialDirectory
+RegKey21=HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\Burn Image Project\SaveDialog_SelectImageBrowse|InitialDirectory
+RegKey22=HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\Burn Image Project\SelectImage|ImagePath
+RegKey23=HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\Data Disc Project\DumpImage|ImagePath
+RegKey24=HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\Data Disc Project\SaveDialog_AddFilesAndDirs|InitialDirectory
+RegKey25=HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\DVD-Video Disc Project\MoviesPage|Path
+RegKey26=HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\DVD-Video Disc Project\SaveDialog_authed.CMoviesPage.Movies|InitialDirectory
+RegKey27=HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\Logs
+RegKey28=HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\tempFiles
+RegKey29=HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\Unknown Project
+RegKey30=HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\VCD Project\SaveDialog_OnAddMovies|InitialDirectory
+RegKey31=HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\VIDEO_TS Disc Project\DumpImage|ImagePath
+RegKey32=HKCU\Software\Ashampoo\Ashampoo Burning Studio 16\VIDEO_TS Disc Project\SelectVideoTSFolder|VideoTSPath
+RegKey33=HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\Audio Disc Project\SaveDialog_CPlaylistDlgEx|InitialDirectory
+RegKey34=HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\Backup Project\BackupOptions|CustomLocation
+RegKey35=HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\BDMV Disc Project\SelectBDMVFolder|BdmvPath
+RegKey36=HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\Browse Image Project\BrowseImageFile|ImagePath
+RegKey37=HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\Browse Image Project\SaveDialog_SelectImageBrowse|InitialDirectory
+RegKey38=HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\Burn Image Project\SaveDialog_SelectImageBrowse|InitialDirectory
+RegKey39=HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\Burn Image Project\SelectImage|ImagePath
+RegKey40=HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\Data Disc Project\DumpImage|ImagePath
+RegKey41=HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\Data Disc Project\SaveDialog_AddFilesAndDirs|InitialDirectory
+RegKey42=HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\DVD-Video Disc Project\MoviesPage|Path
+RegKey43=HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\DVD-Video Disc Project\SaveDialog_authed.CMoviesPage.Movies|InitialDirectory
+RegKey44=HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\Logs
+RegKey45=HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\tempFiles
+RegKey46=HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\Unknown Project
+RegKey47=HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\VCD Project\SaveDialog_OnAddMovies|InitialDirectory
+RegKey48=HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\VIDEO_TS Disc Project\DumpImage|ImagePath
+RegKey49=HKCU\Software\Ashampoo\Ashampoo Burning Studio 18\VIDEO_TS Disc Project\SelectVideoTSFolder|VideoTSPath
+RegKey50=HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\Audio Disc Project\SaveDialog_CPlaylistDlgEx|InitialDirectory
+RegKey51=HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\Backup Project\BackupOptions|CustomLocation
+RegKey52=HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\BDMV Disc Project\SelectBDMVFolder|BdmvPath
+RegKey53=HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\Browse Image Project\BrowseImageFile|ImagePath
+RegKey54=HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\Browse Image Project\SaveDialog_SelectImageBrowse|InitialDirectory
+RegKey55=HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\Burn Image Project\SaveDialog_SelectImageBrowse|InitialDirectory
+RegKey56=HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\Burn Image Project\SelectImage|ImagePath
+RegKey57=HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\Data Disc Project\DumpImage|ImagePath
+RegKey58=HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\Data Disc Project\SaveDialog_AddFilesAndDirs|InitialDirectory
+RegKey59=HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\DVD-Video Disc Project\MoviesPage|Path
+RegKey60=HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\DVD-Video Disc Project\SaveDialog_authed.CMoviesPage.Movies|InitialDirectory
+RegKey61=HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\Logs
+RegKey62=HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\tempFiles
+RegKey63=HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\Unknown Project
+RegKey64=HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\VCD Project\SaveDialog_OnAddMovies|InitialDirectory
+RegKey65=HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\VIDEO_TS Disc Project\DumpImage|ImagePath
+RegKey66=HKCU\Software\Ashampoo\Ashampoo Burning Studio 19\VIDEO_TS Disc Project\SelectVideoTSFolder|VideoTSPath
+RegKey67=HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\Audio Disc Project\SaveDialog_CPlaylistDlgEx|InitialDirectory
+RegKey68=HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\Backup Project\BackupOptions|CustomLocation
+RegKey69=HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\BDMV Disc Project\SelectBDMVFolder|BdmvPath
+RegKey70=HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\Browse Image Project\BrowseImageFile|ImagePath
+RegKey71=HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\Browse Image Project\SaveDialog_SelectImageBrowse|InitialDirectory
+RegKey72=HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\Burn Image Project\SaveDialog_SelectImageBrowse|InitialDirectory
+RegKey73=HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\Burn Image Project\SelectImage|ImagePath
+RegKey74=HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\Data Disc Project\DumpImage|ImagePath
+RegKey75=HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\Data Disc Project\SaveDialog_AddFilesAndDirs|InitialDirectory
+RegKey76=HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\DVD-Video Disc Project\MoviesPage|Path
+RegKey77=HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\DVD-Video Disc Project\SaveDialog_authed.CMoviesPage.Movies|InitialDirectory
+RegKey78=HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\Logs
+RegKey79=HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\tempFiles
+RegKey80=HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\Unknown Project
+RegKey81=HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\VCD Project\SaveDialog_OnAddMovies|InitialDirectory
+RegKey82=HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\VIDEO_TS Disc Project\DumpImage|ImagePath
+RegKey83=HKCU\Software\Ashampoo\Ashampoo Burning Studio 20\VIDEO_TS Disc Project\SelectVideoTSFolder|VideoTSPath
+RegKey84=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2007\Burn Image Project\AddDialog
+RegKey85=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2007\Data Disc Project\AddDialog
+RegKey86=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2007\Dump Image Project\DumpImage
+RegKey87=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2007\Unknown Project\AddDialog
+RegKey88=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2016\Audio Disc Project\SaveDialog_CPlaylistDlgEx|InitialDirectory
+RegKey89=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2016\Backup Project\BackupOptions|CustomLocation
+RegKey90=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2016\Browse Image Project\BrowseImageFile|ImagePath
+RegKey91=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2016\Browse Image Project\SaveDialog_SelectImageBrowse|InitialDirectory
+RegKey92=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2016\Burn Image Project\SaveDialog_SelectImageBrowse|InitialDirectory
+RegKey93=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2016\Burn Image Project\SelectImage|ImagePath
+RegKey94=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2016\Data Disc Project\DumpImage|ImagePath
+RegKey95=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2016\Data Disc Project\SaveDialog_AddFilesAndDirs|InitialDirectory
+RegKey96=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2016\Logs
+RegKey97=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2016\tempFiles
+RegKey98=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2016\Unknown Project
+RegKey99=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2016\VCD Project\SaveDialog_OnAddMovies|InitialDirectory
+RegKey100=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2016\VIDEO_TS Disc Project\DumpImage|ImagePath
+RegKey101=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2016\VIDEO_TS Disc Project\SelectVideoTSFolder|VideoTSPath
+RegKey102=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2017\Audio Disc Project\SaveDialog_CPlaylistDlgEx|InitialDirectory
+RegKey103=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2017\Backup Project\BackupOptions|CustomLocation
+RegKey104=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2017\Browse Image Project\BrowseImageFile|ImagePath
+RegKey105=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2017\Browse Image Project\SaveDialog_SelectImageBrowse|InitialDirectory
+RegKey106=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2017\Burn Image Project\SaveDialog_SelectImageBrowse|InitialDirectory
+RegKey107=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2017\Burn Image Project\SelectImage|ImagePath
+RegKey108=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2017\Data Disc Project\DumpImage|ImagePath
+RegKey109=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2017\Data Disc Project\SaveDialog_AddFilesAndDirs|InitialDirectory
+RegKey110=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2017\Logs
+RegKey111=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2017\tempFiles
+RegKey112=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2017\Unknown Project
+RegKey113=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2017\VCD Project\SaveDialog_OnAddMovies|InitialDirectory
+RegKey114=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2017\VIDEO_TS Disc Project\DumpImage|ImagePath
+RegKey115=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2017\VIDEO_TS Disc Project\SelectVideoTSFolder|VideoTSPath
+RegKey116=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2018\Audio Disc Project\SaveDialog_CPlaylistDlgEx|InitialDirectory
+RegKey117=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2018\Backup Project\BackupOptions|CustomLocation
+RegKey118=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2018\Browse Image Project\BrowseImageFile|ImagePath
+RegKey119=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2018\Browse Image Project\SaveDialog_SelectImageBrowse|InitialDirectory
+RegKey120=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2018\Burn Image Project\SaveDialog_SelectImageBrowse|InitialDirectory
+RegKey121=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2018\Burn Image Project\SelectImage|ImagePath
+RegKey122=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2018\Data Disc Project\DumpImage|ImagePath
+RegKey123=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2018\Data Disc Project\SaveDialog_AddFilesAndDirs|InitialDirectory
+RegKey124=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2018\Logs
+RegKey125=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2018\tempFiles
+RegKey126=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2018\Unknown Project
+RegKey127=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2018\VCD Project\SaveDialog_OnAddMovies|InitialDirectory
+RegKey128=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2018\VIDEO_TS Disc Project\DumpImage|ImagePath
+RegKey129=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2018\VIDEO_TS Disc Project\SelectVideoTSFolder|VideoTSPath
+RegKey130=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2019\Audio Disc Project\SaveDialog_CPlaylistDlgEx|InitialDirectory
+RegKey131=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2019\Backup Project\BackupOptions|CustomLocation
+RegKey132=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2019\Browse Image Project\BrowseImageFile|ImagePath
+RegKey133=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2019\Browse Image Project\SaveDialog_SelectImageBrowse|InitialDirectory
+RegKey134=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2019\Burn Image Project\SaveDialog_SelectImageBrowse|InitialDirectory
+RegKey135=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2019\Burn Image Project\SelectImage|ImagePath
+RegKey136=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2019\Data Disc Project\DumpImage|ImagePath
+RegKey137=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2019\Data Disc Project\SaveDialog_AddFilesAndDirs|InitialDirectory
+RegKey138=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2019\Logs
+RegKey139=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2019\tempFiles
+RegKey140=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2019\Unknown Project
+RegKey141=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2019\VCD Project\SaveDialog_OnAddMovies|InitialDirectory
+RegKey142=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2019\VIDEO_TS Disc Project\DumpImage|ImagePath
+RegKey143=HKCU\Software\Ashampoo\Ashampoo Burning Studio 2019\VIDEO_TS Disc Project\SelectVideoTSFolder|VideoTSPath
+...end "Trimmer Block".
+-->
