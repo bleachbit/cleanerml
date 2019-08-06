@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2008-2019 Andrew Ziem
+    https://www.bleachbit.org
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+    @app Quicktime Player
+    @url https://support.apple.com/en_US/downloads/quicktime
+    @os Windows
+    @cleanerversion v0.4.5
+    @cleanerdate 2019-03-22
+    @cleanerby https://github.com/Tobias-B-Besemer (2019-03-22)
+    @tested ok v???, Windows 7
+    @testeddate 2019-03-22
+    @testedby https://github.com/Tobias-B-Besemer
+    @note 
+
+-->
+<cleaner id="quicktime" os="windows">
+  <label>Quicktime Player</label>
+  <description>Media player</description>
+  <option id="mru">
+    <label>Most recently used</label>
+    <description>Delete the usage history</description>
+    <action command="winreg" path="HKLM\Software\Apple Computer, Inc.\QuickTime\Recent Movies"/>
+    <action command="winreg" path="HKLM\Software\WOW6432Node\Apple Computer, Inc.\QuickTime\Recent Movies"/>
+  </option>
+  <option id="downloads">
+    <label>Downloads</label>
+    <description>Delete the files</description>
+    <action command="delete" search="walk.files" path="%LocalAppData%\Apple Computer\QuickTime\downloads\"/>
+    <action command="delete" search="walk.files" path="%LocalAppDataLow%\Apple Computer\QuickTime\downloads\"/>
+  </option>
+  <option id="session">
+    <label>Session</label>
+    <description>Delete the data</description>
+    <action command="delete" search="file" path="%LocalAppData%\Apple Computer\QuickTime\QTPlayerSession.xml"/>
+    <action command="delete" search="file" path="%AppData%\Apple Computer\QuickTime\QTPlayerSession.xml"/>
+    <action command="delete" search="file" path="%UserProfile%\QTPlayerSession.xml"/>
+  </option>
+  <option id="backup">
+    <label>Backup files</label>
+    <description>Delete the backup files</description>
+    <action command="delete" search="glob" path="%CommonAppData%\Apple Computer\Installer Cache\QuickTime*\QuickTime.msi.backup"/>
+  </option>
+</cleaner>
+<!--
+Start "Trimmer Block"...
+@trimmercheckedversion: 190312
+@trimmercheckedby: https://github.com/Tobias-B-Besemer
+[QuickTime Player *]
+LangSecRef=3023
+Detect=HKLM\Software\Apple Computer, Inc.\QuickTime
+Default=False
+RegKey1=HKLM\Software\Apple Computer, Inc.\QuickTime\Favorite Movies
+RegKey2=HKLM\Software\Apple Computer, Inc.\QuickTime\Recent Movies
+RegKey3=HKLM\Software\WOW6432Node\Apple Computer, Inc.\QuickTime\Favorite Movies
+RegKey4=HKLM\Software\WOW6432Node\Apple Computer, Inc.\QuickTime\Recent Movies
+...end "Trimmer Block".
+-->
+<!--
+Developer Notes:
+Not used from WinApp2.ini:
+RegKey1=HKLM\Software\Apple Computer, Inc.\QuickTime\Favorite Movies
+RegKey3=HKLM\Software\WOW6432Node\Apple Computer, Inc.\QuickTime\Favorite Movies
+Tobias.
+-->
