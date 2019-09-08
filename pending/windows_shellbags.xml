@@ -48,10 +48,6 @@
     <action command="winreg" path="HKCU\Software\Microsoft\Windows\ShellNoRoam\BagMRU"/>
     <action command="winreg" path="HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags"/>
     <action command="winreg" path="HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU"/>
-    <action command="winreg" path="HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU" name="0"/>
-    <action command="winreg" path="HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU" name="1"/>
-    <action command="winreg" path="HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU" name="2"/>
-    <action command="winreg" path="HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU" name="3"/>
     <!-- And on 64-bit systems additionally: -->
     <action command="winreg" path="HKCU\Software\Classes\Wow6432Node\Local Settings\Software\Microsoft\Windows\Shell\Bags"/>
     <action command="winreg" path="HKCU\Software\Classes\Wow6432Node\Local Settings\Software\Microsoft\Windows\Shell\BagMRU"/>
