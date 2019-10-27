@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2011 Andrew Ziem
+    http://www.bleachbit.org
+
+    Cleaner for dev tools cache by biji
+    Copy to directory ~/.config/bleachbit/cleaners/
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<cleaner id="coding" os="linux">
+  <!-- FIXME: Does it work under Windows? -->
+  <label>Coding caches</label>
+  <description>Clean development tools cache</description>
+  <option id="gradle">
+    <label>gradle</label>
+    <description>Clean .gradle</description>
+    <action search="walk.all" command="delete" path="~/.gradle/"/>
+  </option>
+  <option id="meteor">
+    <label>meteor</label>
+    <description>Clean .meteor</description>
+    <action search="walk.all" command="delete" path="~/.meteor/"/>
+  </option>
+  <option id="pdepend">
+    <label>pdepend</label>
+    <description>Clean .pdepend</description>
+    <action search="walk.all" command="delete" path="~/.pdepend/"/>
+  </option>
+  <option id="phpls">
+    <label>phpls</label>
+    <description>Clean vscode php language server</description>
+    <action search="walk.all" command="delete" path="~/.phpls/"/>
+  </option>
+  <option id="npm">
+    <label>npm</label>
+    <description>Clean .npm</description>
+    <action search="walk.all" command="delete" path="~/.npm/"/>
+  </option>
+  <option id="expo">
+    <label>expo</label>
+    <description>Clean .expo</description>
+    <action search="walk.all" command="delete" path="~/.expo/"/>
+  </option>
+  <option id="pub-cache">
+    <label>pub-cache</label>
+    <description>Clean .pub-cache</description>
+    <action search="walk.all" command="delete" path="~/.pub-cache/"/>
+  </option>
+  <option id="symfony-cache">
+    <label>symfony cache</label>
+    <description>Clean symfony cache</description>
+    <!-- <action search="walk.all" command="delete" wholeregex="app\/cache\/(prod|dev)\/" path="~/" cache="true" />
+    <action search="walk.all" command="delete" wholeregex="var\/cache\/(prod|dev)\/" path="~/" cache="true" /> -->
+    <!-- faster -->
+    <action search="glob" command="delete" path="~/*/var/cache/dev/*" />
+    <action search="glob" command="delete" path="~/*/*/var/cache/dev/*" />
+    <action search="glob" command="delete" path="~/*/*/*/var/cache/dev/*" />
+    <action search="glob" command="delete" path="~/*/var/cache/prod/*" />
+    <action search="glob" command="delete" path="~/*/*/var/cache/prod/*" />
+    <action search="glob" command="delete" path="~/*/*/*/var/cache/prod/*" />
+
+    <action search="glob" command="delete" path="~/*/app/cache/dev/*" />
+    <action search="glob" command="delete" path="~/*/*/app/cache/dev/*" />
+    <action search="glob" command="delete" path="~/*/*/*/app/cache/dev/*" />
+    <action search="glob" command="delete" path="~/*/app/cache/prod/*" />
+    <action search="glob" command="delete" path="~/*/*/app/cache/prod/*" />
+    <action search="glob" command="delete" path="~/*/*/*/app/cache/prod/*" />
+  </option>
+  <option id="symfony-log">
+    <label>symfony log</label>
+    <description>Truncate symfony log</description>
+    <!-- <action search="walk.files" command="truncate" wholeregex="app\/logs\/(prod|dev)\.log$" path="~/" cache="true" />
+    <action search="walk.files" command="truncate" wholeregex="var\/log\/(prod|dev)\.log$" path="~/" cache="true" /> -->
+    <!-- faster -->
+    <action search="glob" command="truncate" path="~/*/var/log/dev.log" />
+    <action search="glob" command="truncate" path="~/*/*/var/log/dev.log" />
+    <action search="glob" command="truncate" path="~/*/*/*/var/log/dev.log" />
+    <action search="glob" command="truncate" path="~/*/var/log/prod.log" />
+    <action search="glob" command="truncate" path="~/*/*/var/log/prod.log" />
+    <action search="glob" command="truncate" path="~/*/*/*/var/log/prod.log" />
+
+    <action search="glob" command="truncate" path="~/*/app/logs/dev.log" />
+    <action search="glob" command="truncate" path="~/*/*/app/logs/dev.log" />
+    <action search="glob" command="truncate" path="~/*/*/*/app/logs/dev.log" />
+    <action search="glob" command="truncate" path="~/*/app/logs/prod.log" />
+    <action search="glob" command="truncate" path="~/*/*/app/logs/prod.log" />
+    <action search="glob" command="truncate" path="~/*/*/*/app/logs/prod.log" />
+  </option>
+
+</cleaner>
