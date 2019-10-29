@@ -31,6 +31,7 @@
     <description>Clean ethereum chain data</description>
     <action search="walk.all" command="delete" path="~/.ethereum/geth/lightchaindata/"/>
     <action search="walk.all" command="delete" path="~/.ethereum/geth/chaindata/"/>
+    <action search="walk.all" command="delete" path="~/.ethereum/geth/ethash/"/>
   </option>
 
 </cleaner>
