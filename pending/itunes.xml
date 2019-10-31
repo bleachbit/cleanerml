@@ -47,7 +47,7 @@
   <option id="backup">
     <label>Backup files</label>
     <description>Delete the backup files</description>
-  <!-- That we don't need so much translation, we combine some options! Tobias.
+    <!-- That we don't need so much translation, we combine some options! Tobias.
   <option id="mobilesync_bak">
     <label>MobileSync Backup</label>
     <description>Delete the backup files</description>
@@ -56,7 +56,7 @@
     <action command="delete" search="walk.all" path="%AppData%\Apple Computer\MobileSync\Backup\"/>
     <action command="delete" search="walk.all" path="%UserProfile%\Apple\MobileSync\Backup"/>
     <!-- ...end! Tobias. -->
-  <!-- That we don't need so much translation, we combine some options! Tobias.
+    <!-- That we don't need so much translation, we combine some options! Tobias.
   </option>
   <option id="itunes_prev_lib">
     <label>iTunes Previous Libraries</label>

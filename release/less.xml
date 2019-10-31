@@ -31,6 +31,6 @@
   <option id="history">
     <label>History</label>
     <description>Delete search and command history</description>
-    <action search="path" command="delete" path="~/.lesshst"/>
+    <action search="file" command="delete" path="~/.lesshst"/>
   </option>
 </cleaner>

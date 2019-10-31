@@ -134,7 +134,7 @@
   <option id="backup">
     <label>Backup files</label>
     <description>Delete the backup files</description>
-  <!--
+    <!--
   Was:
   <option id="category_bak">
     <label>Category Backup</label>

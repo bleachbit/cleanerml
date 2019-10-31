@@ -98,7 +98,7 @@
   <option id="backup">
     <label>Backup files</label>
     <description>Delete the backup files</description>
-  <!--
+    <!--
   Was: (Tobias)
   <option id="winsxs_backup_files">
     <label>WinSxS Backup Files</label>

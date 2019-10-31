@@ -47,7 +47,7 @@
   <option id="history">
     <label>History</label>
     <description>Clean the list of visited web pages</description>
-    <action command="mozilla_url_history" search="glob" path="~/.moonchild productions/pale moon/*.default/places.sqlite"/>
+    <action command="mozilla.url.history" search="glob" path="~/.moonchild productions/pale moon/*.default/places.sqlite"/>
   </option>
   <option id="passwords">
     <label>Passwords</label>
