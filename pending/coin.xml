@@ -25,12 +25,10 @@
 <cleaner id="coin" os="linux">
   <label>Coins cache</label>
   <description>Clean coins cache</description>
-
   <option id="ethereum">
     <label>Ethereum chain</label>
     <description>Clean ethereum chain data</description>
     <action search="walk.all" command="delete" path="~/.ethereum/geth/lightchaindata/"/>
     <action search="walk.all" command="delete" path="~/.ethereum/geth/chaindata/"/>
   </option>
-
 </cleaner>

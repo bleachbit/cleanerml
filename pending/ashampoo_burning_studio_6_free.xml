@@ -38,7 +38,7 @@
   <option id="mru">
     <label>Most recently used</label>
     <description>Delete the usage history</description>
-  <!-- Was:
+    <!-- Was:
   <option id="adddialogs">
     <label>AddDialogs</label>
     <description>Delete the Paths in the Add-Dialogs</description>
@@ -46,7 +46,7 @@
     <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 6\Burn Image Project\AddDialog" name="InitialDirectory"/>
     <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 6\Dump Image Project\AddDialog" name="InitialDirectory"/>
     <action command="winreg" path="HKCU\Software\Ashampoo\Ashampoo Burning Studio 6\Unknown Project\AddDialog" name="InitialDirectory"/>
-  <!-- And was:
+    <!-- And was:
   </option>
   <option id="images">
     <label>Last Images</label>

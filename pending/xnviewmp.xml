@@ -65,7 +65,7 @@
     <action command="ini" search="file" path="$$Profile$$\xnview.ini" section="Start" parameter="History"/>
     <action command="ini" search="file" path="$$ProgramFiles$$\xnview.ini" section="Start" parameter="History"/>
     <action command="winreg" path="HKCU\Software\XnView\XnViewMP\Start" name="History"/>
-  <!-- That we don't need so much translation, we combine some options! Tobias.
+    <!-- That we don't need so much translation, we combine some options! Tobias.
   </option>
   <option id="customPath">
     <label>Custom Path of XnView MP</label>
@@ -74,7 +74,7 @@
     <action command="ini" search="file" path="$$Profile$$\xnview.ini" section="Start" parameter="customPath"/>
     <action command="ini" search="file" path="$$ProgramFiles$$\xnview.ini" section="Start" parameter="customPath"/>
     <action command="winreg" path="HKCU\Software\XnView\XnViewMP\Start" name="customPath"/>
-  <!-- That we don't need so much translation, we combine some options! Tobias.
+    <!-- That we don't need so much translation, we combine some options! Tobias.
   </option>
   <option id="savefolder">
     <label>Save Folder of Viewer</label>
@@ -83,7 +83,7 @@
     <action command="ini" search="file" path="$$Profile$$\xnview.ini" section="Viewer" parameter="saveFolder"/>
     <action command="ini" search="file" path="$$ProgramFiles$$\xnview.ini" section="Viewer" parameter="saveFolder"/>
     <action command="winreg" path="HKCU\Software\XnView\XnViewMP\Viewer" name="saveFolder"/>
-  <!-- That we don't need so much translation, we combine some options! Tobias.
+    <!-- That we don't need so much translation, we combine some options! Tobias.
   </option>
   <option id="list_folders">
     <label>List folders of the Strip Maker and Slideshow</label>
@@ -92,7 +92,7 @@
     <action command="ini" search="file" path="$$Profile$$\xnview.ini" section="Strip" parameter="list_folder"/>
     <action command="ini" search="file" path="$$ProgramFiles$$\xnview.ini" section="Strip" parameter="list_folder"/>
     <action command="winreg" path="HKCU\Software\XnView\XnViewMP\Strip" name="list_folder"/>
-  <!-- That we don't need so much translation, we combine some options! Tobias.
+    <!-- That we don't need so much translation, we combine some options! Tobias.
   </option>
   <option id="recentfiles">
     <label>Recent Files</label>
@@ -101,7 +101,7 @@
     <action command="ini" search="file" path="$$Profile$$\xnview.ini" section="Start" parameter="RecentFiles"/>
     <action command="ini" search="file" path="$$ProgramFiles$$\xnview.ini" section="Start" parameter="RecentFiles"/>
     <action command="winreg" path="HKCU\Software\XnView\XnViewMP\Start" name="RecentFiles"/>
-  <!-- That we don't need so much translation, we combine some options! Tobias.
+    <!-- That we don't need so much translation, we combine some options! Tobias.
   </option>
   <option id="pathbrowser">
     <label>Path Browser</label>
@@ -110,7 +110,7 @@
     <action command="ini" search="file" path="$$Profile$$\xnview.ini" section="Start" parameter="PathBrowser"/>
     <action command="ini" search="file" path="$$ProgramFiles$$\xnview.ini" section="Start" parameter="PathBrowser"/>
     <action command="winreg" path="HKCU\Software\XnView\XnViewMP\Start" name="PathBrowser"/>
-  <!-- That we don't need so much translation, we combine some options! Tobias.
+    <!-- That we don't need so much translation, we combine some options! Tobias.
   </option>
   <option id="slideshow_list_folder">
     <label>Slideshow List Folder</label>
@@ -119,7 +119,7 @@
     <action command="ini" search="file" path="$$Profile$$\xnview.ini" section="Slideshow" parameter="list_folder"/>
     <action command="ini" search="file" path="$$ProgramFiles$$\xnview.ini" section="Slideshow" parameter="list_folder"/>
     <action command="winreg" path="HKCU\Software\XnView\XnViewMP\Slideshow" name="list_folder"/>
-  <!-- That we don't need so much translation, we combine some options! Tobias.
+    <!-- That we don't need so much translation, we combine some options! Tobias.
   </option>
   <option id="convert_history">
     <label>Convert history</label>

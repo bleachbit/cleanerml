@@ -67,19 +67,18 @@
     <!-- <action search="walk.all" command="delete" wholeregex="app\/cache\/(prod|dev)\/" path="~/" cache="true" />
     <action search="walk.all" command="delete" wholeregex="var\/cache\/(prod|dev)\/" path="~/" cache="true" /> -->
     <!-- faster -->
-    <action search="glob" command="delete" path="~/*/var/cache/dev/*" />
-    <action search="glob" command="delete" path="~/*/*/var/cache/dev/*" />
-    <action search="glob" command="delete" path="~/*/*/*/var/cache/dev/*" />
-    <action search="glob" command="delete" path="~/*/var/cache/prod/*" />
-    <action search="glob" command="delete" path="~/*/*/var/cache/prod/*" />
-    <action search="glob" command="delete" path="~/*/*/*/var/cache/prod/*" />
-
-    <action search="glob" command="delete" path="~/*/app/cache/dev/*" />
-    <action search="glob" command="delete" path="~/*/*/app/cache/dev/*" />
-    <action search="glob" command="delete" path="~/*/*/*/app/cache/dev/*" />
-    <action search="glob" command="delete" path="~/*/app/cache/prod/*" />
-    <action search="glob" command="delete" path="~/*/*/app/cache/prod/*" />
-    <action search="glob" command="delete" path="~/*/*/*/app/cache/prod/*" />
+    <action search="glob" command="delete" path="~/*/var/cache/dev/*"/>
+    <action search="glob" command="delete" path="~/*/*/var/cache/dev/*"/>
+    <action search="glob" command="delete" path="~/*/*/*/var/cache/dev/*"/>
+    <action search="glob" command="delete" path="~/*/var/cache/prod/*"/>
+    <action search="glob" command="delete" path="~/*/*/var/cache/prod/*"/>
+    <action search="glob" command="delete" path="~/*/*/*/var/cache/prod/*"/>
+    <action search="glob" command="delete" path="~/*/app/cache/dev/*"/>
+    <action search="glob" command="delete" path="~/*/*/app/cache/dev/*"/>
+    <action search="glob" command="delete" path="~/*/*/*/app/cache/dev/*"/>
+    <action search="glob" command="delete" path="~/*/app/cache/prod/*"/>
+    <action search="glob" command="delete" path="~/*/*/app/cache/prod/*"/>
+    <action search="glob" command="delete" path="~/*/*/*/app/cache/prod/*"/>
   </option>
   <option id="symfony-log">
     <label>symfony log</label>
@@ -87,19 +86,17 @@
     <!-- <action search="walk.files" command="truncate" wholeregex="app\/logs\/(prod|dev)\.log$" path="~/" cache="true" />
     <action search="walk.files" command="truncate" wholeregex="var\/log\/(prod|dev)\.log$" path="~/" cache="true" /> -->
     <!-- faster -->
-    <action search="glob" command="truncate" path="~/*/var/log/dev.log" />
-    <action search="glob" command="truncate" path="~/*/*/var/log/dev.log" />
-    <action search="glob" command="truncate" path="~/*/*/*/var/log/dev.log" />
-    <action search="glob" command="truncate" path="~/*/var/log/prod.log" />
-    <action search="glob" command="truncate" path="~/*/*/var/log/prod.log" />
-    <action search="glob" command="truncate" path="~/*/*/*/var/log/prod.log" />
-
-    <action search="glob" command="truncate" path="~/*/app/logs/dev.log" />
-    <action search="glob" command="truncate" path="~/*/*/app/logs/dev.log" />
-    <action search="glob" command="truncate" path="~/*/*/*/app/logs/dev.log" />
-    <action search="glob" command="truncate" path="~/*/app/logs/prod.log" />
-    <action search="glob" command="truncate" path="~/*/*/app/logs/prod.log" />
-    <action search="glob" command="truncate" path="~/*/*/*/app/logs/prod.log" />
+    <action search="glob" command="truncate" path="~/*/var/log/dev.log"/>
+    <action search="glob" command="truncate" path="~/*/*/var/log/dev.log"/>
+    <action search="glob" command="truncate" path="~/*/*/*/var/log/dev.log"/>
+    <action search="glob" command="truncate" path="~/*/var/log/prod.log"/>
+    <action search="glob" command="truncate" path="~/*/*/var/log/prod.log"/>
+    <action search="glob" command="truncate" path="~/*/*/*/var/log/prod.log"/>
+    <action search="glob" command="truncate" path="~/*/app/logs/dev.log"/>
+    <action search="glob" command="truncate" path="~/*/*/app/logs/dev.log"/>
+    <action search="glob" command="truncate" path="~/*/*/*/app/logs/dev.log"/>
+    <action search="glob" command="truncate" path="~/*/app/logs/prod.log"/>
+    <action search="glob" command="truncate" path="~/*/*/app/logs/prod.log"/>
+    <action search="glob" command="truncate" path="~/*/*/*/app/logs/prod.log"/>
   </option>
-
 </cleaner>
