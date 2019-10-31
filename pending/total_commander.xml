@@ -33,8 +33,8 @@ Totalcommander 8.51a
   <label>Total Commander</label>
   <description>File manager</description>
   <option id="history"><label>File tab history</label><description>Delete the history of the file tabs</description><action search="file" path="$APPDATA\GHISLER\wincmd.ini" command="ini" section="left" parameter="path"/><action search="file" path="$APPDATA\GHISLER\wincmd.ini" command="ini" section="Left" parameter="path"/><action search="file" path="$APPDATA\GHISLER\wincmd.ini" command="ini" section="right" parameter="path"/><action search="file" path="$APPDATA\GHISLER\wincmd.ini" command="ini" section="Right" parameter="path"/><action search="file" path="$APPDATA\GHISLER\wincmd.ini" command="ini" section="LeftHistory"/><action search="file" path="$APPDATA\GHISLER\wincmd.ini" command="ini" section="RightHistory"/><action search="file" path="$APPDATA\GHISLER\wincmd.ini" command="ini" section="Command line history"/>
-+		<action search="file" path="$APPDATA\GHISLER\wincmd.ini" command="ini" section="MkDirHistory"/>
-	</option>
+  <action search="file" path="$APPDATA\GHISLER\wincmd.ini" command="ini" section="MkDirHistory"/>
+  </option>
   <option id="search_history">
     <label>Search, replace and selection history</label>
     <description>Delete the history of Search, Replace and Selection dialog</description>
@@ -47,8 +47,8 @@ Totalcommander 8.51a
   </option>
   <option id="ftp_client_history">
     <label>FTP Client History deletion</label>
-    <warning>Using this option will DELETE ALL your saved FTP connections in TotalCommander!</warning>
     <description>Delete the history the FTP Client</description>
+    <warning>Using this option will DELETE ALL your saved FTP connections in TotalCommander!</warning>
     <!-- <action search="file" path="$APPDATA\GHISLER\wcx_ftp.ini" command="ini" section="connections" />
 		@TODO everything after [default] section delete -->
     <action command="delete" search="file" path="$APPDATA\GHISLER\wcx_ftp.ini"/>

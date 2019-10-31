@@ -70,8 +70,8 @@
     <action command="winreg" path="HKCU\Software\MPC-HC\MPC-HC\Settings" name="File Name 19"/>
     <action command="winreg" path="HKCU\Software\MPC-HC\MPC-HC\Settings" name="LastOpenDir"/>
     <action command="winreg" path="HKCU\Software\MPC-BE\Recent File List"/>
-  </option>
   <!-- That we don't need so much translation, we combine some options in "History"! Tobias.
+  </option>
   <option id="file-positions">
     <label>File positions</label>
     <description>Delete the file positions</description>
