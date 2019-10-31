@@ -58,8 +58,19 @@
   </option>
   <option id="pub-cache">
     <label>pub-cache</label>
-    <description>Clean .pub-cache</description>
+    <description>Clean flutter .pub-cache</description>
     <action search="walk.all" command="delete" path="~/.pub-cache/"/>
+  </option>
+  <option id="composer">
+    <label>composer</label>
+    <description>Clean composer</description>
+    <action search="walk.all" command="delete" path="~/.composer/cache/"/>
+    <action search="walk.all" command="delete" path="~/.cache/composer/"/>
+  </option>
+  <option id="netbeans">
+    <label>netbeans</label>
+    <description>Clean netbeans</description>
+    <action search="walk.all" command="delete" path="~/.cache/netbeans/"/>
   </option>
   <option id="symfony-cache">
     <label>symfony cache</label>
