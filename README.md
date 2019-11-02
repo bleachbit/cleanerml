@@ -17,12 +17,18 @@ BleachBit is an open source system cleaner for Windows and Linux.
 
 How to contribute
 -----------------
+
+There are three ways to contribute: review a pull request, review cleaners that
+are already submitted, or write your own cleaner.
+
+For any of these, start here:
 1.  Download [BleachBit](https://www.bleachbit.org).
 2.  Read [Documentation on CleanerML](http://docs.bleachbit.org/doc/cleanerml.html).
 3.  Read [Contributing a cleaner](https://www.bleachbit.org/contribute/cleaner).
-4.  Help testing untested cleaners in [`pending/`](pending/) and submit an issue to have it moved to `release/`, or fixed.
-4.  Write your own cleaner *or* review someone else's submission.
 
+After making changes to a cleaner, run `make tests` to check for errors because the
+XSD can find many errors in the XML. It's best to also run `make pretty` before
+commiting a change.
 
 How to use
 ----------
