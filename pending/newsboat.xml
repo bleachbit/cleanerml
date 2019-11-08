@@ -25,17 +25,23 @@
   <label>Newsboat</label>
   <option id="cache">
     <label>Cache</label>
-    <description>Delete the newsboat cache</description>
-    <action command="delete" search="file" path="~/.newsboat/cache.db"/>
+    <description>Vacuum the newsboat cache</description>
+    <action command="sqlite.vacuum" search="file" path="$HOME/.newsboat/cache.db"/>
+    <action command="sqlite.vacuum" search="file" path="$XDG_CONFIG_HOME/newsboat/cache.db"/>
+    <action command="sqlite.vacuum" search="file" path="$XDG_DATA_HOME/newsboat/cache.db"/>
   </option>
   <option id="search_history">
     <label>Search History</label>
     <description>Clear the search history</description>
-    <action command="delete" search="file" path="~/.newsboat/history.search"/>
+    <action command="delete" search="file" path="$HOME/.newsboat/history.search"/>
+    <action command="delete" search="file" path="$XDG_CONFIG_HOME/newsboat/history.search"/>
+    <action command="delete" search="file" path="$XDG_DATA_HOME/newsboat/history.search"/>
   </option>
   <option id="cmdline_history">
     <label>Delete the command line history</label>
     <description>Clears the previous command history</description>
-    <action command="delete" search="file" path="~/.newsboat/history.cmdline"/>
+    <action command="delete" search="file" path="$HOME/.newsboat/history.cmdline"/>
+    <action command="delete" search="file" path="$XDG_CONFIG_HOME/newsboat/history.cmdline"/>
+    <action command="delete" search="file" path="$XDG_DATA_HOME/newsboat/history.cmdline"/>
   </option>
 </cleaner>
