@@ -1,4 +1,23 @@
 @echo off
+rem Set "cleaner-xsd" if the path to your cleaner_markup_language.xsd is not one of the following:
+rem - ..\doc\cleaner_markup_language.xsd
+rem - ..\bleachbit\doc\cleaner_markup_language.xsd
+rem DON'T FORGET TO REMOVE THE "rem " AT THE BEGINNING OF THE NEXT LINE !!!
+rem set cleaner-xsd=I:\GitHub\bleachbit\doc\cleaner_markup_language.xsd
+
+rem Use a system environment variable for MinGW:
+set Path-MinGW=%Path%;C:\MinGW\msys\1.0\bin
+
+rem Use a system environment variable for Cygwin:
+set Path-Cygwin=%Path%;C:\cygwin64\bin
+
+rem Short way to add MinGW & Cygwin to the system environment variable "Path" (workaround):
+rem DON'T FORGET TO REMOVE THE "rem " AT THE BEGINNING OF THE NEXT LINE !!!
+rem set Path=%Path%;%Path-Cygwin%;%Path-MinGW%
+
+if not "%Path-MinGW%"=="" set tool-path=%Path-MinGW%
+if not "%Path-Cygwin%"=="" set tool-path=%Path-Cygwin%
+
 if "%1"=="" goto shorthelp
 if "%1"=="-help" goto help
 if "%1"=="-file" goto help
@@ -7,24 +26,30 @@ goto shorthelp
 
 :help
 echo.
-echo Copyright (C) 2019 by Andrew Ziem and Tobias B. Besemer.  All rights reserved.
+echo Copyright (C) 2019 by Tobias B. Besemer for BleachBit.org.  All rights reserved.
 echo License is GNU GPL version 3 or later - http://gnu.org/licenses/gpl.html.
 echo This is free software: You are free to change and redistribute it.
 echo There is NO WARRANTY, to the extent permitted by law.
 echo.
-echo Based on "Makefile" of Andrew Ziem.
+echo Based on "Makefile" of Andrew Ziem from BleachBit.org.
 echo.
-echo Version: 0.4.0
-echo Date: 2019-03-12
+echo Version: 0.7.5
+echo Date: 2019-11-12
 echo.
 if "%1"=="-file" goto file
 if "%1"=="-folder" goto folder
-echo Requirements:
+echo Requirements with MinGW:
 echo - MinGW
 echo - msys-libxml2-bin of MinGW and its dependencies
 echo - msys-diffutils-bin of MinGW and its dependencies
 rem echo - msys-grep-bin of MinGW and its dependencies
 echo - Path to MinGW\msys\1.0\bin\ in the system environment variable "path"
+echo.
+echo Or Requirements with Cygwin:
+echo - Cygwin
+echo - libxml2 of Cygwin
+echo - diffutils (included in the standard installation of Cygwin)
+echo - Path to \cygwin\bin or \cygwin64\bin in the system environment variable "path"
 echo.
 if "%1"=="-help" goto shorthelp
 
@@ -58,8 +83,12 @@ goto end
 if "%2"=="" goto errorfile
 
 rem Make pretty:
+if not "%tool-path%"=="" %tool-path%\xmllint --format %2 >%2.pretty
+if not "%tool-path%"=="" %tool-path%\diff -q %2 %2.pretty
+if not "%tool-path%"=="" goto after-lint
 xmllint --format %2 >%2.pretty
 diff -q %2 %2.pretty
+:after-lint
 echo.
 
 rem A "if not" to prevent 0-Byte-File because e.g. xmllint not found...
@@ -86,10 +115,24 @@ rem Make test:
 :workaround-xmllint-schema-crash
 rem goto end
 
-if exist ..\doc\cleaner_markup_language.xsd xmllint --noout --schema ..\bleachbit\doc\cleaner_markup_language.xsd %2
-if exist ..\doc\cleaner_markup_language.xsd goto end
-if exist ..\bleachbit\doc\cleaner_markup_language.xsd xmllint --noout --schema ..\bleachbit\doc\cleaner_markup_language.xsd %2
-if exist ..\bleachbit\doc\cleaner_markup_language.xsd goto end
+if "%cleaner-xsd%"=="" goto cleaner-xsd-empty
+if not "%tool-path%"=="" %tool-path%\xmllint --noout --schema %cleaner-xsd% %2
+if not "%tool-path%"=="" goto end
+xmllint --noout --schema %cleaner-xsd% %2
+goto end
+:cleaner-xsd-empty
+if not exist ..\doc\cleaner_markup_language.xsd goto no-doc-cml
+if not "%tool-path%"=="" %tool-path%\xmllint --noout --schema ..\doc\cleaner_markup_language.xsd %2
+if not "%tool-path%"=="" goto end
+xmllint --noout --schema ..\doc\cleaner_markup_language.xsd %2
+goto end
+:no-doc-cml
+if not exist ..\bleachbit\doc\cleaner_markup_language.xsd goto no-bb-doc-cml
+if not "%tool-path%"=="" %tool-path%\xmllint --noout --schema ..\bleachbit\doc\cleaner_markup_language.xsd %2
+if not "%tool-path%"=="" goto end
+xmllint --noout --schema ..\bleachbit\doc\cleaner_markup_language.xsd %2
+goto end
+:no-bb-doc-cml
 echo.
 echo cleaner_markup_language.xsd missing !!!
 goto end
