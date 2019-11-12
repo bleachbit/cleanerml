@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+
+    BleachBit
+    Copyright (C) 2008-2019 Andrew Ziem
+    https://www.bleachbit.org
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+
+<cleaner id="newsboat" os="linux">
+  <label>Newsboat</label>
+  <option id="cache">
+    <label>Cache</label>
+    <description>Vacuum the newsboat cache</description>
+    <action command="sqlite.vacuum" search="file" path="$HOME/.newsboat/cache.db"/>
+    <action command="sqlite.vacuum" search="file" path="$XDG_CONFIG_HOME/newsboat/cache.db"/>
+    <action command="sqlite.vacuum" search="file" path="$XDG_DATA_HOME/newsboat/cache.db"/>
+  </option>
+  <option id="search_history">
+    <label>Search History</label>
+    <description>Clear the search history</description>
+    <action command="delete" search="file" path="$HOME/.newsboat/history.search"/>
+    <action command="delete" search="file" path="$XDG_CONFIG_HOME/newsboat/history.search"/>
+    <action command="delete" search="file" path="$XDG_DATA_HOME/newsboat/history.search"/>
+  </option>
+  <option id="cmdline_history">
+    <label>Delete the command line history</label>
+    <description>Clears the previous command history</description>
+    <action command="delete" search="file" path="$HOME/.newsboat/history.cmdline"/>
+    <action command="delete" search="file" path="$XDG_CONFIG_HOME/newsboat/history.cmdline"/>
+    <action command="delete" search="file" path="$XDG_DATA_HOME/newsboat/history.cmdline"/>
+  </option>
+</cleaner>
