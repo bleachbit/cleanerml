@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2008-2019 Andrew Ziem
+    https://www.bleachbit.org
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+    @app Telegram Desktop
+    @url https://desktop.telegram.org/
+    @os Windows, Linux, macOS
+    @cleanerversion v1.0.0
+    @cleanerdate 2019-11-14
+    @cleanerby Tobias B. Besemer
+    @tested ok v???, Windows ???
+    @testeddate ???
+    @testedby ???
+    @note Linux $$ProgramFiles$$ not yet figured out! I will do this later! Tobias.
+
+-->
+<cleaner id="telegram_desktop">
+  <label>Telegram Desktop</label>
+  <description>Messaging program</description>
+  <!-- Not yet figured out:
+  <running type="exe" os="linux">telegram</running>
+  -->
+  <running type="exe" os="windows">Telegram</running>
+  <option id="log">
+    <label>Log</label>
+    <description>Delete the log</description>
+    <!-- Linux: -->
+    <!-- Not yet figured out! -->
+    <!-- Windows: -->
+    <action command="delete" search="file" path="%AppData%\Telegram Desktop\log.txt"/>
+    <!-- macOS: -->
+    <!-- Not yet figured out! -->
+  </option>
+  <option id="memory_dumps">
+    <label>Memory Dumps</label>
+    <description>Delete the files</description>
+    <!-- Linux: -->
+    <!-- Not yet figured out! -->
+    <!-- Windows: -->
+    <action command="delete" search="walk.all" path="%AppData%\Telegram Desktop\tdata\dumps"/>
+    <!-- macOS: -->
+    <!-- Not yet figured out! -->
+  </option>
+  <option id="cache">
+    <label>Cache files</label>
+    <description>Delete the cache files</description>
+    <!-- Linux: -->
+    <!-- Not yet figured out! -->
+    <!-- Windows: -->
+    <action command="delete" search="walk.all" path="%AppData%\Telegram Desktop\tdata\user_data\cache"/>
+    <action command="delete" search="glob" path="%AppData%\Telegram Desktop\tdata\user_data\cache\*"/>
+    <action command="delete" search="walk.all" path="%AppData%\Telegram Desktop\tdata\user_data\media_cache"/>
+    <action command="delete" search="glob" path="%AppData%\Telegram Desktop\tdata\user_data\media_cache\*"/>
+    <!-- macOS: -->
+    <!-- Not yet figured out! -->
+  </option>
+</cleaner>
