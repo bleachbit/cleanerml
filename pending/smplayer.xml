@@ -21,9 +21,9 @@
     @app SMPlayer
     @url https://www.smplayer.info/
     @os Windows, Linux
-    @cleanerversion v2.1.0
-    @cleanerdate 2019-03-29
-    @cleanerby Manuel E. Gutierrez (xr09) (2013-09-17) & Tobias B. Besemer (2018-12-25 - 2019-03-29)
+    @cleanerversion v3.0.1.0
+    @cleanerdate 2019-11-15
+    @cleanerby Manuel E. Gutierrez (xr09) (2013-09-17) & Tobias B. Besemer (2018-12-25 - 2019-11-15)
     @tested ok v18.10.0, Windows 7
     @testeddate 2019-03-10 (... with an old version of the cleaner!)
     @testedby https://github.com/Tobias-B-Besemer
@@ -33,6 +33,8 @@
 <cleaner id="smplayer">
   <label>SMPlayer</label>
   <description>Video player</description>
+  <running type="exe" os="windows">smplayer.exe</running>
+  <running type="exe" os="linux">smplayer</running>
   <var name="profile">
     <value os="windows">%LocalAppData%\SMPlayer2</value>
     <value os="windows">%UserProfile%\.smplayer</value>
@@ -46,14 +48,14 @@
   <option id="history">
     <label>History</label>
     <description>Delete the usage history</description>
-    <!-- That we don't need so much translation, we combine all in "History"! Tobias.
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   <option id="filesettings">
     <label>File Settings</label>
     <description>Remove file settings (last position, subtitles size, fonts)</description>
   -->
     <action command="delete" search="file" path="$$profile$$/smplayer_files.ini"/>
     <action command="delete" search="walk.all" path="$$profile$$\file_settings\"/>
-    <!-- That we don't need so much translation, we combine all in "History"! Tobias.
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="playlist_contents">
     <label>Playlists Contents</label>
@@ -303,21 +305,21 @@
     <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\27\item_26_params"/>
     <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\27\item_26_video_url"/>
     <action command="ini" search="file" path="$$profile$$\playlist.ini" section="playlist_contents" parameter="items\27\item_26_icon_url"/>
-    <!-- That we don't need so much translation, we combine all in "History"! Tobias.
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="screenshot_folder">
     <label>Screenshots path</label>
     <description>Reset screenshots path</description>
   -->
     <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="%General" parameter="screenshot_folder"/>
-    <!-- That we don't need so much translation, we combine all in "History"! Tobias.
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="history_files">
     <label>Recent Files</label>
     <description>Clear recent played files</description>
   -->
     <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="history" parameter="recents"/>
-    <!-- That we don't need so much translation, we combine all in "History"! Tobias.
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="history_urls">
     <label>Recent URLs</label>
@@ -325,7 +327,7 @@
   -->
     <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="history" parameter="urls"/>
     <action command="ini" search="file" path="$$profile$$\playlist.ini" section="history" parameter="urls"/>
-    <!-- That we don't need so much translation, we combine all in "History"! Tobias.
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="videopreview">
     <label>Video Preview</label>
@@ -333,14 +335,14 @@
   -->
     <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="videopreview" parameter="last_directory"/>
     <action command="ini" search="file" path="$$profile$$\smplayer.ini" section="videopreview" parameter="filename"/>
-    <!-- That we don't need so much translation, we combine all in "History"! Tobias.
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="playlist_directory">
     <label>Playlist Directory</label>
     <description>Playlist Directory - Last directory</description>
   -->
     <action command="ini" search="file" path="$$profile$$\playlist.ini" section="directories" parameter="latest_dir"/>
-    <!-- That we don't need so much translation, we combine all in "History"! Tobias.
+  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="smtube.ini">
     <label>SMTube Recording Directory</label>
