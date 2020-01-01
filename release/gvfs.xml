@@ -28,8 +28,9 @@
   <option id="metadata">
     <label>GVFS Metadata</label>
     <description>Delete metadata about previously mounted filesystems</description>
-    <warning>All customizations like comments, emblems, icons and any position information of icons and documents will be deleted as well.</warning>
-    <!-- XDG vars will likely store under .data - still searching for the doc. -->
-    <action command="delete" search="glob" path="~/.local/share/gvfs-metadata/*"/>
+    <warning>All customizations like comments, emblems, icons and any position information of icons and within documents will be deleted as well.</warning>
+    <action command="delete" search="glob" path="${XDG_DATA_HOME}/gvfs-metadata/*"/>      
+    <!-- Remaining data pre XDG adaption -->
+    <action command="delete" search="glob" path="${HOME}/.local/share/gvfs-metadata/*"/>
   </option>
 </cleaner>
