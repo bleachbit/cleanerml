@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2008-2020 Andrew Ziem
+    
+    https://www.bleachbit.org
+
+    pip cleaner
+    Copyright (C) 2020 Leeroy
+
+    @url https://github.com/pypa/pip
+    @note Cleans caches generated when installing Python packages using pip.
+    @tested ok 12/03/2020 Windows 7
+    @note These don't usually get too large
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<cleaner id="pip" os="windows">
+  <label>The Python package installer</label>
+  <description>You can use pip to install packages from the Python Package Index</description>
+  <option id="cache">
+    <label>Cache</label>
+    <description>Delete the caches for installed packages</description>
+    <action command="delete" search="walk.files" path="$LOCALAPPDATA\pip\cache"/>
+  </option>
+</cleaner>
