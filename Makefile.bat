@@ -70,7 +70,7 @@ echo        -help : Shows more help
 echo        -file : Makes the [file] pretty and tests it
 echo        -folder : Makes the files in [folder] pretty and test them
 echo.
-echo CleanerML on GitHub: https://github.com/az0/cleanerml
+echo CleanerML on GitHub: https://github.com/bleachbit/cleanerml
 goto end
 
 :folder

@@ -45,7 +45,7 @@ The directory `release` contains cleaners that are considered safe and effective
 
 Additional information
 --------
-Your cleaners should retain the copyright and information header found in `release/*.xml`. Please edit the copyright information accordingly. If needed, you can also include extra maintenance information in the header, as found in [release/openshot.xml](https://github.com/az0/cleanerml/blob/master/release/openshot.xml):
+Your cleaners should retain the copyright and information header found in `release/*.xml`. Please edit the copyright information accordingly. If needed, you can also include extra maintenance information in the header, as found in [release/openshot.xml](https://github.com/bleachbit/cleanerml/blob/master/release/openshot.xml):
 
     @url http://full.url.of/software-project
     @tested ok softwareversion, OSnameandversion
