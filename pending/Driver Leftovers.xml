@@ -14,22 +14,17 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
-<cleaner id="Driver Leftovers" os="windows">
-  <label>Driver Leftovers</label>
+<cleaner id="driver_leftovers" os="windows">
+  <label>driver leftovers</label>
   <description>Deletes staging folders with driver installer data.</description>
-  <option id="NVIDIA">
+  <option id="nvidia">
     <label>NVIDIA</label>
-    <description>Deletes C:\Nvidia [Used for Nvidia Drivers]</description>
+    <description>Deletes C:\Nvidia [Used for Nvidia Drivers].</description>
     <action search="walk.top" command="delete" path="C:\Nvidia"/>
   </option>
-  <option id="AMD">
+  <option id="amd">
     <label>AMD</label>
-    <description>Deletes C:\AMD [used for AMD drivers]</description>
+    <description>Deletes C:\AMD [used for AMD drivers].</description>
     <action search="walk.top" command="delete" path="C:\AMD"/>
-  </option>
-  <option id="Temp">
-    <label>Temp</label>
-    <description>Deletes C:\Temp [Used for numerous applications, including RTX Voice]</description>
-    <action search="walk.top" command="delete" path="C:\Temp"/>
   </option>
 </cleaner>
