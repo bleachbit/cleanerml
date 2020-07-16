@@ -15,7 +15,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <cleaner id="driver_leftovers" os="windows">
-  <label>driver leftovers</label>
+  <label>Driver Leftovers</label>
   <description>Deletes staging folders with driver installer data.</description>
   <option id="nvidia">
     <label>NVIDIA</label>
