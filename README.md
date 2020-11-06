@@ -34,7 +34,8 @@ How to use
 ----------
 In the future automated sync may be as easy as checking one option, but for now you must manually
 download and copy the files to your personal cleaners directory.  The easiest way to find the
-directory is to open BleachBit, click Help, click System Information, and look for personal_cleaner_dir.
+directory is to open BleachBit, click the hamburger menu (three horizontal lines), click Diagnostics,
+and look for the line with `personal_cleaner_dir`.
 
 
 Contents
