@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Template Copyright (C) 2008-2020 Andrew Ziem
+    File Copyright (C) 2020-2020 Tomodachi94 under the GNU General Public License
+    https://www.bleachbit.org
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+    File Copyright (C) 2020-2020 Tomodachi94 under the GNU General Public License
+    https://tomodachi94.github.io
+
+    All trademarks, copyrights, and patents are owned by their respective authors.
+-->
+<cleaner id="atom">
+  <label>Atom</label>
+  <running type="exe" os="windows">atom.exe</running>
+  <running type="exe" os="linux">atom</running>
+  <description>Text editor</description>
+  <option id="cache">
+    <label>Cache</label>
+    <description>Clears the cache.</description>
+    <action search="walk.files" command="delete" path="%appdata%/Atom/Cache"/>
+    <action search="walk.files" command="delete" path="%appdata%/Atom/GPUCache"/>
+  </option>
+  <option id="indexeddb">
+    <label>IndexedDB</label>
+    <description>Clears the IndexedDB folder.</description>
+    <action search="walk.all" command="truncate" path="%appdata%/Atom/IndexedDB"/>
+  </option>
+  <option id="logs">
+    <label>Logs</label>
+    <description>Clears the logs folder.</description>
+    <action search="walk.all" command="truncate" path="%appdata%/Atom/logs"/>
+  </option>
+  <option id="cookies">
+    <label>Logs</label>
+    <description>Clears the cookies.</description>
+    <action search="file" command="truncate" path="%appdata%/Atom/Cookies"/>
+  </option>
+</cleaner>
