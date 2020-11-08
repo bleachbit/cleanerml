@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Template Copyright (C) 2008-2020 Andrew Ziem
+    File Copyright (C) 2020-2020 Tomodachi94 under the GNU General Public License
+    https://www.bleachbit.org
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+    File Copyright (C) 2020-2020 Tomodachi94 under the GNU General Public License
+    https://tomodachi94.github.io
+
+    All trademarks, copyrights, and patents are owned by their respective authors.
+-->
+<cleaner id="bitwarden">
+  <label>Bitwarden</label>
+  <running type="exe" os="windows">bitwarden.exe</running>
+  <running type="exe" os="linux">bitwarden</running>
+  <description>Password manager</description>
+  <option id="cache">
+    <label>Cache</label>
+    <description>Clears the cache.</description>
+    <action search="walk.files" command="delete" path="%appdata%/Bitwarden/Cache"/>
+    <action search="walk.files" command="delete" path="%appdata%/Bitwarden/GPUCache"/>
+  </option>
+  <option id="app.log">
+    <label>app.log</label>
+    <description>Deletes app.log</description>
+    <action search="file" command="truncate" path="%appdata%/Bitwarden/app.log"/>
+  </option>
+  <option id="cookies">
+    <label>Cookies</label>
+    <description>Clears the cookies.</description>
+    <action search="file" command="truncate" path="%appdata%/Bitwarden/Cookies"/>
+  </option>
+</cleaner>
