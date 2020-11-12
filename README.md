@@ -24,7 +24,7 @@ are already submitted, or write your own cleaner.
 For any of these, start here:
 1.  Download [BleachBit](https://www.bleachbit.org).
 2.  Read [Documentation on CleanerML](http://docs.bleachbit.org/doc/cleanerml.html).
-3.  Read [Contributing a cleaner](https://www.bleachbit.org/contribute/cleaner).
+3.  Read [Contributing a cleaner](https://docs.bleachbit.org/cml/contributing.html).
 
 After making changes to a cleaner, run `make tests` to check for errors because the
 XSD can find many errors in the XML. It's best to also run `make pretty` before
