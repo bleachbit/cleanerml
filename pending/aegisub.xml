@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2008-2020 Andrew Ziem
+    https://www.bleachbit.org
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<cleaner id="aegisub">
+  <label>Aegisub</label>
+  <description>Subtitle editor</description>
+
+  <var name="user">
+    <value os="linux">~/.aegisub</value>
+    <value os="windows">%AppData%/Aegisub</value>
+  </var>
+
+  <var name="local">
+    <value os="linux">~/.aegisub</value>
+    <value os="windows">%LocalAppData%/Aegisub</value>
+  </var>
+
+  <option id="autoback">
+    <label>Autoback</label>
+    <description>Backup of all opened subtitles</description>
+    <action search="walk.all" command="delete" path="$$user$$/autoback/"/>
+  </option>
+
+  <option id="autosave">
+    <label>Autosave</label>
+    <description>Autosaved subtitles</description>
+    <action search="walk.all" command="delete" path="$$user$$/autosave/"/>
+  </option>
+
+  <option id="ffms2cache">
+    <label>ffms2 cache</label>
+    <description>ffms2 (FFmpegSource) index cache</description>
+    <action search="walk.all" command="delete" path="$$local$$/ffms2cache/"/>
+  </option>
+
+  <option id="log">
+    <label>Log</label>
+    <description>Startup log</description>
+    <action search="walk.all" command="delete" path="$$user$$/log/"/>
+  </option>
+
+  <option id="recovered">
+    <label>Recovered</label>
+    <description>Subtitles saved on crash</description>
+    <action search="walk.all" command="delete" path="$$user$$/recovered/"/>
+  </option>
+
+  <option id="mru">
+    <label>Most recently used</label>
+    <description></description>
+    <action search="file" command="delete" path="$$user$$/mru.json"/>
+  </option>
+</cleaner>
