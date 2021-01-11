@@ -25,7 +25,7 @@
 
   <option id="history">
     <label>History</label>
-    <description>Command history</description>
+    <description>Delete the command history</description>
     <action search="file" command="delete" path="$XDG_DATA_HOME/ranger/history"/>
   </option>
 </cleaner>
