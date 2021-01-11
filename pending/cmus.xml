@@ -24,14 +24,14 @@
   <description>Music player</description>
 
   <option id="command-history">
-    <label>Command history</label>
-    <description></description>
+    <label>History</label>
+    <description>Delete the command history</description>
     <action search="file" command="delete" path="$XDG_CONFIG_HOME/cmus/command-history"/>
   </option>
 
   <option id="search-history">
     <label>Search history</label>
-    <description></description>
+    <description>Delete the search history</description>
     <action search="file" command="delete" path="$XDG_CONFIG_HOME/cmus/search-history"/>
   </option>
 </cleaner>
