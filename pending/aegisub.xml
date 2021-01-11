@@ -35,37 +35,37 @@
 
   <option id="autoback">
     <label>Autoback</label>
-    <description>Backup of all opened subtitles</description>
+    <description>Delete the backup of all opened subtitles</description>
     <action search="walk.all" command="delete" path="$$user$$/autoback/"/>
   </option>
 
   <option id="autosave">
     <label>Autosave</label>
-    <description>Autosaved subtitles</description>
+    <description>Delete the autosaved subtitles</description>
     <action search="walk.all" command="delete" path="$$user$$/autosave/"/>
   </option>
 
   <option id="ffms2cache">
     <label>ffms2 cache</label>
-    <description>ffms2 (FFmpegSource) index cache</description>
+    <description>Delete the ffms2 (FFmpegSource) index cache</description>
     <action search="walk.all" command="delete" path="$$local$$/ffms2cache/"/>
   </option>
 
   <option id="log">
-    <label>Log</label>
-    <description>Startup log</description>
+    <label>Logs</label>
+    <description>Delete the startup logs</description>
     <action search="walk.all" command="delete" path="$$user$$/log/"/>
   </option>
 
   <option id="recovered">
     <label>Recovered</label>
-    <description>Subtitles saved on crash</description>
+    <description>Delete the subtitles saved on crash</description>
     <action search="walk.all" command="delete" path="$$user$$/recovered/"/>
   </option>
 
   <option id="mru">
     <label>Most recently used</label>
-    <description></description>
+    <description>Delete the most recently used list</description>
     <action search="file" command="delete" path="$$user$$/mru.json"/>
   </option>
 </cleaner>
