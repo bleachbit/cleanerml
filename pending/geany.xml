@@ -20,7 +20,7 @@ Geany text editor on Linux systems
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<cleaner id="geany">
+<cleaner id="geany" os="linux">
   <label>Geany</label>
   <description>Editor</description>
   <option id="history">
