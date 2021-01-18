@@ -22,10 +22,10 @@ Geany text editor on Linux systems
 -->
 <cleaner id="geany">
   <label>Geany</label>
-  <description>Geany text editor</description>
+  <description>Editor</description>
   <option id="history">
     <label>History</label>
-    <description>Delete recent file history</description>
+    <description>Delete the most recently used list</description>
     <!-- Clean ini section for recent files in ~/.config/geany/geany.conf -->
     <action command="ini" search="file" path="$XDG_CONFIG_HOME/geany/geany.conf" section="files"/>
   </option>
