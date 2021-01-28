@@ -19,7 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<cleaner id="nano">
+<cleaner id="nano" os="linux">
   <label>nano</label>
   <description>Text editor</description>
 
