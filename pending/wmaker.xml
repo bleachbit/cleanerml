@@ -19,7 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-<cleaner id="wmaker">
+<cleaner id="wmaker" os="linux">
   <label>Window Maker</label>
   <description>Window manager</description>
 
