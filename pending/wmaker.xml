@@ -22,7 +22,6 @@
 <cleaner id="wmaker" os="linux">
   <label>Window Maker</label>
   <description>Window manager</description>
-
   <option id="history">
     <label>History</label>
     <description>Delete the "Run..." history</description>

@@ -22,13 +22,11 @@
 <cleaner id="cmus" os="linux">
   <label>cmus</label>
   <description>Music player</description>
-
   <option id="command-history">
     <label>History</label>
     <description>Delete the command history</description>
     <action search="file" command="delete" path="$XDG_CONFIG_HOME/cmus/command-history"/>
   </option>
-
   <option id="search-history">
     <label>Search history</label>
     <description>Delete the search history</description>
