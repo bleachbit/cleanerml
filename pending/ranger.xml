@@ -21,7 +21,7 @@
 -->
 <cleaner id="ranger">
   <label>ranger</label>
-  <description>file manager</description>
+  <description>File manager</description>
   <option id="history">
     <label>History</label>
     <description>Delete the command history</description>
