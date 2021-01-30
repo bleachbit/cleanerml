@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!--
 
     BleachBit
@@ -20,7 +19,6 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -->
-
 <cleaner id="newsboat" os="linux">
   <label>Newsboat</label>
   <option id="cache">
