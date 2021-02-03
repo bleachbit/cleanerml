@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+(c) Pascal Klein
+03/FEB/2021
+
+BleachBit CleanerML cleaner for:
+Thunderbird email client on Linux systems
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<cleaner id="thunderbird_session">
+  <label>Thunderbird</label>
+  <description>Email client</description>
+  <!-- avoid that thunderbird is currently running -->
+  <running type="exe" os="linux">thunderbird</running>
+
+  <option id="sessionjson">
+  <!-- delete the session.json file in profile directory -->
+    <label>Session</label>
+    <description>Delete the session (open windows and tabs)</description>
+    <action command="delete" search="glob" path="~/.thunderbird/*.default/session.json"/>
+  </option>
+</cleaner>
