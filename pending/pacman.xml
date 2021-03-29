@@ -29,7 +29,13 @@
   <option id="cache">
     <label>Cache</label>
     <description>Delete the cache</description>
-    <!--<warning>It is not recommended to clean the cache if you plan to downgrade or reinstall packages</warning>-->
+    <warning>It is not recommended to clean the cache if you plan to downgrade or reinstall packages</warning>
     <action command="delete" search="walk.all" path="/var/cache/pacman/pkg/"/>
+  </option>
+  <option id="log">
+    <label>Log</label>
+    <description>Delete the log</description>
+    <warning>The log contains package installation and removal history</warning>
+    <action command="truncate" search="file" path="/var/log/pacman.log"/>
   </option>
 </cleaner>
