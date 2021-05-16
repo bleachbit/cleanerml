@@ -31,4 +31,9 @@
     <description>Delete the cache</description>
     <action command="delete" search="walk.all" path="$LOCALAPPDATA\NuGet\Cache"/>
   </option>
+  <option id="temp">
+    <label>Temp</label>
+    <description>Delete the temporary files</description>
+    <action command="delete" search="walk.files" path="$localappdata\temp\chocolatey\" nregex="\.log$" />
+  </option>
 </cleaner>
