@@ -21,9 +21,9 @@
     @app MPC-HC/MPC-BE (Media Player Classic)
     @url https://mpc-hc.org/
     @os Windows
-    @cleanerversion v0.4.5
-    @cleanerdate 2019-03-18
-    @cleanerby 8ohmh (2016-03-23) & Tobias B. Besemer (2018-12-20 - 2019-03-18)
+    @cleanerversion v1.0.0
+    @cleanerdate 2019-03-21
+    @cleanerby 8ohmh (2016-03-23) & Tobias B. Besemer (2018-12-20 - 2019-03-21)
     @tested ok v1.7.1 (9ae7b7c), Windows NT 6.1 (build 7601, Service Pack 1) (64-bit)
     @testeddate ??? (... with an old version of the cleaner!)
     @testedby 8ohmh
@@ -70,7 +70,7 @@
     <action command="winreg" path="HKCU\Software\MPC-HC\MPC-HC\Settings" name="File Name 19"/>
     <action command="winreg" path="HKCU\Software\MPC-HC\MPC-HC\Settings" name="LastOpenDir"/>
     <action command="winreg" path="HKCU\Software\MPC-BE\Recent File List"/>
-    <!-- That we don't need so much translation, we combine some options in "History"! Tobias.
+  <!-- That we don't need so much translation, we combine some options in "History"! Tobias.
   </option>
   <option id="file-positions">
     <label>File positions</label>
@@ -122,7 +122,9 @@
     <action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings" name="DVD Position 17"/>
     <action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings" name="DVD Position 18"/>
     <action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings" name="DVD Position 19"/>
-    <!-- That we don't need so much translation, we combine some options in "History"! Tobias.
+    <!-- WinApp2.ini/[Media Player Classic *] goes till "DVD Position 20"... -->
+    <action command="winreg" path="HKCU\Software\Gabest\Media Player Classic\Settings" name="DVD Position 20"/>
+  <!-- That we don't need so much translation, we combine some options in "History"! Tobias.
   </option>
   <option id="snapshotpath">
     <label>Snapshot Path</label>
@@ -130,8 +132,15 @@
   -->
     <action command="winreg" path="HKCU\Software\MPC-HC\MPC-HC\Settings" name="SnapshotPath"/>
   </option>
+  <!-- "DMP files" are "Minidump files", or "Crash dumps"!
+  Read: https://trac.mpc-hc.org/wiki/minidumps
+  So we change id and label, to have strings, that get elsewhere used (and translated), too!
+  Was:
   <option id="dmp-files">
     <label>DMP files</label>
+  Is now: -->
+  <option id="crash_dumps">
+    <label>Crash dumps</label>
     <description>Delete the files</description>
     <action command="delete" search="glob" path="%AppData%\Media Player Classic\*.dmp"/>
     <action command="delete" search="glob" path="%AppData%\MPC-*\*.dmp"/>
