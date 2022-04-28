@@ -12,16 +12,18 @@
 
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program. If not, see <http://www.gnu.org/licenses/>.
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+    @app GitHub Desktop
     @url https://desktop.github.com/
-    @cleanerversion v0.2.5
-    @cleanerdate 2019-03-11
-    @cleanerby https://github.com/Tobias-B-Besemer
+    @os Windows
+    @cleanerversion v0.5.0
+    @cleanerdate 2019-03-21
+    @cleanerby https://github.com/Tobias-B-Besemer (2019-02-17 - 2019-03-21)
     @tested ok v1.6.3, Windows 7
     @testeddate 2019-03-10
     @testedby https://github.com/Tobias-B-Besemer
@@ -30,26 +32,30 @@
 -->
 <cleaner id="githubdesktop" os="windows">
   <label>GitHub Desktop</label>
-  <description>Code Management Program</description>
+  <description>Version control software</description>
   <option id="logs">
     <label>Logs</label>
-    <description>Delete Logs</description>
+    <description>Delete the logs</description>
     <action command="delete" search="walk.all" path="%AppData%\GitHubDesktop\logs\"/>
     <action command="delete" search="walk.all" path="%AppData%\GitHub Desktop\logs\"/>
-    <action command="delete" search="walk.all" path="%LocalAppData%\GitHubDesktop\*.log"/>
+    <action command="delete" search="glob" path="%LocalAppData%\GitHubDesktop\*.log"/>
     <action command="delete" search="glob" path="%LocalAppData%\GitHubDesktop\app-*\SquirrelSetup.log"/>
   </option>
   <option id="cache">
     <label>Cache</label>
-    <description>Delete Cache</description>
+    <description>Delete the cache</description>
+    <!-- Examples:
+    - C:\Users\Administrator\AppData\Roaming\GitHub Desktop\Cache
+    - C:\Users\Administrator\AppData\Roaming\GitHub Desktop\GPUCache
+    -->
     <action command="delete" search="walk.all" path="%AppData%\GitHubDesktop\*Cache\"/>
     <action command="delete" search="walk.all" path="%AppData%\GitHub Desktop\*Cache\"/>
   </option>
   <option id="temp">
-    <label>Temp</label>
-    <description>Delete Temp Files</description>
+    <label>Temporary files</label>
+    <description>Delete the temporary files</description>
     <action command="delete" search="walk.all" path="%LocalAppData%\GitHubDesktop\packages\SquirrelTemp\"/>
     <action command="delete" search="walk.all" path="%LocalAppData%\SquirrelTemp\"/>
-    <action command="delete" search="glob" path="%LocalAppData%\Temp\GitHubDesktop*"/>
+    <action command="delete" search="glob" path="%Temp%\GitHubDesktop*"/>
   </option>
 </cleaner>
