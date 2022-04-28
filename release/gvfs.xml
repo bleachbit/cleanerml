@@ -29,8 +29,7 @@
     <label>GVFS Metadata</label>
     <description>Delete metadata about previously mounted filesystems</description>
     <warning>All customizations like comments, emblems, icons and any position information of icons and within documents will be deleted as well.</warning>
+    <!-- Reminder: BleachBit defines XDG_DATA_HOME, if needed. -->
     <action command="delete" search="glob" path="${XDG_DATA_HOME}/gvfs-metadata/*"/>      
-    <!-- Remaining data pre XDG adaption -->
-    <action command="delete" search="glob" path="${HOME}/.local/share/gvfs-metadata/*"/>
   </option>
 </cleaner>
