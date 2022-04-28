@@ -25,7 +25,6 @@ Pix (based on gThumb) photo browser
   <label>Pix</label>
   <description>Photo browser</description>
   <running type="exe" os="linux">pix</running>
-
   <option id="history">
     <label>History</label>
     <description>Delete the history</description>

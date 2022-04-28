@@ -121,9 +121,9 @@
     <label>Junk files and folders</label>
     <description>Delete old files and folders that are no more needed</description>
   -->
-    <!-- SLStore: -->
-    <!-- Files date: 2014-09-29 -->
-    <!-- A "Junk folder" we shouldn't delete! https://forums.adobe.com/thread/1342388
+  <!-- SLStore: -->
+  <!-- Files date: 2014-09-29 -->
+  <!-- A "Junk folder" we shouldn't delete! https://forums.adobe.com/thread/1342388
     <action command="delete" search="walk.all" path="%ProgramData%\Adobe\SLStore\"/>
     <action command="delete" search="file" path="%ProgramData%\Adobe\SLStore"/>
     -->
