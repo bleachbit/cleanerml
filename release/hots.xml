@@ -30,11 +30,11 @@
     @note More can probably be cleaned
 
 -->
-<cleaner id="heroes_of_the_storm">
+<cleaner id="heroes_of_the_storm" os="windows">
   <label>Heroes of the Storm</label>
   <description>Game</description>
-  <running os="windows" type="exe">Heroes of the Storm.exe</running>
-  <running os="windows" type="exe">HeroesOfTheStorm_x64.exe</running>
+  <running type="exe">Heroes of the Storm.exe</running>
+  <running type="exe">HeroesOfTheStorm_x64.exe</running>
   <option id="cache">
     <label>Delete Cache</label>
     <description>Delete cache and cookies</description>
