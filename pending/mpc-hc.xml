@@ -40,7 +40,7 @@
   <option id="history">
     <label>History</label>
     <description>Delete the usage history</description>
-  <!-- That we don't need so much translation, we combine some options in "History"! Tobias.
+    <!-- That we don't need so much translation, we combine some options in "History"! Tobias.
   <option id="mru">
     <label>Most recently used (MRU)</label>
     <description>Delete the most recently used (MRU) list</description>
@@ -96,7 +96,7 @@
     <action command="winreg" path="HKCU\Software\MPC-HC\MPC-HC\Settings" name="File Position 17"/>
     <action command="winreg" path="HKCU\Software\MPC-HC\MPC-HC\Settings" name="File Position 18"/>
     <action command="winreg" path="HKCU\Software\MPC-HC\MPC-HC\Settings" name="File Position 19"/>
-  <!-- That we don't need so much translation, we combine some options in "History"! Tobias.
+    <!-- That we don't need so much translation, we combine some options in "History"! Tobias.
   </option>
   <option id="dvd-positions">
     <label>DVD positions</label>

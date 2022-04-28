@@ -21,9 +21,9 @@
     @app Double Commander
     @url https://doublecmd.sourceforge.io/
     @os Windows, Linux, FreeBSD
-    @cleanerversion v0.2.8
-    @cleanerdate 2019-03-14
-    @cleanerby https://github.com/Tobias-B-Besemer
+    @cleanerversion v0.3.0
+    @cleanerdate 2019-03-21
+    @cleanerby https://github.com/Tobias-B-Besemer (2019-03-12 - 2019-03-21)
     @tested ok v0.8.4, Windows 7
     @testeddate 2019-03-12
     @testedby https://github.com/Tobias-B-Besemer
@@ -31,25 +31,31 @@
     @testeddate 2019-03-12
     @testedby https://github.com/Tobias-B-Besemer
     @note As long we have no command="xml", we need to delete the complete file!
+    @note That we don't need so much translation, we change some things... Tobias.
 
 -->
 <cleaner id="double_commander" os="windows">
   <label>Double Commander</label>
   <description>File manager</description>
   <var name="profile">
-    <value search="glob" os="windows">%AppData%\doublecmd</value>
+    <value os="windows">%AppData%\doublecmd</value>
     <!-- Not yet figured out! I will do this later! Tobias.
-    <value search="glob" os="linux">~/.doublecmd</value>
+    <value os="linux">~/.doublecmd</value>
     -->
     <!-- Can somebody else figured it out for FreeBSD ??? Tobias.
-    <value search="glob" os="freebsd">~/.doublecmd</value>
-    -->
+    <value os="freebsd">~/.doublecmd</value>
+    Or must this line be...
+    <value os="unix">~/.doublecmd</value>
+    ...??? -->
     <!-- After all: Don't forget to remove the os="windows" from the element "cleaner" !!! -->
   </var>
+  <!-- That we don't need so much translation, we change some things... Tobias. -->
+  <!-- Make to comment to combine. Start...
   <option id="openedtabs">
     <label>Opened Tabs</label>
     <description>Delete the usage history</description>
     <warning>As long we have no command="xml", we need to delete the complete file! Use this option only if you know what you do!</warning>
+  ...just a break, because some comments follow to XML... -->
     <!-- This is how IMHO a CleanerML-XML-Cleaning-Syntax maybe can look like (Part 3). Tobias.
     Explanation: Deletes with "/*" at the end the content of the element.
                  Deletes without "/*" at the end the element itself and all of his content.
@@ -58,14 +64,15 @@
     <action command="xml" search="file" path="$$profile$$\doublecmd.xml" element="doublecmd/Tabs/OpenedTabs/Right/Tab/FileView/History/Entry/Paths/Path"/>
     -->
     <!-- But as long we have no command="xml", we just delete the complete file - Double Commander creates them again. -->
-    <!-- Double Commander creates the file again after first session, when it gets closed! -->
+    <!-- Double Commander creates the file again after first session, when Double Commander gets closed, again! -->
+    <!-- Make to comment, too. Start...
     <action command="delete" search="file" path="$$profile$$\doublecmd.xml"/>
+    ...end! -->
+  <!-- That we don't need so much translation, we change some things... Tobias. -->
+  <!-- id="history" moved to top that we can combine... Tobias. -->
+  <!-- ...and now the final end of "making option to comment"...
   </option>
-  <option id="logs">
-    <label>Logs</label>
-    <description>Delete the logs</description>
-    <action command="delete" search="glob" path="$$profile$$\*.log"/>
-  </option>
+  ...end! -->
   <option id="history">
     <label>History</label>
     <description>Delete the usage history</description>
@@ -82,9 +89,15 @@
     <action command="xml" search="file" path="$$profile$$\doublecmd.xml" element="doublecmd/History/*"/>
     -->
     <!-- But as long we have no command="xml", we just delete the complete file - Double Commander creates them again. -->
-    <!-- Double Commander creates the file again after first session, when it gets closed! -->
+    <!-- Double Commander creates the file again after first session, when Double Commander gets closed, again! -->
+    <!-- As we have combined the options, here we delete "Opened Tabs", too! -->
     <action command="delete" search="file" path="$$profile$$\doublecmd.xml"/>
     <!-- History gets saved in two files... -->
     <action command="delete" search="file" path="$$profile$$\history.xml"/>
+  </option>
+  <option id="logs">
+    <label>Logs</label>
+    <description>Delete the logs</description>
+    <action command="delete" search="glob" path="$$profile$$\*.log"/>
   </option>
 </cleaner>

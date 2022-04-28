@@ -37,14 +37,14 @@
   <option id="history">
     <label>History</label>
     <description>Delete the usage history</description>
-  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
+    <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   <option id="open_opendir">
     <label>Open Directory</label>
     <description>Directory shown in the open dialog</description>
   -->
     <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Open" parameter="OpenDir"/>
     <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Open" parameter="OpenDir"/>
-  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
+    <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="thumbnails_mrud">
     <label>MRU - Thumbnails</label>
@@ -110,7 +110,7 @@
     <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD28"/>
     <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD29"/>
     <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="MRUD30"/>
-  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
+    <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="thumbnails_saveassingle">
     <label>Save As Single Directory</label>
@@ -118,7 +118,7 @@
   -->
     <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Thumbnails" parameter="SaveAsSingle"/>
     <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Thumbnails" parameter="SaveAsSingle"/>
-  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
+    <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="save_savedir">
     <label>Save Directory</label>
@@ -126,7 +126,7 @@
   -->
     <action command="ini" search="file" path="%AppData%\IrfanView\i_view32.ini" section="Save" parameter="SaveDir"/>
     <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="Save" parameter="SaveDir"/>
-  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
+    <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="mrud_savedir">
     <label>MRU - Save Directories</label>
@@ -172,7 +172,7 @@
     <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="MRUD" parameter="SaveDir18"/>
     <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="MRUD" parameter="SaveDir19"/>
     <action command="ini" search="file" path="%AppData%\IrfanView\i_view64.ini" section="MRUD" parameter="SaveDir20"/>
-  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
+    <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   </option>
   <option id="recentfiles_file">
     <label>MRU - Files</label>

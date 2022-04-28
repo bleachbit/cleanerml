@@ -48,8 +48,13 @@
   </option>
   <option id="tmp">
     <label>Temporary files</label>
-    <description>Delete temporary files created by XBMC</description>
+    <description>Delete temporary files created by Kodi (XBMC)</description>
     <action command="delete" search="walk.all" path="~/.xbmc/temp/"/>
     <action command="delete" search="walk.all" path="~/.kodi/temp/"/>
+  </option>
+  <option id="crashlog">
+    <label>Crashlogs</label>
+    <description>Delete Kodi crashlogs</description>
+    <action command="delete" search="glob" path="~/kodi_crashlog-*.log"/>
   </option>
 </cleaner>

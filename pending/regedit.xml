@@ -22,8 +22,8 @@
     @url none
     @os Windows
     @cleanerversion v1.1.0
-    @cleanerdate 2019-03-15
-    @cleanerby https://github.com/Tobias-B-Besemer
+    @cleanerdate 2019-03-22
+    @cleanerby https://github.com/Tobias-B-Besemer (2019-03-07 - 2019-03-22)
     @tested ok v???, Windows 7
     @testeddate 2019-03-10 (... with an old version of the cleaner!)
     @testedby https://github.com/Tobias-B-Besemer
@@ -37,7 +37,7 @@
   <option id="history">
     <label>History</label>
     <description>Delete the usage history</description>
-  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
+    <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   <option id="lastkey">
     <label>Last Key</label>
     <description>Delete the Last Key Setting</description>

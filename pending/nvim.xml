@@ -2,8 +2,8 @@
 <!--
 
     BleachBit
-    Copyright (C) 2015 Andrew Ziem
-    http://www.bleachbit.org
+    Copyright (C) 2008-2019 Andrew Ziem
+    https://www.bleachbit.org
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -18,22 +18,19 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-    @app     Chocolatey
-    @link    https://chocolatey.org/
-    @os      Windows
-    @version 0.1.0
 -->
-<cleaner id="chocolatey" os="windows">
-  <label>Chocolatey</label>
-  <description>Package Manager</description>
-  <option id="cache">
-    <label>Cache</label>
-    <description>Delete the cache</description>
-    <action command="delete" search="walk.all" path="$LOCALAPPDATA\NuGet\Cache"/>
+<cleaner id="nvim" os="linux">
+  <label>Neovim</label>
+  <description>Editor</description>
+  <option id="history">
+    <label>History</label>
+    <description>Delete netrw directory history, command history</description>
+    <action search="file" command="delete" path="$XDG_CONFIG_HOME/nvim/.netrwhist"/>
+    <action search="file" command="delete" path="$XDG_DATA_HOME/nvim/shada/main.shada"/>
   </option>
-  <option id="temp">
-    <label>Temp</label>
-    <description>Delete the temporary files</description>
-    <action command="delete" search="walk.files" path="$localappdata\temp\chocolatey\" nregex="\.log$"/>
+  <option id="swap">
+    <label>Swap</label>
+    <description>Delete swap</description>
+    <action search="glob" command="delete" path="$XDG_DATA_HOME/nvim/swap/*"/>
   </option>
 </cleaner>
