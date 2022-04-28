@@ -85,7 +85,7 @@
     <label>URL history</label>
     <description>List of visited web pages</description>
     <warning>This option will delete your bookmarks. It's safer to delete your URL history from IceDragon itself.</warning>
-    <action command="mozilla_url_history" search="glob" path="$APPDATA\Comodo\IceDragon\Profiles\*\places.sqlite"/>
+    <action command="mozilla.url.history" search="glob" path="$APPDATA\Comodo\IceDragon\Profiles\*\places.sqlite"/>
   </option>
   <option id="vacuum">
     <label>Vacuum</label>

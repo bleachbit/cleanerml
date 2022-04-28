@@ -2,8 +2,8 @@
 <!--
 
     BleachBit
-    Copyright (C) 2015 Andrew Ziem
-    http://www.bleachbit.org
+    Copyright (C) 2008-2019 Andrew Ziem
+    https://www.bleachbit.org
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -18,40 +18,145 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-	@app     Adobe Common
-	@os      Windows
-	@version 0.3.0
+    @app Adobe Common
+    @url https://www.adobe.com/
+    @os Windows, Linux
+    @cleanerversion v0.5.0
+    @cleanerdate 2019-03-31
+    @cleanerby cfoellmann (2015-03-14) & Tobias B. Besemer (2019-03-26 - 2019-03-31)
+    @tested ok v???, Windows ???
+    @testeddate ??? (... with an old version of the cleaner!)
+    @testedby ???
+    @note 
+
 -->
 <cleaner id="adobe_common" os="windows">
-  <label>Adobe</label>
-  <description>Shared/Common Adobe Applications</description>
+  <label>Adobe Common</label>
+  <description>Shared/Common applications</description>
+  <var name="ProgramFiles">
+    <!--
+    Windows itself changes %ProgramFiles% for 32-bit processes running in a 64-bit operating system as documented here:
+    https://docs.microsoft.com/en-us/windows/desktop/winprog64/wow64-implementation-details
+    ...so we used "%SystemDrive%\Program Files\" & "%SystemDrive%\Program Files (x86)\"...
+    <value os="windows">%SystemDrive%\Program Files\[ProgramName]</value>
+    <value os="windows">%SystemDrive%\Program Files (x86)\[ProgramName]</value>
+    ...but %ProgramFiles% & %ProgramFiles(x86)% don't need to be on %SystemDrive% !!!
+    So we use: -->
+    <value os="windows">%ProgramW6432%</value>
+    <!-- ...that BleachBit as 32-bit program can find "\Program Files\XYZ" and... -->
+    <value os="windows">%ProgramFiles(x86)%</value>
+    <!-- ...that BleachBit can find "\Program Files (x86)\XYZ" and... -->
+    <value os="windows">%ProgramFiles%</value>
+    <!-- ...that BleachBit can find "\Program Files\XYZ" on a x86 system...
+    ...and later, as 64-bit program, "\Program Files\XYZ" (x64)!
+    So all cases solved! ;-) Tobias. -->
+  </var>
   <option id="logs">
     <label>Logs</label>
     <description>Delete the logs</description>
-    <!-- Application Manager Updater -->
-    <action command="delete" search="glob" path="$LOCALAPPDATA\Adobe\AAMUpdater\*\*.log"/>
-    <!-- Cloud Sync Library -->
-    <action command="delete" search="glob" path="$APPDATA\Adobe\ACSL\logs\*.txt"/>
-    <!-- Service Manager -->
-    <action command="delete" search="glob" path="$APPDATA\Adobe\CS*ServiceManager\logs\*.log"/>
+    <!-- Application Manager Updater: -->
+    <!-- Delete *.log recursive: -->
+    <action command="delete" search="walk.files" path="%LocalAppData%\Adobe\AAMUpdater\" regex="\.[Ll][Oo][Gg]$"/>
+    <!-- Updater: -->
+    <action command="delete" search="glob" path="%AppData%\Adobe\Acrobat\*\Updater\*.log"/>
+    <!-- Delete *.log recursive: -->
+    <action command="delete" search="glob" path="%LocalAppData%\Adobe\Updater*\" regex="\.[Ll][Oo][Gg]$"/>
+    <!-- Cloud Sync Library: -->
+    <action command="delete" search="glob" path="%AppData%\Adobe\ACSL\logs\*.txt"/>
+    <!-- Service Manager: -->
+    <action command="delete" search="glob" path="%AppData%\Adobe\CS*ServiceManager\logs\*.log"/>
+    <!-- LogTransport2: -->
+    <action command="delete" search="walk.files" path="%AppData%\Adobe\LogTransport2\Logs\"/>
+    <!-- Installers - Delete *.log.gz recursive: -->
+    <action command="delete" search="walk.files" path="%CommonProgramFiles%\Adobe\Installers\" regex="\.[Ll][Oo][Gg].[Gg][Zz]$"/>
   </option>
   <option id="cache">
     <label>Cache</label>
     <description>Delete the cache</description>
-    <!-- Service Manager -->
-    <action command="delete" search="glob" path="$APPDATA\Adobe\CS*ServiceManager\cache\*.*"/>
-    <!-- Camera Raw Library -->
-    <action command="delete" search="glob" path="$LOCALAPPDATA\Adobe\CameraRaw\Cache\*.dat"/>
-    <!-- Media Caches -->
-    <action command="delete" search="glob" path="$APPDATA\Adobe\Common\Media Cache Files\*"/>
-    <action command="delete" search="glob" path="$APPDATA\Adobe\Common\Media Cache\*"/>
+    <warning>Do not use this until all your Premiere projects have been completed!</warning>
+    <!-- Service Manager: -->
+    <action command="delete" search="glob" path="%AppData%\Adobe\CS*ServiceManager\cache\*"/>
+    <!-- Camera Raw Library: -->
+    <action command="delete" search="glob" path="%LocalAppData%\Adobe\CameraRaw\Cache\*.dat"/>
+    <!-- Media Caches: -->
+    <action command="delete" search="walk.files" path="%AppData%\Adobe\Common\Media Cache Files\"/>
+    <action command="delete" search="walk.files" path="%AppData%\Adobe\Common\Media Cache\"/>
+    <!-- Color: -->
+    <action command="delete" search="glob" path="%LocalAppData%\Adobe\Color\ACECache*.lst"/>
+    <!-- SLCache: -->
+    <!-- A cache we shouldn't delete! https://forums.adobe.com/thread/1342388
+    <action command="delete" search="walk.files" path="$$ProgramFiles$$\Common Files\Adobe\SLCache"/>
+    -->
+    <!-- Adobe PCD: -->
+    <!-- A cache we shouldn't delete! https://smallbusiness.chron.com/erase-adobe-registration-file-45714.html
+    <action command="delete" search="walk.files" path="$$ProgramFiles$$\Common Files\Adobe\Adobe PCD\cache"/>
+    -->
+    <!-- From WinApp2.ini/[Adobe Media Cache *]: -->
+    <action command="delete" search="walk.all" path="%AppData%\Adobe\Common\* Cache*\"/>
+    <action command="delete" search="walk.all" path="%AppData%\Adobe\Common\Peak Files\"/>
   </option>
-  <!-- Installers might also be included in cache -->
+  <!-- Installers might also be included in cache! -->
   <option id="installers">
     <label>Installers</label>
     <description>Delete cached patches and installers</description>
-    <action command="delete" search="glob" path="$PROGRAMFILES\Adobe\Adobe\AdobePatchFiles\*.*"/>
-    <action command="delete" search="glob" path="$PROGRAMW6432\Adobe\Adobe\AdobePatchFiles\*.*"/>
-    <action command="delete" search="glob" path="$PROGRAMDATA\Adobe\CameraRaw\Adobe\AdobePatchFiles\*.*"/>
+    <action command="delete" search="walk.all" path="%ProgramData%\Adobe\ARM\"/>
+    <!-- Old version of AAM starts here... -->
+    <action command="delete" search="walk.all" path="$$ProgramFiles$$\Common Files\Adobe\AdobeApplicationManager\AAMSetup\"/>
+    <action command="delete" search="file" path="$$ProgramFiles$$\Common Files\Adobe\AdobeApplicationManager\AAMSetup"/>
+    <!-- ...and end here. -->
+    <action command="delete" search="walk.files" path="$$ProgramFiles$$\Common Files\Adobe\ARM\1.0\Cache\"/>
+    <action command="delete" search="walk.all" path="$$ProgramFiles$$\Adobe\Adobe\AdobePatchFiles\"/>
+    <action command="delete" search="walk.all" path="%ProgramData%\Adobe\CameraRaw\Adobe\AdobePatchFiles\"/>
+    <action command="delete" search="walk.all" path="%ProgramData%\Adobe\Setup\"/>
+    <action command="delete" search="file" path="%ProgramData%\Adobe\Setup"/>
   </option>
+  <option id="temp">
+    <label>Temporary files</label>
+    <description>Delete the temporary files</description>
+    <action command="delete" search="walk.all" path="%Temp%\WebInstaller\"/>
+    <action command="delete" search="file" path="%Temp%\WebInstaller"/>
+  </option>
+  <!--
+  <option id="junk">
+    <label>Junk files and folders</label>
+    <description>Delete old files and folders that are no more needed</description>
+  -->
+  <!-- SLStore: -->
+  <!-- Files date: 2014-09-29 -->
+  <!-- A "Junk folder" we shouldn't delete! https://forums.adobe.com/thread/1342388
+    <action command="delete" search="walk.all" path="%ProgramData%\Adobe\SLStore\"/>
+    <action command="delete" search="file" path="%ProgramData%\Adobe\SLStore"/>
+    -->
+  <!--
+  </option>
+  -->
 </cleaner>
+<!--
+Start "Trimmer Block"...
+@trimmercheckedversion: 190312
+@trimmercheckedby: https://github.com/Tobias-B-Besemer
+[Adobe Application Manager *]
+LangSecRef=3021
+Detect=HKCU\Software\Adobe
+Default=False
+FileKey1=%AppData%\Adobe\Acrobat\*\Updater|*.log
+FileKey2=%CommonAppData%\Adobe\ARM|*.*|RECURSE
+FileKey3=%CommonProgramFiles%\Adobe\Installers|*.log.gz|RECURSE
+FileKey4=%LocalAppData%\Adobe\AAMUpdater|*.Log|RECURSE
+FileKey5=%LocalAppData%\Adobe\Acrobat\*\Updater|*.log
+FileKey6=%LocalAppData%\Adobe\Updater*|*.log|RECURSE
+...end "Trimmer Block".
+-->
+<!--
+Start "Trimmer Block"...
+@trimmercheckedversion: 190312
+@trimmercheckedby: https://github.com/Tobias-B-Besemer
+[Adobe Media Cache *]
+LangSecRef=3023
+DetectFile=%AppData%\Adobe\Common\Media Cache
+Default=False
+Warning=Do not use this until all your Premiere projects have been completed.
+FileKey1=%AppData%\Adobe\Common\* Cache*|*.*|RECURSE
+FileKey2=%AppData%\Adobe\Common\Peak Files|*.*|RECURSE
+...end "Trimmer Block".
+-->

@@ -22,8 +22,8 @@
     @url http://light-alloy.verona.im/
     @os Windows
     @cleanerversion v0.2.5
-    @cleanerdate 2019-03-18
-    @cleanerby https://github.com/Tobias-B-Besemer (2019-03-12 - 2019-03-18)
+    @cleanerdate 2019-03-21
+    @cleanerby https://github.com/Tobias-B-Besemer (2019-03-12 - 2019-03-21)
     @tested ok v???, Windows 7
     @testeddate 2019-03-12
     @testedby https://github.com/Tobias-B-Besemer
@@ -34,13 +34,13 @@
 <cleaner id="light_alloy" os="windows">
   <label>Light Alloy</label>
   <description>Media player</description>
-  <!-- Works only with a command="xml" - as long we delete the complete config file!
+  <!-- Works only with a command="xml" - as long we delete the complete config file! -->
   <!-- That we don't need so much translation, we combine all in "History"! Tobias. -->
   <!-- Not yet...
   <option id="history">
     <label>History</label>
     <description>Delete the usage history</description>
-  ...later!-->
+  ...later! -->
   <!-- That we don't need so much translation, we combine some options in "History"! Tobias.
   <option id="MediaDir">
     <label>Media Diretory</label>

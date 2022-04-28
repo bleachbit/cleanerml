@@ -31,6 +31,6 @@
   <option id="history">
     <label>History</label>
     <description>Delete command history</description>
-    <action search="path" command="delete" path="~/.gmrun_history"/>
+    <action search="file" command="delete" path="~/.gmrun_history"/>
   </option>
 </cleaner>

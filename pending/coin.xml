@@ -2,8 +2,11 @@
 <!--
 
     BleachBit
-    Copyright (C) 2015 Andrew Ziem
+    Copyright (C) 2011 Andrew Ziem
     http://www.bleachbit.org
+
+    Cleaner for coins cache by biji
+    Copy to directory ~/.config/bleachbit/cleaners/
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -18,22 +21,15 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-    @app     Chocolatey
-    @link    https://chocolatey.org/
-    @os      Windows
-    @version 0.1.0
 -->
-<cleaner id="chocolatey" os="windows">
-  <label>Chocolatey</label>
-  <description>Package Manager</description>
-  <option id="cache">
-    <label>Cache</label>
-    <description>Delete the cache</description>
-    <action command="delete" search="walk.all" path="$LOCALAPPDATA\NuGet\Cache"/>
-  </option>
-  <option id="temp">
-    <label>Temp</label>
-    <description>Delete the temporary files</description>
-    <action command="delete" search="walk.files" path="$localappdata\temp\chocolatey\" nregex="\.log$"/>
+<cleaner id="coin" os="linux">
+  <label>Coins cache</label>
+  <description>Clean coins cache</description>
+  <option id="ethereum">
+    <label>Ethereum chain</label>
+    <description>Clean ethereum chain data</description>
+    <action search="walk.all" command="delete" path="~/.ethereum/geth/lightchaindata/"/>
+    <action search="walk.all" command="delete" path="~/.ethereum/geth/chaindata/"/>
+    <action search="walk.all" command="delete" path="~/.ethereum/geth/ethash/"/>
   </option>
 </cleaner>

@@ -44,7 +44,7 @@
   <option id="history">
     <label>History</label>
     <description>Delete the usage history</description>
-  <!-- That we don't need so much translation, we combine all in "History"! Tobias.
+    <!-- That we don't need so much translation, we combine all in "History"! Tobias.
   <option id="open_opendir">
     <label>Open Directory</label>
     <description>Directory shown in the open dialog</description>

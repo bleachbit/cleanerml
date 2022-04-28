@@ -17,18 +17,25 @@ BleachBit is an open source system cleaner for Windows and Linux.
 
 How to contribute
 -----------------
+
+There are three ways to contribute: review a pull request, review cleaners that
+are already submitted, or write your own cleaner.
+
+For any of these, start here:
 1.  Download [BleachBit](https://www.bleachbit.org).
 2.  Read [Documentation on CleanerML](http://docs.bleachbit.org/doc/cleanerml.html).
-3.  Read [Contributing a cleaner](https://www.bleachbit.org/contribute/cleaner).
-4.  Help testing untested cleaners in [`pending/`](pending/) and submit an issue to have it moved to `release/`, or fixed.
-4.  Write your own cleaner *or* review someone else's submission.
+3.  Read [Contributing a cleaner](https://docs.bleachbit.org/cml/contributing.html).
 
+After making changes to a cleaner, run `make tests` to check for errors because the
+XSD can find many errors in the XML. It's best to also run `make pretty` before
+commiting a change.
 
 How to use
 ----------
 In the future automated sync may be as easy as checking one option, but for now you must manually
 download and copy the files to your personal cleaners directory.  The easiest way to find the
-directory is to open BleachBit, click Help, click System Information, and look for personal_cleaner_dir.
+directory is to open BleachBit, click the hamburger menu (three horizontal lines), click Diagnostics,
+and look for the line with `personal_cleaner_dir`.
 
 
 Contents
@@ -39,7 +46,7 @@ The directory `release` contains cleaners that are considered safe and effective
 
 Additional information
 --------
-Your cleaners should retain the copyright and information header found in `release/*.xml`. Please edit the copyright information accordingly. If needed, you can also include extra maintenance information in the header, as found in [release/openshot.xml](https://github.com/az0/cleanerml/blob/master/release/openshot.xml):
+Your cleaners should retain the copyright and information header found in `release/*.xml`. Please edit the copyright information accordingly. If needed, you can also include extra maintenance information in the header, as found in [release/openshot.xml](https://github.com/bleachbit/cleanerml/blob/master/release/openshot.xml):
 
     @url http://full.url.of/software-project
     @tested ok softwareversion, OSnameandversion

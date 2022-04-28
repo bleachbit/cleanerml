@@ -22,8 +22,8 @@
     @url none
     @os Windows, Linux, BSD
     @cleanerversion v0.5.0
-    @cleanerdate 2019-03-15
-    @cleanerby https://github.com/Tobias-B-Besemer
+    @cleanerdate 2019-03-21
+    @cleanerby https://github.com/Tobias-B-Besemer (2019-02-27 - 2019-03-21)
     @tested ok v???, Windows 7
     @testeddate 2019-03-10
     @testedby https://github.com/Tobias-B-Besemer
@@ -37,18 +37,18 @@
     <label translate="true">All .tmp files</label>
     <description>Delete the files</description>
     <warning>Deletes all .tmp files on your system! Use on your own risk! Inspect the preview for any files you want to keep. This option is slow.</warning>
-    <action command="delete" search="deep" cache="false" regex="\.[Tt][Mm][Pp]$"/>
+    <action command="delete" search="deep" regex="\.[Tt][Mm][Pp]$"/>
   </option>
   <option id="log">
     <label translate="true">All .log files</label>
     <description>Delete the files</description>
     <warning>Deletes all .log files on your system! Use on your own risk! Inspect the preview for any files you want to keep. This option is slow.</warning>
-    <action command="delete" search="deep" cache="false" regex="\.[Ll][Oo][Gg]$"/>
+    <action command="delete" search="deep" regex="\.[Ll][Oo][Gg]$"/>
   </option>
   <option id="old">
     <label translate="true">All .old files</label>
     <description>Delete the files</description>
     <warning>Deletes all .old files on your system! Use on your own risk! Inspect the preview for any files you want to keep. This option is slow.</warning>
-    <action command="delete" search="deep" cache="false" regex="\.[Oo][Ll][Dd]$"/>
+    <action command="delete" search="deep" regex="\.[Oo][Ll][Dd]$"/>
   </option>
 </cleaner>
