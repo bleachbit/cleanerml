@@ -24,7 +24,6 @@
   <option id="cache">
     <label>Cache</label>
     <description>Delete the cache files</description>
-    <action command="go clean.-cache"/>
-    <action command="go clean.-fuzzcache"/>
+    <action command="delete" search="glob" path="~/.cache/go-build/*"/>
   </option>
 </cleaner>
