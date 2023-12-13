@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2008-2019 Andrew Ziem
+    https://www.bleachbit.org
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+    @app Windows
+    @url none
+    @os Windows
+    @cleanerversion v0.5.0
+    @cleanerdate 2019-03-22
+    @cleanerby https://github.com/Tobias-B-Besemer (2019-02-26 - 2019-03-22)
+    @tested ok v???, Windows 7
+    @testeddate 2019-03-10
+    @testedby https://github.com/Tobias-B-Besemer
+    @note A more fine graded/careful deletion of the content of the system temp folders.
+
+-->
+<cleaner id="system_temp_folders_more" os="windows">
+  <label translate="true">System Temp Folders - More</label>
+  <description>Operating system</description>
+  <option id="dot_tmp">
+    <label>*.tmp</label>
+    <description>Remove all files with the extension "tmp"</description>
+    <action command="delete" search="walk.all" path="%Temp%\*.tmp"/>
+    <action command="delete" search="walk.all" path="%WinDir%\Temp\*.tmp"/>
+    <action command="delete" search="glob" path="%Temp%\*.tmp"/>
+    <action command="delete" search="glob" path="%WinDir%\Temp\*.tmp"/>
+  </option>
+  <option id="temp_files">
+    <label>temp*</label>
+    <description>Remove all files starting with "temp"</description>
+    <action command="delete" search="walk.all" path="%Temp%\temp*"/>
+    <action command="delete" search="walk.all" path="%WinDir%\Temp\temp*"/>
+    <action command="delete" search="glob" path="%Temp%\temp*"/>
+    <action command="delete" search="glob" path="%WinDir%\Temp\temp*"/>
+  </option>
+  <option id="tmp_files">
+    <label>tmp*</label>
+    <description>Remove all files starting with "tmp"</description>
+    <action command="delete" search="walk.all" path="%Temp%\tmp*"/>
+    <action command="delete" search="walk.all" path="%WinDir%\Temp\tmp*"/>
+    <action command="delete" search="glob" path="%Temp%\tmp*"/>
+    <action command="delete" search="glob" path="%WinDir%\Temp\tmp*"/>
+  </option>
+  <option id="msi_logs">
+    <label>MSI Logs</label>
+    <description>Remove all files with "MSI*.log" (Microsoft Installer Logs)</description>
+    <action command="delete" search="glob" path="%Temp%\MSI*.log"/>
+    <action command="delete" search="glob" path="%WinDir%\Temp\MSI*.log"/>
+  </option>
+  <option id="all">
+    <label>All</label>
+    <description>Remove all files of the system temp folders</description>
+    <warning>Use the option only if you know what you do!</warning>
+    <action command="delete" search="walk.all" path="%Temp%\"/>
+    <action command="delete" search="walk.all" path="%WinDir%\Temp\"/>
+  </option>
+  <option id="dot_part">
+    <label>*.part</label>
+    <description>Remove all files with the extension "part" (e.g. Firefox partial downloads)</description>
+    <action command="delete" search="walk.all" path="%Temp%\*.part"/>
+    <action command="delete" search="walk.all" path="%WinDir%\Temp\*.part"/>
+    <action command="delete" search="glob" path="%Temp%\*.part"/>
+    <action command="delete" search="glob" path="%WinDir%\Temp\*.part"/>
+  </option>
+  <option id="dot_log">
+    <label>*.log</label>
+    <description>Remove all files with the extension "log" (e.g. Installer logs)</description>
+    <action command="delete" search="walk.all" path="%Temp%\*.log"/>
+    <action command="delete" search="walk.all" path="%WinDir%\Temp\*.log"/>
+    <action command="delete" search="glob" path="%Temp%\*.log"/>
+    <action command="delete" search="glob" path="%WinDir%\Temp\*.log"/>
+  </option>
+  <option id="dot_txt">
+    <label>*.txt</label>
+    <description>Remove all files with the extension "txt" (e.g. Installer logs)</description>
+    <action command="delete" search="walk.all" path="%Temp%\*.txt"/>
+    <action command="delete" search="walk.all" path="%WinDir%\Temp\*.txt"/>
+    <action command="delete" search="glob" path="%Temp%\*.txt"/>
+    <action command="delete" search="glob" path="%WinDir%\Temp\*.txt"/>
+  </option>
+  <option id="dot_tmp-tmp">
+    <label>*.tmp-tmp</label>
+    <description>Remove all files with the extension "tmp-tmp"</description>
+    <action command="delete" search="walk.all" path="%Temp%\*.tmp-tmp"/>
+    <action command="delete" search="walk.all" path="%WinDir%\Temp\*.tmp-tmp"/>
+    <action command="delete" search="glob" path="%Temp%\*.tmp-tmp"/>
+    <action command="delete" search="glob" path="%WinDir%\Temp\*.tmp-tmp"/>
+  </option>
+</cleaner>
