@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  @app            ClickOnce
+  @os             Windows
+  @cleanerversion 0.0.1
+  @cleanerdate    2025-10-09
+  @testeddate     2025-10-09
+  @note Info source: https://learn.microsoft.com/en-us/previous-versions/troubleshoot/dotnet/framework/clickonce-application-fails-update
+  @note To delete the ClickOnce file cache, delete the contents of this folder based on the operating system.
+  @note   Windows XP    and Server 2003           - %userprofile%\Local Settings\Apps\2.0\*.*
+  @note   Windows Vista and Server 2008 and later - %userprofile%\AppData\Local\Apps\2.0\*.*
+-->
+<cleaner id="Cache_ClickOnce" os="windows"><label>ClickOnce</label>
+  <option id="cache"><label>Cache</label>
+    <description>Clear ClickOnce file cache</description>
+    <action command="delete" search="walk.all" path="%LOCALAPPDATA%/Apps/2.0"/>
+    <!-- walk.all: match all file/dirs under a dir (but not the top dir)
+    %LOCALAPPDATA% = C:\Users\USER_NAME\AppData\Local -->
+  </option>
+</cleaner>
+<!-- BleachBit Copyright (C) Andrew Ziem http://www.bleachbit.org This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.-->
