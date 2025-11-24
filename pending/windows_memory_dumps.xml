@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2008-2019 Andrew Ziem
+    https://www.bleachbit.org
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+    @app Windows
+    @url none
+    @os Windows
+    @cleanerversion v0.4.3
+    @cleanerdate 2019-03-22
+    @cleanerby https://github.com/Tobias-B-Besemer (2019-02-17 - 2019-03-22)
+    @tested ok v???, Windows 7
+    @testeddate 2019-03-10
+    @testedby https://github.com/Tobias-B-Besemer
+    @note Can maybe one day be integrated into the windows.xml-cleaner...
+
+-->
+<cleaner id="windows_memory_dumps" os="windows">
+  <label>Windows Memory Dumps</label>
+  <description>Windows component</description>
+  <option id="all">
+    <label>All</label>
+    <description>Delete the files</description>
+    <action command="delete" search="file" path="%WinDir%\MEMORY.DMP"/>
+    <action command="delete" search="walk.all" path="%WinDir%\Minidump\"/>
+    <action command="delete" search="walk.all" path="%WinDir%\System32\config\systemprofile\AppData\Local\CrashDumps\"/>
+    <action command="delete" search="walk.all" path="%WinDir%\System32\config\systemprofile\Local Settings\Application Data\CrashDumps\"/>
+    <action command="delete" search="walk.all" path="%WinDir%\SysWOW64\config\systemprofile\AppData\Local\CrashDumps\"/>
+    <action command="delete" search="walk.all" path="%WinDir%\SysWOW64\config\systemprofile\Local Settings\Application Data\CrashDumps\"/>
+    <action command="delete" search="walk.all" path="%WinDir%\LiveKernelReports\WATCHDOG\"/>
+    <action command="delete" search="walk.all" path="%LocalAppData%\CrashDumps\"/>
+    <!-- Windows Error Reporting, HEAP-Dumps: -->
+    <action command="delete" search="glob" path="%WinDir%\Temp\WER*.hdmp"/>
+    <!-- Windows Error Reporting, Mini-Dumps: -->
+    <action command="delete" search="glob" path="%WinDir%\Temp\WER*.mdmp"/>
+    <!-- Dr Watson, user.dmp: -->
+    <action command="delete" search="file" path="%AllUsersProfile%\Application Data\Microsoft\Dr Watson\user.dmp"/>
+    <!-- Windows Error Reporting, LocalDumps, saved in Registry: -->
+    <action command="winreg" path="HKLM\Software\Microsoft\Windows\Windows Error Reporting\LocalDumps"/>
+  </option>
+</cleaner>
+<!--
+Start "Trimmer Block"...
+@trimmercheckedversion: 190312
+@trimmercheckedby: https://github.com/Tobias-B-Besemer
+[Windows Error Reporting *]
+FileKey5=%WinDir%\System32\config\systemprofile\AppData\Local\CrashDumps|*.dmp
+FileKey6=%WinDir%\System32\config\systemprofile\Local Settings\Application Data\CrashDumps|*.dmp
+FileKey7=%WinDir%\SysWOW64\config\systemprofile\AppData\Local\CrashDumps|*.dmp
+FileKey8=%WinDir%\SysWOW64\config\systemprofile\Local Settings\Application Data\CrashDumps|*.dmp
+RegKey4=HKLM\Software\Microsoft\Windows\Windows Error Reporting\LocalDumps
+...end "Trimmer Block".
+-->
