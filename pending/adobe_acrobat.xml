@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    BleachBit
+    Copyright (C) 2008-2019 Andrew Ziem
+    https://www.bleachbit.org
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+    @app Adobe Acrobat
+    @url https://acrobat.adobe.com/
+    @os Windows, Linux
+    @cleanerversion v2.0.0
+    @cleanerdate 2019-03-30
+    @cleanerby https://github.com/Tobias-B-Besemer (2019-03-26 - 2019-03-30)
+    @tested ok v???, Windows ???
+    @testeddate 
+    @testedby 
+    @note 
+
+-->
+<cleaner id="adobe_acrobat">
+  <label>Adobe Acrobat</label>
+  <description>Desktop publishing</description>
+  <var name="Profile">
+    <value search="glob" os="windows">%LocalAppData%\Adobe\Acrobat\*</value>
+    <value search="glob" os="linux">~/.adobe/Acrobat/*</value>
+  </var>
+  <option id="cache">
+    <label>Cache</label>
+    <description>Delete the cache</description>
+    <!-- Delete *.tmp recursive: -->
+    <action command="delete" search="walk.files" path="$$Profile$$" regex="\.[Ii][Dd][Xx]$"/>
+    <!-- General: -->
+    <action command="delete" search="glob" path="$$Profile$$\*.lst"/>
+    <action command="delete" search="file" path="$$Profile$$\UserCache.bin"/>
+    <action command="delete" search="walk.all" path="$$Profile$$\Cache\"/>
+    <action command="delete" search="walk.all" path="$$Profile$$\ToolsSearchCacheAcro\"/>
+    <action command="delete" search="glob" path="%LocalAppDataLow%\Adobe\Acrobat\*\ConnectorIcons\*"/>
+    <action command="delete" search="walk.all" path="%LocalAppDataLow%\Adobe\AcroCef\*\Acrobat\Cache\"/>
+    <action command="delete" search="glob" path="%AppData%\Adobe\Acrobat\*\Cache\*"/>
+    <action command="delete" search="glob" path="%AppData%\Adobe\Acrobat\*\JSCache\*"/>
+    <action command="delete" search="walk.all" path="%AppData%\Adobe\Acrobat\*\Security\CRLCache\"/>
+    <!-- https://helpx.adobe.com/acrobat/kb/RdrCEF-exe-and-AcroCEF-exe-can-I-disable.html -->
+    <action command="delete" search="walk.all" path="%LocalAppDataLow%\Adobe\AcroCef\*\Acrobat\Cache\"/>
+  </option>
+  <option id="mru">
+    <label>Most recently used</label>
+    <description>Delete the list of recently used documents</description>
+    <!-- Seen on Linux: -->
+    <!-- ??? -->
+    <!-- Windows: -->
+    <!-- https://www.techwalla.com/articles/what-is-adobe-synchronizer -->
+    <action command="winreg" path="HKCU\Software\Adobe\Adobe Synchronizer\10.0"/>
+    <action command="winreg" path="HKCU\Software\Adobe\Adobe Synchronizer\11.0"/>
+    <!-- From WinApp2.ini/[Adobe Acrobat 2017 *]: -->
+    <action command="winreg" path="HKCU\Software\Adobe\Adobe Acrobat\2017\AVGeneral\cRecentFiles"/>
+    <action command="winreg" path="HKCU\Software\Adobe\Adobe Acrobat\2017\AVGeneral\cRecentFolders"/>
+    <!-- From WinApp2.ini/[Adobe Acrobat DC *]: -->
+    <action command="winreg" path="HKCU\Software\Adobe\Adobe Acrobat\DC\AVConversionFromPDF\cSettings"/>
+    <action command="winreg" path="HKCU\Software\Adobe\Adobe Acrobat\DC\AVConversionToPDF\cSettings"/>
+    <action command="winreg" path="HKCU\Software\Adobe\Adobe Acrobat\DC\AVGeneral\cDockables"/>
+    <action command="winreg" path="HKCU\Software\Adobe\Adobe Acrobat\DC\AVGeneral\cRecentFiles"/>
+    <action command="winreg" path="HKCU\Software\Adobe\Adobe Acrobat\DC\AVGeneral\cRecentFolders"/>
+    <action command="winreg" path="HKCU\Software\Adobe\Adobe Acrobat\DC\AVGeneral\cRecentToolsList"/>
+    <action command="winreg" path="HKCU\Software\Adobe\Adobe Acrobat\DC\AVGeneral\cToolbars"/>
+    <action command="winreg" path="HKCU\Software\Adobe\Adobe Acrobat\DC\RememberedViews\cNoCategoryFiles"/>
+    <action command="winreg" path="HKCU\Software\Adobe\Adobe Acrobat\DC\ShareIdentity"/>
+    <action command="winreg" path="HKCU\Software\Adobe\Adobe Synchronizer\DC"/>
+    <!-- From WinApp2.ini/[Adobe Acrobat Distiller XI *]: -->
+    <action command="winreg" path="HKCU\Software\Adobe\Acrobat Distiller\PrinterJobControl"/>
+  </option>
+  <option id="search">
+    <label>Search history</label>
+    <description>Delete the search history</description>
+    <!--Linux:-->
+    <!-- ??? -->
+    <!--Windows:-->
+    <action command="delete" search="walk.all" path="%LocalAppDataLow%\Adobe\Acrobat\*\Search\"/>
+  </option>
+  <option id="temp">
+    <label>Temporary files</label>
+    <description>Delete the temporary files</description>
+    <!--Linux:-->
+    <action command="delete" search="glob" path="/dev/shm/sem.ADBE_*_$LOGNAME"/>
+    <!--Windows:-->
+    <action command="delete" search="walk.all" path="%Temp%\acrocef_low\"/>
+    <action command="delete" search="file" path="%Temp%\acrocef_low"/>
+    <action command="delete" search="walk.all" path="%Temp%\WebInstaller\"/>
+    <action command="delete" search="file" path="%Temp%\WebInstaller"/>
+    <!-- https://www.bleepingcomputer.com/startups/AdobeARM.exe-25493.html -->
+    <action command="delete" search="glob" path="%Temp%\AdobeARM*"/>
+    <action command="delete" search="file" path="%Temp%\AdobeARM.log"/>
+    <action command="delete" search="file" path="%WinDir%\Temp\AdobeARM.log"/>
+    <action command="delete" search="file" path="%WinDir%\Temp\AdobeARM_NotLocked.log"/>
+  </option>
+  <option id="logs">
+    <label>Logs</label>
+    <description>Delete the logs</description>
+    <!-- From WinApp2.ini/[Adobe Acrobat Distiller XI *]: -->
+    <action command="delete" search="glob" path="%AppData%\Adobe\Acrobat\*\*.log"/>
+  </option>
+</cleaner>
+<!--
+Start "Trimmer Block"...
+@trimmercheckedversion: 190312
+@trimmercheckedby: https://github.com/Tobias-B-Besemer
+[Adobe Acrobat 2017 *]
+LangSecRef=3021
+Detect=HKCU\Software\Adobe\Adobe Acrobat\2017
+Default=False
+RegKey1=HKCU\Software\Adobe\Adobe Acrobat\2017\AVGeneral\cRecentFiles
+RegKey2=HKCU\Software\Adobe\Adobe Acrobat\2017\AVGeneral\cRecentFolders
+...end "Trimmer Block".
+-->
+<!--
+Start "Trimmer Block"...
+@trimmercheckedversion: 190312
+@trimmercheckedby: https://github.com/Tobias-B-Besemer
+[Adobe Acrobat DC *]
+LangSecRef=3021
+Detect=HKLM\Software\Adobe\Adobe Acrobat\DC
+Default=False
+FileKey1=%LocalAppData%\Adobe\Acrobat\DC|*.lst;UserCache.bin
+FileKey2=%LocalAppData%\Adobe\Acrobat\DC\Cache|*.lst
+FileKey3=%LocalAppData%\Adobe\Acrobat\DC\ToolsSearchCacheAcro|*.*|RECURSE
+FileKey4=%LocalLowAppData%\Adobe\Acrobat\DC\Search|*.*|RECURSE
+FileKey5=%LocalLowAppData%\Adobe\AcroCef\DC\Acrobat\Cache|*.*|RECURSE
+RegKey1=HKCU\Software\Adobe\Adobe Acrobat\DC\AVConversionFromPDF\cSettings
+RegKey2=HKCU\Software\Adobe\Adobe Acrobat\DC\AVConversionToPDF\cSettings
+RegKey3=HKCU\Software\Adobe\Adobe Acrobat\DC\AVGeneral\cDockables
+RegKey4=HKCU\Software\Adobe\Adobe Acrobat\DC\AVGeneral\cRecentFiles
+RegKey5=HKCU\Software\Adobe\Adobe Acrobat\DC\AVGeneral\cRecentFolders
+RegKey6=HKCU\Software\Adobe\Adobe Acrobat\DC\AVGeneral\cRecentToolsList
+RegKey7=HKCU\Software\Adobe\Adobe Acrobat\DC\AVGeneral\cToolbars
+RegKey8=HKCU\Software\Adobe\Adobe Acrobat\DC\RememberedViews\cNoCategoryFiles
+RegKey9=HKCU\Software\Adobe\Adobe Acrobat\DC\ShareIdentity
+RegKey10=HKCU\Software\Adobe\Adobe Synchronizer\DC
+...end "Trimmer Block".
+-->
+<!--
+Start "Trimmer Block"...
+@trimmercheckedversion: 190312
+@trimmercheckedby: https://github.com/Tobias-B-Besemer
+[Adobe Acrobat Distiller XI *]
+LangSecRef=3021
+Detect=HKCU\Software\Adobe\Acrobat Distiller\11.0
+Default=False
+FileKey1=%AppData%\Adobe\Acrobat\Distiller 11|*.log
+FileKey2=%AppData%\Adobe\Acrobat\Distiller 11\Cache|*.*
+RegKey1=HKCU\Software\Adobe\Acrobat Distiller\PrinterJobControl
+...end "Trimmer Block".
+-->
+<!--
+Start "Trimmer Block"...
+@trimmercheckedversion: 190312
+@trimmercheckedby: https://github.com/Tobias-B-Besemer
+[Adobe Acrobat XI *]
+LangSecRef=3021
+Detect=HKCU\Software\Adobe\Adobe Acrobat\11.0
+Default=False
+FileKey1=%LocalAppData%\Adobe\Acrobat|*.idx|RECURSE
+FileKey2=%LocalAppData%\Adobe\Acrobat\11.0|UserCache.bin
+...end "Trimmer Block".
+-->
