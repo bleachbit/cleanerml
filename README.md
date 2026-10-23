@@ -28,7 +28,7 @@ For any of these, start here:
 
 After making changes to a cleaner, run `make tests` to check for errors because the
 XSD can find many errors in the XML. It's best to also run `make pretty` before
-commiting a change.
+committing a change.
 
 How to use
 ----------
